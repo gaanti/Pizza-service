@@ -45,13 +45,15 @@ export const sliceSlice = createSlice({
                               //debugger;
                         } else return initialState;
                   };
-                  debugger;
-                  if (action.payload!=null) {
+                  if (action.payload != null) {
                         state.filterCategory = setOrNot(state.filterCategory, action.payload.filterByCategory);
                         state.filterTitle = setOrNot(state.filterTitle, action.payload.filterTitle);
                         state.sortBy = setOrNot(state.sortBy, action.payload.sortBy);
-                        state.currentPageIndex = setOrNot(state.currentPageIndex, Number(action.payload.currentPage)||null);
-                        state.overallPagesQuantity = setOrNot(state.overallPagesQuantity, Number(action.payload.overallPagesQuantity)||null)
+                        state.currentPageIndex = setOrNot(state.currentPageIndex, Number(action.payload.currentPage) || null);
+                        state.overallPagesQuantity = setOrNot(
+                              state.overallPagesQuantity,
+                              Number(action.payload.overallPagesQuantity) || null
+                        );
                   }
             }
       }

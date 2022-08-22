@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../redux/store';
-import { setFilterByCategory } from '../redux/slices/slice';
+import { RootState } from '../../../redux/store';
+import { setFilterByCategory } from '../../../redux/slices/slice';
 
 function Categories() {
       const filterByCategory = useSelector((state: RootState) => state.slice.filterCategory);

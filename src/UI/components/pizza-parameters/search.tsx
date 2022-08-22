@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
-import '../styles/components/_search.scss';
+import '../../../styles/components/_search.scss';
 import { useDispatch } from 'react-redux';
-import { setFilterByTitle } from '../redux/slices/slice';
+import { setFilterByTitle } from '../../../redux/slices/slice';
 import debounce from 'lodash.debounce';
 
 function Search() {
@@ -9,7 +9,6 @@ function Search() {
 
       const testDBNC = useCallback(
             debounce((e) => {
-                  console.log("112")
                   dispatch(setFilterByTitle(e));
             }, 1000),
             []

@@ -5,7 +5,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7154f848-4d52-4cd8-a3e2-47b003914112" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/public/app-screen.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/screenshot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/pizza-parameters/pagination.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/pizza-parameters/sort.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/pizzas.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/header.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/cart/cart-button.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/cart/cart-empty.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/cart/cart.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/App.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cart-button.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cart-empty.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cart-item.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cart/cart-item.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cart.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/categories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pizza-parameters/categories.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/main-page/main-page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pagination.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pizza-block.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pizza-parameters/search.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sort.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/slices/slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/slice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/App.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/components/_pizza-block.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/_pizza-block.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/components/_search.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/_search.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/components/_sort.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/_sort.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +65,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectId" id="2DDpzlOad2nJjcvyGBIVDnr3nXS" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -44,27 +76,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/juliagaskevich/webstormprojects/untitled3/public&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/juliagaskevich/webstormprojects/untitled3/node_modules/prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/juliagaskevich/webstormprojects/untitled3/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/juliagaskevich/webstormprojects/untitled3/public",
+    "list.type.of.created.stylesheet": "SCSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "/Users/juliagaskevich/webstormprojects/untitled3/node_modules/prettier",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "settings.javascript.prettier",
+    "ts.external.directory.path": "/Users/juliagaskevich/webstormprojects/untitled3/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -80,9 +113,11 @@
       <recent name="$PROJECT_DIR$/src/redux" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/src/components" />
-      <recent name="$PROJECT_DIR$/src/styles" />
+      <recent name="$PROJECT_DIR$/src/pages/main-page" />
+      <recent name="$PROJECT_DIR$/src/components/pizza-parameters" />
+      <recent name="$PROJECT_DIR$/src/pages/cart" />
+      <recent name="$PROJECT_DIR$/src/tests" />
     </key>
   </component>
   <component name="RunManager" selected="npm.start">

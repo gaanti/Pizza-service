@@ -35,10 +35,10 @@ body {
       justify-content: flex-start;
       align-items: center;
       flex-basis: max-content;
-      border: #181818 solid;
+      border: $black solid;
       border-radius: 5px;
       gap: 10px;
-      margin: 0px 10px;
+      margin: 0 10px;
       overflow: scroll;
 
       input{
@@ -47,17 +47,15 @@ body {
         justify-content: flex-start;
         align-items: center;
         flex-basis: max-content;
-        border: #181818 solid;
+        border: $black solid;
         border-radius: 5px;
         gap: 10px;
-        margin: 0px 10px;
         overflow: scroll;
 
-        background-color: #fe5f1e;
+        background-color: $orange;
         word-break: keep-all;
         white-space: nowrap;
-        margin: 0px 10px;
-        overflow: scroll;
+        margin: 0 10px;
         max-width: 230px;
         color: rgb(192, 192, 192, .5);
         font-size: 15px;
@@ -89,7 +87,7 @@ body {
       .title {
         word-break: keep-all;
         white-space: nowrap;
-        margin: 0px 10px;
+        margin: 0 10px;
         overflow: scroll;
         max-width: 230px;
         color: rgb(192, 192, 192, .5);
@@ -132,7 +130,7 @@ body {
   &__top {
     display: flex;
     flex-direction: column;
-    margin: 10px 0px 30px 0px;
+    margin: 10px 0 30px 0;
     align-items: center;
     justify-content: space-between;
     align-content: space-between;
@@ -438,7 +436,6 @@ body {
 
         span {
           color: darken($color: $gray-line, $amount: 20);
-          font-weight: 500;
           font-weight: 600;
         }
 

@@ -1,15 +1,15 @@
 import React, { useCallback, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Pizzas } from './pizza-block';
-import Categories from './categories';
-import Sort from './sort';
+import { Pizzas } from '../../components/pizzas';
+import Categories from '../../components/pizza-parameters/categories';
+import Sort from '../../components/pizza-parameters/sort';
 import axios from 'axios';
-import { RootState } from '../redux/store';
-import Search from './search';
+import { RootState } from '../../../redux/store';
+import Search from '../../components/pizza-parameters/search';
 import qs from 'qs';
-import { setCurrentPage, setGetParams, setOverallPagesQuantity, setFilterByTitle } from '../redux/slices/slice';
+import { setCurrentPage, setGetParams, setOverallPagesQuantity } from '../../../redux/slices/slice';
 import { useNavigate } from 'react-router-dom';
-import Pagination from './pagination';
+import Pagination from '../../components/pizza-parameters/pagination';
 
 function MainPage() {
       const sortBy = useSelector((state: RootState) => state.slice.sortBy);
@@ -39,46 +39,35 @@ function MainPage() {
             rank: Number;
       };
       const dispatch = useDispatch();
-
+      //set params from address
       React.useEffect(() => {
-            console.log(`Lol, that's working`);
-
             const params = qs.parse(window.location.search.substring(1));
             dispatch(setGetParams(params));
             doNextStep((val) => !val);
       }, []);
-
+      //get request definition
       const fetchPizzas = useCallback(async () => {
-            console.log('fetchPizzas...');
-		const filterByTitle = filterTitle?`&filterByTitle=${filterTitle}`:''
+            const filterByTitle = filterTitle ? `&filterByTitle=${filterTitle}` : '';
             return await axios
                   .get(
                         `http://localhost:8080/pizzas?sortBy=${sortBy}&filterByCategory=${filterByCategory}&currentPage=${REALcurrentPage}${filterByTitle}`
                   )
-                  .then((res) => res.data)
-                  .finally(() => console.log('fetched!'));
+                  .then((res) => res.data);
       }, [sortBy, filterByCategory, currentPage, filterTitle]);
-
+      //do get request after fetch, on params change
       React.useEffect(() => {
-            console.log('useMemo POWER!...');
-
             fetchPizzas().then((res) => {
                   dispatch(setOverallPagesQuantity(res.totalPages));
-                  if (currentPage + 1 > res.totalPages && currentPage !=0) {
+                  if (currentPage + 1 > res.totalPages && currentPage !== 0) {
                         dispatch(setCurrentPage(res.totalPages - 1));
                   } else setPizzas(res.content);
             });
       }, [nextStep, sortBy, filterByCategory, currentPage, filterTitle]);
-
+      //change the address link
       React.useEffect(() => {
-            const filterByTitle = filterTitle?`&filterByTitle=${filterTitle}`:''
+            const filterByTitle = filterTitle ? `&filterByTitle=${filterTitle}` : '';
             nav2(`?sortBy=${sortBy}&filterByCategory=${filterByCategory}&currentPage=${currentPage}${filterByTitle}`);
       }, [sortBy, filterByCategory, currentPage, filterTitle]);
-
-      const pagesQty = [];
-      for (let i = 0; i < overallPagesQuantity; i++) {
-            pagesQty.push(i + 1);
-      }
 
       return (
             <div className="content">

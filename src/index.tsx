@@ -5,8 +5,8 @@ import App from './App';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { store } from './redux/store';
-import Header from './components/header';
-import Cart from './components/cart';
+import Header from './UI/header';
+import Cart from './UI/pages/cart/cart';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
