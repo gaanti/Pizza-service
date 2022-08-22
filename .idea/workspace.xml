@@ -4,30 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7154f848-4d52-4cd8-a3e2-47b003914112" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/search.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/pagination.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/search.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/slices/slice.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/components/_search.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/untitled3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/untitled3.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/cart-item.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cart-item.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main-page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pizza-block.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pizza-block.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sort.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sort.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slices/filter.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slices/sort.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/App.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/components/_sort.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/_sort.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
-    </list>
+    <list default="true" id="7154f848-4d52-4cd8-a3e2-47b003914112" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -156,7 +133,7 @@
       <workItem from="1661023884728" duration="1150000" />
       <workItem from="1661025124781" duration="151000" />
       <workItem from="1661025329673" duration="25976000" />
-      <workItem from="1661086588338" duration="24190000" />
+      <workItem from="1661086588338" duration="24996000" />
     </task>
     <task id="LOCAL-00001" summary="Project has been initialized">
       <created>1660245634989</created>
@@ -189,7 +166,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="copy-template" />
+                        <option value="HEAD" />
                       </list>
                     </value>
                   </entry>
