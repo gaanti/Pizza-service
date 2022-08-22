@@ -1,7 +1,7 @@
 import React from 'react';
 // @ts-ignore
 import logo from './logo.svg';
-import './styles/app.scss';
+import './styles/App.scss';
 import MainPage from "./components/main-page";
 
 function App() {

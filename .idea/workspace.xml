@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7154f848-4d52-4cd8-a3e2-47b003914112" name="Changes" comment="" />
+    <list default="true" id="7154f848-4d52-4cd8-a3e2-47b003914112" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -83,7 +85,7 @@
       <recent name="$PROJECT_DIR$/src/styles" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.">
+  <component name="RunManager" selected="npm.start">
     <configuration type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:3000/?sortBy=price&amp;filterByCategory=All&amp;currentPage=1">
       <method v="2" />
     </configuration>
@@ -111,9 +113,6 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug." />
-        <item itemvalue="JavaScript Debug." />
-        <item itemvalue="JavaScript Debug." />
         <item itemvalue="npm.start" />
       </list>
     </recent_temporary>
@@ -166,7 +165,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="HEAD" />
+                        <option value="master" />
                       </list>
                     </value>
                   </entry>
