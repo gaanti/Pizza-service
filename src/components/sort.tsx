@@ -1,14 +1,18 @@
 import React, {useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux'
-import {RootState} from "../redux/store";
-import {setSort} from "../redux/slices/sort";
+import { RootState } from '../redux/store';
+import {setSort} from "../redux/slices/slice";
 
 
 function Sort() {
-    const sortBy = useSelector((state: RootState) => state.sort.sortBy)
+    const sortBy = useSelector((state: RootState) => {
+        console.log('State: ', state);
+        return state.slice.sortBy;
+    });
     const dispatch = useDispatch()
     const SORT_BY_OPTIONS = ["popularity", "price", "title"]
     const [open, setOpen] = useState(false);
+
 
     return (
         <div className="sort">

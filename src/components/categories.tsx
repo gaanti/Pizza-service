@@ -1,26 +1,27 @@
-import React, {useState} from 'react';
-import {useDispatch, useSelector} from "react-redux";
-import {RootState} from "../redux/store";
-import {setFilter} from "../redux/slices/filter";
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../redux/store';
+import { setFilterByCategory } from '../redux/slices/slice';
 
 function Categories() {
-    const filterBy = useSelector((state: RootState) => state.filter.filterBy)
-    const dispatch = useDispatch()
-    const categories = ["All", "Meat", "Vegetarian", "Grille", "Spicy"]
-    const [activeIndex, setActiveIndex] = useState(0)
-    return (
-        <div className="categories">
-            <ul>
-                {categories.map((value, index) => {
-                    return (
-                        <li onClick={() => dispatch(setFilter(value))} className={filterBy === value ? "active" : ""}>
-                            {value}
-                        </li>
-                    )
-                })}
-            </ul>
-        </div>
-    );
+      const filterByCategory = useSelector((state: RootState) => state.slice.filterCategory);
+      const dispatch = useDispatch();
+      const categories = ['All', 'Meat', 'Vegetarian', 'Grille', 'Spicy'];
+      return (
+            <div className="categories">
+                  <ul>
+                        {categories.map((value, index) => {
+                              return (
+                                    <li
+                                          onClick={() => dispatch(setFilterByCategory(value))}
+                                          className={filterByCategory === value ? 'active' : ''}>
+                                          {value}
+                                    </li>
+                              );
+                        })}
+                  </ul>
+            </div>
+      );
 }
 
 export default Categories;

@@ -1,0 +1,43 @@
+@import 'src/styles/variables';
+
+input {
+  color: $black;
+  border: $black solid;
+  border-radius: 5px;
+  word-break: keep-all;
+  white-space: nowrap;
+  margin: 0px 15px;
+  overflow: scroll;
+  max-width: 230px;
+  font-size: 15px;
+  background: white url(../../../public/search.svg) left no-repeat;
+  background-size: 21px;
+  background-position: 6px;
+  padding: 2px 2px 2px 29px;
+}
+
+input::placeholder {
+}
+
+.searchIcon {
+  position: relative;
+  min-width: 16px !important;
+  height: 16px;
+  border: 2px solid;
+  border-radius: 100%;
+  margin: 7px 7px;
+}
+
+.searchIcon::after {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  border-radius: 3px;
+  width: 2px;
+  height: 8px;
+  background: currentColor;
+  transform: rotate(-45deg);
+  top: 10px;
+  left: 12px
+}

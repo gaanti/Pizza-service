@@ -2,28 +2,23 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './styles/index.scss';
 import App from './App';
-import {Provider} from "react-redux";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
-import {store} from "./redux/store";
-import Header from "./components/header";
-import Cart from "./components/cart";
+import { Provider } from 'react-redux';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { store } from './redux/store';
+import Header from './components/header';
+import Cart from './components/cart';
 
-const root = ReactDOM.createRoot(
-    document.getElementById('root') as HTMLElement
-);
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
-    <React.StrictMode>
-        <Provider store={store}>
+      <Provider store={store}>
             <BrowserRouter>
-                <div className="wrapper">
-                    <Header/>
-                    <Routes>
-                        <Route path="/" element={<App/>}>
-                        </Route>
-                        <Route path="cart" element={<Cart/>}/>
-                    </Routes>
-                </div>
+                  <div className="wrapper">
+                        <Header />
+                        <Routes>
+                              <Route path="/" element={<App />}></Route>
+                              <Route path="cart" element={<Cart />} />
+                        </Routes>
+                  </div>
             </BrowserRouter>
-        </Provider>
-    </React.StrictMode>
+      </Provider>
 );

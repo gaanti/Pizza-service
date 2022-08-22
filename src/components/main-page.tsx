@@ -1,90 +1,104 @@
-import React, {useState} from 'react';
-import {useSelector} from 'react-redux'
-import {PizzaBlock, Skeleton} from "./pizza-block";
-import Categories from "./categories";
-import Sort from "./sort";
-import axios from "axios";
-import {RootState} from "../redux/store";
+import React, { useCallback, useRef, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Pizzas } from './pizza-block';
+import Categories from './categories';
+import Sort from './sort';
+import axios from 'axios';
+import { RootState } from '../redux/store';
+import Search from './search';
+import qs from 'qs';
+import { setCurrentPage, setGetParams, setOverallPagesQuantity, setFilterByTitle } from '../redux/slices/slice';
+import { useNavigate } from 'react-router-dom';
+import Pagination from './pagination';
 
 function MainPage() {
-    const sortBy = useSelector((state: RootState) => state.sort.sortBy)
-    const filterBy = useSelector((state: RootState) => state.filter.filterBy)
-    const [pages, setPages] = useState(1)
-    const [page, setPage] = useState(0)
-    type pizzaC = {
-        title: String;
-        image: string;
-        doughType: string;
-        size: string;
-        price: Number;
-        category: String;
-        rank: Number;
-    };
-    const [pizzas, setPizzas] = useState<pizzaC[]>()
+      const sortBy = useSelector((state: RootState) => state.slice.sortBy);
+      const filterByCategory = useSelector((state: RootState) => state.slice.filterCategory);
+      const currentPage = useSelector((state: RootState) => state.slice.currentPageIndex);
+      const filterTitle = useSelector((state: RootState) => state.slice.filterTitle);
+      const [nextStep, doNextStep] = useState(false);
 
-    const fetchPizza = async () => {
-        const sort = sortBy ? "sortBy=" + sortBy : "";
-        const filter = filterBy !== "All" ? "filterBy=" + filterBy : "";
-        let res = await axios.get("http://localhost:8080/pizzas?" + sort + "&" + filter + "&page=" + page)
-        setPages(res.data.totalPages)
+      let REALcurrentPage: any = useRef().current;
+      useSelector((state: RootState) => {
+            REALcurrentPage = state.slice.currentPageIndex;
+      });
+      let overallPagesQuantity: any = useRef().current;
+      useSelector((state: RootState) => {
+            overallPagesQuantity = state.slice.overallPagesQuantity;
+      });
 
-        if (page + 1 === pages && page + 1 > res.data.totalPages) {
-            res = await axios.get("http://localhost:8080/pizzas?" + sort + "&" + filter + "&page=" + page)
-            setPage(res.data.totalPages - 1)
-        }
-        setPizzas(res.data.content)
-    }
+      const nav2 = useNavigate();
+      const [pizzas, setPizzas] = useState<pizza[]>();
+      type pizza = {
+            title: String;
+            image: string;
+            doughType: string;
+            size: string;
+            price: Number;
+            category: String;
+            rank: Number;
+      };
+      const dispatch = useDispatch();
 
-    React.useEffect(() => {
-        fetchPizza()
-    }, [sortBy, filterBy, page])
+      React.useEffect(() => {
+            console.log(`Lol, that's working`);
 
-    const pagesQty = []
-    for (let i = 0; i < pages; i++) {
-        pagesQty.push(i + 1)
-    }
+            const params = qs.parse(window.location.search.substring(1));
+            dispatch(setGetParams(params));
+            doNextStep((val) => !val);
+      }, []);
 
-    return (
-        <div className="content">
-            <div className="container">
-                <div className="content__top">
-                    <Categories/>
-                    <Sort/>
-                </div>
-                <h2 className="content__title">All pizzas</h2>
-                <div className="content__items">
-                    {pizzas ? pizzas.map((element) => {
-                            return (
-                                <PizzaBlock title={element.title}
-                                            category={element.category}
-                                            doughType={JSON.parse(element.doughType)}
-                                            image={element.image}
-                                            price={element.price}
-                                            rank={element.rank}
-                                            size={JSON.parse(element.size)}/>
-                            )
-                        }) :
-                        <>
-                            <Skeleton/>
-                            <Skeleton/>
-                            <Skeleton/>
-                            <Skeleton/>
-                            <Skeleton/>
-                            <Skeleton/>
-                            <Skeleton/>
-                            <Skeleton/></>}
-                </div>
+      const fetchPizzas = useCallback(async () => {
+            console.log('fetchPizzas...');
+		const filterByTitle = filterTitle?`&filterByTitle=${filterTitle}`:''
+            return await axios
+                  .get(
+                        `http://localhost:8080/pizzas?sortBy=${sortBy}&filterByCategory=${filterByCategory}&currentPage=${REALcurrentPage}${filterByTitle}`
+                  )
+                  .then((res) => res.data)
+                  .finally(() => console.log('fetched!'));
+      }, [sortBy, filterByCategory, currentPage, filterTitle]);
+
+      React.useEffect(() => {
+            console.log('useMemo POWER!...');
+
+            fetchPizzas().then((res) => {
+                  dispatch(setOverallPagesQuantity(res.totalPages));
+                  if (currentPage + 1 > res.totalPages && currentPage !=0) {
+                        dispatch(setCurrentPage(res.totalPages - 1));
+                  } else setPizzas(res.content);
+            });
+      }, [nextStep, sortBy, filterByCategory, currentPage, filterTitle]);
+
+      React.useEffect(() => {
+            const filterByTitle = filterTitle?`&filterByTitle=${filterTitle}`:''
+            nav2(`?sortBy=${sortBy}&filterByCategory=${filterByCategory}&currentPage=${currentPage}${filterByTitle}`);
+      }, [sortBy, filterByCategory, currentPage, filterTitle]);
+
+      const pagesQty = [];
+      for (let i = 0; i < overallPagesQuantity; i++) {
+            pagesQty.push(i + 1);
+      }
+
+      return (
+            <div className="content">
+                  <div className="container">
+                        <div className="content__top">
+                              <h2 className="content__title">
+                                    <div className="title">All pizzas</div>
+                                    <Search />
+                              </h2>
+                              <Categories />
+                              <Sort />
+                        </div>
+                        <div className="content__items">
+                              {/*@ts-ignore*/}
+                              <Pizzas pizzas={pizzas} />
+                        </div>
+                  </div>
+                  <Pagination overallPagesQuantity={overallPagesQuantity as number} currentPage={currentPage} />
             </div>
-            <ul className="content__pages">
-                {pagesQty.map((e, index) => {
-                    return (
-                        <li className={"button button--outline button--circle " + (page === index ? "content__pages-active-page" : "")}
-                            onClick={() => setPage(index)}>{e}</li>
-                    )
-                })}
-            </ul>
-        </div>
-    );
+      );
 }
 
 export default MainPage;
