@@ -1,5 +1,7 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
-import { createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { useCallback } from 'react';
+import axios from 'axios';
 
 const initialState: initialStateTypes = {
       filterCategory: 'All',
@@ -9,6 +11,7 @@ const initialState: initialStateTypes = {
       overallPagesQuantity: 1,
       sortBy: 'price'
 };
+
 
 interface initialStateTypes {
       filterCategory: string;

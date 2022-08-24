@@ -6,7 +6,7 @@ import { setSort } from '../../../redux/slices/slice';
 function Sort() {
       const sortBy = useSelector((state: RootState) => {
             console.log('State: ', state);
-            return state.slice.sortBy;
+            return state.params.sortBy;
       });
       const dispatch = useDispatch();
       const SORT_BY_OPTIONS = ['popularity', 'price', 'title'];

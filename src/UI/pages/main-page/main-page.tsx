@@ -12,31 +12,34 @@ import { useNavigate } from 'react-router-dom';
 import Pagination from '../../components/pizza-parameters/pagination';
 
 function MainPage() {
-      const sortBy = useSelector((state: RootState) => state.slice.sortBy);
-      const filterByCategory = useSelector((state: RootState) => state.slice.filterCategory);
-      const currentPage = useSelector((state: RootState) => state.slice.currentPageIndex);
-      const filterTitle = useSelector((state: RootState) => state.slice.filterTitle);
+      const sortBy = useSelector((state: RootState) => state.params.sortBy);
+      const filterByCategory = useSelector((state: RootState) => state.params.filterCategory);
+      const currentPage = useSelector((state: RootState) => state.params.currentPageIndex);
+      const filterTitle = useSelector((state: RootState) => state.params.filterTitle);
       const [nextStep, doNextStep] = useState(false);
 
       let REALcurrentPage: any = useRef().current;
       useSelector((state: RootState) => {
-            REALcurrentPage = state.slice.currentPageIndex;
+            REALcurrentPage = state.params.currentPageIndex;
       });
       let overallPagesQuantity: any = useRef().current;
       useSelector((state: RootState) => {
-            overallPagesQuantity = state.slice.overallPagesQuantity;
+            overallPagesQuantity = state.params.overallPagesQuantity;
       });
 
       const nav2 = useNavigate();
       const [pizzas, setPizzas] = useState<pizza[]>();
+      let RealPizzas: any = useRef().current;
+      RealPizzas=pizzas
+
       type pizza = {
-            title: String;
+            title: string;
             image: string;
-            doughType: string;
-            size: string;
-            price: Number;
-            category: String;
-            rank: Number;
+            doughType: string[];
+            size: number[];
+            price: number;
+            category: string;
+            rank: number;
       };
       const dispatch = useDispatch();
       //set params from address
@@ -48,6 +51,7 @@ function MainPage() {
       //get request definition
       const fetchPizzas = useCallback(async () => {
             const filterByTitle = filterTitle ? `&filterByTitle=${filterTitle}` : '';
+            console.log('err');
             return await axios
                   .get(
                         `http://localhost:8080/pizzas?sortBy=${sortBy}&filterByCategory=${filterByCategory}&currentPage=${REALcurrentPage}${filterByTitle}`
@@ -60,7 +64,16 @@ function MainPage() {
                   dispatch(setOverallPagesQuantity(res.totalPages));
                   if (currentPage + 1 > res.totalPages && currentPage !== 0) {
                         dispatch(setCurrentPage(res.totalPages - 1));
-                  } else setPizzas(res.content);
+                  } else {
+                        console.log(RealPizzas);
+                        setPizzas( RealPizzas = res.content);
+                        // @ts-ignore
+                        RealPizzas.forEach((e: any) => {
+                              e.doughType = JSON.parse(e.doughType);
+                              e.size = JSON.parse(e.size)
+                        })
+                        console.log(RealPizzas);
+                  }
             });
       }, [nextStep, sortBy, filterByCategory, currentPage, filterTitle]);
       //change the address link

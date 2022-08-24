@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7154f848-4d52-4cd8-a3e2-47b003914112" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/UI/components/pizza-block.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/components/pizza-parameters/categories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/components/pizza-parameters/categories.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/components/pizza-parameters/sort.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/components/pizza-parameters/sort.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/components/pizzas.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/components/pizzas.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/pages/main-page/main-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/main-page/main-page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/slices/cart.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/cart.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/slices/slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/slice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,28 +55,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/juliagaskevich/webstormprojects/untitled3/public",
-    "list.type.of.created.stylesheet": "SCSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "/Users/juliagaskevich/webstormprojects/untitled3/node_modules/prettier",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "org.intellij.featuresSuggester.FeatureSuggesterConfigurable",
-    "ts.external.directory.path": "/Users/juliagaskevich/webstormprojects/untitled3/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/juliagaskevich/webstormprojects/untitled3/public&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/juliagaskevich/webstormprojects/untitled3/node_modules/prettier&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.intellij.featuresSuggester.FeatureSuggesterConfigurable&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/juliagaskevich/webstormprojects/untitled3/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -92,7 +99,7 @@
       <recent name="$PROJECT_DIR$/src/components/pizza-parameters" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.start">
+  <component name="RunManager" selected="JavaScript Debug.">
     <configuration type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:3000/?sortBy=price&amp;filterByCategory=All&amp;currentPage=1">
       <method v="2" />
     </configuration>
@@ -108,6 +115,9 @@
     <configuration type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:3000?sortBy=title&amp;filterByCategory=All&amp;currentPage=1">
       <method v="2" />
     </configuration>
+    <configuration type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:3000">
+      <method v="2" />
+    </configuration>
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -120,6 +130,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug." />
         <item itemvalue="npm.start" />
       </list>
     </recent_temporary>
@@ -140,6 +151,7 @@
       <workItem from="1661025124781" duration="151000" />
       <workItem from="1661025329673" duration="25976000" />
       <workItem from="1661086588338" duration="24996000" />
+      <workItem from="1661283163647" duration="13565000" />
     </task>
     <task id="LOCAL-00001" summary="Project has been initialized">
       <created>1660245634989</created>
@@ -172,7 +184,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="cart" />
                       </list>
                     </value>
                   </entry>
@@ -196,9 +208,26 @@
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/UI/pages/main-page/main-page.tsx</url>
+          <line>68</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/UI/components/pizzas.tsx</url>
+          <line>51</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="JavascriptDebugType">
         <watch expression="actualLinkToBackend" language="TypeScript JSX" />
+        <watch expression="pizzas" language="TypeScript JSX" />
       </configuration>
     </watches-manager>
   </component>
