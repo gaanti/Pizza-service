@@ -48,7 +48,6 @@ export function Pizzas(props: { pizzas: pizza[] }) {
 	};
 	return props.pizzas ? (
 		props.pizzas.map((element) => {
-			console.log(element)
 			return <PizzaBlock element={element}/>;
 		})
 	) : (

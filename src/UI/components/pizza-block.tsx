@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { addItemOrIncreaseQuantity } from '../../redux/slices/cart';
 import { pizza } from './pizzas';
 import { useDispatch, useSelector } from 'react-redux';
@@ -9,15 +9,33 @@ function PizzaBlock(props: { element: pizza }) {
       const [doughType, setDoughType] = useState<string>(props.element.doughType[0]);
       const [size, setSize] = useState<number>(props.element.size[0]);
       const pizzas = useSelector((state: RootState) => state.cart.items);
-	const [qty, setQty] = useState(0)
+      const [qty, setQty] = useState(0);
+      const indexOfItem = useCallback(() => {
+            return pizzas.filter((elem: any[0]) => elem.price === props.element.price && elem.title === props.element.title);
+      }, [pizzas]);
       const increaseQty = () => {
-            const indexOfItem = pizzas.findIndex(
-                  (elem: any[0]) => elem.price === props.element.price && elem.title === props.element.title
+            dispatch(
+                  addItemOrIncreaseQuantity({
+                        title: props.element.title,
+                        price: props.element.price,
+                        doughType: doughType as string,
+                        size: size as number,
+                        quantity: 1
+                  })
             );
-            if (indexOfItem !== -1) {
-                  setQty(pizzas[indexOfItem].quantity);
-            }
       };
+      useEffect(() => {
+            const pizArr = indexOfItem();
+            if (pizArr !== []) {
+                  let bbb = 0;
+                  for (let i = 0; i < pizArr.length; i++) {
+                        debugger;
+                        bbb += pizArr[i].quantity;
+                        console.log(bbb);
+                  }
+                  setQty(bbb);
+            }
+      }, [increaseQty]);
 
       return (
             <div>
@@ -50,18 +68,8 @@ function PizzaBlock(props: { element: pizza }) {
                               <div
                                     className="button button--outline button--add"
                                     onClick={() => {
-                                          dispatch(
-                                                addItemOrIncreaseQuantity({
-                                                      title: props.element.title,
-                                                      price: props.element.price,
-                                                      doughType: doughType as string,
-                                                      size: size as number,
-                                                      quantity: 1
-                                                })
-                                          );
-							increaseQty()
-                                    }
-                                    }>
+                                          increaseQty();
+                                    }}>
                                     <span>Add to cart</span>
                                     <i>{qty}</i>
                               </div>
@@ -70,4 +78,5 @@ function PizzaBlock(props: { element: pizza }) {
             </div>
       );
 }
+
 export default PizzaBlock;

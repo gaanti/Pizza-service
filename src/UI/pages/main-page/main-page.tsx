@@ -51,7 +51,6 @@ function MainPage() {
       //get request definition
       const fetchPizzas = useCallback(async () => {
             const filterByTitle = filterTitle ? `&filterByTitle=${filterTitle}` : '';
-            console.log('err');
             return await axios
                   .get(
                         `http://localhost:8080/pizzas?sortBy=${sortBy}&filterByCategory=${filterByCategory}&currentPage=${REALcurrentPage}${filterByTitle}`
@@ -65,14 +64,12 @@ function MainPage() {
                   if (currentPage + 1 > res.totalPages && currentPage !== 0) {
                         dispatch(setCurrentPage(res.totalPages - 1));
                   } else {
-                        console.log(RealPizzas);
                         setPizzas( RealPizzas = res.content);
                         // @ts-ignore
                         RealPizzas.forEach((e: any) => {
                               e.doughType = JSON.parse(e.doughType);
                               e.size = JSON.parse(e.size)
                         })
-                        console.log(RealPizzas);
                   }
             });
       }, [nextStep, sortBy, filterByCategory, currentPage, filterTitle]);

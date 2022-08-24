@@ -5,15 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7154f848-4d52-4cd8-a3e2-47b003914112" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/UI/components/pizza-block.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/components/pizza-parameters/categories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/components/pizza-parameters/categories.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/components/pizza-parameters/sort.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/components/pizza-parameters/sort.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/components/pizza-block.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/components/pizza-block.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/components/pizzas.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/components/pizzas.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/pages/main-page/main-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/main-page/main-page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/slices/cart.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/cart.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/slices/slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/slice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +148,7 @@
       <workItem from="1661025124781" duration="151000" />
       <workItem from="1661025329673" duration="25976000" />
       <workItem from="1661086588338" duration="24996000" />
-      <workItem from="1661283163647" duration="13565000" />
+      <workItem from="1661283163647" duration="18162000" />
     </task>
     <task id="LOCAL-00001" summary="Project has been initialized">
       <created>1660245634989</created>
@@ -212,13 +209,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/UI/pages/main-page/main-page.tsx</url>
-          <line>68</line>
+          <line>66</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/UI/components/pizzas.tsx</url>
-          <line>51</line>
+          <line>50</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="7" />
         </line-breakpoint>

@@ -20,7 +20,7 @@ export const cartSlice = createSlice({
       reducers: {
             addItemOrIncreaseQuantity: (state, action: PayloadAction<PizzaForCart>) => {
                   //const addOrIncrease = state.items.indexOf(action.payload)
-                   const indexOfItem = state.items.findIndex(
+                  const indexOfItem = state.items.findIndex(
                         (elem: any[0]) =>
                               elem.price === action.payload.price &&
                               elem.doughType === action.payload.doughType &&
