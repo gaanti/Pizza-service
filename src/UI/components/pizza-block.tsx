@@ -3,6 +3,7 @@ import { addItemOrIncreaseQuantity } from '../../redux/slices/cart';
 import { pizza } from './pizzas';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
+import { setOverallPagesQuantity } from '../../redux/slices/slice';
 
 function PizzaBlock(props: { element: pizza }) {
       const dispatch = useDispatch();
@@ -33,30 +34,32 @@ function PizzaBlock(props: { element: pizza }) {
       useEffect(() => {
             const pizArr = findAllPizzasByConstantParameters();
             if (pizArr !== []) {
-                  //debugger
+                  debugger
                   let bbb = 0;
                   for (let i = 0; i < pizArr.length; i++) {
                         bbb += pizArr[i].quantity;
                   }
+
                   const rnd = pizzas.find((item) => item.title === currentPizzaItem?.title);
+                  console.log(rnd);
                   if (rnd) {
-                        setQty(bbb);
+                        console.log("{PP");
+                        debugger
+                        setQty(rnd.quantity);
                   } else if (rnd === undefined) setQty(0);
             }
-      }, [increaseQty]);
+      }, [setOverallPagesQuantity,increaseQty]);
 
       return (
             <div>
                   <div className="pizza-block">
-                        <img className="pizza-block__image" src={'data:image/jpg;base64,' + props.element.image}
-                             alt="Pizza" />
+                        <img className="pizza-block__image" src={'data:image/jpg;base64,' + props.element.image} alt="Pizza" />
                         <h4 className="pizza-block__title">{props.element.title}</h4>
                         <div className="pizza-block__selector">
                               <ul>
                                     {props.element.doughType.map((e: string) => {
                                           return (
-                                                <li className={e === doughType ? 'active' : ''}
-                                                    onClick={() => setDoughType(e)}>
+                                                <li className={e === doughType ? 'active' : ''} onClick={() => setDoughType(e)}>
                                                       {e}
                                                 </li>
                                           );
@@ -81,7 +84,7 @@ function PizzaBlock(props: { element: pizza }) {
                                           increaseQty();
                                     }}>
                                     <span>Add to cart</span>
-                                    <i>{qty}</i>
+                                    {qty?<i>{qty}</i>:''}
                               </div>
                         </div>
                   </div>
