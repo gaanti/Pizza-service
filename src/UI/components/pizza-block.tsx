@@ -9,14 +9,20 @@ function PizzaBlock(props: { element: pizza }) {
       const [doughType, setDoughType] = useState<string>(props.element.doughType[0]);
       const [size, setSize] = useState<number>(props.element.size[0]);
       const pizzas = useSelector((state: RootState) => state.cart.items);
+      const currentPizzaItem = useSelector((state: RootState) =>
+            state.cart.items.find((elem: any) => elem.price === props.element.price && elem.title === props.element.title)
+      );
       const [qty, setQty] = useState(0);
-      const indexOfItem = useCallback(() => {
+
+      const findAllPizzasByConstantParameters = useCallback(() => {
             return pizzas.filter((elem: any[0]) => elem.price === props.element.price && elem.title === props.element.title);
       }, [pizzas]);
+
       const increaseQty = () => {
             dispatch(
                   addItemOrIncreaseQuantity({
                         title: props.element.title,
+                        image: props.element.image,
                         price: props.element.price,
                         doughType: doughType as string,
                         size: size as number,
@@ -25,28 +31,32 @@ function PizzaBlock(props: { element: pizza }) {
             );
       };
       useEffect(() => {
-            const pizArr = indexOfItem();
+            const pizArr = findAllPizzasByConstantParameters();
             if (pizArr !== []) {
+                  //debugger
                   let bbb = 0;
                   for (let i = 0; i < pizArr.length; i++) {
-                        debugger;
                         bbb += pizArr[i].quantity;
-                        console.log(bbb);
                   }
-                  setQty(bbb);
+                  const rnd = pizzas.find((item) => item.title === currentPizzaItem?.title);
+                  if (rnd) {
+                        setQty(bbb);
+                  } else if (rnd === undefined) setQty(0);
             }
       }, [increaseQty]);
 
       return (
             <div>
                   <div className="pizza-block">
-                        <img className="pizza-block__image" src={'data:image/jpg;base64,' + props.element.image} alt="Pizza" />
+                        <img className="pizza-block__image" src={'data:image/jpg;base64,' + props.element.image}
+                             alt="Pizza" />
                         <h4 className="pizza-block__title">{props.element.title}</h4>
                         <div className="pizza-block__selector">
                               <ul>
                                     {props.element.doughType.map((e: string) => {
                                           return (
-                                                <li className={e === doughType ? 'active' : ''} onClick={() => setDoughType(e)}>
+                                                <li className={e === doughType ? 'active' : ''}
+                                                    onClick={() => setDoughType(e)}>
                                                       {e}
                                                 </li>
                                           );

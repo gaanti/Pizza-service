@@ -8,6 +8,7 @@ const initialState = {
 
 export type PizzaForCart = {
       title: string;
+      image: string;
       price: number;
       doughType: string;
       size: number;
@@ -29,7 +30,11 @@ export const cartSlice = createSlice({
                   );
                   if (state.items[indexOfItem]) {
                         ++state.items[indexOfItem].quantity;
-                  } else state.items.push(action.payload);
+                        state.total_price += action.payload.price;
+                  } else {
+                        state.items.push(action.payload);
+                        state.total_price += action.payload.price;
+                  }
             },
             deletePizza: (state, action: PayloadAction<PizzaForCart>) => {
                   const addOrIncrease = state.items.indexOf(action.payload);
@@ -37,11 +42,9 @@ export const cartSlice = createSlice({
                         state.items.splice(addOrIncrease, 1);
                   }
             },
-            deleteAllPizzas: (state, action: PayloadAction<PizzaForCart>) => {
-                  const addOrIncrease = state.items.indexOf(action.payload);
-                  if (addOrIncrease !== -1) {
-                        state.items = [];
-                  }
+            deleteAllPizzas: (state) => {
+                  state.items = [];
+                  state.total_price = 0;
             }
       }
 });

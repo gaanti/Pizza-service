@@ -1,27 +1,26 @@
 import React from 'react';
+import { PizzaForCart } from '../../../redux/slices/cart';
 
-function CartItem() {
+function CartItem(props: { pizzasInCart:PizzaForCart }) {
       return (
             <>
                   <div className="cart__item">
                         <div className="cart__item-img">
-                              <img
-                                    className="pizza-block__image"
-                                    src="https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg"
-                                    alt="Pizza"
-                              />
+                              <img className="pizza-block__image" src={'data:image/jpg;base64,' + props.pizzasInCart.image} alt="Pizza" />
                         </div>
                         <div className="cart__item-info">
-                              <h3>Cheesy Chicken</h3>
-                              <p>thin crust, 26 cm.</p>
+                              <h3>{props.pizzasInCart.title}</h3>
+                              <p>
+                                    {props.pizzasInCart.doughType} crust, {props.pizzasInCart.size}cm.
+                              </p>
                         </div>
                         <div className="cart__item-count">
                               <div className="button button--outline button--circle cart__item-count-minus-plus">
                                     <img src="plus.svg" />
                               </div>
                               <div>
-                                    <b>2</b>
-                                    <h6>$666/per</h6>
+                                    <b>{props.pizzasInCart.quantity}</b>
+                                    <h6>${props.pizzasInCart.price}/per</h6>
                               </div>
                               <div className="button button--outline button--circle cart__item-count-minus-plus">
                                     <img src="plus.svg" />
@@ -29,7 +28,7 @@ function CartItem() {
                         </div>
                         <div className="cart__item-pizza-cost">
                               <div className="cart__item-pizza-cost-price">
-                                    <b>$770</b>
+                                    <b>${props.pizzasInCart.quantity*props.pizzasInCart.price}</b>
                               </div>
                               <div className="cart__item-pizza-cost-remove">
                                     <div>
