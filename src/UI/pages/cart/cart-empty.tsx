@@ -1,21 +1,22 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function CartEmpty() {
       return (
             <div className="wrapper">
                   <div className="content">
                         <div className="container container--cart">
-                              <div className="cart cart--empty">
-                                    <h2>Корзина пустая 😕</h2>
+                              <div className="cart--empty">
+                                    <h2>Cart is empty 😕</h2>
                                     <p>
-                                          Вероятней всего, вы не заказывали ещё пиццу.
+                                          Probably, you haven't added pizza yet.
                                           <br />
-                                          Для того, чтобы заказать пиццу, перейди на главную страницу.
+                                          To choose the pizza go to the main page.
                                     </p>
-                                    <img src="/img/empty-cart.png" alt="Empty cart" />
-                                    <a href="/Users/juliagaskevich/webstormprojects/untitled3/public" className="button button--black">
-                                          <span>Вернуться назад</span>
-                                    </a>
+                                    <Link to={'/'}
+                                          className='button button--black'>
+                                          <span>Back to homepage</span>
+                                    </Link>
                               </div>
                         </div>
                   </div>

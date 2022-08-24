@@ -6,11 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7154f848-4d52-4cd8-a3e2-47b003914112" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/components/pizza-block.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/components/pizza-block.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/cart-button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/cart/cart-button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/cart-item.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/cart/cart-item.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/cart-empty.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/cart/cart-empty.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/cart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/cart/cart.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slices/cart.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/cart.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/App.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +94,7 @@
       <recent name="$PROJECT_DIR$/src/components/pizza-parameters" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.">
+  <component name="RunManager" selected="npm.start">
     <configuration type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:3000/?sortBy=price&amp;filterByCategory=All&amp;currentPage=1">
       <method v="2" />
     </configuration>
@@ -127,7 +125,6 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug." />
         <item itemvalue="npm.start" />
       </list>
     </recent_temporary>
@@ -210,7 +207,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/UI/components/pizzas.tsx</url>
           <line>50</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>

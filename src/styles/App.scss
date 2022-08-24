@@ -471,6 +471,10 @@ body {
     margin: 0 auto;
     width: 560px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
 
     h2 {
       font-size: 32px;
