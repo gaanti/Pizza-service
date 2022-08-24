@@ -1,57 +1,19 @@
 import React from 'react';
-import ContentLoader from 'react-content-loader';
 import PizzaBlock from './pizza-block';
+import { pizza } from '../../redux/slices/pizza';
+import Skeleton from './skeleton';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../redux/store';
 
-export type pizza = {
-	title: string;
-	image: string;
-	doughType: string[];
-	size: number[];
-	price: number;
-	category: string;
-	rank: number;
-};
+export function Pizzas() {
+      const pizArr = useSelector((state: RootState) => state.pizza.pizzas);
 
-export function Pizzas(props: { pizzas: pizza[] }) {
-	const Skeleton = () => {
-		const SkeletonObj = () => {
-			return (
-				<div>
-					{/*@ts-ignore*/}
-					<ContentLoader
-						speed={2}
-						width={280}
-						height={544}
-						viewBox='0 0 280 544'
-						backgroundColor='#f3f3f3'
-						foregroundColor='#ecebeb'>
-						<circle cx='140' cy='140' r='140' />
-						<rect x='1' y='293' rx='10' ry='10' width='280' height='31' />
-						<rect x='-1' y='330' rx='10' ry='10' width='140' height='27' />
-						<rect x='140' y='330' rx='10' ry='10' width='140' height='27' />
-						<rect x='0' y='360' rx='10' ry='10' width='93' height='27' />
-						<rect x='93' y='360' rx='10' ry='10' width='93' height='27' />
-						<rect x='186' y='360' rx='10' ry='10' width='93' height='27' />
-						<rect x='0' y='411' rx='10' ry='10' width='59' height='27' />
-						<rect x='140' y='400' rx='10' ry='10' width='140' height='44' />
-					</ContentLoader>
-				</div>
-			);
-		};
-		let arr = []
-		for (let i = 0; i < 8; i++) {
-			// @ts-ignore
-			arr.push(<SkeletonObj />);
-		}
-		return arr;
-		//
-	};
-	return props.pizzas ? (
-		props.pizzas.map((element) => {
-			return <PizzaBlock element={element}/>;
-		})
-	) : (
-		/*@ts-ignore*/
-		<Skeleton />
-	);
+      return pizArr ? (
+            pizArr.map((element: pizza[]) => {
+                  // @ts-ignore
+                  return <PizzaBlock element={element} />;
+            })
+      ) : (
+            <Skeleton />
+      );
 }

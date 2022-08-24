@@ -1,78 +1,47 @@
-import React, { useCallback, useRef, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useCallback, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { Pizzas } from '../../components/pizzas';
 import Categories from '../../components/pizza-parameters/categories';
 import Sort from '../../components/pizza-parameters/sort';
-import axios from 'axios';
-import { RootState } from '../../../redux/store';
+import { RootState, useAppDispatch } from '../../../redux/store';
 import Search from '../../components/pizza-parameters/search';
 import qs from 'qs';
-import { setCurrentPage, setGetParams, setOverallPagesQuantity } from '../../../redux/slices/slice';
+import { setCurrentPage, setGetParams } from '../../../redux/slices/slice';
 import { useNavigate } from 'react-router-dom';
 import Pagination from '../../components/pizza-parameters/pagination';
+import { fetchPizzas } from '../../../redux/slices/pizza';
 
 function MainPage() {
       const sortBy = useSelector((state: RootState) => state.params.sortBy);
       const filterByCategory = useSelector((state: RootState) => state.params.filterCategory);
       const currentPage = useSelector((state: RootState) => state.params.currentPageIndex);
       const filterTitle = useSelector((state: RootState) => state.params.filterTitle);
+      const total_pageas_qty = useSelector((state: RootState) => state.pizza.total_pageas_qty);
+
       const [nextStep, doNextStep] = useState(false);
 
-      let REALcurrentPage: any = useRef().current;
-      useSelector((state: RootState) => {
-            REALcurrentPage = state.params.currentPageIndex;
-      });
-      let overallPagesQuantity: any = useRef().current;
-      useSelector((state: RootState) => {
-            overallPagesQuantity = state.params.overallPagesQuantity;
-      });
-
       const nav2 = useNavigate();
-      const [pizzas, setPizzas] = useState<pizza[]>();
-      let RealPizzas: any = useRef().current;
-      RealPizzas=pizzas
-
-      type pizza = {
-            title: string;
-            image: string;
-            doughType: string[];
-            size: number[];
-            price: number;
-            category: string;
-            rank: number;
-      };
-      const dispatch = useDispatch();
+      const dispatch = useAppDispatch();
       //set params from address
       React.useEffect(() => {
             const params = qs.parse(window.location.search.substring(1));
             dispatch(setGetParams(params));
             doNextStep((val) => !val);
       }, []);
+
       //get request definition
-      const fetchPizzas = useCallback(async () => {
-            const filterByTitle = filterTitle ? `&filterByTitle=${filterTitle}` : '';
-            return await axios
-                  .get(
-                        `http://localhost:8080/pizzas?sortBy=${sortBy}&filterByCategory=${filterByCategory}&currentPage=${REALcurrentPage}${filterByTitle}`
-                  )
-                  .then((res) => res.data);
+      const UseCallback1 = useCallback(async () => {
+            dispatch(fetchPizzas({ sortBy, filterByCategory, currentPage, filterTitle }));
       }, [sortBy, filterByCategory, currentPage, filterTitle]);
+
       //do get request after fetch, on params change
       React.useEffect(() => {
-            fetchPizzas().then((res) => {
-                  dispatch(setOverallPagesQuantity(res.totalPages));
-                  if (currentPage + 1 > res.totalPages && currentPage !== 0) {
-                        dispatch(setCurrentPage(res.totalPages - 1));
-                  } else {
-                        setPizzas( RealPizzas = res.content);
-                        // @ts-ignore
-                        RealPizzas.forEach((e: any) => {
-                              e.doughType = JSON.parse(e.doughType);
-                              e.size = JSON.parse(e.size)
-                        })
-                  }
-            });
+            UseCallback1();
+            if (currentPage + 1 > total_pageas_qty && currentPage !== 0) {
+                  dispatch(setCurrentPage(total_pageas_qty - 1));
+            }
       }, [nextStep, sortBy, filterByCategory, currentPage, filterTitle]);
+
       //change the address link
       React.useEffect(() => {
             const filterByTitle = filterTitle ? `&filterByTitle=${filterTitle}` : '';
@@ -91,11 +60,10 @@ function MainPage() {
                               <Sort />
                         </div>
                         <div className="content__items">
-                              {/*@ts-ignore*/}
-                              <Pizzas pizzas={pizzas} />
+                              <Pizzas />
                         </div>
                   </div>
-                  <Pagination overallPagesQuantity={overallPagesQuantity as number} currentPage={currentPage} />
+                  <Pagination currentPage={currentPage} />
             </div>
       );
 }

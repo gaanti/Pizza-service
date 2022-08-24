@@ -1,11 +1,14 @@
 import React from 'react';
 import { setCurrentPage } from '../../../redux/slices/slice';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../../../redux/store';
 
-function Pagination(props: { overallPagesQuantity: number; currentPage: number }) {
+function Pagination(props: { currentPage: number }) {
+      const total_pageas_qty = useSelector((state: RootState) => state.pizza.total_pageas_qty);
       const dispatch = useDispatch();
+
       const pagesQty = [];
-      for (let i = 0; i < props.overallPagesQuantity; i++) {
+      for (let i = 0; i < total_pageas_qty; i++) {
             pagesQty.push(i + 1);
       }
       return (

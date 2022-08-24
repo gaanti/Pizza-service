@@ -1,15 +1,16 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { addItemOrIncreaseQuantity } from '../../redux/slices/cart';
-import { pizza } from './pizzas';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
-import { setOverallPagesQuantity } from '../../redux/slices/slice';
+import { pizza } from '../../redux/slices/pizza';
 
 function PizzaBlock(props: { element: pizza }) {
       const dispatch = useDispatch();
       const [doughType, setDoughType] = useState<string>(props.element.doughType[0]);
       const [size, setSize] = useState<number>(props.element.size[0]);
       const pizzas = useSelector((state: RootState) => state.cart.items);
+      const pizzzzzzasFROMBUSINESSSS = useSelector((state: RootState) => state.pizza.pizzas);
+
       const currentPizzaItem = useSelector((state: RootState) =>
             state.cart.items.find((elem: any) => elem.price === props.element.price && elem.title === props.element.title)
       );
@@ -48,7 +49,7 @@ function PizzaBlock(props: { element: pizza }) {
                         setQty(rnd.quantity);
                   } else if (rnd === undefined) setQty(0);
             }
-      }, [setOverallPagesQuantity,increaseQty]);
+      }, [increaseQty, pizzzzzzasFROMBUSINESSSS]);
 
       return (
             <div>
