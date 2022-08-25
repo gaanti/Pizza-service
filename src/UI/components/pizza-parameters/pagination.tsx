@@ -1,16 +1,25 @@
-import React from 'react';
-import { setCurrentPage } from '../../../redux/slices/slice';
-import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../../../redux/store';
+import {  useSelector } from 'react-redux';
+import { RootState, useAppDispatch } from '../../../redux/store';
+import { fetchPizzas, setCurrentPage } from '../../../redux/slices/pizza';
 
-function Pagination(props: { currentPage: number }) {
+
+function Pagination( ) {
       const total_pageas_qty = useSelector((state: RootState) => state.pizza.total_pageas_qty);
-      const dispatch = useDispatch();
+      const current_page_index = useSelector((state: RootState) => state.pizza.current_page_index);
+
+      const dispatch = useAppDispatch();
 
       const pagesQty = [];
       for (let i = 0; i < total_pageas_qty; i++) {
             pagesQty.push(i + 1);
       }
+
+      const rp = (index:number) => {
+            dispatch(setCurrentPage(index))
+            dispatch(fetchPizzas({ sortBy:null, filterByCategory:null, currentPage:null, filterTitle:null } ))
+      }
+
+
       return (
             <ul className="content__pages">
                   {pagesQty.map((e, index) => {
@@ -18,10 +27,10 @@ function Pagination(props: { currentPage: number }) {
                               <li
                                     className={
                                           'button button--outline button--circle ' +
-                                          (props.currentPage === index ? 'content__pages-active-page' : '')
+                                          (current_page_index === index ? 'content__pages-active-page' : '')
                                     }
                                     onClick={() => {
-                                          dispatch(setCurrentPage(index));
+                                          rp(index)
                                     }}>
                                     {e}
                               </li>

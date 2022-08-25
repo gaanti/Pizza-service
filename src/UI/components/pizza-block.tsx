@@ -35,16 +35,12 @@ function PizzaBlock(props: { element: pizza }) {
       useEffect(() => {
             const pizArr = findAllPizzasByConstantParameters();
             if (pizArr !== []) {
-                  debugger
                   let bbb = 0;
                   for (let i = 0; i < pizArr.length; i++) {
                         bbb += pizArr[i].quantity;
                   }
-
                   const rnd = pizzas.find((item) => item.title === currentPizzaItem?.title);
-                  console.log(rnd);
                   if (rnd) {
-                        console.log("{PP");
                         debugger
                         setQty(rnd.quantity);
                   } else if (rnd === undefined) setQty(0);

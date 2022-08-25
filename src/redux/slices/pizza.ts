@@ -3,8 +3,9 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 const initialState = {
-      pizzas: [] as any,
+      pizzas: [] as pizza[],
       total_pageas_qty: 1,
+      current_page_index: 0,
       status: ""
 };
 export type pizza = {
@@ -17,17 +18,20 @@ export type pizza = {
       rank: number;
 };
 
-export const fetchPizzas = createAsyncThunk('pizza/fetchPizzas', async (params: any) => {
+export const fetchPizzas = createAsyncThunk('pizza/fetchPizzas', async (params:any, { dispatch, getState }) => {
+      const state:any = getState ()
       const { sortBy, filterByCategory, currentPage, filterTitle } = params;
-      const sortBy1 = sortBy ? `sortBy=${sortBy}` : '';
-      const filterByCategory1 = filterByCategory ? `&filterByCategory=${filterByCategory}` : '';
-      const currentPage1 = Number(currentPage) !== undefined ? `&currentPage=${currentPage}` : '';
-      //const currentPage1 = `&currentPage=${currentPage}`;
+      const sortBy1 = `sortBy=${sortBy?sortBy:'price'}`;
+      const filterByCategory1 = `&filterByCategory=${filterByCategory?filterByCategory:'All'}`;
+      debugger
+      //const currentPage1 = `&currentPage=${currentPage?currentPage:0}`;
+      const currentPage1 = `&currentPage=${state.pizza.current_page_index}`;
       const filterTitle1 = filterTitle ? `&filterByTitle=${filterTitle}` : '';
-
       const { data } = await axios.get(
             `http://localhost:8080/pizzas?${sortBy1}${filterByCategory1}${currentPage1}${filterTitle1}`
       );
+      dispatch(setCurrentPage(data.pageable.pageNumber))
+      //debugger
       return data;
 });
 
@@ -35,8 +39,19 @@ export const pizzaSlice = createSlice({
       name: 'pizza',
       initialState,
       reducers: {
-            setPizzas: (state, action: PayloadAction<string>) => {
-                  //state.pizzas = action.payload;
+            setPizzas: (state, action: PayloadAction<any>) => {
+
+                  state.pizzas = action.payload;
+            },
+            setCurrentPage: (state, action: PayloadAction<number>) => {
+                  if (typeof action.payload == "number") {
+                        state.current_page_index = action.payload;
+                  }
+                  //fetchPizzas()
+            },
+            setTotalPageasQuantity: (state, action: PayloadAction<number>) => {
+                  state.current_page_index = action.payload;
+                  //fetchPizzas()
             }
       },
       extraReducers: (builder) => {
@@ -54,12 +69,16 @@ export const pizzaSlice = createSlice({
                         e.size = JSON.parse(e.size);
                   })
                   state.pizzas = POP
+                  /*dispatch(setPizzas(POP))
+                  dispatch(setCurrentPage(action.payload.totalPages))
+                  dispatch(setTotalPageasQuantity(action.payload.pageable.pageNumber))*/
                   state.total_pageas_qty = action.payload.totalPages
+                  state.current_page_index = action.payload.pageable.pageNumber
                   state.status = "success"
             })
       },
 });
 
-export const { setPizzas } = pizzaSlice.actions;
+export const { setPizzas, setCurrentPage, setTotalPageasQuantity } = pizzaSlice.actions;
 
 export default pizzaSlice.reducer;

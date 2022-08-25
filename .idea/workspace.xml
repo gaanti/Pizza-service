@@ -6,12 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="7154f848-4d52-4cd8-a3e2-47b003914112" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/src/UI/components/skeleton.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/slices/pizza.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/components/pizza-block.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/components/pizza-block.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/components/pizza-parameters/pagination.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/components/pizza-parameters/pagination.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/components/pizzas.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/components/pizzas.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/pages/main-page/main-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/main-page/main-page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/slices/pizza.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/pizza.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/slices/slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/slice.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.ts" afterDir="false" />
     </list>
@@ -183,7 +183,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="cart" />
+                        <option value="bussines-logic" />
                       </list>
                     </value>
                   </entry>

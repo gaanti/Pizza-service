@@ -9,7 +9,7 @@ export function Pizzas() {
       const pizArr = useSelector((state: RootState) => state.pizza.pizzas);
 
       return pizArr ? (
-            pizArr.map((element: pizza[]) => {
+            pizArr.map((element) => {
                   // @ts-ignore
                   return <PizzaBlock element={element} />;
             })
