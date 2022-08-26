@@ -11,9 +11,6 @@ function PizzaBlock(props: { element: pizza }) {
       const pizzas = useSelector((state: RootState) => state.cart.items);
       const pizzzzzzasFROMBUSINESSSS = useSelector((state: RootState) => state.pizza.pizzas);
 
-      const currentPizzaItem = useSelector((state: RootState) =>
-            state.cart.items.find((elem: any) => elem.price === props.element.price && elem.title === props.element.title)
-      );
       const [qty, setQty] = useState(0);
 
       const findAllPizzasByConstantParameters = useCallback(() => {
@@ -34,16 +31,17 @@ function PizzaBlock(props: { element: pizza }) {
       };
       useEffect(() => {
             const pizArr = findAllPizzasByConstantParameters();
+            debugger;
             if (pizArr !== []) {
                   let bbb = 0;
                   for (let i = 0; i < pizArr.length; i++) {
                         bbb += pizArr[i].quantity;
                   }
-                  const rnd = pizzas.find((item) => item.title === currentPizzaItem?.title);
-                  if (rnd) {
-                        debugger
-                        setQty(rnd.quantity);
-                  } else if (rnd === undefined) setQty(0);
+                  if (bbb) {
+                        debugger;
+                        setQty(bbb);
+                        console.log(qty);
+                  } else setQty(0);
             }
       }, [increaseQty, pizzzzzzasFROMBUSINESSSS]);
 
@@ -81,7 +79,7 @@ function PizzaBlock(props: { element: pizza }) {
                                           increaseQty();
                                     }}>
                                     <span>Add to cart</span>
-                                    {qty?<i>{qty}</i>:''}
+                                    {qty ? <i>{qty}</i> : ''}
                               </div>
                         </div>
                   </div>

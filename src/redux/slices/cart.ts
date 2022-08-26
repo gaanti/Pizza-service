@@ -33,9 +33,10 @@ export const cartSlice = createSlice({
                         state.total_price += action.payload.price;
                   } else {
                         state.items.push(action.payload);
-                        state.total_price = state.items.reduce((previousValue, currentValue) => previousValue + currentValue.price*currentValue.quantity, 0);
-
-                        console.log(state.total_price);
+                        state.total_price = state.items.reduce(
+                              (previousValue, currentValue) => previousValue + currentValue.price * currentValue.quantity,
+                              0
+                        );
                   }
             },
             deletePizzaByType: (state, action: PayloadAction<PizzaForCart>) => {
@@ -48,8 +49,10 @@ export const cartSlice = createSlice({
                   );
                   if (indexOfItem !== -1) {
                         state.items.splice(indexOfItem, 1);
-                        state.total_price = state.items.reduce((previousValue, currentValue) => previousValue + currentValue.price*currentValue.quantity, 0);
-
+                        state.total_price = state.items.reduce(
+                              (previousValue, currentValue) => previousValue + currentValue.price * currentValue.quantity,
+                              0
+                        );
                   }
             },
             decreasePizzaQuantity: (state, action: PayloadAction<PizzaForCart>) => {
@@ -60,11 +63,14 @@ export const cartSlice = createSlice({
                               elem.size === action.payload.size &&
                               elem.title === action.payload.title
                   );
-                  if (!(state.items[indexOfItem].quantity<=1)) {
+                  if (!(state.items[indexOfItem].quantity <= 1)) {
                         --state.items[indexOfItem].quantity;
                   } else state.items.splice(indexOfItem, 1);
 
-                  state.total_price = state.items.reduce((previousValue, currentValue) => previousValue + currentValue.price*currentValue.quantity, 0);
+                  state.total_price = state.items.reduce(
+                        (previousValue, currentValue) => previousValue + currentValue.price * currentValue.quantity,
+                        0
+                  );
             },
             deleteAllPizzas: (state) => {
                   state.items = [];

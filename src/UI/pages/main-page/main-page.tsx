@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Pizzas } from '../../components/pizzas';
 import Categories from '../../components/pizza-parameters/categories';
@@ -15,13 +15,11 @@ function MainPage() {
       const sortBy = useSelector((state: RootState) => state.params.sortBy);
       const filterByCategory = useSelector((state: RootState) => state.params.filterCategory);
       const currentPage = useSelector((state: RootState) => state.pizza.current_page_index);
-      //const currentPage = useRef(useSelector((state: RootState) => state.params.current_page_index)).current;
       const filterTitle = useSelector((state: RootState) => state.params.filterTitle);
-
       const [nextStep, doNextStep] = useState(false);
-
       const nav2 = useNavigate();
       const dispatch = useAppDispatch();
+
       //set params from address
       React.useEffect(() => {
             console.log('Whoops...');
@@ -32,17 +30,9 @@ function MainPage() {
             doNextStep((val) => !val);
       }, []);
 
-      //get request definition
-      const UseCallback1 = useCallback(async () => {
-            debugger
-            dispatch(fetchPizzas({ sortBy, filterByCategory, currentPage, filterTitle }));
-      }, [sortBy, filterByCategory, currentPage, filterTitle]);
-
       //do get request after fetch, on params change
       React.useEffect(() => {
-            //UseCallback1()
             dispatch(fetchPizzas({ sortBy, filterByCategory, currentPage, filterTitle }));
-            debugger
       }, [nextStep, sortBy, filterByCategory, currentPage, filterTitle]);
 
       //change the address link
