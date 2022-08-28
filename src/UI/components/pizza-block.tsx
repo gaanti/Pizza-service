@@ -31,14 +31,12 @@ function PizzaBlock(props: { element: pizza }) {
       };
       useEffect(() => {
             const pizArr = findAllPizzasByConstantParameters();
-            debugger;
             if (pizArr !== []) {
                   let bbb = 0;
                   for (let i = 0; i < pizArr.length; i++) {
                         bbb += pizArr[i].quantity;
                   }
                   if (bbb) {
-                        debugger;
                         setQty(bbb);
                         console.log(qty);
                   } else setQty(0);

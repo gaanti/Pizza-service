@@ -18,7 +18,7 @@ function CartItem(props: { pizzasInCart: PizzaForCart }) {
                         </div>
                         <div className="cart__item-count">
                               <div
-                                    className="button button--outline button--circle cart__item-count-minus-plus"
+                                    className="button button--outline button--plusMinus"
                                     onClick={() =>
                                           dispatch(
                                                 addItemOrIncreaseQuantity({
@@ -31,14 +31,14 @@ function CartItem(props: { pizzasInCart: PizzaForCart }) {
                                                 })
                                           )
                                     }>
-                                    <img src="plus.svg" />
+                                +
                               </div>
                               <div>
                                     <b>{props.pizzasInCart.quantity}</b>
                                     <h6>${props.pizzasInCart.price}/per</h6>
                               </div>
                               <div
-                                    className="button button--outline button--circle cart__item-count-minus-plus"
+                                    className="button button--outline button--plusMinus"
                                     onClick={() =>
                                           dispatch(
                                                 decreasePizzaQuantity({
@@ -51,7 +51,7 @@ function CartItem(props: { pizzasInCart: PizzaForCart }) {
                                                 })
                                           )
                                     }>
-                                    <img src="plus.svg" />
+                                -
                               </div>
                         </div>
                         <div className="cart__item-pizza-cost">

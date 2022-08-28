@@ -23,18 +23,15 @@
 
   &__selector {
     display: flex;
-    background-color: #f3f3f3;
+    background-color: $white;
     border-radius: 10px;
     flex-direction: column;
     padding: 6px;
+    row-gap: 5px;
 
     ul {
       display: flex;
-      flex: 1;
-
-      &:first-of-type {
-        margin-bottom: 6px;
-      }
+      column-gap: 5px;
 
       li {
         padding: 8px;
@@ -42,17 +39,28 @@
         cursor: pointer;
         font-weight: 600;
         font-size: 14px;
+        border-radius: 5px;
         @include noselect();
         @media (max-width: 986px) {
           font-size: 16px;
-
         }
+        transition: 200ms;
 
         &.active {
-          background: #ffffff;
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-          border-radius: 5px;
+          transition: none !important;
+          -webkit-transition: none;
+          -webkit-animation: 0;
+          animation: 0 !important;
+
+          background-color: #f4f4f4;
+          color: black;
           cursor: auto;
+        }
+        &:not(.active):hover {
+          background-color: black;
+          color: hsl(0deg 0% 98%);
+          transform: translateY(2px);
+          text-decoration: underline
         }
       }
     }
