@@ -15,7 +15,8 @@ input {
   font-size: 15px;
   background-size: 21px;
   background-position: 6px;
-  padding: 2px 2px 2px 29px;
+  padding: 3px;
+  padding-left: 8px;
   //animation: mmm 1s reverse;
   -webkit-transition: all 1s cubic-bezier(0.550, 0.085, 0.680, 0.530);
   -moz-transition: all 1s cubic-bezier(0.550, 0.085, 0.680, 0.530);
@@ -25,7 +26,9 @@ input {
   transition-duration: 0.4s;
 
   &::placeholder{
-    color: $white
+    color: $white;
+    text-align: center;
+
   }
   &:focus{
     background-color: $black;

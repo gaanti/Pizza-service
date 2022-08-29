@@ -12,10 +12,10 @@ function Cart() {
       const dispatch = useDispatch();
 
       let quantity = 0;
+
       for (let i = 0; i < pizzas.length; i++) {
             quantity += pizzas[i].quantity;
       }
-      console.log(pizzas);
       const CartWithItems = () => {
             return (
                   <div className="content">
@@ -32,8 +32,7 @@ function Cart() {
                                           </div>
                                     </div>
                                     <div>
-                                          {pizzas.map((value: any, index) => {
-                                                console.log(value);
+                                          {pizzas.map((value: any) => {
                                                 return <CartItem pizzasInCart={value} />;
                                           })}
                                     </div>

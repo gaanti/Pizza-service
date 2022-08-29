@@ -21,26 +21,6 @@ function CartItem(props: { pizzasInCart: PizzaForCart }) {
                                     className="button button--outline button--plusMinus"
                                     onClick={() =>
                                           dispatch(
-                                                addItemOrIncreaseQuantity({
-                                                      title: props.pizzasInCart.title,
-                                                      image: props.pizzasInCart.image,
-                                                      price: props.pizzasInCart.price,
-                                                      doughType: props.pizzasInCart.doughType as string,
-                                                      size: props.pizzasInCart.size as number,
-                                                      quantity: 1
-                                                })
-                                          )
-                                    }>
-                                +
-                              </div>
-                              <div>
-                                    <b>{props.pizzasInCart.quantity}</b>
-                                    <h6>${props.pizzasInCart.price}/per</h6>
-                              </div>
-                              <div
-                                    className="button button--outline button--plusMinus"
-                                    onClick={() =>
-                                          dispatch(
                                                 decreasePizzaQuantity({
                                                       title: props.pizzasInCart.title,
                                                       image: props.pizzasInCart.image,
@@ -51,7 +31,28 @@ function CartItem(props: { pizzasInCart: PizzaForCart }) {
                                                 })
                                           )
                                     }>
-                                -
+                                    -
+                              </div>
+
+                              <div>
+                                    <b>{props.pizzasInCart.quantity}</b>
+                                    <h6>${props.pizzasInCart.price}/per</h6>
+                              </div>
+                              <div
+                                    className="button button--outline button--plusMinus"
+                                    onClick={() =>
+                                          dispatch(
+                                                addItemOrIncreaseQuantity({
+                                                      title: props.pizzasInCart.title,
+                                                      image: props.pizzasInCart.image,
+                                                      price: props.pizzasInCart.price,
+                                                      doughType: props.pizzasInCart.doughType as string,
+                                                      size: props.pizzasInCart.size as number,
+                                                      quantity: 1
+                                                })
+                                          )
+                                    }>
+                                    +
                               </div>
                         </div>
                         <div className="cart__item-pizza-cost">

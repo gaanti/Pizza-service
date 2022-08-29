@@ -9,11 +9,11 @@ export function Pizzas() {
 
       const pizArr = useSelector((state: RootState) => state.pizza.pizzas);
 
-      return status === "success" ? (
-            pizArr.map((element) => {
+      if (status === 'success') {
+            return pizArr.map((element) => {
                   return <PizzaBlock element={element} />;
             })
-      ) : (
-            <Skeleton />
-      );
+      } else if (status === 'loading') {
+            return <Skeleton />
+      } else return "Something bad happened"
 }

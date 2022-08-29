@@ -8,14 +8,14 @@ function PizzaBlock(props: { element: pizza }) {
       const dispatch = useDispatch();
       const [doughType, setDoughType] = useState<string>(props.element.doughType[0]);
       const [size, setSize] = useState<number>(props.element.size[0]);
-      const pizzas = useSelector((state: RootState) => state.cart.items);
-      const pizzzzzzasFROMBUSINESSSS = useSelector((state: RootState) => state.pizza.pizzas);
+      const cartPizzas = useSelector((state: RootState) => state.cart.items);
+      const fetchedPizzas = useSelector((state: RootState) => state.pizza.pizzas);
 
       const [qty, setQty] = useState(0);
 
       const findAllPizzasByConstantParameters = useCallback(() => {
-            return pizzas.filter((elem: any[0]) => elem.price === props.element.price && elem.title === props.element.title);
-      }, [pizzas]);
+            return cartPizzas.filter((elem: any[0]) => elem.price === props.element.price && elem.title === props.element.title);
+      }, [cartPizzas]);
 
       const increaseQty = () => {
             dispatch(
@@ -41,13 +41,32 @@ function PizzaBlock(props: { element: pizza }) {
                         console.log(qty);
                   } else setQty(0);
             }
-      }, [increaseQty, pizzzzzzasFROMBUSINESSSS]);
+      }, [increaseQty, fetchedPizzas]);
 
       return (
             <div>
                   <div className="pizza-block">
-                        <img className="pizza-block__image" src={'data:image/jpg;base64,' + props.element.image} alt="Pizza" />
+                        <img
+                              className="pizza-block__image"
+                              src={'data:image/jpg;base64,' + props.element.image}
+                              alt="Pizza"
+                              /*onClick={() => changeOpenPop_up(!openPop_up)}*/
+                        />
                         <h4 className="pizza-block__title">{props.element.title}</h4>
+                        {/*{openPop_up &&
+                          <div className="pizza-block__description">
+
+                                <ul>
+                                      Ingredients:
+                                      <li>tomato</li>
+                                      <li>cucumber</li>
+                                      <li>potato</li>
+                                      <li>sausages</li>
+                                </ul>
+                                <p>description</p>
+                          </div>
+                        }*/}
+
                         <div className="pizza-block__selector">
                               <ul>
                                     {props.element.doughType.map((e: string) => {

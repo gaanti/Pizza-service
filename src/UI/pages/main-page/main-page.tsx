@@ -22,10 +22,8 @@ function MainPage() {
 
       //set params from address
       React.useEffect(() => {
-            console.log('Whoops...');
             const params = qs.parse(window.location.search.substring(1)) as any;
             dispatch(setGetParams(params));
-
             dispatch(setCurrentPage(params.currentPage));
             doNextStep((val) => !val);
       }, []);
@@ -42,23 +40,23 @@ function MainPage() {
       }, [sortBy, filterByCategory, currentPage, filterTitle]);
 
       return (
-            <div className="content">
-                  <div className="container">
-                        <div className="content__top">
-                              <h2 className="content__title">
-                                    <div className="title">All pizzas</div>
-                                    <Search />
-                              </h2>
-                              <Categories />
-                              <Sort />
-                        </div>
-                        <div className="content__items">
-                              {/*@ts-ignore*/}
-                              <Pizzas />
-                        </div>
-                  </div>
-                  <Pagination />
-            </div>
+        <div className="content">
+              <div className="container">
+                    <div className="content__top">
+                          <h2 className="content__title">
+                                <div className="title">All pizzas</div>
+                                <Search />
+                          </h2>
+                          <Categories />
+                          <Sort />
+                    </div>
+                    <div className="content__items">
+                          {/*@ts-ignore*/}
+                          <Pizzas />
+                    </div>
+              </div>
+              <Pagination />
+        </div>
       );
 }
 

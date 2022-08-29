@@ -1,9 +1,21 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 
+export const func = () => {
+      const pflor = function () {
+            return JSON.parse(window.localStorage.getItem('cart') as string) as PizzaForCart[];
+      };
+      const total_price = pflor().reduce(
+            (previousValue: number, currentValue: PizzaForCart) => previousValue + currentValue.price * currentValue.quantity,
+            0
+      );
+
+      return { items: pflor(), total_price: total_price };
+};
+
 const initialState = {
-      total_price: 0,
-      items: [] as PizzaForCart[]
+      total_price: func().total_price,
+      items: func().items as PizzaForCart[]
 };
 
 export type PizzaForCart = {
@@ -19,6 +31,15 @@ export const cartSlice = createSlice({
       name: 'cart',
       initialState,
       reducers: {
+            setCartPizzas: (state, action: PayloadAction<PizzaForCart>) => {
+                  //const addOrIncrease = state.items.indexOf(action.payload)
+                  // @ts-ignore
+                  state.items = action.payload;
+                  state.total_price = state.items.reduce(
+                        (previousValue, currentValue) => previousValue + currentValue.price * currentValue.quantity,
+                        0
+                  );
+            },
             addItemOrIncreaseQuantity: (state, action: PayloadAction<PizzaForCart>) => {
                   //const addOrIncrease = state.items.indexOf(action.payload)
                   const indexOfItem = state.items.findIndex(
@@ -38,6 +59,8 @@ export const cartSlice = createSlice({
                               0
                         );
                   }
+                  // @ts-ignore
+                  window.localStorage.setItem('cart', JSON.stringify(state.items));
             },
             deletePizzaByType: (state, action: PayloadAction<PizzaForCart>) => {
                   const indexOfItem = state.items.findIndex(
@@ -54,6 +77,8 @@ export const cartSlice = createSlice({
                               0
                         );
                   }
+                  // @ts-ignore
+                  window.localStorage.setItem('cart', JSON.stringify(state.items));
             },
             decreasePizzaQuantity: (state, action: PayloadAction<PizzaForCart>) => {
                   const indexOfItem = state.items.findIndex(
@@ -71,10 +96,14 @@ export const cartSlice = createSlice({
                         (previousValue, currentValue) => previousValue + currentValue.price * currentValue.quantity,
                         0
                   );
+                  // @ts-ignore
+                  window.localStorage.setItem('cart', JSON.stringify(state.items));
             },
             deleteAllPizzas: (state) => {
                   state.items = [];
                   state.total_price = 0;
+                  // @ts-ignore
+                  window.localStorage.setItem('cart', JSON.stringify(state.items));
             }
       }
 });

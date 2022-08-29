@@ -2,20 +2,38 @@
 
 .header {
   border-bottom: 1px solid $gray-line;
-  padding: 40px 0;
+  padding: 10px;
+  position: sticky !important;
+  top: 0;
+  align-self: flex-start;
+  height: auto;
+  user-select: none;
+  background-color: $white;
+  z-index: 10;
 
-  .container {
+  &__container {
+    margin: 10px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
   }
 
   &__logo {
     display: flex;
+    //position: relative;
     flex-direction: row;
-    flex-wrap: wrap;
     align-items: center;
     gap: 20px;
+
+    nav {
+      //position: absolute;
+      bottom: -70px;
+      width: $icon-block-size;
+      background-color: orange;
+    }
 
     img {
       margin-right: 15px;
@@ -36,35 +54,24 @@
 }
 
 .logo {
-  transition: 1.5s cubic-bezier(1, 0.02, 0, 1.02);;
+  transition: 1.5s cubic-bezier(1, 0.02, 0, 1.02);
+  transform: rotate(35deg) translate(0%, 0%);
   will-change: transform;
+  font-size: $icon-block-size*0.55;
   animation: lll 2s cubic-bezier(1, 0.02, 0, 1.02) 1 forwards;
-  //transform: rotate(35deg) translate(30%, -10%);
 
   @keyframes lll {
     0% {
       transform: rotateY(0) scale(1);
     }
-    25% {
+    20% {
       transform: rotateY(-180deg) scale(1.2);
     }
-    60% {
-      transform: rotateY(360deg) scale(1.4);
+    85% {
+      transform: rotateY(360deg) scale(1.6);
     }
-    75%{
+    100% {
       transform: scale(1);
-    }
-    80%{
-      transform: translateY(10px);
-    }
-    85%{
-      transform: translateY(-10px);
-    }
-    90%{
-      transform: translateY(10px);
-    }
-    100%{
-      transform: rotate(35deg) translate(0%, 0%)
     }
   }
 }

@@ -2,21 +2,19 @@
 @import "src/styles/variables";
 
 
-
 .firstDiv {
-  $size: 100px;
-
+  cursor: pointer;
 
   position: relative;
   overflow: hidden;
-  height: $size;
-  width: $size;
+  height: $icon-block-size;
+  width: $icon-block-size;
   box-shadow: 0 4px 40px -16px rgba(0, 0, 0, 0.2);
   border-radius: $border-radius;
 
   .secondDiv {
-    height: $size*0.8;
-    width: $size*0.8;
+    height: $icon-block-size*0.8;
+    width: $icon-block-size*0.8;
     background: white;
     border-radius: $border-radius;
     position: absolute;
@@ -34,8 +32,8 @@
   &::after {
     will-change: transform;
     content: "";
-    height: sqrt(2)*$size*0.95;
-    width: sqrt(2)*$size*0.95;
+    height: sqrt(2)*$icon-block-size*0.95;
+    width: sqrt(2)*$icon-block-size*0.95;
     border-radius: $border-radius;
     background: rgb(226, 17, 67);
     //background: linear-gradient(135deg, rgba(226,17,67,1) 0%, rgba(255,176,58,1) 100%);
