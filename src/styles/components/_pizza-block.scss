@@ -24,14 +24,14 @@
   &__selector {
     display: flex;
     background-color: $white;
-    border-radius: 10px;
+    border-radius: $border-radius;
     flex-direction: column;
     padding: 6px;
     row-gap: 5px;
 
     ul {
       display: flex;
-      column-gap: 5px;
+      column-gap: 15px;
 
       li {
         padding: 8px;
@@ -39,12 +39,14 @@
         cursor: pointer;
         font-weight: 600;
         font-size: 14px;
-        border-radius: 5px;
+        border-radius: $border-radius*0.2;
         @include noselect();
         @media (max-width: 986px) {
           font-size: 16px;
         }
         transition: 200ms;
+        background-color: #f4f4f4;
+        color: black;
 
         &.active {
           transition: none !important;
@@ -52,15 +54,19 @@
           -webkit-animation: 0;
           animation: 0 !important;
 
-          background-color: #f4f4f4;
-          color: black;
+          background-color: $black;
+          color: hsl(0deg 0% 98%);
           cursor: auto;
+
+          box-shadow: 0 10px 10px -10px rgb(0 0 0 / 50%);
+          transform: scale(1.1);
         }
         &:not(.active):hover {
-          background-color: black;
-          color: hsl(0deg 0% 98%);
-          transform: translateY(2px);
-          text-decoration: underline
+          //transform: translateY(2px);
+          text-decoration: underline;
+
+          box-shadow: 0 10px 10px -10px rgb(0 0 0 / 50%);
+          transform: scale(1.1);
         }
       }
     }

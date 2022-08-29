@@ -3,7 +3,7 @@
 .button {
   display: inline-block;
   background-color: $orange;
-  border-radius: 30px;
+  border-radius: $border-radius;
   padding: 10px 20px;
   text-align: center;
   cursor: pointer;
@@ -116,7 +116,7 @@
 
     i {
       display: inline-block;
-      border-radius: 30px;
+      border-radius: $border-radius;
       background-color: $orange;
       color: $white;
       font-weight: 600;

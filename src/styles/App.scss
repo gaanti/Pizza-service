@@ -15,11 +15,12 @@ body {
   background-color: $white;
   margin: 1% auto;
   max-width: 1400px;
-  border-radius: 30px;
+  border-radius: $border-radius;
+  position: sticky;
 }
 
 .content {
-  padding: 40px 0;
+  padding: 20px 0;
 
   &__title {
     margin: auto 0;
@@ -30,74 +31,6 @@ body {
     }
     justify-content: center;
     white-space: nowrap;
-
-    .container {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-      align-items: center;
-      flex-basis: max-content;
-      border: $black solid;
-      border-radius: 5px;
-      gap: 10px;
-      margin: 0 10px;
-      overflow: scroll;
-
-      input{
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-        flex-basis: max-content;
-        border: $black solid;
-        border-radius: 5px;
-        gap: 10px;
-        overflow: scroll;
-
-        background-color: $orange;
-        word-break: keep-all;
-        white-space: nowrap;
-        margin: 0 10px;
-        max-width: 230px;
-        color: rgb(192, 192, 192, .5);
-        font-size: 15px;
-      }
-
-      .search {
-        position: relative;
-        min-width: 16px !important;
-        height: 16px;
-        border: 2px solid;
-        border-radius: 100%;
-        margin: 7px 7px;
-      }
-
-      .search::after {
-        content: "";
-        display: block;
-        box-sizing: border-box;
-        position: absolute;
-        border-radius: 3px;
-        width: 2px;
-        height: 8px;
-        background: currentColor;
-        transform: rotate(-45deg);
-        top: 10px;
-        left: 12px
-      }
-
-      .title {
-        word-break: keep-all;
-        white-space: nowrap;
-        margin: 0 10px;
-        overflow: scroll;
-        max-width: 230px;
-        color: rgb(192, 192, 192, .5);
-        font-size: 15px;
-      }
-    }
-
-    /**/
 
   }
 

@@ -1,13 +1,18 @@
 import React from 'react';
 import CartButton from './pages/cart/cart-button';
 import { Link } from 'react-router-dom';
+import '../styles/components/live-gradient-border.scss';
 
 function Header() {
       return (
             <div className="header">
                   <div className="container">
                         <div className="header__logo">
-                              <img width="38" src="pizza-logo.svg" alt="Pizza logo" />
+                              <div className="firstDiv">
+                                    <div className="secondDiv">
+                                          <div className="logo">🍕</div>
+                                    </div>
+                              </div>
                               <div>
                                     <Link to="/">
                                           <h1> React Pizza </h1>

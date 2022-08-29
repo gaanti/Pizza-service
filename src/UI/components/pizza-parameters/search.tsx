@@ -16,7 +16,8 @@ function Search() {
       /*styled from _search.scss*/
       return (
             <>
-                  <input placeholder="Find by title" onChange={(val) => testDBNC(val.target.value)} />
+                  <input placeholder="Find by title" onChange={(val) => testDBNC(val.target.value)}
+                  className="input"/>
             </>
       );
 }

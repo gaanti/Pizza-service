@@ -1,0 +1,56 @@
+@import 'src/styles/functions/sqrt.scss';
+@import "src/styles/variables";
+
+
+
+.firstDiv {
+  $size: 100px;
+
+
+  position: relative;
+  overflow: hidden;
+  height: $size;
+  width: $size;
+  box-shadow: 0 4px 40px -16px rgba(0, 0, 0, 0.2);
+  border-radius: $border-radius;
+
+  .secondDiv {
+    height: $size*0.8;
+    width: $size*0.8;
+    background: white;
+    border-radius: $border-radius;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    place-items: center;
+    font-size: 60px;
+    &:hover{
+
+    }
+  }
+
+  &::after {
+    will-change: transform;
+    content: "";
+    height: sqrt(2)*$size*0.95;
+    width: sqrt(2)*$size*0.95;
+    border-radius: $border-radius;
+    background: rgb(226, 17, 67);
+    //background: linear-gradient(135deg, rgba(226,17,67,1) 0%, rgba(255,176,58,1) 100%);
+    background: linear-gradient(135deg, $background 0%, $orange 100%);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: -1;
+    transform: translate(-50%, -50%) rotateZ(0deg);
+    animation: spin 2s infinite linear;
+  }
+}
+
+@keyframes spin {
+  100% {
+    transform: translate(-50%, -50%) rotateZ(360deg);
+  }
+}

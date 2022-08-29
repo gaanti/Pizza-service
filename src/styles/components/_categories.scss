@@ -3,31 +3,43 @@
 .categories {
   overflow: scroll;
   max-width: 100%;
+  position: relative;
 
   ul {
+    padding: 10px;
     display: flex;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
 
     li {
+      position: static;
       background-color: #f9f9f9;
       padding: 13px 30px;
-      border-radius: 30px;
+      border-radius: $border-radius;
       margin-right: 10px;
       font-weight: bold;
       cursor: pointer;
-      transition: background-color 0.1s ease-in-out;
-      @include noselect();
+      //transition: background-color 0.1s ease-in-out;
+      transition: 200ms;
+      will-change: transform;
 
-      &:hover {
+      &:not(.active):hover {
+        will-change: transform;
         background-color: darken(#f9f9f9, 2%);
-      }
+        text-decoration: underline;
 
-      &:active {
-        background-color: darken(#f9f9f9, 5%);
+        box-shadow: 0 10px 10px -10px rgb(0 0 0 / 50%);
+        transform: scale(1.1);
       }
 
       &.active {
+        will-change: transform;
         background-color: $black;
-        color: $white;
+        color: hsl(0deg 0% 98%);
+        cursor: auto;
+        box-shadow: 0 10px 10px -10px rgb(0 0 0 / 50%);
+        transform: scale(1.1);
       }
     }
   }
