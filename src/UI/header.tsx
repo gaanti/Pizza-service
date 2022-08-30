@@ -37,6 +37,7 @@ function Header() {
                   <div className="header__container">
                         <MemorizedHeader/>
                         {/*@ts-ignore*/}
+                        <CartButton/>
                   </div>
             </div>
       );
