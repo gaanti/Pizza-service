@@ -8,12 +8,12 @@ function CartButton() {
       const totalCost = useSelector((state: RootState) => state.cart.total_price);
       const [quantity, setQuantity] = useState(0);
       useEffect(() => {
-            let o = 0;
+            let temp = 0;
             for (let i = 0; i < pizzasArray.length; i++) {
-                  o += pizzasArray[i].quantity;
+                  temp += pizzasArray[i].quantity;
                   setQuantity(quantity + pizzasArray[i].quantity);
             }
-            setQuantity(o);
+            setQuantity(temp);
             console.log('items in cart: ' + quantity);
       }, [pizzasArray, totalCost]);
 

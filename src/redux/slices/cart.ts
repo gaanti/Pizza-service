@@ -1,5 +1,6 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
+import { PizzaForCart } from "../types";
 
 export const func = () => {
       const pflor = function () {
@@ -18,14 +19,7 @@ const initialState = {
       items: func().items as PizzaForCart[]
 };
 
-export type PizzaForCart = {
-      title: string;
-      image: string;
-      price: number;
-      doughType: string;
-      size: number;
-      quantity: number;
-};
+
 
 export const cartSlice = createSlice({
       name: 'cart',

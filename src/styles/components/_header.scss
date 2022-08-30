@@ -75,3 +75,28 @@
     }
   }
 }
+.header{
+  &__logo{
+    &___textNsubText{
+      transition: 0.3s cubic-bezier(0.14, 1.29, 0.06, 1.23);
+      will-change: transform;
+      animation: iii 2.222s cubic-bezier(0.14, 1.29, 0.06, 1.23) 1 both;
+
+      @keyframes iii {
+
+        0% {
+          transform: scale(1);
+        }
+        85% {
+          transform: scale(1);
+        }
+        90% {
+          transform: scale(0.8);
+        }
+        100%{
+          transform: scale(1);
+        }
+      }
+    }
+  }
+}

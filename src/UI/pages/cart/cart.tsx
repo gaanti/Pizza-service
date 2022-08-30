@@ -33,7 +33,7 @@ function Cart() {
                                     </div>
                                     <div>
                                           {pizzas.map((value: any) => {
-                                                return <CartItem pizzasInCart={value} />;
+                                                return <CartItem pizzasInCart={value} key={value.title + value.doughType + value.size} />;
                                           })}
                                     </div>
                                     <div className="cart__bottom">

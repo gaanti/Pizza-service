@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { addItemOrIncreaseQuantity } from '../../redux/slices/cart';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
-import { pizza } from '../../redux/slices/pizza';
+import { pizza } from "../../redux/types";
 
 function PizzaBlock(props: { element: pizza }) {
       const dispatch = useDispatch();
@@ -31,6 +31,7 @@ function PizzaBlock(props: { element: pizza }) {
       };
       useEffect(() => {
             const pizArr = findAllPizzasByConstantParameters();
+            // @ts-ignore
             if (pizArr !== []) {
                   let bbb = 0;
                   for (let i = 0; i < pizArr.length; i++) {
@@ -38,7 +39,6 @@ function PizzaBlock(props: { element: pizza }) {
                   }
                   if (bbb) {
                         setQty(bbb);
-                        console.log(qty);
                   } else setQty(0);
             }
       }, [increaseQty, fetchedPizzas]);
@@ -71,7 +71,7 @@ function PizzaBlock(props: { element: pizza }) {
                               <ul>
                                     {props.element.doughType.map((e: string) => {
                                           return (
-                                                <li className={e === doughType ? 'active' : ''} onClick={() => setDoughType(e)}>
+                                                <li className={e === doughType ? 'active' : ''} onClick={() => setDoughType(e)} key={e}>
                                                       {e}
                                                 </li>
                                           );
@@ -80,7 +80,7 @@ function PizzaBlock(props: { element: pizza }) {
                               <ul>
                                     {props.element.size.map((e: number) => {
                                           return (
-                                                <li className={e === size ? 'active' : ''} onClick={() => setSize(e)}>
+                                                <li className={e === size ? 'active' : ''} onClick={() => setSize(e)} key={e}>
                                                       {e} см.
                                                 </li>
                                           );
@@ -104,4 +104,4 @@ function PizzaBlock(props: { element: pizza }) {
       );
 }
 
-export default PizzaBlock;
+export default React.memo(PizzaBlock);
