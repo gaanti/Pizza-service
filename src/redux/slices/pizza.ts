@@ -19,9 +19,11 @@ export const pizzaSlice = createSlice({
                   state.pizzas = action.payload;
             },
             setCurrentPage: (state, action: PayloadAction<number>) => {
-                  if (typeof Number(action.payload) == 'number') {
+                  const temp = Number(action.payload)
+                  debugger
+                  if (typeof temp == 'number' && !isNaN(temp)) {
                         state.current_page_index = action.payload;
-                  }
+                  } else state.current_page_index = state.current_page_index
             },
             setTotalPagesQuantity: (state, action: PayloadAction<number>) => {
                   state.current_page_index = action.payload;

@@ -20,9 +20,14 @@ function MainPage() {
       const dispatch = useAppDispatch();
 
       React.useEffect(() => {
+            debugger;
             const params = qs.parse(window.location.search.substring(1)) as any;
+            if (!params){
+                  console.log("params are null");
+            }
             dispatch(setGetParams(params));
             dispatch(setCurrentPage(params.currentPage));
+            console.log('aboba');
       }, []);
 
       //change the address link

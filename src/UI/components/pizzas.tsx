@@ -10,7 +10,6 @@ export function Pizzas() {
       const filterByCategory = useSelector((state: RootState) => state.params.filterCategory);
       const currentPage = useSelector((state: RootState) => state.pizza.current_page_index);
       const filterTitle = useSelector((state: RootState) => state.params.filterTitle);
-      debugger
       const { data } = useGetPizzasQuery({
             sortBy: sortBy,
             filterByCategory: filterByCategory,

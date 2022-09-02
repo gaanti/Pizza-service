@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7154f848-4d52-4cd8-a3e2-47b003914112" name="Changes" comment="Sorting, filtering and pagination functionality">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/components/pizzas.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/components/pizzas.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/pages/main-page/main-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/main-page/main-page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/slices/pizza.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/pizza.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +75,7 @@
     "nodejs_package_manager_path": "npm",
     "prettierjs.PrettierConfiguration.Package": "/Users/juliagaskevich/webstormprojects/untitled3/node_modules/prettier",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "settings.editor.selected.configurable": "preferences.updates",
     "settings.editor.splitter.proportion": "0.20500347",
     "ts.external.directory.path": "/Users/juliagaskevich/webstormprojects/untitled3/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
@@ -153,7 +156,7 @@
       <workItem from="1661086588338" duration="24996000" />
       <workItem from="1661283163647" duration="25752000" />
       <workItem from="1661851904632" duration="128000" />
-      <workItem from="1661852075667" duration="25634000" />
+      <workItem from="1661852075667" duration="30006000" />
     </task>
     <task id="LOCAL-00001" summary="Project has been initialized">
       <created>1660245634989</created>
