@@ -13,28 +13,26 @@ import { setCurrentPage } from '../../../redux/slices/pizza';
 
 function MainPage() {
       const sortBy = useSelector((state: RootState) => state.params.sortBy);
-      const filterByCategory = useSelector((state: RootState) => state.params.filterCategory);
+      const filterByCategoryId = useSelector((state: RootState) => state.params.filterCategoryId);
       const currentPage = useSelector((state: RootState) => state.pizza.current_page_index);
       const filterTitle = useSelector((state: RootState) => state.params.filterTitle);
       const nav2 = useNavigate();
       const dispatch = useAppDispatch();
 
       React.useEffect(() => {
-            debugger;
             const params = qs.parse(window.location.search.substring(1)) as any;
             if (!params){
                   console.log("params are null");
             }
             dispatch(setGetParams(params));
-            dispatch(setCurrentPage(params.currentPage));
-            console.log('aboba');
+            //dispatch(setCurrentPage(params.currentPage));
       }, []);
 
       //change the address link
       React.useEffect(() => {
             const filterByTitle = filterTitle ? `&filterByTitle=${filterTitle}` : '';
-            nav2(`?sortBy=${sortBy}&filterByCategory=${filterByCategory}&currentPage=${currentPage}${filterByTitle}`);
-      }, [sortBy, filterByCategory, currentPage, filterTitle]);
+            nav2(`?sortBy=${sortBy}&filterByCategoryId=${filterByCategoryId}&currentPage=${currentPage}${filterByTitle}`);
+      }, [sortBy, filterByCategoryId, currentPage, filterTitle]);
 
       return (
             <div className="content">

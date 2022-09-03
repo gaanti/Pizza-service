@@ -14,7 +14,9 @@ function PizzaBlock(props: { element: pizza }) {
       const [qty, setQty] = useState(0);
 
       const findAllPizzasByConstantParameters = useCallback(() => {
-            return cartPizzas.filter((elem: any[0]) => elem.price === props.element.price && elem.title === props.element.title);
+            if (cartPizzas) {
+                  return cartPizzas.filter((elem: any[0]) => elem.price === props.element.price && elem.title === props.element.title);
+            }
       }, [cartPizzas]);
 
       const increaseQty = () => {
@@ -32,7 +34,7 @@ function PizzaBlock(props: { element: pizza }) {
       useEffect(() => {
             const pizArr = findAllPizzasByConstantParameters();
             // @ts-ignore
-            if (pizArr !== []) {
+            if (pizArr) {
                   let bbb = 0;
                   for (let i = 0; i < pizArr.length; i++) {
                         bbb += pizArr[i].quantity;

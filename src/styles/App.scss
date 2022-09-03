@@ -8,6 +8,11 @@ body {
   background-color: $background;
 }
 
+.direction-column{
+  display: flex;
+  flex-direction: column;
+}
+
 .wrapper {
   width: 97%;
   height: auto;
@@ -77,7 +82,8 @@ body {
     flex-direction: row;
     gap: 5px;
     justify-content: center;
-    li{
+
+    li {
       padding: 0;
       width: 24px;
       height: 24px;
@@ -108,11 +114,54 @@ body {
     .content__title {
       margin: 0;
     }
+
   }
 }
 
 .cart {
   cursor: default;
+
+
+  &-wrapper {
+    display: grid;
+    grid-template-columns:  1fr 0.4fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    @media (max-width: 729px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &___user__data_order {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    row-gap: 40px;
+    &-input-wrapper{
+      display: flex;
+      flex-direction: column;
+      row-gap: 11px;
+    }
+    &-input-radio{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly;
+      column-gap: 8px;
+    }
+    &-input-text{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      row-gap: 8px;
+    }
+    &-input {
+      background-color: #fe5f1e;
+    }
+
+  }
 
   &__top {
     display: flex;
@@ -179,8 +228,8 @@ body {
     border-top: 1px solid $gray-line;
     padding-top: 2rem;
 
-      display: grid;
-      grid-template-columns: min-content 1fr min-content 0.7fr;
+    display: grid;
+    grid-template-columns: min-content 1fr min-content 0.7fr;
     grid-column-gap: 14px;
 
     @media (max-width: 470px) {
@@ -269,6 +318,7 @@ body {
         padding: 0;
       }
     }
+
     /*Button to clear order and Price HERE!*/
     &-pizza-cost {
       display: flex;

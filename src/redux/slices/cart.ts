@@ -1,16 +1,18 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
-import { PizzaForCart } from "../types";
+import { PizzaForCart } from '../types';
 
 export const func = () => {
-      const pflor = function () {
-            return JSON.parse(window.localStorage.getItem('cart') as string) as PizzaForCart[];
+      const pflor = () => {
+            const POPO = JSON.parse(window.localStorage.getItem('cart') as string) as PizzaForCart[];
+            return POPO ? POPO : [];
       };
-      const total_price = pflor().reduce(
+      let total_price = 0;
+      debugger;
+      total_price = pflor().reduce(
             (previousValue: number, currentValue: PizzaForCart) => previousValue + currentValue.price * currentValue.quantity,
             0
       );
-
       return { items: pflor(), total_price: total_price };
 };
 
@@ -18,8 +20,6 @@ const initialState = {
       total_price: func().total_price,
       items: func().items as PizzaForCart[]
 };
-
-
 
 export const cartSlice = createSlice({
       name: 'cart',
@@ -35,6 +35,7 @@ export const cartSlice = createSlice({
                   );
             },
             addItemOrIncreaseQuantity: (state, action: PayloadAction<PizzaForCart>) => {
+                  console.log(state.items);
                   //const addOrIncrease = state.items.indexOf(action.payload)
                   const indexOfItem = state.items.findIndex(
                         (elem: any[0]) =>

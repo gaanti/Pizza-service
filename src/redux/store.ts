@@ -1,9 +1,10 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore, createListenerMiddleware } from "@reduxjs/toolkit";
 import slice from './slices/filtering_params';
 import cart from './slices/cart';
 import pizza from './slices/pizza';
 import { useDispatch } from 'react-redux';
-import {pizzaApi} from './services/pizza'
+import { pizzaApi, useGetPizzasQuery } from "./services/pizza";
+
 
 export const store = configureStore({
       reducer: {

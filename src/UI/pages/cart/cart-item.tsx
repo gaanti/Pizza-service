@@ -1,6 +1,7 @@
 import React from 'react';
-import { addItemOrIncreaseQuantity, decreasePizzaQuantity, deletePizzaByType, PizzaForCart } from '../../../redux/slices/cart';
+import { addItemOrIncreaseQuantity, decreasePizzaQuantity, deletePizzaByType,  } from '../../../redux/slices/cart';
 import { useDispatch } from 'react-redux';
+import { PizzaForCart } from "../../../redux/types";
 
 function CartItem(props: { pizzasInCart: PizzaForCart }) {
       const dispatch = useDispatch();

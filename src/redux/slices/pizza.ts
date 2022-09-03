@@ -20,13 +20,13 @@ export const pizzaSlice = createSlice({
             },
             setCurrentPage: (state, action: PayloadAction<number>) => {
                   const temp = Number(action.payload)
-                  debugger
                   if (typeof temp == 'number' && !isNaN(temp)) {
+                        console.log("index changed");
                         state.current_page_index = action.payload;
-                  } else state.current_page_index = state.current_page_index
+                  }
             },
             setTotalPagesQuantity: (state, action: PayloadAction<number>) => {
-                  state.current_page_index = action.payload;
+                  state.total_pages_qty = action.payload;
             }
       },
 
@@ -37,19 +37,20 @@ export const pizzaSlice = createSlice({
                         console.log("I'm fetching", action);
                   })
                   .addMatcher(pizzaApi.endpoints.getPizzas.matchRejected, (state, action) => {
-                        //state.status = "error";
+                        //state.status = "ERROR";
                         console.log('error happened', action);
                   })
                   .addMatcher(pizzaApi.endpoints.getPizzas.matchFulfilled, (state, action) => {
-                        console.log('SUCCESS!!!', action);
-                        const POP = action.payload.content;
+                        console.log('SUCCESS!!!', action.payload.pizzas);
+                        const POP = action.payload.pizzas.content;
                         POP.forEach((e: any) => {
                               e.doughType = JSON.parse(e.doughType);
                               e.size = JSON.parse(e.size);
                         });
                         state.pizzas = POP;
-                        state.total_pages_qty = action.payload.totalPages;
-                        state.current_page_index = action.payload.pageable.pageNumber;
+                        debugger
+                        state.total_pages_qty = action.payload.pizzas.totalPages;
+                        state.current_page_index = action.payload.pizzas.pageable.pageNumber;
                         state.status = 'success';
                   });
       }

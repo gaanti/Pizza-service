@@ -5,6 +5,7 @@ import { RootState } from '../../../redux/store';
 import { deleteAllPizzas } from '../../../redux/slices/cart';
 import { Link } from 'react-router-dom';
 import CartEmpty from './cart-empty';
+import OrderDetails from "./OrderDetails";
 
 function Cart() {
       const pizzas = useSelector((state: RootState) => state.cart.items);
@@ -13,8 +14,10 @@ function Cart() {
 
       let quantity = 0;
 
-      for (let i = 0; i < pizzas.length; i++) {
-            quantity += pizzas[i].quantity;
+      if (pizzas) {
+            for (let i = 0; i < pizzas.length; i++) {
+                  quantity += pizzas[i].quantity;
+            }
       }
       const CartWithItems = () => {
             return (
@@ -31,10 +34,13 @@ function Cart() {
                                                 <span>Clear the cart</span>
                                           </div>
                                     </div>
-                                    <div>
+                                    <div className="cart-wrapper">
+                                          <div className="cart__items">
                                           {pizzas.map((value: any) => {
                                                 return <CartItem pizzasInCart={value} key={value.title + value.doughType + value.size} />;
                                           })}
+                                          </div>
+                                          <OrderDetails/>
                                     </div>
                                     <div className="cart__bottom">
                                           <div className="cart__bottom-details">
@@ -61,7 +67,7 @@ function Cart() {
             );
       };
 
-      return <>{pizzas.length ? <CartWithItems /> : <CartEmpty />}</>;
+      return <>{pizzas?.length ? <CartWithItems /> : <CartEmpty />}</>;
 }
 
 export default Cart;
