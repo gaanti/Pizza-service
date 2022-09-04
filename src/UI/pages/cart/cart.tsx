@@ -5,7 +5,7 @@ import { RootState } from '../../../redux/store';
 import { deleteAllPizzas } from '../../../redux/slices/cart';
 import { Link } from 'react-router-dom';
 import CartEmpty from './cart-empty';
-import OrderDetails from "./OrderDetails";
+import OrderDetails from './OrderDetails';
 
 function Cart() {
       const pizzas = useSelector((state: RootState) => state.cart.items);
@@ -35,12 +35,21 @@ function Cart() {
                                           </div>
                                     </div>
                                     <div className="cart-wrapper">
-                                          <div className="cart__items">
-                                          {pizzas.map((value: any) => {
-                                                return <CartItem pizzasInCart={value} key={value.title + value.doughType + value.size} />;
-                                          })}
+                                          <h1>Enter your data to order the pizza</h1>
+                                          <div className="cart-wrapper_content">
+                                                <div className="cart__items">
+                                                      {pizzas.map((value: any) => {
+                                                            return (
+                                                                  <CartItem
+                                                                        pizzasInCart={value}
+                                                                        key={value.title + value.doughType + value.size}
+                                                                  />
+                                                            );
+                                                      })}
+                                                </div>
+                                                <OrderDetails />
                                           </div>
-                                          <OrderDetails/>
+
                                     </div>
                                     <div className="cart__bottom">
                                           <div className="cart__bottom-details">

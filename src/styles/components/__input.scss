@@ -1,7 +1,7 @@
 @import url('https://rsms.me/inter/inter.css');
 @import 'src/styles/variables';
 
-.order_details{
+.order_details {
   --color-light: white;
   --color-dark: #212121;
   --color-signal: #FE5F1EFF;
@@ -26,16 +26,48 @@ card h1, h2, h3 {
   font-weight: 900;
   margin-bottom: 15px;
 }
-.card h2{
+
+.card h2 {
   color: white;
+  white-space: nowrap;
 }
 
-
 mark {
-  background: var(--color-accent);
-  color: var(--color-text);
-  font-weight: bold;
-  padding: 0 0.2em;
+  padding: 5px;
+  margin-top: 20px;
+  flex: 1;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: $border-radius*0.2;
+  @media (max-width: 986px) {
+    font-size: 16px;
+  }
+  transition: 200ms;
+  background-color: #f4f4f4;
+  color: black;
+
+  &.active {
+    transition: none !important;
+    -webkit-transition: none;
+    -webkit-animation: 0;
+    animation: 0 !important;
+
+    background-color: $black;
+    color: hsl(0deg 0% 98%);
+    cursor: auto;
+
+    box-shadow: 0 10px 10px -10px rgb(0 0 0 / 50%);
+    transform: scale(1.1);
+  }
+
+  &:not(.active):hover {
+    //transform: translateY(2px);
+    text-decoration: underline;
+
+    box-shadow: 0 10px 10px -10px rgb(0 0 0 / 50%);
+    transform: scale(1.1);
+  }
 }
 
 .card {
@@ -58,9 +90,6 @@ mark {
     color: var(--color-dark);
   }
 
-  *:first-child {
-    margin-top: 0;
-  }
 }
 
 
@@ -73,38 +102,35 @@ mark {
   position: relative;
   background-color: unset;
 
+
   &__label {
+    content: "Some Fancy Label";
     position: absolute;
-    left: -16px;
-    top: 24px;
-    padding: calc(var(--size-bezel) * 0.75) calc(var(--size-bezel) * .5);
-    margin: calc(var(--size-bezel) * 0.75 + 3px) calc(var(--size-bezel) * .5);
+    height: auto;
+    color: $orange;
+    left: 4px;
+    top: 7px;
+    padding: calc(var(--size-bezel) * .4) calc(var(--size-bezel) * .5);
     white-space: nowrap;
-    transform: translate(0, 0);
     transform-origin: 0 0;
     background: var(--color-background);
     transition: transform 120ms ease-in;
     font-weight: bold;
     line-height: 1.2;
+    transform: translate(.25rem, -65%) scale(.8);
   }
+
   &__field {
     box-sizing: border-box;
     display: block;
-    width: 100%;
+    min-width: 100%;
     border: 3px solid currentColor;
     padding: calc(var(--size-bezel) * 1.5) var(--size-bezel);
     color: currentColor;
     background: transparent;
     border-radius: var(--size-radius);
-
-    &:focus,
-    &:not(:placeholder-shown) {
-      & + .input__label {
-        transform: translate(.25rem, -65%) scale(.8);
-        color: var(--color-accent);
-      }
-    }
   }
+
 }
 
 
@@ -120,7 +146,7 @@ button {
   border-radius: var(--size-radius);
   font-weight: 900;
 
-  &[type=reset]{
+  &[type=reset] {
     background: var(--color-background);
     font-weight: 200;
   }
@@ -132,10 +158,30 @@ button + button {
 
 .icon {
   display: inline-block;
-  width: 1em; height: 1em;
+  width: 1em;
+  height: 1em;
   margin-right: .5em;
 }
 
 .hidden {
   display: none;
+}
+
+.input input[type="datetime-local"]:before {
+  position: absolute;
+  content: "";
+  box-shadow: 6px 22px 0px 6px $orange;
+  width: 1px;
+  height: 1px;
+  border-radius: 60px;
+  right: 26px;
+  top: 0px;
+  background-color: $white;
+}
+input:before{
+  position: absolute;
+  content: '';
+  width: 20px;
+  height: 20px;
+  background-color: #ff4900;
 }

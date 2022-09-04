@@ -26,6 +26,9 @@ body {
   flex-direction: row;
   gap: 8px;
 }
+.white_font{
+  color: white;
+}
 
 .wrapper {
   width: 97%;
@@ -139,13 +142,23 @@ body {
 
   &-wrapper {
     display: grid;
-    grid-template-columns:  1fr auto;
+    grid-template-columns:  1fr;
+    /*grid-template-columns:  1fr auto;*/
     grid-column-gap: 10px;
     grid-row-gap: 0px;
     @media (max-width: 829px) {
       grid-template-columns: repeat(1, 1fr);
     }
+    &_content{
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+      @media (max-width: 906px) {
+        flex-direction: column-reverse;
+      }
+    }
   }
+
   &__items{
 
     display: flex;

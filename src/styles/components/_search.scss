@@ -1,8 +1,9 @@
 @import 'src/styles/variables';
 
-.input {
+.content__title .input {
   /*color: $black;
   background: #f9f9f9 !*url(../../../public/search.svg)*! left no-repeat;*/
+  border: unset;
   background-color: $black;
   color: $white;
   border-radius: $border-radius;
@@ -33,11 +34,7 @@
     background-color: $black;
     color: $white;
     cursor: auto;
-    box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.35);
-    border-bottom: none;
-    border-top: none;
-    border-right: $orange solid 10px;
-    border-left: $orange solid 10px;
+
     &::placeholder{
       color: $white;
       opacity: 1;
