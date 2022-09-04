@@ -8,7 +8,6 @@ export const func = () => {
             return POPO ? POPO : [];
       };
       let total_price = 0;
-      debugger;
       total_price = pflor().reduce(
             (previousValue: number, currentValue: PizzaForCart) => previousValue + currentValue.price * currentValue.quantity,
             0

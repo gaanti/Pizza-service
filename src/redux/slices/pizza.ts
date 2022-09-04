@@ -48,7 +48,6 @@ export const pizzaSlice = createSlice({
                               e.size = JSON.parse(e.size);
                         });
                         state.pizzas = POP;
-                        debugger
                         state.total_pages_qty = action.payload.pizzas.totalPages;
                         state.current_page_index = action.payload.pizzas.pageable.pageNumber;
                         state.status = 'success';
