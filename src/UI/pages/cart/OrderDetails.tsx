@@ -14,7 +14,7 @@ function OrderDetails() {
       const minMonth = tempMonth < 10 ? `0${tempMonth}` : tempMonth;
       const maxMonth = tempMonth + 1 < 10 ? `0${tempMonth + 1}` : tempMonth + 1;
 
-      const hours = d.getHours() < 10 ? `0${d.getHours()+1}` : d.getHours()+1;
+      const hours = d.getHours() < 10 ? `0${d.getHours() + 1}` : d.getHours() + 1;
       const minutes = d.getMinutes() < 10 ? `0${d.getMinutes()}` : d.getMinutes();
 
       const now = `2022-${minMonth}-${minDay}T${hours}:${minutes}`;
@@ -24,6 +24,10 @@ function OrderDetails() {
 
       const [value, setValue] = useState(now);
       const [DeliveryOrPickup, setDeliveryOrPickup] = useState('Pickup');
+      const [contactMethod, setcontactMethod] = useState('Telegram');
+      const handleChange = (event: any) => {
+            setcontactMethod(event.target.value);
+      };
 
       return (
             <div className="order_details">
@@ -31,13 +35,18 @@ function OrderDetails() {
                         {/*<h1>Enter your data to order the pizza 😋</h1>*/}
                         <p>
                               Choose one of two order options:{' '}
-                              <mark onClick={() => setDeliveryOrPickup('Delivery')} className={DeliveryOrPickup=='Delivery'?'active':''}>
+                              <div
+                                    onClick={() => setDeliveryOrPickup('Delivery')}
+                                    className={`chooseOpt ${DeliveryOrPickup == 'Delivery' ? 'active' : ''}`}>
                                     Delivery
-                              </mark>{' '}
-                              or <mark onClick={() => setDeliveryOrPickup('Pickup')} className={DeliveryOrPickup=='Pickup'?'active':''}>Pickup</mark> and the date when you want to get its.
+                              </div>{' '}
+                              or{' '}
+                              <div onClick={() => setDeliveryOrPickup('Pickup')} className={`chooseOpt ${DeliveryOrPickup == 'Pickup' ? 'active' : ''}`}>
+                                    Pickup
+                              </div>{' '}
+                              and the date when you want to get its.
                         </p>
-                        <hr/>
-
+                        <hr />
                         <p>Your pizza will be ready exactly when you want!</p>
                         {/*<p>Most of the projects I work on have about <mark>3</mark> important colors: Main- , Accent-
                               and Background-Color. Naturally tons of other colors are used in a typical Project, but
@@ -64,24 +73,96 @@ function OrderDetails() {
                                           min={minDate}
                                           max={maxDate}
                                     />
-                                    <div className="input__label">Delivery date</div>
+                                    <div className="input__label">
+                                          {DeliveryOrPickup
+                                                ? DeliveryOrPickup === 'Delivery'
+                                                      ? 'Delivery'
+                                                      : DeliveryOrPickup === 'Pickup'
+                                                      ? 'Pickup'
+                                                      : ''
+                                                : ''}{' '}
+                                          date
+                                    </div>
                               </label>
                               <label className="input">
                                     <input className="input__field" type="text" placeholder="Gaanti" spellCheck="false" />
                                     <div className="input__label">Contact person</div>
                               </label>
-                             {/* <label className="input">
+                              {/* <label className="input">
                                     <div className="input__label direction-row">Phone number or telegram tag</div>
                                     <input className="input__field" type="text" property="alol" />
                               </label>*/}
-                              <label className="input">
-                                    <div className="input__label direction-row">City</div>
-                                    <input className="input__field" type="text"/>
-                              </label>
-                              <label className="input">
-                                    <div className="input__label direction-row">Street</div>
-                                    <input className="input__field" type="text" property="alol" />
-                              </label>
+
+                              {DeliveryOrPickup == 'Delivery' && (
+                                    <>
+                                          <label className="input">
+                                                <div className="input__label direction-row">City</div>
+                                                <input className="input__field" type="text" />
+                                          </label>
+                                          <label className="input">
+                                                <div className="input__label direction-row">Street</div>
+                                                <input className="input__field" type="text" property="alol" />
+                                          </label>
+                                    </>
+                              )}
+
+                              <div className="contact-method_wrapper">
+                                    How can we notify you?
+                                    <div className="contact-method">
+                                          <div>
+                                                <input
+                                                      type="radio"
+                                                      id="contactChoice1"
+                                                      name="contact"
+                                                      value="Telegram"
+                                                      onChange={handleChange}
+                                                      checked={contactMethod === 'Telegram'}
+                                                />
+                                                <label htmlFor="contactChoice1">Telegram</label>
+                                          </div>
+                                          <div>
+                                                <input
+                                                      type="radio"
+                                                      id="contactChoice2"
+                                                      name="contact"
+                                                      value="Phone"
+                                                      onChange={handleChange}
+                                                />
+                                                <label htmlFor="contactChoice2">Phone</label>
+                                          </div>
+                                          <div>
+                                                <input
+                                                      type="radio"
+                                                      id="contactChoice3"
+                                                      name="contact"
+                                                      value="Nothing"
+                                                      onChange={handleChange}
+                                                />
+                                                <label htmlFor="contactChoice3">Nothing</label>
+                                          </div>
+                                          {}
+                                    </div>
+                              </div>
+                              {contactMethod !== 'Nothing' && (
+                                    <label className="input">
+                                          <div className="input__label direction-row">{contactMethod}</div>
+
+                                          <input
+                                                className="input__field"
+                                                type="text"
+                                                property="alol"
+                                                placeholder={
+                                                      contactMethod
+                                                            ? contactMethod === 'Telegram'
+                                                                  ? '@Anton_Gaskevich'
+                                                                  : contactMethod === 'Phone'
+                                                                  ? '+380 99 377 4647'
+                                                                  : ''
+                                                            : ''
+                                                }
+                                          />
+                                    </label>
+                              )}
 
                               <div className="button-group">
                                     <button>Send</button>

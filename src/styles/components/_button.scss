@@ -1,14 +1,18 @@
 @import './../variables';
 
 .button {
-  display: inline-block;
   background-color: $orange;
   border-radius: $border-radius;
-  padding: 10px 20px;
+  padding: 10px 10px;
   text-align: center;
   cursor: pointer;
   transition: background-color $duration ease-in-out, border-color $duration ease-in-out;
   border: 1px solid transparent;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  white-space: nowrap;
   @include noselect();
 
   &,
@@ -21,6 +25,9 @@
   path,
   svg {
     transition: all $duration ease-in-out;
+  }
+  i{
+    min-width: 19px;
   }
 
   &:hover {

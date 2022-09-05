@@ -5,14 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7154f848-4d52-4cd8-a3e2-47b003914112" name="Changes" comment="Sorting, filtering and pagination functionality">
-      <change afterPath="$PROJECT_DIR$/public/calendar.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/components/pizza-parameters/categories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/components/pizza-parameters/categories.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/cart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/cart/cart.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/App.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/_variables.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/components/__input.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/__input.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/components/_search.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/_search.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/components/_button.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/_button.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/libs/_normalize.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/libs/_normalize.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,7 +162,7 @@
       <workItem from="1661283163647" duration="25752000" />
       <workItem from="1661851904632" duration="128000" />
       <workItem from="1661852075667" duration="30082000" />
-      <workItem from="1662160784719" duration="57028000" />
+      <workItem from="1662160784719" duration="67784000" />
     </task>
     <task id="LOCAL-00001" summary="Project has been initialized">
       <created>1660245634989</created>

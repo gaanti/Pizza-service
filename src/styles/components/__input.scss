@@ -20,19 +20,25 @@
   color: var(--color-text);
   background: var(--color-background);
   font-weight: 300;
+  max-width: 100vw;
 }
 
-card h1, h2, h3 {
+.card h1, h2, h3 {
   font-weight: 900;
   margin-bottom: 15px;
+
 }
+
+
 
 .card h2 {
   color: white;
   white-space: nowrap;
 }
 
-mark {
+.chooseOpt {
+  max-width: min-content;
+  display:inline;
   padding: 5px;
   margin-top: 20px;
   flex: 1;
@@ -72,7 +78,7 @@ mark {
 
 .card {
   background: var(--color-background);
-  padding: calc(4 * var(--size-bezel));
+  padding: calc(2 * var(--size-bezel));
   margin-top: calc(4 * var(--size-bezel));
   border-radius: var(--size-radius);
   border: 3px solid var(--color-shadow, currentColor);
@@ -178,10 +184,68 @@ button + button {
   top: 0px;
   background-color: $white;
 }
-input:before{
-  position: absolute;
-  content: '';
-  width: 20px;
-  height: 20px;
-  background-color: #ff4900;
+
+
+input[type="radio"]{
+  appearance: none;
+  margin: 0;
+  font: inherit;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: $orange;
+  color: $orange;
+  display: grid;
+  grid-template-columns: auto;
+  //place-content: center;
 }
+input[type="radio"]::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  transform: scale(0);
+  background-color: #ffffff;
+  transition: 120ms transform ease-in-out;
+}
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
+  outline: max(2px, 0.15em) solid currentColor;
+  outline-offset: max(2px, 0.15em);
+}
+
+input[type="radio"]:focus {
+
+}
+
+.contact-method_wrapper{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.contact-method{
+  margin-top: 4px;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+.contact-method div{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 5px;
+}
+label[htmlFor="contactChoice3"]{
+  white-space: nowrap;
+}
+
+
+
+
+
+
+
+
+
+
+

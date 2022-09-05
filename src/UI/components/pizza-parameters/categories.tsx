@@ -14,16 +14,20 @@ function Categories() {
                               All
                         </li>
                         {filterCategoryOptions.map((value, index) => {
-                              return (
-                                    <>
-                                          <li
-                                                onClick={() => dispatch(setFilterByCategoryId(value.id))}
-                                                className={filterCategoryId === value.id ? 'active' : ''}
-                                                key={value.id}>
-                                                {value.categoryTitle}
-                                          </li>
-                                    </>
-                              );
+                              console.log(value.id);
+
+                          if (value.id){
+                                return (
+                                      <>
+                                            <li
+                                                  onClick={() => dispatch(setFilterByCategoryId(value.id))}
+                                                  className={filterCategoryId === value.id ? 'active' : ''}
+                                                  key={value.id}>
+                                                  {value.categoryTitle}
+                                            </li>
+                                      </>
+                                );
+                          }
                         })}
                   </ul>
             </div>
