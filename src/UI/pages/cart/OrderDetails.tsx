@@ -22,12 +22,22 @@ function OrderDetails() {
       const minDate = `2022-${minMonth}-${minDay}T00:00`;
       const maxDate = `2022-${maxMonth}-${maxDay}T00:00`;
 
-      const [value, setValue] = useState(now);
+      const [getDate, setGetDate] = useState(now);
       const [DeliveryOrPickup, setDeliveryOrPickup] = useState('Pickup');
       const [contactMethod, setcontactMethod] = useState('Telegram');
+      const [contactProvidedByUser, setContactProvidedByUser] = useState('' as string);
+      const [contactPerson, setContactPerson] = useState('' as string);
+      const [city, setCity] = useState('' as string);
+      const [street, setStreet] = useState('' as string);
       const handleChange = (event: any) => {
             setcontactMethod(event.target.value);
       };
+      const [readyToCheckout, setReadyToCheckout] = useState([
+            { DeliveryOrPickup: false },
+            { contactMethod: false },
+            { getDate: false },
+            { contactPerson: false }
+      ]);
 
       return (
             <div className="order_details">
@@ -36,40 +46,34 @@ function OrderDetails() {
                         <p>
                               Choose one of two order options:{' '}
                               <div
-                                    onClick={() => setDeliveryOrPickup('Delivery')}
-                                    className={`chooseOpt ${DeliveryOrPickup == 'Delivery' ? 'active' : ''}`}>
-                                    Delivery
+                                    onClick={() => setDeliveryOrPickup('Pickup')}
+                                    className={`chooseOpt ${DeliveryOrPickup === 'Pickup' ? 'active' : ''}`}>
+                                    Pickup
                               </div>{' '}
                               or{' '}
-                              <div onClick={() => setDeliveryOrPickup('Pickup')} className={`chooseOpt ${DeliveryOrPickup == 'Pickup' ? 'active' : ''}`}>
-                                    Pickup
+                              <div
+                                    onClick={() => setDeliveryOrPickup('Delivery')}
+                                    className={`chooseOpt ${DeliveryOrPickup === 'Delivery' ? 'active' : ''}`}>
+                                    Delivery
                               </div>{' '}
                               and the date when you want to get its.
                         </p>
                         <hr />
                         <p>Your pizza will be ready exactly when you want!</p>
-                        {/*<p>Most of the projects I work on have about <mark>3</mark> important colors: Main- , Accent-
-                              and Background-Color. Naturally tons of other colors are used in a typical Project, but
-                              they are mostly used within specific components.
-                        </p>
-
-                        <p>I find it useful to set those 3 colors as vars on the root and change them in specific
-                              contexts. It turns out that the complexity of the components I build is dramatically cut
-                              down by this. And also gives me a lot of control over the cascade.</p>*/}
                         <div className="card card--inverted">
                               <h2>
                                     <svg className="icon" aria-hidden="true">
                                           <use xlinkHref="#icon-coffee" href="#icon-coffee" />
                                     </svg>
-                                    Order datails
+                                    Order details
                               </h2>
                               <label className="input">
                                     <input
                                           className="input__field"
                                           id="Contact_method"
                                           type="datetime-local"
-                                          onChange={(e) => setValue(e.target.value)}
-                                          value={value}
+                                          onChange={(e) => setGetDate(e.target.value)}
+                                          value={getDate}
                                           min={minDate}
                                           max={maxDate}
                                     />
@@ -85,23 +89,39 @@ function OrderDetails() {
                                     </div>
                               </label>
                               <label className="input">
-                                    <input className="input__field" type="text" placeholder="Gaanti" spellCheck="false" />
+                                    <input
+                                          className="input__field"
+                                          type="text"
+                                          placeholder="Anton Gaskevich"
+                                          spellCheck="false"
+                                          value={contactPerson}
+                                          onChange={(e) => setContactPerson(e.target.value)}
+                                    />
                                     <div className="input__label">Contact person</div>
                               </label>
-                              {/* <label className="input">
-                                    <div className="input__label direction-row">Phone number or telegram tag</div>
-                                    <input className="input__field" type="text" property="alol" />
-                              </label>*/}
 
-                              {DeliveryOrPickup == 'Delivery' && (
+                              {DeliveryOrPickup === 'Delivery' && (
                                     <>
                                           <label className="input">
                                                 <div className="input__label direction-row">City</div>
-                                                <input className="input__field" type="text" />
+                                                <input
+                                                      className="input__field"
+                                                      type="text"
+                                                      placeholder="Brazilia"
+                                                      value={city}
+                                                      onChange={(e) => setCity(e.target.value)}
+                                                />
                                           </label>
                                           <label className="input">
                                                 <div className="input__label direction-row">Street</div>
-                                                <input className="input__field" type="text" property="alol" />
+                                                <input
+                                                      className="input__field"
+                                                      type="text"
+                                                      property="alol"
+                                                      placeholder="Fancy mushrooms 48"
+                                                      value={street}
+                                                      onChange={(e) => setStreet(e.target.value)}
+                                                />
                                           </label>
                                     </>
                               )}
@@ -160,11 +180,28 @@ function OrderDetails() {
                                                                   : ''
                                                             : ''
                                                 }
+                                                value={contactProvidedByUser}
+                                                //TODO form validation and inactive checkout button until all fields are filled
+                                                onChange={(e) => {
+                                                      const val = e.target.value;
+                                                      const pattern = /.*\B@(?=\w{5,32}\b)[a-zA-Z0-9]+(?:_[a-zA-Z0-9]+)*.*/;
+                                                      setContactProvidedByUser(val);
+
+                                                      if (pattern.test(val)) {
+                                                            readyToCheckout.find((e) => e.contactPerson)
+                                                                  ? console.log('succes')
+                                                                  : console.log('failed');
+                                                            let readyToCheckout__COPY = readyToCheckout;
+                                                            readyToCheckout__COPY.push({ contactPerson: true });
+                                                            setReadyToCheckout(readyToCheckout);
+                                                      } else;
+                                                }}
                                           />
                                     </label>
                               )}
 
                               <div className="button-group">
+                                    {/*<button onClick={() => useCreateAnOrderQuery({})}>TEST RTK_Query</button>*/}
                                     <button>Send</button>
                                     <button type="reset">Reset</button>
                               </div>

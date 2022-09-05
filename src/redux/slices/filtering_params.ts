@@ -30,8 +30,9 @@ export const sliceSlice = createSlice({
                               return valueToSet;
                         } else return initialState;
                   };
+                  debugger
                   if (action.payload != null) {
-                        state.filterCategoryId = setOrNot(state.filterCategoryId, action.payload.filterByCategory);
+                        state.filterCategoryId = setOrNot(state.filterCategoryId, action.payload.filterByCategoryId);
                         state.filterTitle = setOrNot(state.filterTitle, action.payload.filterTitle);
                         state.sortBy = setOrNot(state.sortBy, action.payload.sortBy);
                   }

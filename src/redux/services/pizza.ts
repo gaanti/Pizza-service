@@ -1,11 +1,8 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { pagedPizzas } from '../types';
+import { api } from "./api";
 
 // Define a service using a base URL and expected endpoints
-export const pizzaApi = createApi({
-      reducerPath: 'pizzaApi',
-      baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:8080' }),
-      tagTypes: ['PagesQTY'],
+export const pizzaApi = api.injectEndpoints({
       endpoints: (builder) => ({
             getPizzas: builder.query<pagedPizzas, any>({
                   query: ({ sortBy, filterByCategory, currentPage, filterTitle }) => {
@@ -16,9 +13,11 @@ export const pizzaApi = createApi({
                         return {
                               url: `pizzas?${sortBy1}${filterByCategory1}${currentPage1}${filterTitle1}`
                         };
-                  },providesTags: (result) => result?[{type:"PagesQTY" as const, id: result.pizzas.totalPages}]:[{type:"PagesQTY" as const, id: 1}]
+                  }
             })
       })
 });
+
+
 
 export const { useGetPizzasQuery } = pizzaApi;

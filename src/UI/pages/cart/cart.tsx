@@ -49,7 +49,6 @@ function Cart() {
                                                 </div>
                                                 <OrderDetails />
                                           </div>
-
                                     </div>
                                     <div className="cart__bottom">
                                           <div className="cart__bottom-details">
@@ -65,9 +64,9 @@ function Cart() {
                                                       <img src="grey-arrow-left.svg" />
                                                       <span>Back to homepage</span>
                                                 </Link>
-                                                <div className="button pay-btn">
+                                                <button className="button pay-btn" disabled={false}>
                                                       <span>Checkout</span>
-                                                </div>
+                                                </button>
                                           </div>
                                     </div>
                               </div>
