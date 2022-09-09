@@ -101,8 +101,7 @@ function PizzaBlock(props: { element: pizza }) {
                                                 </div>
                                                 <div
                                                       className="button button--outline button--add"
-                                                      onClick={() => {
-                                                            props.increaseQty();
+                                                      onClick={() => {increaseQty();
                                                       }}>
                                                       <span>Add to cart</span>
                                                       {qtyOfItemsInCart ? <i>{qtyOfItemsInCart}</i> : ''}
