@@ -1,6 +1,7 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 import { PizzaForCart } from '../types';
+import isequal from 'lodash.isequal';
 
 export const func = () => {
       const pflor = () => {
@@ -24,24 +25,14 @@ export const cartSlice = createSlice({
       name: 'cart',
       initialState,
       reducers: {
-            setCartPizzas: (state, action: PayloadAction<PizzaForCart>) => {
-                  //const addOrIncrease = state.items.indexOf(action.payload)
-                  // @ts-ignore
-                  state.items = action.payload;
-                  state.total_price = state.items.reduce(
-                        (previousValue, currentValue) => previousValue + currentValue.price * currentValue.quantity,
-                        0
-                  );
-            },
             addItemOrIncreaseQuantity: (state, action: PayloadAction<PizzaForCart>) => {
-                  console.log(state.items);
-                  //const addOrIncrease = state.items.indexOf(action.payload)
                   const indexOfItem = state.items.findIndex(
                         (elem: PizzaForCart) =>
                               elem.price === action.payload.price &&
                               elem.doughWidth === action.payload.doughWidth &&
                               elem.doughRadius === action.payload.doughRadius &&
-                              elem.title === action.payload.title
+                              elem.title === action.payload.title &&
+                              isequal(elem.ingredients, action.payload.ingredients)
                   );
                   if (state.items[indexOfItem]) {
                         ++state.items[indexOfItem].quantity;
@@ -56,52 +47,30 @@ export const cartSlice = createSlice({
                   // @ts-ignore
                   window.localStorage.setItem('cart', JSON.stringify(state.items));
             },
-            deletePizzaByType: (state, action: PayloadAction<PizzaForCart>) => {
-                  const indexOfItem = state.items.findIndex(
-                    (elem: PizzaForCart) =>
-                      elem.price === action.payload.price &&
-                      elem.doughWidth === action.payload.doughWidth &&
-                      elem.doughRadius === action.payload.doughRadius &&
-                      elem.title === action.payload.title
-                  );
-                  if (indexOfItem !== -1) {
-                        state.items.splice(indexOfItem, 1);
-                        state.total_price = state.items.reduce(
-                              (previousValue, currentValue) => previousValue + currentValue.price * currentValue.quantity,
-                              0
-                        );
-                  }
-                  // @ts-ignore
+            increase: (state, action: PayloadAction<number>) => {
+                  const popo = state.items[action.payload]
+                  ++popo.quantity
                   window.localStorage.setItem('cart', JSON.stringify(state.items));
             },
-            decreasePizzaQuantity: (state, action: PayloadAction<PizzaForCart>) => {
-                  const indexOfItem = state.items.findIndex(
-                    (elem: PizzaForCart) =>
-                      elem.price === action.payload.price &&
-                      elem.doughWidth === action.payload.doughWidth &&
-                      elem.doughRadius === action.payload.doughRadius &&
-                      elem.title === action.payload.title
-                  );
-                  if (!(state.items[indexOfItem].quantity <= 1)) {
-                        --state.items[indexOfItem].quantity;
-                  } else state.items.splice(indexOfItem, 1);
-
-                  state.total_price = state.items.reduce(
-                        (previousValue, currentValue) => previousValue + currentValue.price * currentValue.quantity,
-                        0
-                  );
-                  // @ts-ignore
+            decrease: (state, action: PayloadAction<number>) => {
+                  const popo = state.items[action.payload]
+                  if (popo.quantity > 1){
+                        --popo.quantity
+                  }else state.items.splice(action.payload, 1);
+                  window.localStorage.setItem('cart', JSON.stringify(state.items));
+            },
+            deleteLine: (state, action: PayloadAction<number>) => {
+                  state.items.splice(action.payload, 1);
                   window.localStorage.setItem('cart', JSON.stringify(state.items));
             },
             deleteAllPizzas: (state) => {
                   state.items = [];
                   state.total_price = 0;
-                  // @ts-ignore
                   window.localStorage.setItem('cart', JSON.stringify(state.items));
-            }
+            },
       }
 });
 
-export const { addItemOrIncreaseQuantity, deletePizzaByType, decreasePizzaQuantity, deleteAllPizzas } = cartSlice.actions;
+export const { addItemOrIncreaseQuantity, deleteLine, increase, decrease, deleteAllPizzas } = cartSlice.actions;
 
 export default cartSlice.reducer;

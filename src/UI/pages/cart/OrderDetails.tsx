@@ -43,7 +43,7 @@ function OrderDetails() {
             <div className="order_details">
                   <article className="l-design-widht">
                         {/*<h1>Enter your data to order the pizza 😋</h1>*/}
-                        <p>
+                        <div>
                               Choose one of two order options:{' '}
                               <div
                                     onClick={() => setDeliveryOrPickup('Pickup')}
@@ -57,7 +57,7 @@ function OrderDetails() {
                                     Delivery
                               </div>{' '}
                               and the date when you want to get its.
-                        </p>
+                        </div>
                         <hr />
                         <p>Your pizza will be ready exactly when you want!</p>
                         <div className="card card--inverted">

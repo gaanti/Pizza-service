@@ -21,7 +21,7 @@ function PizzaBlock(props: { element: pizza }) {
       const [qtyOfItemsInCart, setQtyOfItemsInCart] = useState(0);
       const [doughRadius, setDoughRadius] = useState(dough_radius[0].radius);
       const [doughWidth, setDoughWidth] = useState(dough_widths[0].doughWidthTitle);
-      const lpo = () => {
+      const resetPizzaParams = () => {
             setIngredients(mapped_ingredients)
             setDoughRadius(dough_radius[0].radius)
             setDoughWidth(dough_widths[0].doughWidthTitle)
@@ -42,26 +42,25 @@ function PizzaBlock(props: { element: pizza }) {
                         price: props.element.price,
                         doughRadius: doughRadius as number,
                         doughWidth: doughWidth as string,
+                        /*@ts-ignore*/
+                        ingredients: ingredients,
                         quantity: 1
                   })
             );
       };
-      let func = useRef().current;
-      func = () => increaseQty();
       useEffect(() => {
             const pizArr = findAllPizzasByConstantParameters();
             // @ts-ignore
             if (pizArr) {
-                  let bbb = 0;
+                  let popo = 0;
                   for (let i = 0; i < pizArr.length; i++) {
-                        bbb += pizArr[i].quantity;
+                        popo += pizArr[i].quantity;
                   }
-                  if (bbb) {
-                        setQtyOfItemsInCart(bbb);
+                  if (popo) {
+                        setQtyOfItemsInCart(popo);
                   } else setQtyOfItemsInCart(0);
             }
       }, [increaseQty, fetchedPizzas]);
-      console.log('RENDERED NEW ITEM!!!');
 
 
 
@@ -80,13 +79,14 @@ function PizzaBlock(props: { element: pizza }) {
                                     setDoughWidth={setDoughWidth}
                                     doughRadius={doughRadius}
                                     doughWidth={doughWidth}
-                                    increaseQty={func}
+                                    increaseQty={increaseQty}
                                     qtyOfItemsInCart={qtyOfItemsInCart}
                                     ingredients={ingredients}
                                     setIngredients={setIngredients}
                                     parent={parent}
                                     rerenderParent={rerenderParent}
-                                    lpo={lpo}
+                                    resetPizzaParams={resetPizzaParams}
+                                    fetchedPizzas={fetchedPizzas}
                               />
                         )}
                         <div>

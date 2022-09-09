@@ -6,6 +6,7 @@ import { deleteAllPizzas } from '../../../redux/slices/cart';
 import { Link } from 'react-router-dom';
 import CartEmpty from './cart-empty';
 import OrderDetails from './OrderDetails';
+import { PizzaForCart } from "../../../redux/types";
 
 function Cart() {
       const pizzas = useSelector((state: RootState) => state.cart.items);
@@ -38,11 +39,12 @@ function Cart() {
                                           <h1>Enter your data to order the pizza</h1>
                                           <div className="cart-wrapper_content">
                                                 <div className="cart__items">
-                                                      {pizzas.map((value: any) => {
+                                                      {pizzas.map((value: PizzaForCart, index) => {
                                                             return (
                                                                   <CartItem
                                                                         pizzasInCart={value}
-                                                                        key={value.title + value.doughType + value.size}
+                                                                        key={index}
+                                                                        index={index}
                                                                   />
                                                             );
                                                       })}

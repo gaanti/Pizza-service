@@ -27,17 +27,20 @@ export type pagedPizzas = {
       };
       doughRadius: doughRadius;
       doughWidths: doughWidths;
+      ingredients: {
+            id: number;
+            ingredientName: string;
+      }[];
 };
 export type doughRadius = { radius: number }[];
 export type doughWidths = { id: number; doughWidthTitle: string }[];
-export type PizzaForCart = {
-      title: string;
-      image: string;
-      price: number;
+
+export interface PizzaForCart extends pizza {
       doughWidth: string;
       doughRadius: number;
       quantity: number;
-};
+}
+
 export type pizza = {
       title: string;
       image: string;

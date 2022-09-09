@@ -1,10 +1,12 @@
 import React from 'react';
-import { addItemOrIncreaseQuantity, decreasePizzaQuantity, deletePizzaByType,  } from '../../../redux/slices/cart';
+import { decrease, deleteLine, increase } from '../../../redux/slices/cart';
 import { useDispatch } from 'react-redux';
-import { PizzaForCart } from "../../../redux/types";
+import { PizzaForCart } from '../../../redux/types';
 
-function CartItem(props: { pizzasInCart: PizzaForCart }) {
+function CartItem(props: { pizzasInCart: PizzaForCart; index: number }) {
       const dispatch = useDispatch();
+      console.log(props.pizzasInCart);
+
       return (
             <>
                   <div className="cart__item">
@@ -13,25 +15,13 @@ function CartItem(props: { pizzasInCart: PizzaForCart }) {
                         </div>
                         <div className="cart__item-info">
                               <h3>{props.pizzasInCart.title}</h3>
-                              <p>
-                                    {props.pizzasInCart.doughWidth} crust, {props.pizzasInCart.doughRadius}cm.
-                              </p>
+                              <div>
+                                    <div>{props.pizzasInCart.doughWidth}, {props.pizzasInCart.doughRadius}cm.</div>
+                                    <div>{props.pizzasInCart.ingredients.join(", ")}</div>
+                              </div>
                         </div>
                         <div className="cart__item-count">
-                              <div
-                                    className="button button--outline button--plusMinus"
-                                    onClick={() =>
-                                          dispatch(
-                                                decreasePizzaQuantity({
-                                                      title: props.pizzasInCart.title,
-                                                      image: props.pizzasInCart.image,
-                                                      price: props.pizzasInCart.price,
-                                                      doughWidth: props.pizzasInCart.doughWidth as string,
-                                                      doughRadius: props.pizzasInCart.doughRadius as number,
-                                                      quantity: 1
-                                                })
-                                          )
-                                    }>
+                              <div className="button button--outline button--plusMinus" onClick={() => dispatch(decrease(props.index))}>
                                     -
                               </div>
 
@@ -39,20 +29,7 @@ function CartItem(props: { pizzasInCart: PizzaForCart }) {
                                     <b>{props.pizzasInCart.quantity}</b>
                                     <h6>${props.pizzasInCart.price}/per</h6>
                               </div>
-                              <div
-                                    className="button button--outline button--plusMinus"
-                                    onClick={() =>
-                                          dispatch(
-                                                addItemOrIncreaseQuantity({
-                                                      title: props.pizzasInCart.title,
-                                                      image: props.pizzasInCart.image,
-                                                      price: props.pizzasInCart.price,
-                                                      doughWidth: props.pizzasInCart.doughWidth as string,
-                                                      doughRadius: props.pizzasInCart.doughRadius as number,
-                                                      quantity: 1
-                                                })
-                                          )
-                                    }>
+                              <div className="button button--outline button--plusMinus" onClick={() => dispatch(increase(props.index))}>
                                     +
                               </div>
                         </div>
@@ -63,16 +40,7 @@ function CartItem(props: { pizzasInCart: PizzaForCart }) {
                               <div className="cart__item-pizza-cost-remove">
                                     <div
                                           onClick={() => {
-                                                dispatch(
-                                                      deletePizzaByType({
-                                                            title: props.pizzasInCart.title,
-                                                            image: props.pizzasInCart.image,
-                                                            price: props.pizzasInCart.price,
-                                                            doughWidth: props.pizzasInCart.doughWidth as string,
-                                                            doughRadius: props.pizzasInCart.doughRadius as number,
-                                                            quantity: 1
-                                                      })
-                                                );
+                                                dispatch(deleteLine(props.index));
                                           }}>
                                           <img src="cancel.svg" />
                                     </div>

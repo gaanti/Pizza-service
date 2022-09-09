@@ -27,11 +27,6 @@ function Header() {
       }
       const MemorizedHeader = React.memo(Header)
 
-      const Popo = () => {
-            const pizzasArray = useSelector((state: RootState) => state.cart.items);
-            return pizzasArray.length > 0 ? <CartButton /> : ''
-      }
-
       return (
             <div className="header">
                   <div className="header__container">
