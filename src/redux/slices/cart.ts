@@ -37,10 +37,10 @@ export const cartSlice = createSlice({
                   console.log(state.items);
                   //const addOrIncrease = state.items.indexOf(action.payload)
                   const indexOfItem = state.items.findIndex(
-                        (elem: any[0]) =>
+                        (elem: PizzaForCart) =>
                               elem.price === action.payload.price &&
-                              elem.doughType === action.payload.doughType &&
-                              elem.size === action.payload.size &&
+                              elem.doughWidth === action.payload.doughWidth &&
+                              elem.doughRadius === action.payload.doughRadius &&
                               elem.title === action.payload.title
                   );
                   if (state.items[indexOfItem]) {
@@ -58,11 +58,11 @@ export const cartSlice = createSlice({
             },
             deletePizzaByType: (state, action: PayloadAction<PizzaForCart>) => {
                   const indexOfItem = state.items.findIndex(
-                        (elem: any[0]) =>
-                              elem.price === action.payload.price &&
-                              elem.doughType === action.payload.doughType &&
-                              elem.size === action.payload.size &&
-                              elem.title === action.payload.title
+                    (elem: PizzaForCart) =>
+                      elem.price === action.payload.price &&
+                      elem.doughWidth === action.payload.doughWidth &&
+                      elem.doughRadius === action.payload.doughRadius &&
+                      elem.title === action.payload.title
                   );
                   if (indexOfItem !== -1) {
                         state.items.splice(indexOfItem, 1);
@@ -76,11 +76,11 @@ export const cartSlice = createSlice({
             },
             decreasePizzaQuantity: (state, action: PayloadAction<PizzaForCart>) => {
                   const indexOfItem = state.items.findIndex(
-                        (elem: any[0]) =>
-                              elem.price === action.payload.price &&
-                              elem.doughType === action.payload.doughType &&
-                              elem.size === action.payload.size &&
-                              elem.title === action.payload.title
+                    (elem: PizzaForCart) =>
+                      elem.price === action.payload.price &&
+                      elem.doughWidth === action.payload.doughWidth &&
+                      elem.doughRadius === action.payload.doughRadius &&
+                      elem.title === action.payload.title
                   );
                   if (!(state.items[indexOfItem].quantity <= 1)) {
                         --state.items[indexOfItem].quantity;

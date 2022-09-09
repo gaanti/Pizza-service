@@ -3,12 +3,65 @@
 .pizza-block {
   width: 280px;
   text-align: center;
-  margin: auto auto 65px auto !important;
   display: flex;
+  margin: auto;
   flex-direction: column;
 
+  &__configure {
+    &_button {
+      background-color: $black;
+      color: $white;
+      border-radius: $border-radius;
+
+      transition: all $duration ease-in-out, border-color $duration ease-in-out;
+
+      &:hover {
+        background-color: #ffffff;
+        color: #000;
+        border: solid black 1px;
+      }
+
+      word-break: keep-all;
+      white-space: nowrap;
+    }
+    &_window{
+      text-align: left;
+      position: absolute;
+      width: 280px;
+      height: 463px;
+      background-color: white;
+      /*
+      background-color: black;
+      color: white;*/
+      left: 0;
+      bottom: 0;
+      z-index: 10;
+      h4{
+        margin-left: 15px;
+        margin-bottom: 5px;
+      }
+      justify-content: space-between;
+      &_dough_params{
+        justify-content: space-evenly;
+      }
+    }
+  }
   &__image {
     width: 280px;
+    position: relative;
+    display: block;
+
+    &:after {
+      content: "" !important;
+      top: 0 !important;
+      left: 0 !important;
+      position: absolute !important;
+      display: block !important;
+      color: #ff4900 !important;
+      background-color: #181818 !important;
+      height: 30px !important;
+      width: 30px !important;
+    }
   }
 
   &__title {
@@ -36,6 +89,76 @@
     left: 0;
     bottom: 0;
   }*/
+  &__description_and_params {
+    * {
+      font-weight: 600;
+      text-align: left;
+      font-size: 12px;
+    }
+
+    div ul {
+      display: flex;
+      flex-direction: column;
+      column-gap: 3px;
+      justify-content: space-evenly;
+
+      li {
+        &:before {
+          content: "Dough ";
+        }
+
+        flex: 1;
+        cursor: pointer;
+        border-radius: $border-radius*0.2;
+        @include noselect();
+        transition: 200ms;
+        background-color: #ffffff;
+        color: $orange;
+        border: solid $orange 1px;
+        padding: 3px;
+        white-space: nowrap;
+
+        &:not(.active):hover {
+          //transform: translateY(2px);
+          text-decoration: underline;
+
+          box-shadow: 0 10px 10px -10px rgb(0 0 0 / 50%);
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    h5 {
+      text-align: left;
+      font-weight: 800;
+    }
+
+    p div {
+      display: inline-block;
+      background-color: #181818;
+      color: white;
+    }
+
+    P + div {
+      display: flex;
+      flex-direction: column;
+
+      h5 {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        column-gap: 5px;
+
+        div {
+          display: inline-block;
+          white-space: nowrap; /* Запрещаем перенос строк */
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+
+    }
+  }
 
   &__selector {
     display: flex;
@@ -43,8 +166,9 @@
     border-radius: $border-radius;
     flex-direction: column;
     row-gap: 5px;
+    max-width: min-content;
 
-    ul {
+     ul {
       display: flex;
       column-gap: 15px;
 
@@ -90,10 +214,12 @@
   }
 
   &__bottom {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-top: 20px;
+    height: 42px;
   }
 
   &__price {

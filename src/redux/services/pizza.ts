@@ -1,5 +1,5 @@
 import { pagedPizzas } from '../types';
-import { api } from "./api";
+import { api } from './api';
 
 // Define a service using a base URL and expected endpoints
 export const pizzaApi = api.injectEndpoints({
@@ -17,7 +17,5 @@ export const pizzaApi = api.injectEndpoints({
             })
       })
 });
-
-
 
 export const { useGetPizzasQuery } = pizzaApi;

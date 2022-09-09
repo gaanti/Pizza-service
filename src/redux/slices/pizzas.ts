@@ -1,17 +1,19 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 import { pizzaApi } from '../services/pizza';
-import { pizza } from '../types';
+import { doughRadius, doughWidths, pizza } from '../types';
 
 const initialState = {
       pizzas: [] as pizza[],
+      dough_radius: [] as doughRadius,
+      dough_widths: [] as doughWidths,
       total_pages_qty: 1,
       current_page_index: 0,
       status: ''
 };
 
 export const pizzaSlice = createSlice({
-      name: 'pizza',
+      name: 'pizzas',
       initialState,
 
       reducers: {
@@ -42,10 +44,11 @@ export const pizzaSlice = createSlice({
                   })
                   .addMatcher(pizzaApi.endpoints.getPizzas.matchFulfilled, (state, action) => {
                         console.log('SUCCESS!!!', action.payload);
-                        debugger
                         state.pizzas = action.payload.pizzas.content;
                         state.total_pages_qty = action.payload.pizzas.totalPages;
                         state.current_page_index = action.payload.pizzas.pageable.pageNumber;
+                        state.dough_radius = action.payload.doughRadius;
+                        state.dough_widths = action.payload.doughWidths;
                         state.status = 'success';
                   });
       }

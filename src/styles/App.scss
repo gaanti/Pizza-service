@@ -8,29 +8,45 @@ body {
   background-color: $background;
 }
 
-.direction-column {
+.DIRECTION_COLUMN {
   display: flex;
   flex-direction: column;
   gap: 8px;
-
-  & label {
-    font-family: "Proxima Nova", Roboto, system-ui, Tahoma, sans-serif;
-    font-weight: 600;
-    /*"Proxima Nova", Roboto, system-ui, Tahoma, sans-serif;*/
-    /*-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;*/
-  }
 }
-
-.direction-row {
+.DIRECTION_ROW {
   display: flex;
   flex-direction: row;
   gap: 8px;
 }
-
-.white_font {
+.WHITE_FONT {
   color: white;
+}
+.CENTRED_ITEM{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.hover_scale_increase_animation{
+  transition: 200ms;
+
+  &:not(.active):hover {
+    will-change: transform;
+    background-color: darken(#f9f9f9, 2%);
+    text-decoration: underline;
+
+    box-shadow: 0 10px 10px -10px rgb(0 0 0 / 50%);
+    transform: scale(1.1);
+  }
+
+  &.active {
+    will-change: transform;
+    background-color: $black;
+    color: hsl(0deg 0% 98%);
+    cursor: auto;
+    box-shadow: 0 10px 10px -10px rgb(0 0 0 / 50%);
+    transform: scale(1.1);
+  }
 }
 
 .wrapper {
@@ -50,10 +66,7 @@ body {
     margin: auto 0;
     display: flex;
     flex-direction: row;
-    @media (max-width: 400px) {
-      flex-wrap: wrap;
-    }
-    justify-content: center;
+    justify-content: flex-start;
     white-space: nowrap;
 
   }
@@ -63,7 +76,8 @@ body {
     grid-template-columns: repeat(4, 4fr);
     grid-column-gap: 1rem;
     justify-content: center;
-
+    grid-row-gap: 65px;
+    margin: 20px 0;
   }
 
   @media (max-width: 1439px) {
@@ -88,12 +102,14 @@ body {
   }
 
   &__top {
+    @media (max-width: 685px) {
+      max-width: 300px;
+    }
     display: flex;
     flex-direction: column;
-    margin: 10px 0 30px 0;
     align-items: center;
     justify-content: space-between;
-    align-content: space-between;
+    align-content: flex-start;
     flex-wrap: nowrap;
     gap: 15px;
   }
@@ -103,7 +119,6 @@ body {
     flex-direction: row;
     gap: 5px;
     justify-content: center;
-
     li {
       padding: 0;
       width: 24px;
@@ -124,9 +139,21 @@ body {
   width: $container-width;
   margin: 0 auto;
   flex-wrap: wrap;
+  align-content: center;
   row-gap: 2vh;
   @media (max-width: 300px) {
     display: list-item;
+  }
+
+  .main_page_filters {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    row-gap: 6px;
+    column-gap: 10px;
+    margin-bottom: 10px;
   }
 
   &--cart {
@@ -241,7 +268,6 @@ body {
 
   .content__title {
     display: flex;
-    align-items: center;
     font-size: 32px;
 
     svg {

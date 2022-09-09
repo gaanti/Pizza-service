@@ -4,13 +4,12 @@ import Skeleton from './skeleton';
 import { useDispatch, useSelector } from "react-redux";
 import { RootState, store } from "../../redux/store";
 import { useGetPizzasQuery } from '../../redux/services/pizza';
-import { setTotalPagesQuantity } from "../../redux/slices/pizza";
+import { setTotalPagesQuantity } from "../../redux/slices/pizzas";
 
 export function Pizzas() {
       const sortBy = useSelector((state: RootState) => state.params.sortBy);
       const filterByCategory = useSelector((state: RootState) => state.params.filterCategoryId);
-      const currentPage = useSelector((state: RootState) => state.pizza.current_page_index);
-      const totalPagesQty = useSelector((state: RootState) => state.pizza.total_pages_qty);
+      const currentPage = useSelector((state: RootState) => state.pizzas.current_page_index);
       const filterTitle = useSelector((state: RootState) => state.params.filterTitle);
       const dispatch = useDispatch()
       //const total_pages_qty = useSelector((state: RootState) => state.pizza.total_pages_qty);
@@ -28,7 +27,7 @@ export function Pizzas() {
             }
       }, [data])
 
-      const status = useSelector((state: RootState) => state.pizza.status);
+      const status = useSelector((state: RootState) => state.pizzas.status);
 
       if (status === 'success' && data) {
             return data.pizzas.content.map((element, index) => {

@@ -1,10 +1,10 @@
 import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch } from '../../../redux/store';
-import { setCurrentPage } from '../../../redux/slices/pizza';
+import { setCurrentPage } from '../../../redux/slices/pizzas';
 
 function Pagination() {
-      const total_pages_qty = useSelector((state: RootState) => state.pizza.total_pages_qty);
-      const current_page_index = useSelector((state: RootState) => state.pizza.current_page_index);
+      const total_pages_qty = useSelector((state: RootState) => state.pizzas.total_pages_qty);
+      const current_page_index = useSelector((state: RootState) => state.pizzas.current_page_index);
 
       const dispatch = useAppDispatch();
 

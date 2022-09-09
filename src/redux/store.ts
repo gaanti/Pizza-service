@@ -1,7 +1,7 @@
 import { configureStore, createListenerMiddleware } from "@reduxjs/toolkit";
 import slice from './slices/filtering_params';
 import cart from './slices/cart';
-import pizza from './slices/pizza';
+import pizzas from './slices/pizzas';
 import { useDispatch } from 'react-redux';
 import { pizzaApi, useGetPizzasQuery } from "./services/pizza";
 
@@ -10,7 +10,7 @@ export const store = configureStore({
       reducer: {
             params: slice,
             cart: cart,
-            pizza: pizza,
+            pizzas: pizzas,
             [pizzaApi.reducerPath]: pizzaApi.reducer
       },
       middleware: (getDefaultMiddleware) => {

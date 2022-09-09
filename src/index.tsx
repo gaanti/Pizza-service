@@ -15,7 +15,7 @@ root.render(
                   <div className="wrapper">
                         <Header />
                         <Routes>
-                              <Route path="/" element={<App />}></Route>
+                              <Route path="/pizzas" element={<App />}></Route>
                               <Route path="cart" element={<Cart />} />
                         </Routes>
                   </div>

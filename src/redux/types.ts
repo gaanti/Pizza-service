@@ -25,14 +25,17 @@ export type pagedPizzas = {
             totalElements: number;
             totalPages: number;
       };
+      doughRadius: doughRadius
+      doughWidths: doughWidths
 };
-
+export type doughRadius = {radius: number}[];
+export type doughWidths = {id: number, doughWidthTitle: string}[];
 export type PizzaForCart = {
       title: string;
       image: string;
       price: number;
-      doughType: string;
-      size: number;
+      doughWidth: string;
+      doughRadius: number;
       quantity: number;
 };
 export type pizza = {
