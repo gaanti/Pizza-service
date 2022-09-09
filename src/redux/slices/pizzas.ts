@@ -41,13 +41,9 @@ export const pizzaSlice = createSlice({
                         console.log('error happened', action);
                   })
                   .addMatcher(pizzaApi.endpoints.getPizzas.matchFulfilled, (state, action) => {
-                        console.log('SUCCESS!!!', action.payload.pizzas);
-                        const POP = action.payload.pizzas.content;
-                        POP.forEach((e: any) => {
-                              e.doughType = JSON.parse(e.doughType);
-                              e.size = JSON.parse(e.size);
-                        });
-                        state.pizzas = POP;
+                        console.log('SUCCESS!!!', action.payload);
+                        debugger
+                        state.pizzas = action.payload.pizzas.content;
                         state.total_pages_qty = action.payload.pizzas.totalPages;
                         state.current_page_index = action.payload.pizzas.pageable.pageNumber;
                         state.status = 'success';
