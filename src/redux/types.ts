@@ -25,11 +25,11 @@ export type pagedPizzas = {
             totalElements: number;
             totalPages: number;
       };
-      doughRadius: doughRadius
-      doughWidths: doughWidths
+      doughRadius: doughRadius;
+      doughWidths: doughWidths;
 };
-export type doughRadius = {radius: number}[];
-export type doughWidths = {id: number, doughWidthTitle: string}[];
+export type doughRadius = { radius: number }[];
+export type doughWidths = { id: number; doughWidthTitle: string }[];
 export type PizzaForCart = {
       title: string;
       image: string;
@@ -41,11 +41,10 @@ export type PizzaForCart = {
 export type pizza = {
       title: string;
       image: string;
-      doughType: string[];
-      size: number[];
       price: number;
       category: string;
       rank: number;
+      ingredients: { id: number; ingredientName: string }[];
 };
 
 export type filteringParams = {
@@ -53,4 +52,4 @@ export type filteringParams = {
       filterCategoryOptions: { id: number; categoryTitle: string }[] | null;
       filterTitle: string | null;
       sortBy: string;
-}
+};

@@ -13,9 +13,19 @@ function PizzaBlock(props: { element: pizza }) {
       const dough_radius = useSelector((state: RootState) => state.pizzas.dough_radius);
       const dough_widths = useSelector((state: RootState) => state.pizzas.dough_widths);
 
+      const mapped_ingredients = props.element.ingredients.map((v) => {
+            return v.ingredientName;
+      });
+      const [ingredients, setIngredients] = useState(mapped_ingredients);
+      const [parent, rerenderParent] = useState(false);
       const [qtyOfItemsInCart, setQtyOfItemsInCart] = useState(0);
       const [doughRadius, setDoughRadius] = useState(dough_radius[0].radius);
       const [doughWidth, setDoughWidth] = useState(dough_widths[0].doughWidthTitle);
+      const lpo = () => {
+            setIngredients(mapped_ingredients)
+            setDoughRadius(dough_radius[0].radius)
+            setDoughWidth(dough_widths[0].doughWidthTitle)
+      }
       const [configureTab, setConfigureTab] = useState(false);
 
       const findAllPizzasByConstantParameters = useCallback(() => {
@@ -51,6 +61,9 @@ function PizzaBlock(props: { element: pizza }) {
                   } else setQtyOfItemsInCart(0);
             }
       }, [increaseQty, fetchedPizzas]);
+      console.log('RENDERED NEW ITEM!!!');
+
+
 
       return (
             <div className="pizza-block__wrapper">
@@ -69,18 +82,20 @@ function PizzaBlock(props: { element: pizza }) {
                                     doughWidth={doughWidth}
                                     increaseQty={func}
                                     qtyOfItemsInCart={qtyOfItemsInCart}
+                                    ingredients={ingredients}
+                                    setIngredients={setIngredients}
+                                    parent={parent}
+                                    rerenderParent={rerenderParent}
+                                    lpo={lpo}
                               />
                         )}
                         <div>
                               <div className="pizza-block__selector">
                                     <div className="pizza-block__description_and_params">
-                                          <p>
-                                                The term originally referred to messages sent using the Short Message Service (SMS). It has
-                                                grown
-                                          </p>
                                           <div>
                                                 <h5>
-                                                      Ingredients: <div> sausages, tomatoes, mayo, green, cheese, eggs</div>
+                                                      Ingredients:
+                                                      <div>{ingredients.join(", ")}</div>
                                                 </h5>
                                                 <h5>
                                                       Dough:{' '}
@@ -113,4 +128,4 @@ function PizzaBlock(props: { element: pizza }) {
       );
 }
 
-export default React.memo(PizzaBlock);
+export default PizzaBlock;

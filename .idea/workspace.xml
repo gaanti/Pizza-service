@@ -7,6 +7,8 @@
     <list default="true" id="7154f848-4d52-4cd8-a3e2-47b003914112" name="Changes" comment="Sorting, filtering and pagination functionality">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/components/pizza-block.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/components/pizza-block.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/components/pizza-parameters/configure.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/components/pizza-parameters/configure.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/components/_pizza-block.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/_pizza-block.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

@@ -1,12 +1,12 @@
 @import './../variables';
 
 .pizza-block {
+  position: relative;
   min-width: 280px;
   max-width: inherit;
   @media (max-width: 340px) {
     width: 280px;
   }
-  position: relative;
   min-height: inherit;
   max-height: inherit;
   text-align: center;
@@ -42,7 +42,7 @@
 
     &_window {
       position: absolute;
-      bottom: -130;
+      top: 320px;
       z-index: 1;
       *{
         font-weight: 600;
@@ -76,7 +76,6 @@
       color: white;*/
 
       h4 {
-        margin-left: 15px;
         margin-bottom: 5px;
         font-weight: 800;
       }
@@ -88,7 +87,8 @@
       }
 
       input[type="search"] {
-        max-width: 115px;
+        max-width: 100%;
+        width: 100%;
         color: white;
         background-color: $black;
         border-radius: $border-radius;
@@ -107,7 +107,6 @@
 
   &__image {
     width: 280px;
-    position: relative;
     display: block;
 
     &:after {
@@ -124,6 +123,7 @@
   }
 
   &__title {
+    top: 300px;
     font-size: 20px;
     @media (max-width: 986px) {
       font-size: 23px;
@@ -185,7 +185,10 @@
 
     h5 {
       text-align: left;
-      font-weight: 800;
+      font-weight: 800;/*
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 5px;*/
     }
 
     p div {

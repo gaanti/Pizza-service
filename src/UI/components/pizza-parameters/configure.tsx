@@ -12,58 +12,76 @@ function Configure(props: {
       doughRadius: number;
       increaseQty: any;
       qtyOfItemsInCart: number;
+      setIngredients: React.Dispatch<React.SetStateAction<string>>;
+      ingredients: string;
+      rerenderParent: any;
+      parent: boolean;
+      lpo: any;
 }) {
-      const Ingredients = ['sausages', 'mayo', 'fish', 'lobster', 'lemon', 'olive', 'bread', 'cheese'];
+      console.log(`${props.ingredients} equal to [] ${props.ingredients == []}`);
+      if (props.ingredients != null && props.ingredients != '') console.log(123);
       return (
             <div className="pizza-block__configure_window DIRECTION_COLUMN">
                   <div className="DIRECTION_COLUMN">
                         <h4 className="DIRECTION_ROW" style={{ whiteSpace: 'nowrap' }}>
-                              Add ingredient <input type="search" placeholder="Ingredient"/>
+                              Add ingredient <input type="search" placeholder="Ingredient" />
                         </h4>
                         <ul
-                              style={{
-                                    display: 'grid',
-                                    gridTemplateColumns: 'max-content min-content',
-                                    justifyContent: 'space-between'
-                              }}>
-                              {Ingredients.map((v) => {
-                                    return (
-                                          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                                <li>{v}</li>
-                                                <img src="cancel.svg" />
-                                          </div>
-                                    );
-                              })}
+                              style={
+                                    props.ingredients != ''
+                                          ? {
+                                                  display: 'grid',
+                                                  gridTemplateColumns: '1fr 1fr',
+                                                  justifyContent: 'space-between'
+                                            }
+                                          : { display: 'block' }
+                              }>
+                              {props.ingredients != '' ? (
+                                    props.ingredients.map((v) => {
+                                          return (
+                                                <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
+                                                  <img
+                                                    src="cancel.svg"
+                                                    style={{ width: '24px', height: '24px' }}
+                                                    onClick={() => {
+                                                      const popo = props.ingredients;
+                                                      popo.splice(popo.indexOf(v), 1);
+                                                      console.log(popo);
+                                                      props.rerenderParent(!props.parent);
+                                                      props.setIngredients(popo);
+                                                    }}
+                                                  />
+                                                  <li>{v}</li>
+                                                </div>
+                                          );
+                                    })
+                              ) : (
+                                    <div>Wtf?! Dude, you are going to order dough 🤪.</div>
+                              )}
                         </ul>
                   </div>
-                  <div className="DIRECTION_COLUMN">
-                        <DoughParams
-                              setDoughRadius={props.setDoughRadius}
-                              setDoughWidth={props.setDoughWidth}
-                              doughRadius={props.doughRadius}
-                              doughWidth={props.doughWidth}
-                        />
+                  <DoughParams
+                        setDoughRadius={props.setDoughRadius}
+                        setDoughWidth={props.setDoughWidth}
+                        doughRadius={props.doughRadius}
+                        doughWidth={props.doughWidth}
+                  />
 
-                        <div className="DIRECTION_COLUMN">
-                              <div className="DIRECTION_ROW_WITHOUT_GAP" style={{ width: '100%' }}>
-                                    <div
-                                          className="pizza-block__configure_button"
-                                          onClick={() => props.setConfigureTab(!props.configureTab)}>
-                                          Reset
-                                    </div>
-                                    <div
-                                          className="button button--outline button--add"
-                                          onClick={() => {
-                                                props.increaseQty();
-                                          }}>
-                                          <span>Add to cart</span>
-                                          {props.qtyOfItemsInCart ? <i>{props.qtyOfItemsInCart}</i> : ''}
-                                    </div>
-                                    <div
-                                          className="pizza-block__configure_button"
-                                          onClick={() => props.setConfigureTab(!props.configureTab)}>
-                                          Save & close
-                                    </div>
+                  <div className="DIRECTION_COLUMN">
+                        <div className="DIRECTION_ROW_WITHOUT_GAP" style={{ width: '100%' }}>
+                              <div className="pizza-block__configure_button" onClick={() => props.lpo()}>
+                                    Reset
+                              </div>
+                              <div
+                                    className="button button--outline button--add"
+                                    onClick={() => {
+                                          props.increaseQty();
+                                    }}>
+                                    <span>Add to cart</span>
+                                    {props.qtyOfItemsInCart ? <i>{props.qtyOfItemsInCart}</i> : ''}
+                              </div>
+                              <div className="pizza-block__configure_button" onClick={() => props.setConfigureTab(!props.configureTab)}>
+                                    Save & close
                               </div>
                         </div>
                   </div>
