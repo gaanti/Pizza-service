@@ -53,4 +53,4 @@ export type filteringParams = {
       filterCategoryOptions: { id: number; categoryTitle: string }[] | null;
       filterTitle: string | null;
       sortBy: string;
-};
+}

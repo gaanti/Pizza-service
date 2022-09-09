@@ -34,7 +34,7 @@
     border-radius: $border-radius;
     background: rgb(226, 17, 67);
     //background: linear-gradient(135deg, rgba(226,17,67,1) 0%, rgba(255,176,58,1) 100%);
-    background: linear-gradient(135deg, rgba(35, 35, 35, 0.3) 0%, $orange 100%);
+    background: linear-gradient(135deg, $background 0%, $orange 100%);
     position: absolute;
     left: 50%;
     top: 50%;

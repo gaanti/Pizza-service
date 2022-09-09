@@ -6,19 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="7154f848-4d52-4cd8-a3e2-47b003914112" name="Changes" comment="Sorting, filtering and pagination functionality">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/components/doughParams.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/components/doughParams.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/components/pizza-block.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/components/pizza-block.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/components/pizza-parameters/configure.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/components/pizza-parameters/configure.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/components/pizzas.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/components/pizzas.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/main-page/main-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/main-page/main-page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/services/pizza.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/services/pizza.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slices/cart.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/cart.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slices/filtering_params.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/filtering_params.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/cart-item.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/cart/cart-item.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/slices/pizzas.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/pizzas.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/components/_pizza-block.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/_pizza-block.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/components/_categories.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/_categories.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/components/live-gradient-border.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/live-gradient-border.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

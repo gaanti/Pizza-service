@@ -14,7 +14,7 @@ function CartItem(props: { pizzasInCart: PizzaForCart }) {
                         <div className="cart__item-info">
                               <h3>{props.pizzasInCart.title}</h3>
                               <p>
-                                    {props.pizzasInCart.doughType} crust, {props.pizzasInCart.size}cm.
+                                    {props.pizzasInCart.doughWidth} crust, {props.pizzasInCart.doughRadius}cm.
                               </p>
                         </div>
                         <div className="cart__item-count">
@@ -26,8 +26,8 @@ function CartItem(props: { pizzasInCart: PizzaForCart }) {
                                                       title: props.pizzasInCart.title,
                                                       image: props.pizzasInCart.image,
                                                       price: props.pizzasInCart.price,
-                                                      doughType: props.pizzasInCart.doughType as string,
-                                                      size: props.pizzasInCart.size as number,
+                                                      doughWidth: props.pizzasInCart.doughWidth as string,
+                                                      doughRadius: props.pizzasInCart.doughRadius as number,
                                                       quantity: 1
                                                 })
                                           )
@@ -47,8 +47,8 @@ function CartItem(props: { pizzasInCart: PizzaForCart }) {
                                                       title: props.pizzasInCart.title,
                                                       image: props.pizzasInCart.image,
                                                       price: props.pizzasInCart.price,
-                                                      doughType: props.pizzasInCart.doughType as string,
-                                                      size: props.pizzasInCart.size as number,
+                                                      doughWidth: props.pizzasInCart.doughWidth as string,
+                                                      doughRadius: props.pizzasInCart.doughRadius as number,
                                                       quantity: 1
                                                 })
                                           )
@@ -68,8 +68,8 @@ function CartItem(props: { pizzasInCart: PizzaForCart }) {
                                                             title: props.pizzasInCart.title,
                                                             image: props.pizzasInCart.image,
                                                             price: props.pizzasInCart.price,
-                                                            doughType: props.pizzasInCart.doughType as string,
-                                                            size: props.pizzasInCart.size as number,
+                                                            doughWidth: props.pizzasInCart.doughWidth as string,
+                                                            doughRadius: props.pizzasInCart.doughRadius as number,
                                                             quantity: 1
                                                       })
                                                 );

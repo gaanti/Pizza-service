@@ -8,12 +8,13 @@
   ul {
     padding: 10px;
     display: flex;
-    max-width: 100%;
     overflow-x: auto;
     overflow-y: hidden;
 
     li {
-      position: static;
+      white-space: nowrap;
+      height: min-content;
+      max-height: min-content;
       background-color: #f9f9f9;
       padding: 13px 30px;
       border-radius: $border-radius;
