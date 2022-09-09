@@ -3,8 +3,10 @@
 .sort {
   position: relative;
 
+  display: flex;
+  align-items: center;
+
   &__label {
-    margin-top: 8px;
     display: flex;
     align-items: center;
 

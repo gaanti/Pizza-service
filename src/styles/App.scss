@@ -18,6 +18,14 @@ body {
   flex-direction: row;
   gap: 8px;
 }
+.DIRECTION_COLUMN_WITHOUT_GAP{
+  display: flex;
+  flex-direction: column;
+}
+.DIRECTION_ROW_WITHOUT_GAP{
+  display: flex;
+  flex-direction: row;
+}
 .WHITE_FONT {
   color: white;
 }
@@ -65,6 +73,7 @@ body {
   &__title {
     margin: auto 0;
     display: flex;
+    column-gap: 15px;
     flex-direction: row;
     justify-content: flex-start;
     white-space: nowrap;

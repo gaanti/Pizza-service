@@ -7,8 +7,8 @@
 
   position: relative;
   overflow: hidden;
-  height: $icon-block-size;
-  width: $icon-block-size;
+  min-height: $icon-block-size;
+  min-width: $icon-block-size;
   box-shadow: 0 4px 40px -16px rgba(0, 0, 0, 0.2);
   border-radius: $border-radius;
 

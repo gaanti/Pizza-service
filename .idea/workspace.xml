@@ -6,11 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="7154f848-4d52-4cd8-a3e2-47b003914112" name="Changes" comment="Sorting, filtering and pagination functionality">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/cart-item.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/cart/cart-item.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/components/doughParams.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/components/doughParams.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/components/pizza-block.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/components/pizza-block.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/components/pizza-parameters/configure.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/components/pizza-parameters/configure.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/slices/pizzas.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/pizzas.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/App.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/_variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/components/_categories.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/_categories.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/components/_button.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/_button.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/components/_pizza-block.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/_pizza-block.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/components/_search.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/_search.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/components/_sort.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/_sort.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/components/live-gradient-border.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/live-gradient-border.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -197,7 +202,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="temp0" />
+                        <option value="master" />
                       </list>
                     </value>
                   </entry>

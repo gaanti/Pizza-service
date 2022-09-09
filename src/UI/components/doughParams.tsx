@@ -11,8 +11,9 @@ function DoughParams(props: {
       const dough_radius = useSelector((state: RootState) => state.pizzas.dough_radius);
       const dough_widths = useSelector((state: RootState) => state.pizzas.dough_widths);
       return (
-            <div>
+            <div className="pizza-block__selector">
                   <ul>
+                        <div style={{ display: 'inline-block', width: 'auto' }}>Dough width</div>{' '}
                         {dough_widths.map((e) => {
                               return (
                                     <li
@@ -25,6 +26,7 @@ function DoughParams(props: {
                         })}
                   </ul>
                   <ul>
+                        <div style={{ display: 'inline-block', width: 'auto' }}>Dough rad.</div>{' '}
                         {dough_radius.map((e) => {
                               return (
                                     <li

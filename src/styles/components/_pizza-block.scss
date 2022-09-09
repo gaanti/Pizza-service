@@ -1,51 +1,104 @@
 @import './../variables';
 
 .pizza-block {
-  width: 280px;
+  min-width: 280px;
+  max-width: inherit;
+  @media (max-width: 340px) {
+    width: 280px;
+  }
+  min-height: inherit;
+  max-height: inherit;
   text-align: center;
   display: flex;
   margin: auto;
   flex-direction: column;
 
+  & > img {
+    margin: auto;
+  }
+
   &__configure {
     &_button {
       background-color: $black;
+      text-align: center;
       color: $white;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      padding: 5px 0;
       border-radius: $border-radius;
 
       transition: all $duration ease-in-out, border-color $duration ease-in-out;
-
       &:hover {
-        background-color: #ffffff;
+        background-color: #f9f9f9;
         color: #000;
-        border: solid black 1px;
       }
 
       word-break: keep-all;
-      white-space: nowrap;
     }
-    &_window{
+
+    &_window {
+      *{
+        font-weight: 600;
+      }
+      padding: 10px;
+      background-color: $background;
+      border-radius: $border-radius;
+      h4{
+        font-weight: 700;
+      }
+
+      ul {
+        display: inline-block;
+        width: auto;
+        li {
+          text-align: left;
+          font-size: 12px;
+          display: inline-block;
+          width: auto;
+        }
+      }
+
       text-align: left;
-      position: absolute;
-      width: 280px;
-      height: 463px;
-      background-color: white;
+      width: inherit;
+      min-width: inherit;
+      max-width: 95%;
+      max-height: inherit;
+      //background-color: white;
       /*
       background-color: black;
       color: white;*/
-      left: 0;
-      bottom: 0;
-      z-index: 10;
-      h4{
+
+      h4 {
         margin-left: 15px;
         margin-bottom: 5px;
       }
-      justify-content: space-between;
-      &_dough_params{
+
+      justify-content: flex-start;
+
+      &_dough_params {
         justify-content: space-evenly;
+      }
+
+      input[type="search"] {
+        max-width: 115px;
+        color: white;
+        background-color: $black;
+        border-radius: $border-radius;
+        border: unset;
+        padding-left: 10px;
       }
     }
   }
+
+  &__wrapper {
+    max-width: 280px;
+    min-height: 435px;
+    max-height: 840px;
+    margin: auto;
+  }
+
   &__image {
     width: 280px;
     position: relative;
@@ -103,10 +156,6 @@
       justify-content: space-evenly;
 
       li {
-        &:before {
-          content: "Dough ";
-        }
-
         flex: 1;
         cursor: pointer;
         border-radius: $border-radius*0.2;
@@ -160,29 +209,34 @@
     }
   }
 
-  &__selector {
+  &__selector {/*
     display: flex;
     background-color: unset;
     border-radius: $border-radius;
     flex-direction: column;
-    row-gap: 5px;
-    max-width: min-content;
 
-     ul {
+    row-gap: 10px;
+    text-align: left;
+*/
+    ul {
       display: flex;
-      column-gap: 15px;
-
+      flex-direction: row;
+      column-gap: 5px;
+      align-items: center;
+      div{
+        font-weight: 800;
+        font-size: 13px;
+      }
       li {
         padding: 8px;
         flex: 1;
         cursor: pointer;
         font-weight: 600;
-        font-size: 14px;
-        border-radius: $border-radius*0.2;
+        font-size: 10px;
+        width: min-content;
+
+        border-radius: $border-radius;
         @include noselect();
-        @media (max-width: 986px) {
-          font-size: 16px;
-        }
         transition: 200ms;
         background-color: #f4f4f4;
         color: black;
@@ -228,4 +282,14 @@
     line-height: 27px;
     letter-spacing: 0.015em;
   }
+/*
+  &__add_to_cart_button{
+    span{
+      color: white;
+    }
+    padding: 5px 0 ;
+    border-radius: $border-radius;
+    background-color: $black;
+    color: white;
+  }*/
 }

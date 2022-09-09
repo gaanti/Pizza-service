@@ -47,7 +47,6 @@ export const pizzaSlice = createSlice({
                         state.pizzas = action.payload.pizzas.content;
                         state.total_pages_qty = action.payload.pizzas.totalPages;
                         state.current_page_index = action.payload.pizzas.pageable.pageNumber;
-                        debugger
                         state.dough_radius = action.payload.doughRadius;
                         state.dough_widths = action.payload.doughWidths;
                         state.status = 'success';
