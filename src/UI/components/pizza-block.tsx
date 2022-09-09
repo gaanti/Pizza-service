@@ -57,7 +57,7 @@ function PizzaBlock(props: { element: pizza }) {
                   <div className="pizza-block">
                         <img className="pizza-block__image" src={'data:image/jpg;base64,' + props.element.image} alt="Pizza" />
                         <h4 className="pizza-block__title">{props.element.title}</h4>
-                        {configureTab ? (
+                        {configureTab && (
                               <Configure
                                     setConfigureTab={setConfigureTab}
                                     configureTab={configureTab}
@@ -70,46 +70,44 @@ function PizzaBlock(props: { element: pizza }) {
                                     increaseQty={func}
                                     qtyOfItemsInCart={qtyOfItemsInCart}
                               />
-                        ) : (
-                              <div>
-                                    <div className="pizza-block__selector">
-                                          <div className="pizza-block__description_and_params">
-                                                <p>
-                                                      The term originally referred to messages sent using the Short Message Service (SMS).
-                                                      It has grown
-                                                </p>
-                                                <div>
-                                                      <h5>
-                                                            Ingredients: <div> sausages, tomatoes, mayo, green, cheese, eggs</div>
-                                                      </h5>
-                                                      <h5>
-                                                            Dough:{' '}
-                                                            <div>
-                                                                  width: {doughWidth}, radius: {doughRadius} ️
-                                                            </div>
-                                                      </h5>
-                                                </div>
-                                          </div>
-                                    </div>
-                                    <div className="pizza-block__bottom">
-                                          <div className="pizza-block__price">${props.element.price}</div>
-                                          <div className="DIRECTION_ROW_WITHOUT_GAP">
-                                                <div
-                                                      className="pizza-block__configure_button"
-                                                      onClick={() => setConfigureTab(!configureTab)}>
-                                                      Configure
-                                                </div>
-                                                <div
-                                                      className="button button--outline button--add"
-                                                      onClick={() => {increaseQty();
-                                                      }}>
-                                                      <span>Add to cart</span>
-                                                      {qtyOfItemsInCart ? <i>{qtyOfItemsInCart}</i> : ''}
-                                                </div>
+                        )}
+                        <div>
+                              <div className="pizza-block__selector">
+                                    <div className="pizza-block__description_and_params">
+                                          <p>
+                                                The term originally referred to messages sent using the Short Message Service (SMS). It has
+                                                grown
+                                          </p>
+                                          <div>
+                                                <h5>
+                                                      Ingredients: <div> sausages, tomatoes, mayo, green, cheese, eggs</div>
+                                                </h5>
+                                                <h5>
+                                                      Dough:{' '}
+                                                      <div>
+                                                            width: {doughWidth}, radius: {doughRadius} ️
+                                                      </div>
+                                                </h5>
                                           </div>
                                     </div>
                               </div>
-                        )}
+                              <div className="pizza-block__bottom">
+                                    <div className="pizza-block__price">${props.element.price}</div>
+                                    <div className="DIRECTION_ROW_WITHOUT_GAP">
+                                          <div className="pizza-block__configure_button" onClick={() => setConfigureTab(!configureTab)}>
+                                                Configure
+                                          </div>
+                                          <div
+                                                className="button button--outline button--add"
+                                                onClick={() => {
+                                                      increaseQty();
+                                                }}>
+                                                <span>Add to cart</span>
+                                                {qtyOfItemsInCart ? <i>{qtyOfItemsInCart}</i> : ''}
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
                   </div>
             </div>
       );
