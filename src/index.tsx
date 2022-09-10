@@ -12,7 +12,7 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
       <Provider store={store}>
             <BrowserRouter>
-                  <div className="wrapper">
+              <div className="wrapper">
                         <Header />
                         <Routes>
                               <Route path="/pizzas" element={<App />}></Route>

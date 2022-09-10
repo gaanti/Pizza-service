@@ -28,7 +28,7 @@ function Header() {
       const MemorizedHeader = React.memo(Header)
 
       return (
-            <div className="header">
+            <div className="header" style={{position: "sticky"}}>
                   <div className="header__container">
                         <MemorizedHeader/>
                         {/*@ts-ignore*/}

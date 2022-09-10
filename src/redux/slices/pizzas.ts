@@ -1,10 +1,11 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 import { pizzaApi } from '../services/pizza';
-import { doughRadius, doughWidths, pizza } from '../types';
+import { doughRadius, doughWidths, ingredients, pizza } from "../types";
 
 const initialState = {
       pizzas: [] as pizza[],
+      ingredients: [] as ingredients[],
       dough_radius: [] as doughRadius,
       dough_widths: [] as doughWidths,
       total_pages_qty: 1,
@@ -49,6 +50,8 @@ export const pizzaSlice = createSlice({
                         state.current_page_index = action.payload.pizzas.pageable.pageNumber;
                         state.dough_radius = action.payload.doughRadius;
                         state.dough_widths = action.payload.doughWidths;
+                        // @ts-ignore
+                        state.ingredients = action.payload.ingredients
                         state.status = 'success';
                   });
       }

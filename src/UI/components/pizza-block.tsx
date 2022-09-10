@@ -70,6 +70,7 @@ function PizzaBlock(props: { element: pizza }) {
                         <img className="pizza-block__image" src={'data:image/jpg;base64,' + props.element.image} alt="Pizza" />
                         <h4 className="pizza-block__title">{props.element.title}</h4>
                         {configureTab && (
+                          /*@ts-ignore*/
                               <Configure
                                     setConfigureTab={setConfigureTab}
                                     configureTab={configureTab}

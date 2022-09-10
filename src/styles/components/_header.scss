@@ -3,7 +3,8 @@
 .header {
   border-bottom: 1px solid $gray-line;
   padding: 10px;
-  position: sticky !important;
+  border-radius: $border-radius;
+  /*position: sticky !important;*/
   top: 0;
   align-self: flex-start;
   height: auto;

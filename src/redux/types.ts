@@ -1,5 +1,5 @@
 export type pagedPizzas = {
-      categories: { id: number; categoryTitle: string }[];
+      categories: category[];
 
       pizzas: {
             content: pizza[];
@@ -27,13 +27,18 @@ export type pagedPizzas = {
       };
       doughRadius: doughRadius;
       doughWidths: doughWidths;
-      ingredients: {
-            id: number;
-            ingredientName: string;
-      }[];
+      ingredients: ingredient[]
 };
 export type doughRadius = { radius: number }[];
 export type doughWidths = { id: number; doughWidthTitle: string }[];
+export type category = {
+      id: number; categoryTitle: string
+}
+
+export type ingredient = {
+      id: number;
+      ingredientName: string;
+};
 
 export interface PizzaForCart extends pizza {
       doughWidth: string;
@@ -47,7 +52,7 @@ export type pizza = {
       price: number;
       category: string;
       rank: number;
-      ingredients: { id: number; ingredientName: string }[];
+      ingredients: ingredient[];
 };
 
 export type filteringParams = {

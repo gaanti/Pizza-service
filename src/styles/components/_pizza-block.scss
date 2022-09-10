@@ -53,14 +53,33 @@
       h4{
         font-weight: 700;
       }
-
-      ul {
+      &-add-ingredient{
+        margin-top: 5px;
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 5px;
+        row-gap: 5px;
+        & li {
+          text-align: left;
+          font-size: 12px;
+          display: flex;
+          align-items: center;
+          width: auto;
+          img{
+            rotate: z 45deg;
+            width: 18px;
+            height: 18px;
+          }
+        }
+      }
+      &-ingredients-table {
         display: inline-block;
         width: auto;
         li {
           text-align: left;
           font-size: 12px;
-          display: inline-block;
+          display: flex;
+          align-items: center;
           width: auto;
         }
       }
@@ -76,7 +95,6 @@
       color: white;*/
 
       h4 {
-        margin-bottom: 5px;
         font-weight: 800;
       }
 
@@ -86,7 +104,7 @@
         justify-content: space-evenly;
       }
 
-      input[type="search"] {
+      input[type="text"] {
         max-width: 100%;
         width: 100%;
         color: white;
