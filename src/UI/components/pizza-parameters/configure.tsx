@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, memo } from 'react';
 import DoughParams from '../doughParams';
 import isequal from 'lodash.isequal';
 import differencewith from 'lodash.differencewith';
@@ -27,7 +27,7 @@ function Configure(props: {
       const selected = useSelector(ingredientsSelect);
       const [searchIngredientArray, setSearchIngredientArray] = useState([] as ingredient[]);
       const [searchIngredient, setSearchIngredient] = useState('');
-      const ingredients = structuredClone(selected).map((e: { ingredientName: string }) => e.ingredientName);
+      const ingredients = structuredClone(selected).map((e: { ingredientName: any }) => e.ingredientName);
 
       useEffect(() => {
             popo();
@@ -71,13 +71,11 @@ function Configure(props: {
                                           {searchIngredientArray.map((v) => {
                                                 return (
                                                       <li>
-                                                            {/*@ts-ignore*/}
                                                             <div>{v}</div>
                                                             {/*PLUS from rotated cancel 45deg*/}
                                                             <img
                                                                   src="cancel.svg"
                                                                   onClick={() => {
-                                                                        {/*@ts-ignore*/}
                                                                         props.setIngredients([...props.ingredients, v]);
                                                                         props.rerenderParent(!props.parent);
                                                                   }}
@@ -151,4 +149,4 @@ function Configure(props: {
       );
 }
 
-export default Configure;
+export default memo(Configure);

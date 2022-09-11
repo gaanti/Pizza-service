@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import { useSelector } from 'react-redux';
 import { dough_radiusSelect, dough_widthsSelect } from '../../redux/slices/pizzas';
 
@@ -43,4 +43,4 @@ function DoughParams(props: {
       );
 }
 
-export default DoughParams;
+export default memo(DoughParams);

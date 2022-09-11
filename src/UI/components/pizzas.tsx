@@ -6,7 +6,7 @@ import { RootState } from '../../redux/store';
 import { useGetPizzasQuery } from '../../redux/services/pizza';
 import { current_page_indexSelect, setTotalPagesQuantity, statusSelect } from '../../redux/slices/pizzas';
 
-export default function Pizzas() {
+function Pizzas() {
       const sortBy = useSelector((state: RootState) => state.params.sortBy);
       const filterByCategory = useSelector((state: RootState) => state.params.filterCategoryId);
       const currentPage = useSelector(current_page_indexSelect);
@@ -36,3 +36,4 @@ export default function Pizzas() {
             return <Skeleton />;
       } else return 'Something bad happened';
 }
+export default React.memo(Pizzas)

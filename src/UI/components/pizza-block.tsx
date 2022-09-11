@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState, memo } from 'react';
 import { addItemOrIncreaseQuantity } from '../../redux/slices/cart';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
@@ -91,22 +91,24 @@ function PizzaBlock(props: { element: pizza }) {
                               />
                         )}
                         <div>
-                              <div className="pizza-block__selector">
-                                    <div className="pizza-block__description_and_params">
-                                          <div>
-                                                <h5>
-                                                      Ingredients:
-                                                      <div>{ingredients.join(', ')}</div>
-                                                </h5>
-                                                <h5>
-                                                      Dough:{' '}
-                                                      <div>
-                                                            width: {doughWidth}, radius: {doughRadius} ️
-                                                      </div>
-                                                </h5>
+                              {
+                                    <div className="pizza-block__selector">
+                                          <div className="pizza-block__description_and_params">
+                                                <div>
+                                                      <h5>
+                                                            Ingredients:
+                                                            <div>{ingredients.join(', ')}</div>
+                                                      </h5>
+                                                      <h5>
+                                                            Dough:{' '}
+                                                            <div>
+                                                                  width: {doughWidth}, radius: {doughRadius} ️
+                                                            </div>
+                                                      </h5>
+                                                </div>
                                           </div>
                                     </div>
-                              </div>
+                              }
                               <div className="pizza-block__bottom">
                                     <div className="pizza-block__price">${props.element.price}</div>
                                     <div className="DIRECTION_ROW_WITHOUT_GAP">
@@ -128,5 +130,4 @@ function PizzaBlock(props: { element: pizza }) {
             </div>
       );
 }
-
-export default PizzaBlock;
+export default React.memo(PizzaBlock);

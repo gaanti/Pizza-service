@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from "react";
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { cartItemsSelect, cartTotalPriceSelect } from '../../../redux/slices/cart';
@@ -17,6 +17,16 @@ function CartButton() {
                   setQuantity(temp);
             }
       }, [pizzasArray, totalCost]);
+      const popo = useMemo(() => {
+            let temp = 0;
+            if (pizzasArray) {
+                  for (let i = 0; i < pizzasArray.length; i++) {
+                        temp += pizzasArray[i].quantity;
+                        //setQuantity(quantity + pizzasArray[i].quantity);
+                  }
+            }
+            return temp
+      }, [pizzasArray,totalCost, quantity]);
 
       return (
             <div className="header__cart">
@@ -24,10 +34,10 @@ function CartButton() {
                         <span>$ {totalCost}</span>
                         <div className="button__delimiter"></div>
                         <img src="cart.svg" width="18" height="18"></img>
-                        <span>{quantity}</span>
+                        <span>{popo}</span>
                   </Link>
             </div>
       );
 }
 
-export default CartButton;
+export default React.memo(CartButton);
