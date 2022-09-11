@@ -29,8 +29,8 @@
   &::after {
     will-change: transform;
     content: "";
-    height: sqrt(2)*$icon-block-size*0.95;
-    width: sqrt(2)*$icon-block-size*0.95;
+    height: sqrt(2)*$icon-block-size*0.99;
+    width: sqrt(2)*$icon-block-size*0.99;
     border-radius: $border-radius;
     background: rgb(226, 17, 67);
     //background: linear-gradient(135deg, rgba(226,17,67,1) 0%, rgba(255,176,58,1) 100%);

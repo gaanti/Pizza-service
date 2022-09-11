@@ -7,11 +7,13 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { store } from './redux/store';
 import Header from './UI/header';
 import Cart from './UI/pages/cart/cart';
+import Landing from "./UI/Landing";
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
       <Provider store={store}>
             <BrowserRouter>
+              <Landing/>
               <div className="wrapper">
                         <Header />
                         <Routes>
