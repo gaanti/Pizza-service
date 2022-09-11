@@ -1,7 +1,7 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 import { pizzaApi } from '../services/pizza';
-import { doughRadius, doughWidths, ingredients, pizza } from "../types";
+import { doughRadius, doughWidths, ingredients, pizza } from '../types';
 
 const initialState = {
       pizzas: [] as pizza[],
@@ -18,13 +18,10 @@ export const pizzaSlice = createSlice({
       initialState,
 
       reducers: {
-            setPizzas: (state, action: PayloadAction<any>) => {
-                  state.pizzas = action.payload;
-            },
             setCurrentPage: (state, action: PayloadAction<number>) => {
-                  const temp = Number(action.payload)
+                  const temp = Number(action.payload);
                   if (typeof temp == 'number' && !isNaN(temp)) {
-                        console.log("index changed");
+                        console.log('index changed');
                         state.current_page_index = action.payload;
                   }
             },
@@ -50,13 +47,19 @@ export const pizzaSlice = createSlice({
                         state.current_page_index = action.payload.pizzas.pageable.pageNumber;
                         state.dough_radius = action.payload.doughRadius;
                         state.dough_widths = action.payload.doughWidths;
-                        // @ts-ignore
-                        state.ingredients = action.payload.ingredients
+                        state.ingredients = action.payload.ingredients;
                         state.status = 'success';
                   });
       }
 });
 
-export const { setPizzas, setCurrentPage, setTotalPagesQuantity } = pizzaSlice.actions;
+export const ingredientsSelect = (state) => state.pizzas.ingredients;
+export const dough_radiusSelect = (state) => state.pizzas.dough_radius;
+export const dough_widthsSelect = (state) => state.pizzas.dough_widths;
+export const total_pages_qtySelect = (state) => state.pizzas.total_pages_qty;
+export const current_page_indexSelect = (state) => state.pizzas.current_page_index;
+export const statusSelect = (state) => state.pizzas.status;
+
+export const { setCurrentPage, setTotalPagesQuantity } = pizzaSlice.actions;
 
 export default pizzaSlice.reducer;

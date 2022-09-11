@@ -4,7 +4,7 @@ import isequal from 'lodash.isequal';
 import differencewith from 'lodash.differencewith';
 import { ingredient, pizza } from '../../../redux/types';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../../redux/store';
+import { ingredientsSelect } from '../../../redux/slices/pizzas';
 
 function Configure(props: {
       setConfigureTab: React.Dispatch<React.SetStateAction<boolean>>;
@@ -24,7 +24,7 @@ function Configure(props: {
       resetPizzaParams: any;
       fetchedPizzas: pizza;
 }) {
-      const selected = useSelector((state: RootState) => state.pizzas.ingredients);
+      const selected = useSelector(ingredientsSelect);
       const [searchIngredientArray, setSearchIngredientArray] = useState([] as ingredient[]);
       const [searchIngredient, setSearchIngredient] = useState('');
       const ingredients = structuredClone(selected).map((e) => e.ingredientName);
@@ -32,7 +32,6 @@ function Configure(props: {
       useEffect(() => {
             popo();
             const popop = differencewith(ingredients, props.ingredients, isequal);
-            debugger;
             return searchIngredient.trim() != '' && searchIngredient.trim() != null
                   ? setSearchIngredientArray(popop.filter((value) => value.includes(searchIngredient)))
                   : /*? setSearchIngredientArray( differencewith(ingredients, props.ingredients, isequal))*/
@@ -43,12 +42,6 @@ function Configure(props: {
             for (let i = 0; i < props.ingredients.length; i++) {
                   for (let j = 0; j < ingredients.length; j++) {
                         if (ingredients[j].ingredientName === props.ingredients[i]) {
-                              debugger;
-                              console.log(
-                                    ingredients[j].ingredientName === props.ingredients[i],
-                                    ingredients[j].ingredientName,
-                                    props.ingredients[i]
-                              );
                               ingredients.splice(j, 1);
                         }
                   }

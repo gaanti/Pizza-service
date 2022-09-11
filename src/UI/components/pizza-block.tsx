@@ -1,17 +1,18 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { addItemOrIncreaseQuantity } from '../../redux/slices/cart';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
 import { pizza } from '../../redux/types';
 import Configure from './pizza-parameters/configure';
+import { dough_widthsSelect } from '../../redux/slices/pizzas';
 
 function PizzaBlock(props: { element: pizza }) {
       const dispatch = useDispatch();
 
       const cartPizzas = useSelector((state: RootState) => state.cart.items);
       const fetchedPizzas = useSelector((state: RootState) => state.pizzas.pizzas);
-      const dough_radius = useSelector((state: RootState) => state.pizzas.dough_radius);
-      const dough_widths = useSelector((state: RootState) => state.pizzas.dough_widths);
+      const dough_radius = useSelector(dough_widthsSelect);
+      const dough_widths = useSelector(dough_widthsSelect);
 
       const mapped_ingredients = props.element.ingredients.map((v) => {
             return v.ingredientName;
@@ -22,10 +23,10 @@ function PizzaBlock(props: { element: pizza }) {
       const [doughRadius, setDoughRadius] = useState(dough_radius[0].radius);
       const [doughWidth, setDoughWidth] = useState(dough_widths[0].doughWidthTitle);
       const resetPizzaParams = () => {
-            setIngredients(mapped_ingredients)
-            setDoughRadius(dough_radius[0].radius)
-            setDoughWidth(dough_widths[0].doughWidthTitle)
-      }
+            setIngredients(mapped_ingredients);
+            setDoughRadius(dough_radius[0].radius);
+            setDoughWidth(dough_widths[0].doughWidthTitle);
+      };
       const [configureTab, setConfigureTab] = useState(false);
 
       const findAllPizzasByConstantParameters = useCallback(() => {
@@ -62,15 +63,13 @@ function PizzaBlock(props: { element: pizza }) {
             }
       }, [increaseQty, fetchedPizzas]);
 
-
-
       return (
             <div className="pizza-block__wrapper">
                   <div className="pizza-block">
                         <img className="pizza-block__image" src={'data:image/jpg;base64,' + props.element.image} alt="Pizza" />
                         <h4 className="pizza-block__title">{props.element.title}</h4>
                         {configureTab && (
-                          /*@ts-ignore*/
+                              /*@ts-ignore*/
                               <Configure
                                     setConfigureTab={setConfigureTab}
                                     configureTab={configureTab}
@@ -96,7 +95,7 @@ function PizzaBlock(props: { element: pizza }) {
                                           <div>
                                                 <h5>
                                                       Ingredients:
-                                                      <div>{ingredients.join(", ")}</div>
+                                                      <div>{ingredients.join(', ')}</div>
                                                 </h5>
                                                 <h5>
                                                       Dough:{' '}

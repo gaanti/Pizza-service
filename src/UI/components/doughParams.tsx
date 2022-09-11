@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../redux/store';
+import { dough_radiusSelect, dough_widthsSelect } from '../../redux/slices/pizzas';
 
 function DoughParams(props: {
       setDoughRadius: React.Dispatch<React.SetStateAction<number>>;
@@ -8,8 +8,9 @@ function DoughParams(props: {
       doughWidth: string;
       doughRadius: number;
 }) {
-      const dough_radius = useSelector((state: RootState) => state.pizzas.dough_radius);
-      const dough_widths = useSelector((state: RootState) => state.pizzas.dough_widths);
+      const dough_radius = useSelector(dough_radiusSelect);
+      const dough_widths = useSelector(dough_widthsSelect);
+
       return (
             <div className="pizza-block__selector">
                   <ul>

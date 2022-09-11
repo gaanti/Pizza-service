@@ -9,11 +9,12 @@ import qs from 'qs';
 import { setGetParams } from '../../../redux/slices/filtering_params';
 import { useNavigate } from 'react-router-dom';
 import Pagination from '../../components/pizza-parameters/pagination';
+import { current_page_indexSelect } from '../../../redux/slices/pizzas';
 
 function MainPage() {
       const sortBy = useSelector((state: RootState) => state.params.sortBy);
       const filterByCategoryId = useSelector((state: RootState) => state.params.filterCategoryId);
-      const currentPage = useSelector((state: RootState) => state.pizzas.current_page_index);
+      const currentPage = useSelector(current_page_indexSelect);
       const filterTitle = useSelector((state: RootState) => state.params.filterTitle);
       const nav2 = useNavigate();
       const dispatch = useAppDispatch();

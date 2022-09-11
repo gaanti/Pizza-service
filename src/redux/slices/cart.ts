@@ -48,15 +48,15 @@ export const cartSlice = createSlice({
                   window.localStorage.setItem('cart', JSON.stringify(state.items));
             },
             increase: (state, action: PayloadAction<number>) => {
-                  const popo = state.items[action.payload]
-                  ++popo.quantity
+                  const popo = state.items[action.payload];
+                  ++popo.quantity;
                   window.localStorage.setItem('cart', JSON.stringify(state.items));
             },
             decrease: (state, action: PayloadAction<number>) => {
-                  const popo = state.items[action.payload]
-                  if (popo.quantity > 1){
-                        --popo.quantity
-                  }else state.items.splice(action.payload, 1);
+                  const popo = state.items[action.payload];
+                  if (popo.quantity > 1) {
+                        --popo.quantity;
+                  } else state.items.splice(action.payload, 1);
                   window.localStorage.setItem('cart', JSON.stringify(state.items));
             },
             deleteLine: (state, action: PayloadAction<number>) => {
@@ -67,9 +67,12 @@ export const cartSlice = createSlice({
                   state.items = [];
                   state.total_price = 0;
                   window.localStorage.setItem('cart', JSON.stringify(state.items));
-            },
+            }
       }
 });
+
+export const cartItemsSelect = (state) => state.cart.items;
+export const cartTotalPriceSelect = (state) => state.cart.total_price;
 
 export const { addItemOrIncreaseQuantity, deleteLine, increase, decrease, deleteAllPizzas } = cartSlice.actions;
 

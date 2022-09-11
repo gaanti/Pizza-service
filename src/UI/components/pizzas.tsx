@@ -1,17 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from 'react';
 import PizzaBlock from './pizza-block';
 import Skeleton from './skeleton';
-import { useDispatch, useSelector } from "react-redux";
-import { RootState, store } from "../../redux/store";
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../../redux/store';
 import { useGetPizzasQuery } from '../../redux/services/pizza';
-import { setTotalPagesQuantity } from "../../redux/slices/pizzas";
+import { current_page_indexSelect, setTotalPagesQuantity, statusSelect } from '../../redux/slices/pizzas';
 
 export function Pizzas() {
       const sortBy = useSelector((state: RootState) => state.params.sortBy);
       const filterByCategory = useSelector((state: RootState) => state.params.filterCategoryId);
-      const currentPage = useSelector((state: RootState) => state.pizzas.current_page_index);
+      const currentPage = useSelector(current_page_indexSelect);
       const filterTitle = useSelector((state: RootState) => state.params.filterTitle);
-      const dispatch = useDispatch()
+      const dispatch = useDispatch();
       //const total_pages_qty = useSelector((state: RootState) => state.pizza.total_pages_qty);
 
       const { data } = useGetPizzasQuery({
@@ -21,13 +21,10 @@ export function Pizzas() {
             filterTitle: filterTitle ? filterTitle : ''
       });
       useEffect(() => {
-            if (data) {
-                  console.log("ALOha");
-                  dispatch(setTotalPagesQuantity(data.pizzas.totalPages));
-            }
-      }, [data])
+            dispatch(setTotalPagesQuantity(data.pizzas.totalPages));
+      }, [data]);
 
-      const status = useSelector((state: RootState) => state.pizzas.status);
+      const status = useSelector(statusSelect);
 
       if (status === 'success' && data) {
             return data.pizzas.content.map((element, index) => {
