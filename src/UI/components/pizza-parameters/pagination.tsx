@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from '../../../redux/store';
 import { current_page_indexSelect, setCurrentPage, total_pages_qtySelect } from '../../../redux/slices/pizzas';
+import React from 'react';
 
 function Pagination() {
       const total_pages_qty = useSelector(total_pages_qtySelect);

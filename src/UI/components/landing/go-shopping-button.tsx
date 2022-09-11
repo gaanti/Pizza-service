@@ -1,14 +1,12 @@
-import React, { useMemo } from "react";
+import React from 'react';
 import { Link } from 'react-router-dom';
-import "./go-shopping-button.scss"
-
-import CartButton from "../../pages/cart/cart-button";
+import './go-shopping-button.scss';
 
 function GoShoppingButton() {
-  const Header = () => {
-    return(
-      <div className="header__logo">
-        <div className="firstDiv">
+      const Header = () => {
+            return (
+                  <div className="header__logo">
+                        {/*<div className="firstDiv">
           <div className="secondDiv ">
             <div className="logo_">
               <div>
@@ -16,24 +14,28 @@ function GoShoppingButton() {
               </div></div>
           </div>
         </div>
+*/}
+                        {/*<Link to="/pizzas">
+                              <div className="landing_anchor">
+                                    <img src="power.svg" alt="power.svg" />
+                              </div>
+                        </Link>*/}
 
-        <div className="header__logo___textNsubText">
-          <Link to="/pizzas">
-            <h1> Parametrize it any way you want! </h1>
-          </Link>
-        </div>
-      </div>)
-  }
-  const MemorizedHeader = React.memo(Header)
+                        <div className="header__logo___textNsubText">
+                              <h1> Parametrize it any way you want! </h1>
+                        </div>
+                  </div>
+            );
+      };
+      const MemorizedHeader = React.memo(Header);
 
-  return (
-    <div className="header" style={{position: "relative"}}>
-      <div className="header__container">
-        <MemorizedHeader/>
-      </div>
-    </div>
-  );
+      return (
+            <div className="header" style={{ position: 'relative' }}>
+                  <div className="header__container">
+                        <MemorizedHeader />
+                  </div>
+            </div>
+      );
 }
 
 export default GoShoppingButton;
-

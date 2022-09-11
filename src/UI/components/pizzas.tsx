@@ -6,7 +6,7 @@ import { RootState } from '../../redux/store';
 import { useGetPizzasQuery } from '../../redux/services/pizza';
 import { current_page_indexSelect, setTotalPagesQuantity, statusSelect } from '../../redux/slices/pizzas';
 
-export function Pizzas() {
+export default function Pizzas() {
       const sortBy = useSelector((state: RootState) => state.params.sortBy);
       const filterByCategory = useSelector((state: RootState) => state.params.filterCategoryId);
       const currentPage = useSelector(current_page_indexSelect);
@@ -21,7 +21,9 @@ export function Pizzas() {
             filterTitle: filterTitle ? filterTitle : ''
       });
       useEffect(() => {
-            dispatch(setTotalPagesQuantity(data.pizzas.totalPages));
+            if(data) {
+                  dispatch(setTotalPagesQuantity(data.pizzas.totalPages));
+            }
       }, [data]);
 
       const status = useSelector(statusSelect);

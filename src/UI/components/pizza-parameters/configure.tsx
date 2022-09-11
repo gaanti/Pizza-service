@@ -27,7 +27,7 @@ function Configure(props: {
       const selected = useSelector(ingredientsSelect);
       const [searchIngredientArray, setSearchIngredientArray] = useState([] as ingredient[]);
       const [searchIngredient, setSearchIngredient] = useState('');
-      const ingredients = structuredClone(selected).map((e) => e.ingredientName);
+      const ingredients = structuredClone(selected).map((e: { ingredientName: string }) => e.ingredientName);
 
       useEffect(() => {
             popo();
@@ -71,11 +71,13 @@ function Configure(props: {
                                           {searchIngredientArray.map((v) => {
                                                 return (
                                                       <li>
+                                                            {/*@ts-ignore*/}
                                                             <div>{v}</div>
                                                             {/*PLUS from rotated cancel 45deg*/}
                                                             <img
                                                                   src="cancel.svg"
                                                                   onClick={() => {
+                                                                        {/*@ts-ignore*/}
                                                                         props.setIngredients([...props.ingredients, v]);
                                                                         props.rerenderParent(!props.parent);
                                                                   }}
@@ -105,9 +107,10 @@ function Configure(props: {
                                                             src="cancel.svg"
                                                             style={{ width: '24px', height: '24px' }}
                                                             onClick={() => {
-                                                                  props.ingredients.splice(props.ingredients.indexOf(v), 1);
+                                                                  let temp = props.ingredients
+                                                                  temp.splice(props.ingredients.indexOf(v), 1);
                                                                   props.rerenderParent(!props.parent);
-                                                                  props.setIngredients(props.ingredients);
+                                                                  props.setIngredients(temp);
                                                             }}
                                                       />
                                                       <li key={index}>{v}</li>

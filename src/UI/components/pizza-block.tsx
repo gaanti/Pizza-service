@@ -86,6 +86,7 @@ function PizzaBlock(props: { element: pizza }) {
                                     parent={parent}
                                     rerenderParent={rerenderParent}
                                     resetPizzaParams={resetPizzaParams}
+                                    /*@ts-ignore*/
                                     fetchedPizzas={fetchedPizzas}
                               />
                         )}
