@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import  Pizzas  from '../../components/pizzas';
+import Pizzas from '../../components/pizzas';
 import Categories from '../../components/pizza-parameters/categories';
 import Sort from '../../components/pizza-parameters/sort';
 import { RootState, useAppDispatch } from '../../../redux/store';

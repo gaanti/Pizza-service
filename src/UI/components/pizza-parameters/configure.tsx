@@ -1,8 +1,8 @@
-import React, { useEffect, useState, memo } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 import DoughParams from '../doughParams';
 import isequal from 'lodash.isequal';
 import differencewith from 'lodash.differencewith';
-import { ingredient, pizza } from '../../../redux/types';
+import { pizza } from '../../../redux/types';
 import { useSelector } from 'react-redux';
 import { ingredientsSelect } from '../../../redux/slices/pizzas';
 
@@ -25,7 +25,7 @@ function Configure(props: {
       fetchedPizzas: pizza;
 }) {
       const selected = useSelector(ingredientsSelect);
-      const [searchIngredientArray, setSearchIngredientArray] = useState([] as ingredient[]);
+      const [searchIngredientArray, setSearchIngredientArray] = useState([] as string[]);
       const [searchIngredient, setSearchIngredient] = useState('');
       const ingredients = structuredClone(selected).map((e: { ingredientName: any }) => e.ingredientName);
 
@@ -76,9 +76,11 @@ function Configure(props: {
                                                             <img
                                                                   src="cancel.svg"
                                                                   onClick={() => {
+                                                                        // @ts-ignore
                                                                         props.setIngredients([...props.ingredients, v]);
                                                                         props.rerenderParent(!props.parent);
                                                                   }}
+                                                                  alt="add ingredient"
                                                             />
                                                       </li>
                                                 );
@@ -105,11 +107,12 @@ function Configure(props: {
                                                             src="cancel.svg"
                                                             style={{ width: '24px', height: '24px' }}
                                                             onClick={() => {
-                                                                  let temp = props.ingredients
+                                                                  let temp = props.ingredients;
                                                                   temp.splice(props.ingredients.indexOf(v), 1);
                                                                   props.rerenderParent(!props.parent);
                                                                   props.setIngredients(temp);
                                                             }}
+                                                            alt="remove ingredient"
                                                       />
                                                       <li key={index}>{v}</li>
                                                 </div>

@@ -1,11 +1,10 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
-import { pizzaApi } from "../services/pizza";
-import { filteringParams } from "../types";
+import { pizzaApi } from '../services/pizza';
 
 const initialState = {
       filterCategoryId: 0,
-      filterCategoryOptions: [{id:0, categoryTitle:''}],
+      filterCategoryOptions: [{ id: 0, categoryTitle: '' }],
       filterTitle: null,
       sortBy: 'price'
 };
@@ -36,10 +35,11 @@ export const sliceSlice = createSlice({
                         state.sortBy = setOrNot(state.sortBy, action.payload.sortBy);
                   }
             }
-      }, extraReducers: builder => {
+      },
+      extraReducers: (builder) => {
             builder.addMatcher(pizzaApi.endpoints.getPizzas.matchFulfilled, (state, action) => {
                   state.filterCategoryOptions = action.payload.categories;
-            })
+            });
       }
 });
 

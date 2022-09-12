@@ -1,6 +1,5 @@
 import React from 'react';
-import TextFiller from './components/text-filler';
-import GoShoppingButton from "./components/landing/go-shopping-button";
+import GoShoppingButton from './components/landing/go-shopping-button';
 
 function Landing() {
       return (

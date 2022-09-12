@@ -1,12 +1,12 @@
-import { configureStore, createListenerMiddleware } from "@reduxjs/toolkit";
+import { configureStore } from '@reduxjs/toolkit';
 import slice from './slices/filtering_params';
 import cart from './slices/cart';
 import pizzas from './slices/pizzas';
 import { useDispatch } from 'react-redux';
-import { pizzaApi, useGetPizzasQuery } from "./services/pizza";
-
+import { pizzaApi } from './services/pizza';
 
 export const store = configureStore({
+      /*TODO fox double request*/
       reducer: {
             params: slice,
             cart: cart,
@@ -19,5 +19,5 @@ export const store = configureStore({
 });
 
 export type RootState = ReturnType<typeof store.getState>;
-export type AppDispatch = typeof store.dispatch
-export const useAppDispatch: () => AppDispatch = useDispatch
+export type AppDispatch = typeof store.dispatch;
+export const useAppDispatch: () => AppDispatch = useDispatch;

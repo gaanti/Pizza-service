@@ -2,6 +2,7 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 import { PizzaForCart } from '../types';
 import isequal from 'lodash.isequal';
+import { RootState } from '../store';
 
 export const func = () => {
       const pflor = () => {
@@ -71,8 +72,8 @@ export const cartSlice = createSlice({
       }
 });
 
-export const cartItemsSelect = (state) => state.cart.items;
-export const cartTotalPriceSelect = (state) => state.cart.total_price;
+export const cartItemsSelect = (state: RootState) => state.cart.items;
+export const cartTotalPriceSelect = (state: RootState) => state.cart.total_price;
 
 export const { addItemOrIncreaseQuantity, deleteLine, increase, decrease, deleteAllPizzas } = cartSlice.actions;
 

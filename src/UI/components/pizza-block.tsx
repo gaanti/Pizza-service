@@ -1,17 +1,17 @@
-import React, { useCallback, useEffect, useState, memo } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { addItemOrIncreaseQuantity } from '../../redux/slices/cart';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
-import { pizza } from '../../redux/types';
+import { doughRadius, pizza } from '../../redux/types';
 import Configure from './pizza-parameters/configure';
-import { dough_widthsSelect } from '../../redux/slices/pizzas';
+import { dough_radiusSelect, dough_widthsSelect } from '../../redux/slices/pizzas';
 
 function PizzaBlock(props: { element: pizza }) {
       const dispatch = useDispatch();
 
       const cartPizzas = useSelector((state: RootState) => state.cart.items);
       const fetchedPizzas = useSelector((state: RootState) => state.pizzas.pizzas);
-      const dough_radius = useSelector(dough_widthsSelect);
+      const dough_radius = useSelector(dough_radiusSelect);
       const dough_widths = useSelector(dough_widthsSelect);
 
       const mapped_ingredients = props.element.ingredients.map((v) => {

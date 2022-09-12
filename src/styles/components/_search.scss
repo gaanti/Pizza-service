@@ -1,42 +1,42 @@
 @import 'src/styles/variables';
 
 .content__title .input {
-  /*color: $black;
+      /*color: $black;
   background: #f9f9f9 !*url(../../../public/search.svg)*! left no-repeat;*/
-  border: unset;
-  background-color: $black;
-  color: $white;
-  border-radius: $border-radius;
-
-  word-break: keep-all;
-  white-space: nowrap;
-  overflow: scroll;
-  max-width: 230px;
-  font-size: 15px;
-  background-size: 21px;
-  background-position: 6px;
-  padding: 3px;
-  padding-left: 8px;
-  //animation: mmm 1s reverse;
-  -webkit-transition: all 1s cubic-bezier(0.550, 0.085, 0.680, 0.530);
-  -moz-transition: all 1s cubic-bezier(0.550, 0.085, 0.680, 0.530);
-  -o-transition: all 1s cubic-bezier(0.550, 0.085, 0.680, 0.530);
-  -ms-transition: all 1s cubic-bezier(0.550, 0.085, 0.680, 0.530);
-  transition: all 1s cubic-bezier(0.550, 0.085, 0.680, 0.530);
-  transition-duration: 0.4s;
-
-  &::placeholder{
-    color: $white;
-    text-align: center;
-  }
-  &:focus{
-    background-color: $black;
-    color: $white;
-    cursor: auto;
-
-    &::placeholder{
+      border: unset;
+      background-color: $black;
       color: $white;
-      opacity: 1;
-    }
-  }
+      border-radius: $border-radius;
+
+      word-break: keep-all;
+      white-space: nowrap;
+      overflow: scroll;
+      max-width: 230px;
+      font-size: 15px;
+      background-size: 21px;
+      background-position: 6px;
+      padding: 3px;
+      padding-left: 8px;
+      //animation: mmm 1s reverse;
+      -webkit-transition: all 1s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+      -moz-transition: all 1s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+      -o-transition: all 1s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+      -ms-transition: all 1s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+      transition: all 1s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+      transition-duration: 0.4s;
+
+      &::placeholder {
+            color: $white;
+            text-align: center;
+      }
+      &:focus {
+            background-color: $black;
+            color: $white;
+            cursor: auto;
+
+            &::placeholder {
+                  color: $white;
+                  opacity: 1;
+            }
+      }
 }

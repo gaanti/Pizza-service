@@ -6,7 +6,7 @@ import { deleteAllPizzas } from '../../../redux/slices/cart';
 import { Link } from 'react-router-dom';
 import CartEmpty from './cart-empty';
 import OrderDetails from './OrderDetails';
-import { PizzaForCart } from "../../../redux/types";
+import { PizzaForCart } from '../../../redux/types';
 
 function Cart() {
       const pizzas = useSelector((state: RootState) => state.cart.items);
@@ -27,11 +27,11 @@ function Cart() {
                               <div className="cart">
                                     <div className="cart__top">
                                           <h2 className="content__title">
-                                                <img src="cart.svg" />
+                                                <img src="cart.svg" alt="cart image" />
                                                 Cart
                                           </h2>
                                           <div className="cart__clear" onClick={() => dispatch(deleteAllPizzas())}>
-                                                <img src="trash.svg" />
+                                                <img src="trash.svg" alt="clear cart" />
                                                 <span>Clear the cart</span>
                                           </div>
                                     </div>
@@ -40,13 +40,7 @@ function Cart() {
                                           <div className="cart-wrapper_content">
                                                 <div className="cart__items">
                                                       {pizzas.map((value: PizzaForCart, index) => {
-                                                            return (
-                                                                  <CartItem
-                                                                        pizzasInCart={value}
-                                                                        key={index}
-                                                                        index={index}
-                                                                  />
-                                                            );
+                                                            return <CartItem pizzasInCart={value} key={index} index={index} />;
                                                       })}
                                                 </div>
                                                 <OrderDetails />
@@ -63,7 +57,7 @@ function Cart() {
                                           </div>
                                           <div className="cart__bottom-buttons">
                                                 <Link to={'/'} className="button button--outline button--add go-back-btn">
-                                                      <img src="grey-arrow-left.svg" />
+                                                      <img src="grey-arrow-left.svg" alt="Back to homepage" />
                                                       <span>Back to homepage</span>
                                                 </Link>
                                                 <button className="button pay-btn" disabled={false}>

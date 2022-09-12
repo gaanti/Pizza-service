@@ -1,17 +1,27 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 import { pizzaApi } from '../services/pizza';
-import { doughRadius, doughWidths, ingredients, pizza } from '../types';
+import { doughRadius, doughWidths, ingredient, pizza } from '../types';
+import { RootState } from '../store';
 
-const initialState = {
-      pizzas: [] as pizza[],
-      ingredients: [] as ingredients[],
-      dough_radius: [] as doughRadius,
-      dough_widths: [] as doughWidths,
+const initialState: pizzas = {
+      pizzas: [],
+      ingredients: [],
+      dough_radius: [],
+      dough_widths: [],
       total_pages_qty: 1,
       current_page_index: 0,
       status: ''
 };
+interface pizzas {
+      pizzas: pizza[];
+      ingredients: ingredient[];
+      dough_radius: doughRadius[];
+      dough_widths: doughWidths[];
+      total_pages_qty: number;
+      current_page_index: number;
+      status: string;
+}
 
 export const pizzaSlice = createSlice({
       name: 'pizzas',
@@ -41,6 +51,7 @@ export const pizzaSlice = createSlice({
                         console.log('error happened', action);
                   })
                   .addMatcher(pizzaApi.endpoints.getPizzas.matchFulfilled, (state, action) => {
+                        debugger;
                         console.log('SUCCESS!!!', action.payload);
                         state.pizzas = action.payload.pizzas.content;
                         state.total_pages_qty = action.payload.pizzas.totalPages;
@@ -53,12 +64,12 @@ export const pizzaSlice = createSlice({
       }
 });
 
-export const ingredientsSelect = (state) => state.pizzas.ingredients;
-export const dough_radiusSelect = (state) => state.pizzas.dough_radius;
-export const dough_widthsSelect = (state) => state.pizzas.dough_widths;
-export const total_pages_qtySelect = (state) => state.pizzas.total_pages_qty;
-export const current_page_indexSelect = (state) => state.pizzas.current_page_index;
-export const statusSelect = (state) => state.pizzas.status;
+export const ingredientsSelect = (state: RootState) => state.pizzas.ingredients;
+export const dough_radiusSelect = (state: RootState) => state.pizzas.dough_radius;
+export const dough_widthsSelect = (state: RootState) => state.pizzas.dough_widths;
+export const total_pages_qtySelect = (state: RootState) => state.pizzas.total_pages_qty;
+export const current_page_indexSelect = (state: RootState) => state.pizzas.current_page_index;
+export const statusSelect = (state: RootState) => state.pizzas.status;
 
 export const { setCurrentPage, setTotalPagesQuantity } = pizzaSlice.actions;
 

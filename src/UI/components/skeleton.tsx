@@ -5,7 +5,7 @@ function Skeleton() {
       const Skeleton = () => {
             const SkeletonObj = () => {
                   return (
-                        <div>
+                        <div className="pizza-block_skeleton">
                               {/*@ts-ignore*/}
                               <ContentLoader
                                     speed={2}

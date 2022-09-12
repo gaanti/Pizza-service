@@ -2,250 +2,231 @@
 @import 'src/styles/variables';
 
 .order_details {
-  --color-light: white;
-  --color-dark: #212121;
-  --color-signal: #FE5F1EFF;
+      --color-light: white;
+      --color-dark: #212121;
+      --color-signal: #fe5f1eff;
 
-  --color-background: var(--color-light, $orange);
-  --color-text: var(--color-dark);
-  --color-accent: var(--color-signal);
+      --color-background: var(--color-light, $orange);
+      --color-text: var(--color-dark);
+      --color-accent: var(--color-signal);
 
-  --size-bezel: .5rem;
-  --size-radius: 4px;
+      --size-bezel: 0.5rem;
+      --size-radius: 4px;
 
-  line-height: 1.4;
+      line-height: 1.4;
 
-  font-family: 'Inter', sans-serif;
-  font-size: calc(.6rem + .4vw);
-  color: var(--color-text);
-  background: var(--color-background);
-  font-weight: 300;
-  max-width: 100vw;
+      font-family: 'Inter', sans-serif;
+      font-size: calc(0.6rem + 0.4vw);
+      color: var(--color-text);
+      background: var(--color-background);
+      font-weight: 300;
+      max-width: 100vw;
 }
 
-.card h1, h2, h3 {
-  font-weight: 900;
-  margin-bottom: 15px;
-
+.card h1,
+h2,
+h3 {
+      font-weight: 900;
+      margin-bottom: 15px;
 }
-
-
 
 .card h2 {
-  color: white;
-  white-space: nowrap;
+      color: white;
+      white-space: nowrap;
 }
 
 .chooseOpt {
-  max-width: min-content;
-  display:inline;
-  padding: 5px;
-  margin-top: 20px;
-  flex: 1;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 14px;
-  border-radius: $border-radius*0.2;
-  @media (max-width: 986px) {
-    font-size: 16px;
-  }
-  transition: 200ms;
-  background-color: #f4f4f4;
-  color: black;
+      max-width: min-content;
+      display: inline;
+      padding: 5px;
+      margin-top: 20px;
+      flex: 1;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 14px;
+      border-radius: $border-radius * 0.2;
+      @media (max-width: 986px) {
+            font-size: 16px;
+      }
+      transition: 200ms;
+      background-color: #f4f4f4;
+      color: black;
 
-  &.active {
-    transition: none !important;
-    -webkit-transition: none;
-    -webkit-animation: 0;
-    animation: 0 !important;
+      &.active {
+            transition: none !important;
+            -webkit-transition: none;
+            -webkit-animation: 0;
+            animation: 0 !important;
 
-    background-color: $black;
-    color: hsl(0deg 0% 98%);
-    cursor: auto;
+            background-color: $black;
+            color: hsl(0deg 0% 98%);
+            cursor: auto;
 
-    box-shadow: 0 10px 10px -10px rgb(0 0 0 / 50%);
-    transform: scale(1.1);
-  }
+            box-shadow: 0 10px 10px -10px rgb(0 0 0 / 50%);
+            transform: scale(1.1);
+      }
 
-  &:not(.active):hover {
-    //transform: translateY(2px);
-    text-decoration: underline;
+      &:not(.active):hover {
+            //transform: translateY(2px);
+            text-decoration: underline;
 
-    box-shadow: 0 10px 10px -10px rgb(0 0 0 / 50%);
-    transform: scale(1.1);
-  }
+            box-shadow: 0 10px 10px -10px rgb(0 0 0 / 50%);
+            transform: scale(1.1);
+      }
 }
 
 .card {
-  background: var(--color-background);
-  padding: calc(2 * var(--size-bezel));
-  margin-top: calc(4 * var(--size-bezel));
-  border-radius: var(--size-radius);
-  border: 3px solid var(--color-shadow, currentColor);
-  box-shadow: .5rem .5rem 0 var(--color-shadow, currentColor);
+      background: var(--color-background);
+      padding: calc(2 * var(--size-bezel));
+      margin-top: calc(4 * var(--size-bezel));
+      border-radius: var(--size-radius);
+      border: 3px solid var(--color-shadow, currentColor);
+      box-shadow: 0.5rem 0.5rem 0 var(--color-shadow, currentColor);
 
-  &--inverted {
-    --color-background: var(--color-dark);
-    color: var(--color-light);
-    --color-shadow: var(--color-accent);
-  }
+      &--inverted {
+            --color-background: var(--color-dark);
+            color: var(--color-light);
+            --color-shadow: var(--color-accent);
+      }
 
-  &--accent {
-    --color-background: var(--color-signal);
-    --color-accent: var(--color-light);
-    color: var(--color-dark);
-  }
-
+      &--accent {
+            --color-background: var(--color-signal);
+            --color-accent: var(--color-light);
+            color: var(--color-dark);
+      }
 }
 
-
 .l-design-widht {
-  max-width: 40rem;
-  padding: 1rem;
+      max-width: 40rem;
+      padding: 1rem;
 }
 
 .input {
-  position: relative;
-  background-color: unset;
+      position: relative;
+      background-color: unset;
 
+      &__label {
+            content: 'Some Fancy Label';
+            position: absolute;
+            height: auto;
+            color: $orange;
+            left: 4px;
+            top: 7px;
+            padding: calc(var(--size-bezel) * 0.4) calc(var(--size-bezel) * 0.5);
+            white-space: nowrap;
+            transform-origin: 0 0;
+            background: var(--color-background);
+            transition: transform 120ms ease-in;
+            font-weight: bold;
+            line-height: 1.2;
+            transform: translate(0.25rem, -65%) scale(0.8);
+      }
 
-  &__label {
-    content: "Some Fancy Label";
-    position: absolute;
-    height: auto;
-    color: $orange;
-    left: 4px;
-    top: 7px;
-    padding: calc(var(--size-bezel) * .4) calc(var(--size-bezel) * .5);
-    white-space: nowrap;
-    transform-origin: 0 0;
-    background: var(--color-background);
-    transition: transform 120ms ease-in;
-    font-weight: bold;
-    line-height: 1.2;
-    transform: translate(.25rem, -65%) scale(.8);
-  }
-
-  &__field {
-    box-sizing: border-box;
-    display: block;
-    min-width: 100%;
-    border: 3px solid currentColor;
-    padding: calc(var(--size-bezel) * 1.5) var(--size-bezel);
-    color: currentColor;
-    background: transparent;
-    border-radius: var(--size-radius);
-  }
-
+      &__field {
+            box-sizing: border-box;
+            display: block;
+            min-width: 100%;
+            border: 3px solid currentColor;
+            padding: calc(var(--size-bezel) * 1.5) var(--size-bezel);
+            color: currentColor;
+            background: transparent;
+            border-radius: var(--size-radius);
+      }
 }
 
-
 .button-group {
-  margin-top: calc(var(--size-bezel) * 2.5);
+      margin-top: calc(var(--size-bezel) * 2.5);
 }
 
 button {
-  color: currentColor;
-  padding: var(--size-bezel) calc(var(--size-bezel) * 2);
-  background: var(--color-accent);
-  border: none;
-  border-radius: var(--size-radius);
-  font-weight: 900;
+      color: currentColor;
+      padding: var(--size-bezel) calc(var(--size-bezel) * 2);
+      background: var(--color-accent);
+      border: none;
+      border-radius: var(--size-radius);
+      font-weight: 900;
 
-  &[type=reset] {
-    background: var(--color-background);
-    font-weight: 200;
-  }
+      &[type='reset'] {
+            background: var(--color-background);
+            font-weight: 200;
+      }
 }
 
 button + button {
-  margin-left: calc(var(--size-bezel) * 2);
+      margin-left: calc(var(--size-bezel) * 2);
 }
 
 .icon {
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  margin-right: .5em;
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      margin-right: 0.5em;
 }
 
 .hidden {
-  display: none;
+      display: none;
 }
 
-.input input[type="datetime-local"]:before {
-  position: absolute;
-  content: "";
-  box-shadow: 6px 22px 0px 6px $orange;
-  width: 1px;
-  height: 1px;
-  border-radius: 60px;
-  right: 26px;
-  top: 0px;
-  background-color: $white;
+.input input[type='datetime-local']:before {
+      position: absolute;
+      content: '';
+      box-shadow: 6px 22px 0px 6px $orange;
+      width: 1px;
+      height: 1px;
+      border-radius: 60px;
+      right: 26px;
+      top: 0px;
+      background-color: $white;
 }
 
-
-input[type="radio"]{
-  appearance: none;
-  margin: 0;
-  font: inherit;
-  border-radius: 50%;
-  width: 10px;
-  height: 10px;
-  background-color: $orange;
-  color: $orange;
-  display: grid;
-  grid-template-columns: auto;
-  //place-content: center;
+input[type='radio'] {
+      appearance: none;
+      margin: 0;
+      font: inherit;
+      border-radius: 50%;
+      width: 10px;
+      height: 10px;
+      background-color: $orange;
+      color: $orange;
+      display: grid;
+      grid-template-columns: auto;
+      //place-content: center;
 }
-input[type="radio"]::before {
-  content: "";
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  transform: scale(0);
-  background-color: #ffffff;
-  transition: 120ms transform ease-in-out;
-}
-
-input[type="radio"]:checked::before {
-  transform: scale(1);
-  outline: max(2px, 0.15em) solid currentColor;
-  outline-offset: max(2px, 0.15em);
+input[type='radio']::before {
+      content: '';
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      transform: scale(0);
+      background-color: #ffffff;
+      transition: 120ms transform ease-in-out;
 }
 
-input[type="radio"]:focus {
-
+input[type='radio']:checked::before {
+      transform: scale(1);
+      outline: max(2px, 0.15em) solid currentColor;
+      outline-offset: max(2px, 0.15em);
 }
 
-.contact-method_wrapper{
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-.contact-method{
-  margin-top: 4px;
-  display: flex;
-  flex-direction: row;
-  gap: 30px;
-}
-.contact-method div{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  column-gap: 5px;
-}
-label[htmlFor="contactChoice3"]{
-  white-space: nowrap;
+input[type='radio']:focus {
 }
 
-
-
-
-
-
-
-
-
-
-
+.contact-method_wrapper {
+      margin-top: 10px;
+      margin-bottom: 10px;
+}
+.contact-method {
+      margin-top: 4px;
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+}
+.contact-method div {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      column-gap: 5px;
+}
+label[htmlFor='contactChoice3'] {
+      white-space: nowrap;
+}

@@ -16,8 +16,10 @@ function CartItem(props: { pizzasInCart: PizzaForCart; index: number }) {
                         <div className="cart__item-info">
                               <h3>{props.pizzasInCart.title}</h3>
                               <div>
-                                    <div>{props.pizzasInCart.doughWidth}, {props.pizzasInCart.doughRadius}cm.</div>
-                                    <div>{props.pizzasInCart.ingredients.join(", ")}</div>
+                                    <div>
+                                          {props.pizzasInCart.doughWidth}, {props.pizzasInCart.doughRadius}cm.
+                                    </div>
+                                    <div>{props.pizzasInCart.ingredients.join(', ')}</div>
                               </div>
                         </div>
                         <div className="cart__item-count">
@@ -42,7 +44,7 @@ function CartItem(props: { pizzasInCart: PizzaForCart; index: number }) {
                                           onClick={() => {
                                                 dispatch(deleteLine(props.index));
                                           }}>
-                                          <img src="cancel.svg" />
+                                          <img src="cancel.svg" alt="delete that pizzas" />
                                     </div>
                               </div>
                         </div>

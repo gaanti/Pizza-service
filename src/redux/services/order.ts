@@ -5,7 +5,6 @@ export const pizzaApi = api.injectEndpoints({
       endpoints: (builder) => ({
             createAnDeliveryOrder: builder.query<any, any>({
                   query: ({}) => {
-                        
                         return {
                               url: `pizzas?`
                         };
@@ -13,7 +12,6 @@ export const pizzaApi = api.injectEndpoints({
             }),
             createAnPickupOrder: builder.query<any, any>({
                   query: ({}) => {
-
                         return {
                               url: `pizzas?`
                         };

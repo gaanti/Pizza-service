@@ -1,24 +1,26 @@
 @function sqrt($r) {
-  $x0: 1; // initial value
-  $solution: false;
+      $x0: 1; // initial value
+      $solution: false;
 
-  @for $i from 1 through 10 {
-    @if abs(2 * $x0) < 0.00000000000001 {
-      $solution:false;
-    } $x1:$x0 - ($x0 * $x0 - abs($r)) / (2 * $x0) !global;
+      @for $i from 1 through 10 {
+            @if abs(2 * $x0) < 0.00000000000001 {
+                  $solution: false;
+            }
+            $x1: $x0 - ($x0 * $x0 - abs($r)) / (2 * $x0) !global;
 
-    @if (abs($x1 - $x0) / abs($x1)) < 0.0000001 {
-      $solution:true;
-    } $x0:$x1;
-  }
+            @if (abs($x1 - $x0) / abs($x1)) < 0.0000001 {
+                  $solution: true;
+            }
+            $x0: $x1;
+      }
 
-  @if $solution == true {
-    @if $r < 0 {
-      @return $x1 #{i};
-    } @else {
-      @return $x1;
-    }
-  } @else {
-    @return "No solution";
-  }
+      @if $solution == true {
+            @if $r < 0 {
+                  @return $x1 #{i};
+            } @else {
+                  @return $x1;
+            }
+      } @else {
+            @return 'No solution';
+      }
 }

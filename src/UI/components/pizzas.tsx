@@ -21,7 +21,7 @@ function Pizzas() {
             filterTitle: filterTitle ? filterTitle : ''
       });
       useEffect(() => {
-            if(data) {
+            if (data) {
                   dispatch(setTotalPagesQuantity(data.pizzas.totalPages));
             }
       }, [data]);
@@ -34,6 +34,6 @@ function Pizzas() {
             });
       } else if (status === 'loading') {
             return <Skeleton />;
-      } else return 'Something bad happened';
+      } else return <div>'Something bad happened'</div>;
 }
-export default React.memo(Pizzas)
+export default Pizzas;
