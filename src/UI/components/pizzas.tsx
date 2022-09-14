@@ -3,7 +3,6 @@ import Skeleton from './skeleton';
 import { useDispatch, useSelector } from 'react-redux';
 import { useGetPizzasQuery } from '../../redux/services/pizza';
 import { current_page_indexSelect, setTotalPagesQuantity, statusSelect } from '../../redux/slices/pizzas';
-import qs from 'qs';
 import { filteringParams } from '../../redux/slices/filtering_params';
 import PizzaBlock from './pizza-block';
 
@@ -25,7 +24,7 @@ function Pizzas() {
             if (data) {
                   dispatch(setTotalPagesQuantity(data.pizzas.totalPages));
             }
-      }, [qs.parse]);
+      }, [data]);
 
       if (status === 'success' && data) {
             return (

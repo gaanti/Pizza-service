@@ -10,7 +10,6 @@ function PizzaBlock(props: { element: pizza }) {
       const dispatch = useDispatch();
 
       const cartPizzas = useSelector((state: RootState) => state.cart.items);
-      const fetchedPizzas = useSelector((state: RootState) => state.pizzas.pizzas);
       const dough_radius = useSelector(dough_radiusSelect);
       const dough_widths = useSelector(dough_widthsSelect);
 
@@ -60,15 +59,14 @@ function PizzaBlock(props: { element: pizza }) {
                         setQtyOfItemsInCart(popo);
                   } else setQtyOfItemsInCart(0);
             }
-      }, [increaseQty, fetchedPizzas]);
+      }, [increaseQty]);
 
-      const reference = useRef();
       return (
             <div className="pizza-block__wrapper">
                   <div className="pizza-block">
                         <img className="pizza-block__image" src={'data:image/jpg;base64,' + props.element.image} alt="Pizza" />
                         <h4 className="pizza-block__title">{props.element.title}</h4>
-                        <div style={{position:"relative"}}>
+                        <div style={{ position: 'relative' }}>
                               {
                                     <div className="pizza-block__selector">
                                           <div className="pizza-block__description_and_params">
@@ -91,24 +89,19 @@ function PizzaBlock(props: { element: pizza }) {
                                     <div className="pizza-block__price">${props.element.price}</div>
                                     <div className="DIRECTION_ROW_WITHOUT_GAP">
                                           <Configure
-                                            configureTab={configureTab}
-                                            setConfigureTab={setConfigureTab}
-                                            imageSRC={`data:image/jpg;base64,${props.element.image}`}
-                                            title={props.element.title}
-                                            setDoughRadius={setDoughRadius}
-                                            setDoughWidth={setDoughWidth}
-                                            doughRadius={doughRadius}
-                                            doughWidth={doughWidth}
-                                            increaseQty={increaseQty}
-                                            qtyOfItemsInCart={qtyOfItemsInCart}
-                                            ingredients={ingredients}
-                                            setIngredients={setIngredients}
-                                            parent={parent}
-                                            rerenderParent={rerenderParent}
-                                            resetPizzaParams={resetPizzaParams}
-                                            /*@ts-ignore*/
-                                            fetchedPizzas={fetchedPizzas}
-                                            reference={reference}
+                                                imageSRC={`data:image/jpg;base64,${props.element.image}`}
+                                                title={props.element.title}
+                                                setDoughRadius={setDoughRadius}
+                                                setDoughWidth={setDoughWidth}
+                                                doughRadius={doughRadius}
+                                                doughWidth={doughWidth}
+                                                increaseQty={increaseQty}
+                                                qtyOfItemsInCart={qtyOfItemsInCart}
+                                                ingredients={ingredients}
+                                                setIngredients={setIngredients}
+                                                parent={parent}
+                                                rerenderParent={rerenderParent}
+                                                resetPizzaParams={resetPizzaParams}
                                           />
                                           <div
                                                 className="button button--outline button--add"

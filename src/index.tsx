@@ -10,17 +10,19 @@ import Header from './UI/header';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
-      <Provider store={store}>
-            <BrowserRouter>
-                  <div className="wrapper" id="main-page">
-                        <div>
-                              <Header />
-                              <Routes>
-                                    <Route path="/" element={<App />}></Route>
-                                    <Route path="/cart" element={<Cart />} />
-                              </Routes>
+      <React.StrictMode>
+            <Provider store={store}>
+                  <BrowserRouter>
+                        <div className="wrapper" id="main-page">
+                              <div>
+                                    <Header />
+                                    <Routes>
+                                          <Route path="/" element={<App />}></Route>
+                                          <Route path="/cart" element={<Cart />} />
+                                    </Routes>
+                              </div>
                         </div>
-                  </div>
-            </BrowserRouter>
-      </Provider>
+                  </BrowserRouter>
+            </Provider>
+      </React.StrictMode>
 );

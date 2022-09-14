@@ -2,8 +2,9 @@
 
 .categories {
       overflow: scroll;
-      max-width: 100%;
       position: relative;
+      max-width: 70vw;
+      width: min-content;
 
       ul {
             padding: 10px;

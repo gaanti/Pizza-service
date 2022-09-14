@@ -2,7 +2,8 @@
 
 .sort {
       position: relative;
-
+      width: 170px;
+      height: 20.5px;
       display: flex;
       align-items: center;
 
@@ -28,7 +29,7 @@
 
       &__popup {
             position: absolute;
-            top: 19.5px;
+            top: 25.5px;
             left: 0;
             z-index: 2;
             background: $white;
@@ -36,7 +37,6 @@
             border-radius: 10px;
             overflow: hidden;
             padding: 10px 0;
-            width: 160px;
 
             ul {
                   overflow: hidden;

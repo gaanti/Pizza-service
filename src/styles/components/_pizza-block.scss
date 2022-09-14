@@ -51,7 +51,7 @@
             &_window {
                   position: absolute;
                   z-index: 1;
-                  top:0;
+                  top: 0;
                   left: 0;
                   * {
                         font-weight: 600;
@@ -74,6 +74,9 @@
                               display: flex;
                               align-items: center;
                               width: auto;
+                              p{
+                                    font-size: 20px;
+                              }
                               img {
                                     rotate: z 45deg;
                                     width: 18px;
