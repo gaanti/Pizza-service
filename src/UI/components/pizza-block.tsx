@@ -1,8 +1,8 @@
-import React, { createRef, useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { addItemOrIncreaseQuantity } from '../../redux/slices/cart';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
-import { doughRadius, pizza } from '../../redux/types';
+import { pizza } from '../../redux/types';
 import Configure from './pizza-parameters/configure';
 import { dough_radiusSelect, dough_widthsSelect } from '../../redux/slices/pizzas';
 
@@ -62,33 +62,13 @@ function PizzaBlock(props: { element: pizza }) {
             }
       }, [increaseQty, fetchedPizzas]);
 
+      const reference = useRef();
       return (
             <div className="pizza-block__wrapper">
                   <div className="pizza-block">
                         <img className="pizza-block__image" src={'data:image/jpg;base64,' + props.element.image} alt="Pizza" />
                         <h4 className="pizza-block__title">{props.element.title}</h4>
-                        {configureTab && (
-                              <Configure
-                                    setConfigureTab={setConfigureTab}
-                                    configureTab={configureTab}
-                                    imageSRC={`data:image/jpg;base64,${props.element.image}`}
-                                    title={props.element.title}
-                                    setDoughRadius={setDoughRadius}
-                                    setDoughWidth={setDoughWidth}
-                                    doughRadius={doughRadius}
-                                    doughWidth={doughWidth}
-                                    increaseQty={increaseQty}
-                                    qtyOfItemsInCart={qtyOfItemsInCart}
-                                    ingredients={ingredients}
-                                    setIngredients={setIngredients}
-                                    parent={parent}
-                                    rerenderParent={rerenderParent}
-                                    resetPizzaParams={resetPizzaParams}
-                                    /*@ts-ignore*/
-                                    fetchedPizzas={fetchedPizzas}
-                              />
-                        )}
-                        <div>
+                        <div style={{position:"relative"}}>
                               {
                                     <div className="pizza-block__selector">
                                           <div className="pizza-block__description_and_params">
@@ -110,9 +90,26 @@ function PizzaBlock(props: { element: pizza }) {
                               <div className="pizza-block__bottom">
                                     <div className="pizza-block__price">${props.element.price}</div>
                                     <div className="DIRECTION_ROW_WITHOUT_GAP">
-                                          <div className="pizza-block__configure_button" onClick={() => setConfigureTab(!configureTab)}>
-                                                Configure
-                                          </div>
+                                          <Configure
+                                            configureTab={configureTab}
+                                            setConfigureTab={setConfigureTab}
+                                            imageSRC={`data:image/jpg;base64,${props.element.image}`}
+                                            title={props.element.title}
+                                            setDoughRadius={setDoughRadius}
+                                            setDoughWidth={setDoughWidth}
+                                            doughRadius={doughRadius}
+                                            doughWidth={doughWidth}
+                                            increaseQty={increaseQty}
+                                            qtyOfItemsInCart={qtyOfItemsInCart}
+                                            ingredients={ingredients}
+                                            setIngredients={setIngredients}
+                                            parent={parent}
+                                            rerenderParent={rerenderParent}
+                                            resetPizzaParams={resetPizzaParams}
+                                            /*@ts-ignore*/
+                                            fetchedPizzas={fetchedPizzas}
+                                            reference={reference}
+                                          />
                                           <div
                                                 className="button button--outline button--add"
                                                 onClick={() => {
@@ -128,4 +125,5 @@ function PizzaBlock(props: { element: pizza }) {
             </div>
       );
 }
+
 export default React.memo(PizzaBlock);

@@ -69,12 +69,12 @@ function Sort() {
                               />
                         </svg>
                         <b>Sort by</b>
-                        <span
+                        {!open && <span
                               onClick={() => {
                                     openPopUp();
                               }}>
                               {sortBy}
-                        </span>
+                        </span>}
                   </div>
                   {open && <SortPOPUP setOpen={setOpen} togleSortDirection={togleSortDirection} sortBy={sortBy} ref={ref} />}
             </div>

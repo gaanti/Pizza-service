@@ -50,8 +50,9 @@
 
             &_window {
                   position: absolute;
-                  top: 320px;
                   z-index: 1;
+                  top:0;
+                  left: 0;
                   * {
                         font-weight: 600;
                   }
@@ -95,7 +96,7 @@
                   text-align: left;
                   width: inherit;
                   min-width: inherit;
-                  max-width: 95%;
+                  max-width: 100%;
                   max-height: inherit;
                   //background-color: white;
                   /*
@@ -301,7 +302,6 @@
       }
 
       &__bottom {
-            position: relative;
             display: flex;
             align-items: center;
             justify-content: space-between;

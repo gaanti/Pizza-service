@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useState } from 'react';
+import React, { createRef, ForwardedRef, forwardRef, memo, useEffect, useState } from 'react';
 import DoughParams from '../doughParams';
 import isequal from 'lodash.isequal';
 import differencewith from 'lodash.differencewith';
@@ -6,7 +6,62 @@ import { pizza } from '../../../redux/types';
 import { useSelector } from 'react-redux';
 import { ingredientsSelect } from '../../../redux/slices/pizzas';
 
-function Configure(props: {
+function Configure
+(
+      props: {
+            setConfigureTab: React.Dispatch<React.SetStateAction<boolean>>;
+            configureTab: boolean;
+            imageSRC: string;
+            title: string;
+            setDoughRadius: React.Dispatch<React.SetStateAction<number>>;
+            setDoughWidth: React.Dispatch<React.SetStateAction<string>>;
+            doughWidth: string;
+            doughRadius: number;
+            increaseQty: any;
+            qtyOfItemsInCart: number;
+            setIngredients: React.Dispatch<React.SetStateAction<string[]>>;
+            ingredients: string[];
+            rerenderParent: any;
+            parent: boolean;
+            resetPizzaParams: any;
+            fetchedPizzas: pizza;
+            reference: any;
+      }
+) {
+      const ref = createRef();
+
+      return (
+            <div ref={ref}>
+                  <div className='pizza-block__configure_button'
+                       onClick={() => props.setConfigureTab(!props.configureTab)}>
+                        Configure
+                  </div>
+                  {props.configureTab && (
+                        <PopUp
+                              configureTab={props.configureTab}
+                              setConfigureTab={props.setConfigureTab}
+                              imageSRC={`data:image/jpg;base64,${props.imageSRC}`}
+                              title={props.title}
+                              setDoughRadius={props.setDoughRadius}
+                              setDoughWidth={props.setDoughWidth}
+                              doughRadius={props.doughRadius}
+                              doughWidth={props.doughWidth}
+                              increaseQty={props.increaseQty}
+                              qtyOfItemsInCart={props.qtyOfItemsInCart}
+                              ingredients={props.ingredients}
+                              setIngredients={props.setIngredients}
+                              parent={props.parent}
+                              rerenderParent={props.rerenderParent}
+                              resetPizzaParams={props.resetPizzaParams}
+                              fetchedPizzas={props.fetchedPizzas}
+                              ref={ref}
+                        />
+                  )}
+            </div>
+      );
+}
+
+const PopUp = forwardRef((props: {
       setConfigureTab: React.Dispatch<React.SetStateAction<boolean>>;
       configureTab: boolean;
       imageSRC: string;
@@ -23,7 +78,8 @@ function Configure(props: {
       parent: boolean;
       resetPizzaParams: any;
       fetchedPizzas: pizza;
-}) {
+}, ref: any) =>
+{
       const selected = useSelector(ingredientsSelect);
       const [searchIngredientArray, setSearchIngredientArray] = useState([] as string[]);
       const [searchIngredient, setSearchIngredient] = useState('');
@@ -48,27 +104,28 @@ function Configure(props: {
       }
 
       const AreThereIngredients = !isequal(props.ingredients, []);
-      const ref = React.useRef();
       useEffect(() => {
             const click = (event: any) => {
-                  console.log(!(event.composedPath().includes(ref)), event.composedPath(), ref);
-                 /* if (!event.composedPath().includes(ref.current)) {
-                        props.setConfigureTab(!props.configureTab);
-                  }*/
+                  console.log(event.composedPath().includes(ref.current));
+                  console.log(event.composedPath());
+                  console.log(ref);
+                  /*console.log(ref);*/
+                  if (!event.composedPath().includes(ref.current)) {
+            props.setConfigureTab(false);
+            } else props.setConfigureTab(true)
             };
             document.body.addEventListener('click', click);
             return () => document.body.removeEventListener('click', click);
       }, []);
-
       return (
-            <div className="pizza-block__configure_window DIRECTION_COLUMN" ref={ref}>
-                  <div className="DIRECTION_COLUMN">
+            <div className='pizza-block__configure_window DIRECTION_COLUMN'>
+                  <div className='DIRECTION_COLUMN'>
                         <div style={{ backgroundColor: 'white' }}>
-                              <h4 className="DIRECTION_ROW" style={{ whiteSpace: 'nowrap' }}>
+                              <h4 className='DIRECTION_ROW' style={{ whiteSpace: 'nowrap' }}>
                                     Add ingredient{' '}
                                     <input
-                                          type="text"
-                                          placeholder="Ingredient"
+                                          type='text'
+                                          placeholder='Ingredient'
                                           value={searchIngredient}
                                           onChange={(e) => {
                                                 setSearchIngredient(e.target.value);
@@ -76,19 +133,19 @@ function Configure(props: {
                                     />
                               </h4>
                               {!isequal(searchIngredientArray, []) && (
-                                    <ul className="pizza-block__configure_window-add-ingredient">
+                                    <ul className='pizza-block__configure_window-add-ingredient'>
                                           {searchIngredientArray.map((v) => {
                                                 return (
                                                       <li>
                                                             <div>{v}</div>
                                                             {/*PLUS from rotated cancel 45deg*/}
                                                             <img
-                                                                  src="cancel.svg"
+                                                                  src='cancel.svg'
                                                                   onClick={() => {
                                                                         props.setIngredients([...props.ingredients, v]);
                                                                         props.rerenderParent(!props.parent);
                                                                   }}
-                                                                  alt="add ingredient"
+                                                                  alt='add ingredient'
                                                             />
                                                       </li>
                                                 );
@@ -97,22 +154,23 @@ function Configure(props: {
                               )}
                         </div>
                         <ul
-                              className="pizza-block__configure_window-ingredients-table"
+                              className='pizza-block__configure_window-ingredients-table'
                               style={
                                     AreThereIngredients
                                           ? {
-                                                  display: 'grid',
-                                                  gridTemplateColumns: '1fr 1fr',
-                                                  justifyContent: 'space-between'
-                                            }
+                                                display: 'grid',
+                                                gridTemplateColumns: '1fr 1fr',
+                                                justifyContent: 'space-between'
+                                          }
                                           : { display: 'block' }
                               }>
                               {AreThereIngredients ? (
                                     props.ingredients.map((v, index) => {
                                           return (
-                                                <div style={{ display: 'flex', justifyContent: 'flex-start' }} key={index}>
+                                                <div style={{ display: 'flex', justifyContent: 'flex-start' }}
+                                                     key={index}>
                                                       <img
-                                                            src="cancel.svg"
+                                                            src='cancel.svg'
                                                             style={{ width: '24px', height: '24px' }}
                                                             onClick={() => {
                                                                   let temp = props.ingredients;
@@ -120,7 +178,7 @@ function Configure(props: {
                                                                   props.rerenderParent(!props.parent);
                                                                   props.setIngredients(temp);
                                                             }}
-                                                            alt="remove ingredient"
+                                                            alt='remove ingredient'
                                                       />
                                                       <li key={index}>{v}</li>
                                                 </div>
@@ -138,20 +196,21 @@ function Configure(props: {
                         doughWidth={props.doughWidth}
                   />
 
-                  <div className="DIRECTION_COLUMN">
-                        <div className="DIRECTION_ROW_WITHOUT_GAP" style={{ width: '100%' }}>
-                              <div className="pizza-block__configure_button" onClick={() => props.resetPizzaParams()}>
+                  <div className='DIRECTION_COLUMN'>
+                        <div className='DIRECTION_ROW_WITHOUT_GAP' style={{ width: '100%' }}>
+                              <div className='pizza-block__configure_button' onClick={() => props.resetPizzaParams()}>
                                     Reset
                               </div>
                               <div
-                                    className="button button--outline button--add"
+                                    className='button button--outline button--add'
                                     onClick={() => {
                                           props.increaseQty();
                                     }}>
                                     <span>Add to cart</span>
                                     {props.qtyOfItemsInCart ? <i>{props.qtyOfItemsInCart}</i> : ''}
                               </div>
-                              <div className="pizza-block__configure_button" onClick={() => props.setConfigureTab(!props.configureTab)}>
+                              <div className='pizza-block__configure_button'
+                                   onClick={() => props.setConfigureTab(!props.configureTab)}>
                                     Save & close
                               </div>
                         </div>
@@ -159,5 +218,6 @@ function Configure(props: {
             </div>
       );
 }
+)
 
 export default memo(Configure);
