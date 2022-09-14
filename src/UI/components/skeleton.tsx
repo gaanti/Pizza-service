@@ -6,7 +6,6 @@ function Skeleton() {
             const SkeletonObj = () => {
                   return (
                         <div className="pizza-block_skeleton">
-                              {/*@ts-ignore*/}
                               <ContentLoader
                                     speed={2}
                                     width={280}
@@ -29,14 +28,17 @@ function Skeleton() {
             };
             let arr = [];
             for (let i = 0; i < 8; i++) {
-                  arr.push(<SkeletonObj key={i} />);
+                  arr.push(i);
             }
-            return arr;
+            return (
+                  <>
+                        {arr.map((e) => {
+                              return <SkeletonObj />;
+                        })}
+                  </>
+            );
       };
-      return (
-            /*@ts-ignore*/
-            <Skeleton />
-      );
+      return <Skeleton />;
 }
 
 export default Skeleton;

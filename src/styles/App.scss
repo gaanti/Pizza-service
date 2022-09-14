@@ -13,6 +13,9 @@ body {
       flex-direction: column;
       gap: 8px;
 }
+.REVERSED {
+      rotate: z 90deg;
+}
 .DIRECTION_ROW {
       display: flex;
       flex-direction: row;
@@ -60,6 +63,7 @@ body {
 .wrapper {
       width: 97%;
       height: auto;
+      min-height: 80vh;
       background-color: $white;
       margin: 1% auto;
       max-width: 1400px;
@@ -154,6 +158,11 @@ body {
       }
 
       .main_page_filters {
+            @media (max-width: 575px) {
+                  flex-direction: column;
+                  align-items: center;
+
+            }
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
@@ -566,7 +575,6 @@ body {
                   font-size: 18px;
                   line-height: 145.4%;
                   letter-spacing: 0.01em;
-                  color: $gray;
             }
 
             icon {

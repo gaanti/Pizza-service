@@ -51,7 +51,6 @@ export const pizzaSlice = createSlice({
                         console.log('error happened', action);
                   })
                   .addMatcher(pizzaApi.endpoints.getPizzas.matchFulfilled, (state, action) => {
-                        debugger;
                         console.log('SUCCESS!!!', action.payload);
                         state.pizzas = action.payload.pizzas.content;
                         state.total_pages_qty = action.payload.pizzas.totalPages;

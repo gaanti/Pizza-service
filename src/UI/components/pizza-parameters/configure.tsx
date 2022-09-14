@@ -34,8 +34,7 @@ function Configure(props: {
             const popop = differencewith(ingredients, props.ingredients, isequal);
             return searchIngredient.trim() != '' && searchIngredient.trim() != null
                   ? setSearchIngredientArray(popop.filter((value) => value.includes(searchIngredient)))
-                  : /*? setSearchIngredientArray( differencewith(ingredients, props.ingredients, isequal))*/
-                    setSearchIngredientArray([]);
+                  : setSearchIngredientArray([]);
       }, [props.ingredients, searchIngredient]);
 
       function popo() {
@@ -46,13 +45,23 @@ function Configure(props: {
                         }
                   }
             }
-            /*setSearchIngredientArray(ingredients)*/
       }
 
       const AreThereIngredients = !isequal(props.ingredients, []);
+      const ref = React.useRef();
+      useEffect(() => {
+            const click = (event: any) => {
+                  console.log(!(event.composedPath().includes(ref)), event.composedPath(), ref);
+                 /* if (!event.composedPath().includes(ref.current)) {
+                        props.setConfigureTab(!props.configureTab);
+                  }*/
+            };
+            document.body.addEventListener('click', click);
+            return () => document.body.removeEventListener('click', click);
+      }, []);
 
       return (
-            <div className="pizza-block__configure_window DIRECTION_COLUMN">
+            <div className="pizza-block__configure_window DIRECTION_COLUMN" ref={ref}>
                   <div className="DIRECTION_COLUMN">
                         <div style={{ backgroundColor: 'white' }}>
                               <h4 className="DIRECTION_ROW" style={{ whiteSpace: 'nowrap' }}>
@@ -76,7 +85,6 @@ function Configure(props: {
                                                             <img
                                                                   src="cancel.svg"
                                                                   onClick={() => {
-                                                                        // @ts-ignore
                                                                         props.setIngredients([...props.ingredients, v]);
                                                                         props.rerenderParent(!props.parent);
                                                                   }}

@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { createRef, useCallback, useEffect, useRef, useState } from "react";
 import { addItemOrIncreaseQuantity } from '../../redux/slices/cart';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
@@ -51,7 +51,6 @@ function PizzaBlock(props: { element: pizza }) {
       };
       useEffect(() => {
             const pizArr = findAllPizzasByConstantParameters();
-            // @ts-ignore
             if (pizArr) {
                   let popo = 0;
                   for (let i = 0; i < pizArr.length; i++) {
@@ -69,7 +68,6 @@ function PizzaBlock(props: { element: pizza }) {
                         <img className="pizza-block__image" src={'data:image/jpg;base64,' + props.element.image} alt="Pizza" />
                         <h4 className="pizza-block__title">{props.element.title}</h4>
                         {configureTab && (
-                              /*@ts-ignore*/
                               <Configure
                                     setConfigureTab={setConfigureTab}
                                     configureTab={configureTab}

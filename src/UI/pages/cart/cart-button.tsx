@@ -29,14 +29,18 @@ function CartButton() {
       }, [pizzasArray, totalCost, quantity]);
 
       return (
-            <div className="header__cart">
-                  <Link to="/cart" className="button button--cart">
-                        <span>$ {totalCost}</span>
-                        <div className="button__delimiter"></div>
-                        <img src="cart.svg" width="18" height="18" alt="cart image"></img>
-                        <span>{popo}</span>
-                  </Link>
-            </div>
+            <>
+                  {pizzasArray.length > 0 && (
+                        <div className="header__cart">
+                              <Link to="/cart" className="button button--cart">
+                                    <span>$ {totalCost}</span>
+                                    <div className="button__delimiter"></div>
+                                    <img src="cart.svg" width="18" height="18" alt="cart image"></img>
+                                    <span>{popo}</span>
+                              </Link>
+                        </div>
+                  )}
+            </>
       );
 }
 

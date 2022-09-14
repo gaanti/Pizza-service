@@ -14,7 +14,7 @@ function Header() {
                         </div>
 
                         <div className="header__logo___textNsubText">
-                              <Link to="/pizzas">
+                              <Link to="/">
                                     <h1> React Pizza </h1>
                               </Link>
                               <p>The tastiest pizza in the Universe</p>
@@ -28,7 +28,6 @@ function Header() {
             <div className="header">
                   <div className="header__container">
                         <MemorizedHeader />
-                        {/*@ts-ignore*/}
                         <CartButton />
                   </div>
             </div>

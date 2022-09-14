@@ -1,12 +1,14 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 import { pizzaApi } from '../services/pizza';
+import { RootState } from '../store';
 
 const initialState = {
       filterCategoryId: 0,
       filterCategoryOptions: [{ id: 0, categoryTitle: '' }],
       filterTitle: null,
-      sortBy: 'price'
+      sortBy: 'price',
+      sortDirection: 'decrease'
 };
 
 export const sliceSlice = createSlice({
@@ -23,17 +25,8 @@ export const sliceSlice = createSlice({
             setSort: (state, action: PayloadAction<string>) => {
                   state.sortBy = action.payload;
             },
-            setGetParams: (state, action: PayloadAction<any>) => {
-                  const setOrNot = (initialState: any, valueToSet: any) => {
-                        if (valueToSet !== undefined && valueToSet !== null) {
-                              return valueToSet;
-                        } else return initialState;
-                  };
-                  if (action.payload != null) {
-                        state.filterCategoryId = setOrNot(state.filterCategoryId, action.payload.filterByCategoryId);
-                        state.filterTitle = setOrNot(state.filterTitle, action.payload.filterTitle);
-                        state.sortBy = setOrNot(state.sortBy, action.payload.sortBy);
-                  }
+            setSortDirection: (state, action: PayloadAction<string>) => {
+                  state.sortDirection = action.payload;
             }
       },
       extraReducers: (builder) => {
@@ -42,7 +35,8 @@ export const sliceSlice = createSlice({
             });
       }
 });
+export const filteringParams = (state: RootState) => state.params;
 
-export const { setFilterByTitle, setFilterByCategoryId, setGetParams, setSort } = sliceSlice.actions;
+export const { setFilterByTitle, setFilterByCategoryId, setSort, setSortDirection } = sliceSlice.actions;
 
 export default sliceSlice.reducer;

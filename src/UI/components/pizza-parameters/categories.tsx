@@ -10,9 +10,14 @@ function Categories() {
       return (
             <div className="categories">
                   <ul>
-                        <li onClick={() => dispatch(setFilterByCategoryId(0))} className={filterCategoryId === 0 ? 'active' : ''} key={0}>
-                              All
-                        </li>
+                        {filterCategoryOptions.length > 1 && (
+                              <li
+                                    onClick={() => dispatch(setFilterByCategoryId(0))}
+                                    className={filterCategoryId == 0 ? 'active' : ''}
+                                    key={0}>
+                                    All
+                              </li>
+                        )}
                         {filterCategoryOptions.map((value) => {
                               if (value.id) {
                                     return (
