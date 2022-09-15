@@ -6,7 +6,7 @@ import { pizza } from '../../redux/types';
 import Configure from './pizza-parameters/configure';
 import { dough_radiusSelect, dough_widthsSelect } from '../../redux/slices/pizzas';
 
-function PizzaBlock(props: { element: pizza }) {
+function PizzaBlock(props: { element: pizza; index: number }) {
       const dispatch = useDispatch();
 
       const cartPizzas = useSelector((state: RootState) => state.cart.items);
@@ -26,8 +26,6 @@ function PizzaBlock(props: { element: pizza }) {
             setDoughRadius(dough_radius[0].radius);
             setDoughWidth(dough_widths[0].doughWidthTitle);
       };
-      const [configureTab, setConfigureTab] = useState(false);
-
       const findAllPizzasByConstantParameters = useCallback(() => {
             if (cartPizzas) {
                   return cartPizzas.filter((elem: any[0]) => elem.price === props.element.price && elem.title === props.element.title);
@@ -48,6 +46,7 @@ function PizzaBlock(props: { element: pizza }) {
                   })
             );
       };
+      const refference = useRef();
       useEffect(() => {
             const pizArr = findAllPizzasByConstantParameters();
             if (pizArr) {
@@ -88,21 +87,24 @@ function PizzaBlock(props: { element: pizza }) {
                               <div className="pizza-block__bottom">
                                     <div className="pizza-block__price">${props.element.price}</div>
                                     <div className="DIRECTION_ROW_WITHOUT_GAP">
-                                          <Configure
-                                                imageSRC={`data:image/jpg;base64,${props.element.image}`}
-                                                title={props.element.title}
-                                                setDoughRadius={setDoughRadius}
-                                                setDoughWidth={setDoughWidth}
-                                                doughRadius={doughRadius}
-                                                doughWidth={doughWidth}
-                                                increaseQty={increaseQty}
-                                                qtyOfItemsInCart={qtyOfItemsInCart}
-                                                ingredients={ingredients}
-                                                setIngredients={setIngredients}
-                                                parent={parent}
-                                                rerenderParent={rerenderParent}
-                                                resetPizzaParams={resetPizzaParams}
-                                          />
+                                          <div ref={refference}>
+                                                <Configure
+                                                      imageSRC={`data:image/jpg;base64,${props.element.image}`}
+                                                      title={props.element.title}
+                                                      setDoughRadius={setDoughRadius}
+                                                      setDoughWidth={setDoughWidth}
+                                                      doughRadius={doughRadius}
+                                                      doughWidth={doughWidth}
+                                                      increaseQty={increaseQty}
+                                                      qtyOfItemsInCart={qtyOfItemsInCart}
+                                                      ingredients={ingredients}
+                                                      setIngredients={setIngredients}
+                                                      parent={parent}
+                                                      rerenderParent={rerenderParent}
+                                                      resetPizzaParams={resetPizzaParams}
+                                                      refference={refference}
+                                                />
+                                          </div>
                                           <div
                                                 className="button button--outline button--add"
                                                 onClick={() => {

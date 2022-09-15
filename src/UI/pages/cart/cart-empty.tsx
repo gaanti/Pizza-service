@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 function CartEmpty() {
       return (
-            <div className="wrapper">
-                  <div className="content">
+            <div className="wrapper CENTRED_ITEM">
+                  <div className="content" style={{ width: '600px', marginBottom: '100px' }}>
                         <div className="container container--cart">
                               <div className="cart--empty">
                                     <h2>Cart is empty 😕</h2>

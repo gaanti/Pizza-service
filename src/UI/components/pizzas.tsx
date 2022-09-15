@@ -30,7 +30,7 @@ function Pizzas() {
             return (
                   <>
                         {data.pizzas.content.map((element, index) => {
-                              return <PizzaBlock element={element} key={index} />;
+                              return <PizzaBlock element={element} index={index} key={index} />;
                         })}
                   </>
             );
