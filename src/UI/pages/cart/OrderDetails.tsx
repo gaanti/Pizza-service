@@ -166,7 +166,6 @@ function OrderDetails() {
                               {contactMethod !== 'Nothing' && (
                                     <label className="input">
                                           <div className="input__label direction-row">{contactMethod}</div>
-
                                           <input
                                                 className="input__field"
                                                 type="text"
@@ -191,8 +190,7 @@ function OrderDetails() {
                                                             readyToCheckout.find((e) => e.contactPerson)
                                                                   ? console.log('succes')
                                                                   : console.log('failed');
-                                                            let readyToCheckout__COPY = readyToCheckout;
-                                                            readyToCheckout__COPY.push({ contactPerson: true });
+                                                            readyToCheckout.push({ contactPerson: true });
                                                             setReadyToCheckout(readyToCheckout);
                                                       } else;
                                                 }}

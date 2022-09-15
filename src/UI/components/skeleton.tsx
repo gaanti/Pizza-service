@@ -33,7 +33,7 @@ function Skeleton() {
             return (
                   <>
                         {arr.map((e) => {
-                              return <SkeletonObj />;
+                              return <SkeletonObj key={e} />;
                         })}
                   </>
             );

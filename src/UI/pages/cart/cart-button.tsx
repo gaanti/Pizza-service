@@ -12,7 +12,6 @@ function CartButton() {
             if (pizzasArray) {
                   for (let i = 0; i < pizzasArray.length; i++) {
                         temp += pizzasArray[i].quantity;
-                        //setQuantity(quantity + pizzasArray[i].quantity);
                   }
                   setQuantity(temp);
             }
@@ -22,7 +21,6 @@ function CartButton() {
             if (pizzasArray) {
                   for (let i = 0; i < pizzasArray.length; i++) {
                         temp += pizzasArray[i].quantity;
-                        //setQuantity(quantity + pizzasArray[i].quantity);
                   }
             }
             return temp;

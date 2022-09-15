@@ -6,7 +6,6 @@ import { useDispatch } from 'react-redux';
 import { pizzaApi } from './services/pizza';
 
 export const store = configureStore({
-      /*TODO fox double request*/
       reducer: {
             params: slice,
             cart: cart,

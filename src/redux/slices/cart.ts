@@ -45,13 +45,16 @@ export const cartSlice = createSlice({
                               0
                         );
                   }
-                  // @ts-ignore
                   window.localStorage.setItem('cart', JSON.stringify(state.items));
             },
             increase: (state, action: PayloadAction<number>) => {
                   const popo = state.items[action.payload];
                   ++popo.quantity;
                   window.localStorage.setItem('cart', JSON.stringify(state.items));
+                  state.total_price = state.items.reduce(
+                        (previousValue, currentValue) => previousValue + currentValue.price * currentValue.quantity,
+                        0
+                  );
             },
             decrease: (state, action: PayloadAction<number>) => {
                   const popo = state.items[action.payload];
@@ -59,10 +62,18 @@ export const cartSlice = createSlice({
                         --popo.quantity;
                   } else state.items.splice(action.payload, 1);
                   window.localStorage.setItem('cart', JSON.stringify(state.items));
+                  state.total_price = state.items.reduce(
+                        (previousValue, currentValue) => previousValue + currentValue.price * currentValue.quantity,
+                        0
+                  );
             },
             deleteLine: (state, action: PayloadAction<number>) => {
                   state.items.splice(action.payload, 1);
                   window.localStorage.setItem('cart', JSON.stringify(state.items));
+                  state.total_price = state.items.reduce(
+                        (previousValue, currentValue) => previousValue + currentValue.price * currentValue.quantity,
+                        0
+                  );
             },
             deleteAllPizzas: (state) => {
                   state.items = [];

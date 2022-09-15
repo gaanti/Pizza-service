@@ -16,7 +16,6 @@ export const sliceSlice = createSlice({
       initialState,
       reducers: {
             setFilterByTitle: (state, action: PayloadAction<string>) => {
-                  // @ts-ignore
                   state.filterTitle = action.payload;
             },
             setFilterByCategoryId: (state, action: PayloadAction<number>) => {

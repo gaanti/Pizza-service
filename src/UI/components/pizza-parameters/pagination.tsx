@@ -12,7 +12,6 @@ function Pagination() {
       const pagesQty = [];
       for (let i = 0; i < total_pages_qty; i++) {
             pagesQty.push(i + 1);
-            //TODO pagination after category change
       }
 
       const onClick = (index: number) => {

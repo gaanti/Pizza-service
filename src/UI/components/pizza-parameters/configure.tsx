@@ -1,4 +1,4 @@
-import React, { createRef, forwardRef, memo, useEffect, useState } from 'react';
+import React, { createRef, memo, useEffect, useState } from 'react';
 import DoughParams from '../doughParams';
 import isequal from 'lodash.isequal';
 import differencewith from 'lodash.differencewith';
@@ -23,7 +23,6 @@ function Configure(props: {
 }) {
       const ref = createRef<HTMLDivElement>();
       const [configureTab, setConfigureTab] = useState(false);
-      useEffect(() => console.log(ref, props.refference.current), [props.refference.current]);
 
       return (
             <div ref={ref}>
@@ -47,7 +46,6 @@ function Configure(props: {
                               parent={props.parent}
                               rerenderParent={props.rerenderParent}
                               resetPizzaParams={props.resetPizzaParams}
-                              ref={ref}
                               refference={props.refference.current}
                         />
                   )}
@@ -55,7 +53,6 @@ function Configure(props: {
       );
 }
 
-/*TODO replace forwardRef*/
 function PopUp(props: {
       setConfigureTab: React.Dispatch<React.SetStateAction<boolean>>;
       configureTab: boolean;
@@ -131,7 +128,7 @@ function PopUp(props: {
                                     <ul className="pizza-block__configure_window-add-ingredient">
                                           {searchIngredientArray.map((v) => {
                                                 return (
-                                                      <li>
+                                                      <li key={v}>
                                                             <div>{v}</div>
                                                             {/*PLUS from rotated cancel 45deg*/}
                                                             <img
@@ -166,8 +163,8 @@ function PopUp(props: {
                                                             src="cancel.svg"
                                                             style={{ width: '24px', height: '24px' }}
                                                             onClick={() => {
-                                                                  let temp = props.ingredients;
-                                                                  temp.splice(props.ingredients.indexOf(v), 1);
+                                                                  const temp = [...props.ingredients];
+                                                                  temp.splice(temp.indexOf(v), 1);
                                                                   setIngredient(temp);
                                                             }}
                                                             alt="remove ingredient"

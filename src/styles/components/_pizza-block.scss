@@ -74,7 +74,7 @@
                               display: flex;
                               align-items: center;
                               width: auto;
-                              p{
+                              p {
                                     font-size: 20px;
                               }
                               img {
@@ -203,7 +203,6 @@
                         white-space: nowrap;
 
                         &:not(.active):hover {
-                              //transform: translateY(2px);
                               text-decoration: underline;
 
                               box-shadow: 0 10px 10px -10px rgb(0 0 0 / 50%);
@@ -294,7 +293,6 @@
                         }
 
                         &:not(.active):hover {
-                              //transform: translateY(2px);
                               text-decoration: underline;
 
                               box-shadow: 0 10px 10px -10px rgb(0 0 0 / 50%);

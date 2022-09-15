@@ -12,7 +12,6 @@ function Pizzas() {
       const status = useSelector(statusSelect);
       const dispatch = useDispatch();
 
-      //const total_pages_qty = useSelector((state: RootState) => state.pizza.total_pages_qty);
       const { data } = useGetPizzasQuery({
             sortBy: sortBy,
             filterByCategory: filterCategoryId,
