@@ -6,7 +6,7 @@ import { RootState } from '../store';
 const initialState = {
       filterCategoryId: 0,
       filterCategoryOptions: [{ id: 0, categoryTitle: '' }],
-      filterTitle: null,
+      filterTitle: '',
       sortBy: 'price',
       sortDirection: 'decrease'
 };

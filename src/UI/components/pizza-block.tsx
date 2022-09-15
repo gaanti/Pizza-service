@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { MutableRefObject, RefObject, useCallback, useEffect, useRef, useState } from 'react';
 import { addItemOrIncreaseQuantity } from '../../redux/slices/cart';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
@@ -46,7 +46,6 @@ function PizzaBlock(props: { element: pizza; index: number }) {
                   })
             );
       };
-      const refference = useRef();
       useEffect(() => {
             const pizArr = findAllPizzasByConstantParameters();
             if (pizArr) {
@@ -59,6 +58,7 @@ function PizzaBlock(props: { element: pizza; index: number }) {
                   } else setQtyOfItemsInCart(0);
             }
       }, [increaseQty]);
+      const refference = useRef<HTMLDivElement>(null);
 
       return (
             <div className="pizza-block__wrapper">
