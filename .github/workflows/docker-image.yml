@@ -33,7 +33,7 @@ jobs:
         id: docker_push
         uses: docker push@v2
         with:
-          tags: ${{ env.DCKR_IMAGE_NAME }}:latest
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.DCKR_IMAGE_NAME }}:latest
           
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
