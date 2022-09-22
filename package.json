@@ -13,6 +13,7 @@
     "@types/react-dom": "^18.0.0",
     "@types/react-redux": "^7.1.24",
     "axios": "^0.27.2",
+    "http-proxy-middleware": "^2.0.6",
     "lodash.debounce": "^4.0.8",
     "lodash.differencewith": "^4.5.0",
     "lodash.includes": "^4.3.0",
@@ -64,5 +65,6 @@
     "ts-loader": "^9.3.1",
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0"
-  }
+  },
+  "proxy": "http://api:5000/"
 }
