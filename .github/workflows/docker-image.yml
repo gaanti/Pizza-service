@@ -55,7 +55,7 @@ jobs:
       - name: Deploy task definition to Amazon ECS
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
-          task-definition: ./AppBackFront.json
+          task-definition: /src/AppBackFront.json
           service: AppFrontBack
           cluster: Pizza-should-work
           wait-for-service-stability: true
