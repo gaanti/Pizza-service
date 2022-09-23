@@ -37,28 +37,28 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-north-1
 
-      - name: Delete AWS ECS Service
-        uses: icalia-actions/aws-delete-ecs-service@v0.0.1
-        with:
-          name: AppFrontBack
-          cluster: Pizza-should-work
-      - name: Deploy AWS ECS Service
-        uses: icalia-actions/deploy-aws-ecs-service@v0.0.1
-        with:
-          name: AppFrontBack
-          cluster: Pizza-should-work
-          template: templates/ecs/my-service.json
-          desired-count: 1
-          definition-template: AppBackFront.json
+#      - name: Delete AWS ECS Service
+#        uses: icalia-actions/aws-delete-ecs-service@v0.0.1
+#        with:
+#          name: AppFrontBack
+#          cluster: Pizza-should-work
+
+#      - name: Deploy AWS ECS Service
+#        uses: icalia-actions/deploy-aws-ecs-service@v0.0.1
+#        with:
+#          service-name: AppFrontBack
+#          cluster: Pizza-should-work
+#          desired-count: 1
+#          task-definition-template-path: ./AppBackFront.json
 #          container-images: '{"my-container":"my-built-image"}'
 
-#      - name: Deploy task definition to Amazon ECS
-#        uses: aws-actions/amazon-ecs-deploy-task-definition@v1
-#        with:
-#          task-definition: AppBackFront.json
-#          service: AppFrontBack
-#          cluster: Pizza-should-work
-#          wait-for-service-stability: true
+      - name: Deploy task definition to Amazon ECS
+        uses: aws-actions/amazon-ecs-deploy-task-definition@v1
+        with:
+          task-definition: ./AppBackFront.json
+          service: AppFrontBack
+          cluster: Pizza-should-work
+          wait-for-service-stability: true
 
-#      - name: Stop previous task definition
-#        run: stop-task --cluster Pizza-should-work --task
+      - name: Stop previous task definition
+        run: stop-task --cluster Pizza-should-work --task
