@@ -31,8 +31,8 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "webpack-dev-server --mode development --open --hot",
+    "build": "webpack --mode production",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -60,11 +60,13 @@
     "@types/lodash.includes": "^4.3.7",
     "@types/lodash.isequal": "^4.5.6",
     "compression-webpack-plugin": "^10.0.0",
+    "html-webpack-plugin": "^5.5.0",
     "prettier": "^2.7.1",
     "sass-loader": "^13.0.2",
     "ts-loader": "^9.3.1",
     "webpack": "^5.74.0",
-    "webpack-cli": "^4.10.0"
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.1"
   },
   "proxy": "http://api:5000/"
 }

@@ -47,6 +47,14 @@
                   text-transform: uppercase;
                   font-weight: 800;
             }
+            @media (max-width: 585px) {
+                  & h1{
+                        font-size: 22px;
+                  }
+                  & p{
+                        font-size: 10px;
+                  }
+            }
 
             p {
                   color: #7b7b7b;
@@ -76,6 +84,7 @@
             }
       }
 }
+
 .header {
       &__logo {
             &___textNsubText {

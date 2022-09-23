@@ -1,7 +1,11 @@
 const path = require('path');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
       entry: './src/index.tsx',
+      plugins: [new HtmlWebpackPlugin({
+            template: path.join(__dirname, 'src', 'index.html')
+      })],
       module: {
             rules: [
                   {
@@ -19,6 +23,11 @@ module.exports = {
                               // Compiles Sass to CSS
                               'sass-loader'
                         ]
+                  },
+                  {
+                        test: /\.(png|svg|jpg|jpeg|gif|ico)$/,
+                        exclude: /node_modules/,
+                        use: ['file-loader?name=[name].[ext]'] // ?name=[name].[ext] is only necessary to preserve the original file name
                   }
             ]
       },
