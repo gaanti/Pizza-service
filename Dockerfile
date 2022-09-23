@@ -7,11 +7,12 @@ COPY package.json package.json
 COPY yarn.lock yarn.lock
 
 RUN npm install --production
+RUN npm install webpack webpack-dev-server --save-dev
 
 COPY . .
 
 #RUN npm build
-RUN webpack --mode production
+RUN ./node_modules/.bin/webpack --progress --colors --mode production
 
 FROM nginx:alpine
 
