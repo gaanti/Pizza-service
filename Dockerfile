@@ -10,7 +10,8 @@ RUN npm install --production
 
 COPY . .
 
-RUN npm build
+#RUN npm build
+RUN webpack --mode production
 
 FROM nginx:alpine
 
