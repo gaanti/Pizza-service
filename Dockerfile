@@ -12,7 +12,7 @@ RUN npm install webpack webpack-dev-server --save-dev
 COPY . .
 
 #RUN npm build
-RUN ./node_modules/.bin/webpack --progress --colors --mode production
+RUN ./node_modules/.bin/webpack --progress --mode production
 
 FROM nginx:alpine
 
