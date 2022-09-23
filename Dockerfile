@@ -6,11 +6,11 @@ WORKDIR /app
 COPY package.json package.json
 COPY yarn.lock yarn.lock
 
-RUN yarn install --production
+RUN npm install --production
 
 COPY . .
 
-RUN yarn build
+RUN npm build
 
 FROM nginx:alpine
 
