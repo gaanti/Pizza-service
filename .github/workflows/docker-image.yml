@@ -62,7 +62,7 @@ jobs:
 
       - name: Download task definition
         run: |
-          aws ecs describe-task-definition --task-definition pizza_frontend --query taskDefinition > task-definition.json
+          aws ecs describe-task-definition --task-definition App1 --query taskDefinition > task-definition.json
 
       - name: Build, tag, and push image to Amazon ECR
         id: build-image
