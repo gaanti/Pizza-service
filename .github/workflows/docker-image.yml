@@ -88,5 +88,5 @@ jobs:
         with:
           task-definition: ${{ steps.task-def.outputs.task-definition }}
           service: AppFrontBack
-          cluster: Pizza-should-workUpdate
+          cluster: Pizza-should-work
           wait-for-service-stability: true
