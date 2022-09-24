@@ -18,47 +18,75 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
-      - name: Build and push
-        uses: docker/build-push-action@v2
-        with:
-          context: .
-          file: ./Dockerfile
-          push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/react_pizza_web:latest
-  deploy_task_definition:
-    runs-on: ubuntu-latest
-    steps:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-north-1
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
 
-#      - name: Delete AWS ECS Service
-#        uses: icalia-actions/aws-delete-ecs-service@v0.0.1
+#      - name: Set up Docker Buildx
+#        uses: docker/setup-buildx-action@v1
+#      - name: Build and push
+#        uses: docker/build-push-action@v2
 #        with:
-#          name: AppFrontBack
-#          cluster: Pizza-should-work
-
-#      - name: Deploy AWS ECS Service
-#        uses: icalia-actions/deploy-aws-ecs-service@v0.0.1
+#          context: .
+#          file: ./Dockerfile
+#          push: true
+#          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/react_pizza_web:latest
+##          -=-=-=-=-=-=-=-=-=----
+#      - name: Build, tag, and push image to Amazon ECR
+#        id: build-image
+#        env:
+#          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+#          ECR_REPOSITORY: pizza_frontend
+#          IMAGE_TAG: ${{ github.sha }}
+#          run: |
+#            docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+#            docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+#            echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
+#      - name: Fill in the new image ID in the Amazon ECS task definition
+#        id: task-def
+#        uses: aws-actions/amazon-ecs-render-task-definition@v1
 #        with:
-#          service-name: AppFrontBack
-#          cluster: Pizza-should-work
-#          desired-count: 1
-#          task-definition-template-path: ./AppBackFront.json
-#          container-images: '{"my-container":"my-built-image"}'
+#          task-definition: task-definition.json
+#          container-name: my-container
+#          image: ${{ steps.build-image.outputs.image }}
 
-      - name: Deploy task definition to Amazon ECS
+
+
+
+
+      - name: Download task definition
+        run: |
+          aws ecs describe-task-definition --task-definition pizza_frontend --query taskDefinition > task-definition.json
+          
+      - name: Build, tag, and push image to Amazon ECR
+        id: build-image
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          ECR_REPOSITORY: pizza_frontend
+          IMAGE_TAG: ${{ github.sha }}
+        run: |
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+          echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
+
+      - name: Fill in the new image ID in the Amazon ECS task definition
+        id: task-def
+        uses: aws-actions/amazon-ecs-render-task-definition@v1
+        with:
+          task-definition: task-definition.json
+          container-name: me-web
+          image: ${{ steps.build-image.outputs.image }}
+
+      - name: Deploy Amazon ECS task definition
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
-          task-definition: /src/AppBackFront.json
+          task-definition: ${{ steps.task-def.outputs.task-definition }}
           service: AppFrontBack
-          cluster: Pizza-should-work
+          cluster: Pizza-should-workUpdate
           wait-for-service-stability: true
-
-      - name: Stop previous task definition
-        run: stop-task --cluster Pizza-should-work --task
