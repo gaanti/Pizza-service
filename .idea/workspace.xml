@@ -6,7 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="7154f848-4d52-4cd8-a3e2-47b003914112" name="Changes" comment="Sorting, filtering and pagination functionality">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/nginx.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/services/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/services/api.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,7 +219,7 @@
       <workItem from="1663842868482" duration="547000" />
       <workItem from="1663843425567" duration="1268000" />
       <workItem from="1663956215008" duration="27168000" />
-      <workItem from="1664106616555" duration="652000" />
+      <workItem from="1664106616555" duration="2470000" />
     </task>
     <task id="LOCAL-00001" summary="Project has been initialized">
       <created>1660245634989</created>

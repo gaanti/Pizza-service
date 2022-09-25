@@ -18,13 +18,15 @@ FROM nginx:alpine
 
 COPY nginx.conf /etc/nginx/
 
+COPY ./public .
 WORKDIR /usr/share/nginx/html
 
 RUN rm -rf *
 
-
+COPY ./public .
 COPY --from=builder /app/build .
 
 EXPOSE 80
-ENTRYPOINT ["nginx", "-g", "daemon off;"]
+#ENTRYPOINT ["nginx", "-g", "daemon off;"]
+ENTRYPOINT ["nginx-debug", "-g", "daemon off;"]
 

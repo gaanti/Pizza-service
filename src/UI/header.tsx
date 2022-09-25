@@ -14,7 +14,7 @@ function Header() {
                         </div>
 
                         <div className="header__logo___textNsubText">
-                              <Link to="/">
+                              <Link to="/pizzas">
                                     <h1> React Pizza </h1>
                               </Link>
                               <p>The tastiest pizza in the Universe</p>
