@@ -17,8 +17,9 @@ root.render(
                               <div>
                                     <Header />
                                     <Routes>
-                                          <Route path="/" element={<App />}></Route>
+                                          <Route path="/pizzas" element={<App />}></Route>
                                           <Route path="/cart" element={<Cart />} />
+                                          <Route path="*" element={<div>ERROR PAGE NOT FOUND</div>} />
                                     </Routes>
                               </div>
                         </div>
