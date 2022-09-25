@@ -1,6 +1,10 @@
 name: Docker Image CI
 env:
   DCKR_IMAGE_NAME: "pizzeria_web"
+  CLUSTER: "Pizza-should-work"
+  SERVICE: "AppFrontBack"
+  CONTAINER_NAME: "web"
+  ECR_REPOSITORY: "pizza_frontend"
 on:
   push:
     branches: [ "master" ]
@@ -13,11 +17,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Login to Docker Hub
-        uses: docker/login-action@v1
-        with:
-          username: ${{ secrets.DOCKER_HUB_USERNAME }}
-          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -27,66 +26,27 @@ jobs:
       - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
-
-#      - name: Set up Docker Buildx
-#        uses: docker/setup-buildx-action@v1
-#      - name: Build and push
-#        uses: docker/build-push-action@v2
-#        with:
-#          context: .
-#          file: ./Dockerfile
-#          push: true
-#          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/react_pizza_web:latest
-##          -=-=-=-=-=-=-=-=-=----
-#      - name: Build, tag, and push image to Amazon ECR
-#        id: build-image
-#        env:
-#          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-#          ECR_REPOSITORY: pizza_frontend
-#          IMAGE_TAG: ${{ github.sha }}
-#          run: |
-#            docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
-#            docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-#            echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
-#      - name: Fill in the new image ID in the Amazon ECS task definition
-#        id: task-def
-#        uses: aws-actions/amazon-ecs-render-task-definition@v1
-#        with:
-#          task-definition: task-definition.json
-#          container-name: my-container
-#          image: ${{ steps.build-image.outputs.image }}
-
-
-
-
-
       - name: Download task definition
         run: |
           aws ecs describe-task-definition --task-definition App1 --query taskDefinition > task-definition.json
-
       - name: Build, tag, and push image to Amazon ECR
         id: build-image
-        env:
-          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY: pizza_frontend
-          IMAGE_TAG: ${{ github.sha }}
         run: |
-          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
-          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-          echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
-
+          docker build -t ${{ steps.login-ecr.outputs.registry }}/${{env.ECR_REPOSITORY}}:${{ github.sha }} .
+          docker push ${{ steps.login-ecr.outputs.registry }}/${{env.ECR_REPOSITORY}}:${{ github.sha }}
+          echo "::set-output name=image::${{ steps.login-ecr.outputs.registry }}/${{env.ECR_REPOSITORY}}:${{ github.sha }}"
       - name: Fill in the new image ID in the Amazon ECS task definition
         id: task-def
         uses: aws-actions/amazon-ecs-render-task-definition@v1
         with:
           task-definition: task-definition.json
-          container-name: web
+          container-name: ${{env.CONTAINER_NAME}}
           image: ${{ steps.build-image.outputs.image }}
 
       - name: Deploy Amazon ECS task definition
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
           task-definition: ${{ steps.task-def.outputs.task-definition }}
-          service: AppFrontBack
-          cluster: Pizza-should-work
+          service: ${{env.SERVICE}}
+          cluster: ${{env.CLUSTER}}
           wait-for-service-stability: true
