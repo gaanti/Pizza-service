@@ -16,7 +16,7 @@ RUN ./node_modules/.bin/webpack --progress --mode production
 
 FROM nginx:alpine
 
-#COPY nginx.conf /etc/nginx/
+COPY nginx.conf /etc/nginx/
 
 WORKDIR /usr/share/nginx/html
 
