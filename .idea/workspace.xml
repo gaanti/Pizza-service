@@ -9,8 +9,8 @@
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/nginx.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/header.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/services/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/services/api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,12 +44,12 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="nginx" />
-                    <option name="lastUsedInstant" value="1664108275" />
+                    <option name="branchName" value="master" />
+                    <option name="lastUsedInstant" value="1664180850" />
                   </RecentBranch>
                   <RecentBranch>
-                    <option name="branchName" value="master" />
-                    <option name="lastUsedInstant" value="1663932012" />
+                    <option name="branchName" value="nginx" />
+                    <option name="lastUsedInstant" value="1664108275" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="amazon" />

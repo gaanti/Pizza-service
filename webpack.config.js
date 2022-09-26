@@ -42,7 +42,7 @@ module.exports = {
       devServer: {
             allowedHosts: "all",
             compress: true,
-            port: 800,
+            port: 3000,
             open: true,
             historyApiFallback: true,
       },

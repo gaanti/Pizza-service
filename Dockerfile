@@ -1,32 +1,9 @@
-FROM node:latest AS builder
-#FROM node:alpine AS builder
-
+FROM node:alpine
 WORKDIR /app
-
-COPY package.json package.json
-COPY yarn.lock yarn.lock
-
-RUN npm install --production
-RUN npm install webpack webpack-dev-server --save-dev
-
+COPY package*.json .
+COPY yarn.lock .
+COPY ./node_modules node_modules
+RUN yarn install
 COPY . .
-
-#RUN npm build
-RUN ./node_modules/.bin/webpack --progress --mode production
-
-FROM nginx:alpine
-
-COPY nginx.conf /etc/nginx/
-
-COPY ./public .
-WORKDIR /usr/share/nginx/html
-
-RUN rm -rf *
-
-COPY ./public .
-COPY --from=builder /app/build .
-
-EXPOSE 80
-#ENTRYPOINT ["nginx", "-g", "daemon off;"]
-ENTRYPOINT ["nginx-debug", "-g", "daemon off;"]
-
+EXPOSE 3000
+CMD ["yarn", "startR"]
