@@ -17,7 +17,7 @@ export const pizzaApi = api.injectEndpoints({
                 const filterTitle1 = filterTitle ? `&filterByTitle=${filterTitle}` : '';
                 const sortDirection1 = sortDirection ? `&sortDirection=${sortDirection}` : '';
                 return {
-                    url: `pizzas?${sortBy1}${filterByCategory1}${currentPage1}${filterTitle1}${sortDirection1}`
+                    url: `api?${sortBy1}${filterByCategory1}${currentPage1}${filterTitle1}${sortDirection1}`
                 };
             }
         })
