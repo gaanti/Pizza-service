@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "esnext",
     "lib": [
       "dom",
       "dom.iterable",
@@ -20,11 +20,11 @@
     "outDir": "./dist/",
     "noImplicitAny": true,
     "module": "es6",
-    "jsx": "react",
+    "jsx": "react"
 
   },
   "exclude": ["node_modules"],
   "include": [
     "src/index.tsx"
-  ],
+  ]
 }

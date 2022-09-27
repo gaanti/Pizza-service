@@ -1,4 +1,3 @@
-import React from 'react';
 import CartItem from './cart-item';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../../redux/store';
@@ -7,6 +6,7 @@ import { Link } from 'react-router-dom';
 import CartEmpty from './cart-empty';
 import OrderDetails from './OrderDetails';
 import { PizzaForCart } from '../../../redux/types';
+import React from 'react';
 
 function Cart() {
       const pizzas = useSelector((state: RootState) => state.cart.items);
