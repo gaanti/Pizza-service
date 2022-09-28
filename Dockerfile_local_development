@@ -47,7 +47,7 @@ COPY ./*.json ./
 COPY ./yarn.lock ./
 COPY ./webpack.config.js ./
 
-RUN yarn install
+RUN --mount=type=cache,target=/root/.yarn YARN_CACHE_FOLDER=/root/.yarn yarn install
 COPY ./public public
 COPY ./src src
 EXPOSE 3000
