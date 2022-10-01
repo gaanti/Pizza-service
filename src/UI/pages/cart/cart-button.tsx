@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { cartItemsSelect, cartTotalPriceSelect } from '../../../redux/slices/cart';
+import { FaShoppingCart } from "react-icons/fa";
 
 function CartButton() {
       const pizzasArray = useSelector(cartItemsSelect);
@@ -30,10 +31,10 @@ function CartButton() {
             <>
                   {pizzasArray.length > 0 && (
                         <div className="header__cart">
-                              <Link to="/cart" className="button button--cart">
+                              <Link to="cart" className="button button--cart">
                                     <span>$ {totalCost}</span>
                                     <div className="button__delimiter"></div>
-                                    <img src="cart.svg" width="18" height="18" alt="cart image"></img>
+                                    <FaShoppingCart/>
                                     <span>{popo}</span>
                               </Link>
                         </div>

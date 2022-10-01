@@ -4,6 +4,8 @@ import isequal from 'lodash.isequal';
 import differencewith from 'lodash.differencewith';
 import { useSelector } from 'react-redux';
 import { ingredientsSelect } from '../../../redux/slices/pizzas';
+import { BsPlusSquareFill } from "react-icons/bs";
+import { MdCancel } from "react-icons/md";
 
 function Configure(props: {
       imageSRC: string;
@@ -131,13 +133,9 @@ function PopUp(props: {
                                                       <li key={v}>
                                                             <div>{v}</div>
                                                             {/*PLUS from rotated cancel 45deg*/}
-                                                            <img
-                                                                  src="cancel.svg"
-                                                                  onClick={() => {
-                                                                        setIngredient([...props.ingredients, v]);
-                                                                  }}
-                                                                  alt="add ingredient"
-                                                            />
+                                                            <BsPlusSquareFill onClick={() => {
+                                                                  setIngredient([...props.ingredients, v]);
+                                                            }}/>
                                                       </li>
                                                 );
                                           })}
@@ -159,16 +157,11 @@ function PopUp(props: {
                                     props.ingredients.map((v, index) => {
                                           return (
                                                 <div style={{ display: 'flex', justifyContent: 'flex-start' }} key={index}>
-                                                      <img
-                                                            src="cancel.svg"
-                                                            style={{ width: '24px', height: '24px' }}
-                                                            onClick={() => {
-                                                                  const temp = [...props.ingredients];
-                                                                  temp.splice(temp.indexOf(v), 1);
-                                                                  setIngredient(temp);
-                                                            }}
-                                                            alt="remove ingredient"
-                                                      />
+                                                      <MdCancel onClick={() => {
+                                                            const temp = [...props.ingredients];
+                                                            temp.splice(temp.indexOf(v), 1);
+                                                            setIngredient(temp);
+                                                      }}></MdCancel>
                                                       <li key={index}>{v}</li>
                                                 </div>
                                           );

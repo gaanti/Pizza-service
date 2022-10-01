@@ -62,16 +62,9 @@
       &--outline {
             background-color: #fff;
             border-color: $orange;
-
-            &,
+            color: $orange;
             span {
                   color: $orange;
-            }
-
-            svg {
-                  path {
-                        fill: $orange;
-                  }
             }
 
             &:hover {
@@ -82,11 +75,6 @@
                         color: $white;
                   }
 
-                  svg {
-                        path {
-                              fill: $white;
-                        }
-                  }
             }
 
             &:active {
@@ -103,7 +91,8 @@
       }
 
       &--add {
-            width: 146px;
+            width: 139px;
+            padding: 0 10px;
             svg {
                   margin-right: 2px;
             }

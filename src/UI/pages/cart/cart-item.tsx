@@ -2,6 +2,8 @@ import React from 'react';
 import { decrease, deleteLine, increase } from '../../../redux/slices/cart';
 import { useDispatch } from 'react-redux';
 import { PizzaForCart } from '../../../redux/types';
+import { MdCancel } from "react-icons/md";
+import { AiOutlineCloseSquare } from "react-icons/ai";
 
 function CartItem(props: { pizzasInCart: PizzaForCart; index: number }) {
       const dispatch = useDispatch();
@@ -38,14 +40,6 @@ function CartItem(props: { pizzasInCart: PizzaForCart; index: number }) {
                         <div className="cart__item-pizza-cost">
                               <div className="cart__item-pizza-cost-price">
                                     <b>${props.pizzasInCart.quantity * props.pizzasInCart.price}</b>
-                              </div>
-                              <div className="cart__item-pizza-cost-remove">
-                                    <div
-                                          onClick={() => {
-                                                dispatch(deleteLine(props.index));
-                                          }}>
-                                          <img src="cancel.svg" alt="delete that pizzas" />
-                                    </div>
                               </div>
                         </div>
                   </div>
