@@ -7,7 +7,7 @@ import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import { store } from "./redux/store";
 import Cart from "./UI/pages/cart/cart";
 import Header from "./UI/header";
-import Landing from "./Landinx";
+import Landing from "./UI/pages/landing/Landinx";
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(

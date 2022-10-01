@@ -1,0 +1,16 @@
+.point-wrapper{
+  //background-color: #71795E;
+  border-radius: 10px;
+  height: 70%;
+  width: 8.2vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  //background: linear-gradient(180deg, #3E2422 0%, #DD5139 100%);
+  background-color: #181413;
+  opacity: 1;
+  background-image:  radial-gradient(#71795E 0.45px, transparent 0.45px), radial-gradient(#71795E 0.45px, #181413 0.45px);
+  background-size: 18px 18px;
+  background-position: 0 0,9px 9px;
+}

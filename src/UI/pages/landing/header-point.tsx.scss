@@ -1,0 +1,17 @@
+@import "src/styles/variables";
+
+.header-point{
+  color: white;
+  width: 100%;
+  background-color: $orange;
+  //background-color: white;
+  border: solid 4px white;
+  padding: 4px;
+}
+.header-point-to-footer{
+  color: black;
+  width: 100%;
+  background-color: white;
+  //background-color: white;
+  padding: 4px;
+}

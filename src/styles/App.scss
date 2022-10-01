@@ -612,3 +612,11 @@ body {
     }
   }
 }
+.TWO_COLUMNS{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.FLEX{
+  display: flex;
+}
