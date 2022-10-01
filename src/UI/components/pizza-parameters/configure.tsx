@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 import { ingredientsSelect } from '../../../redux/slices/pizzas';
 import { BsPlusSquareFill } from "react-icons/bs";
 import { MdCancel } from "react-icons/md";
+import { AiFillSetting } from "react-icons/ai";
 
 function Configure(props: {
       imageSRC: string;
@@ -29,6 +30,7 @@ function Configure(props: {
       return (
             <div ref={ref}>
                   <div className="pizza-block__configure_button" onClick={() => setConfigureTab(!configureTab)}>
+                        <AiFillSetting></AiFillSetting>
                         Configure
                   </div>
                   {configureTab && (

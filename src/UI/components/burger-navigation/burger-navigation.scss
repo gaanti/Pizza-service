@@ -1,0 +1,97 @@
+.burger-navigation {
+  $size:46px;
+  background-color: black;
+  height: $size;
+  width: $size;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 4px 0;
+  div {
+    width: ($size * 0.59);
+    height: 3px;
+    background-color: #f9f9f9;
+  }
+}
+.make-burger-middle{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.scale-down-center {
+  transform: scale(1);
+  transition: all 1s;
+  animation: scale-down-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) forwards;
+}
+@-webkit-keyframes scale-down-center {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+}
+@keyframes scale-down-center {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+}
+
+
+
+
+.scale-center-down {
+  transform: scale(0.5);
+  transition: all 1s;
+  animation: scale-center-down 0.4s linear forwards;
+}
+
+@-webkit-keyframes scale-center-down {
+  0% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes scale-center-down {
+  0% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+.spin {
+  transition: all 1s;
+  animation: scale-down-center 0.4s linear forwards, spin-360-at-the-same 0.4s linear forwards infinite;
+}
+@-webkit-keyframes spin-360-at-the-same {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
+@keyframes spin-360-at-the-same {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
