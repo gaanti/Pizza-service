@@ -5,22 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7154f848-4d52-4cd8-a3e2-47b003914112" name="Changes" comment="Sorting, filtering and pagination functionality">
-      <change afterPath="$PROJECT_DIR$/src/UI/pages/landing/Footer.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/pages/landing/Footer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/pages/landing/Header.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/pages/landing/Header.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/pages/landing/Landinx.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/pages/landing/header-point-to-footer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/pages/landing/header-point.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/pages/landing/header-point.tsx.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/pages/landing/landing-side-header.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/pages/landing/landing-side-header.tsx.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Landinx.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/landing.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/landing/landing.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/pages/landing/Footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/landing/Footer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/pages/main-page/main-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/main-page/main-page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/App.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/_variables.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,7 +227,7 @@
       <workItem from="1664370892956" duration="2000" />
       <workItem from="1664370901234" duration="3378000" />
       <workItem from="1664400875915" duration="36000" />
-      <workItem from="1664567610663" duration="32649000" />
+      <workItem from="1664567610663" duration="34600000" />
     </task>
     <task id="LOCAL-00001" summary="Project has been initialized">
       <created>1660245634989</created>
@@ -271,7 +260,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="landing" />
+                        <option value="origin/landing" />
                       </list>
                     </value>
                   </entry>
