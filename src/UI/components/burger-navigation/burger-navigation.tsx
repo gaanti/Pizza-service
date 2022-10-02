@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./burger-navigation.scss";
-import { LeftPoints } from "../../landing/Landinx";
 import HeaderPointToFooter from "../../landing/header-point-to-footer";
 import HeaderPoint from "../../landing/header-point";
 import { useDispatch, useSelector } from "react-redux";
@@ -19,7 +18,6 @@ function BurgerNavigation() {
     setNavigation(!navigation)
   }
   const RightPnts = useSelector(footerPointsTitlesSelector)
-  let LeftPnts = { ...LeftPoints };
 
   return (
     <div className="burger-container">
@@ -32,13 +30,6 @@ function BurgerNavigation() {
             <div></div>
           </div>
         </div>
-        {!navigation && LeftPnts.points.map((point) => {
-          return (
-            <div className="hover">
-              <HeaderPoint>{point}</HeaderPoint>
-            </div>
-          );
-        })}
         {!navigation && RightPnts.map((point) => {
           return (
             <a href="#footer"  className="hover" onClick={() => {

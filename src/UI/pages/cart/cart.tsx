@@ -7,7 +7,7 @@ import CartEmpty from "./cart-empty";
 import OrderDetails from "./OrderDetails";
 import { PizzaForCart } from "../../../redux/types";
 import React from "react";
-import { IoChevronBackSharp, IoReturnDownBack } from "react-icons/io5";
+import { IoChevronBackSharp } from "react-icons/io5";
 import { BsFillCartXFill } from "react-icons/bs";
 
 function Cart() {
@@ -38,34 +38,33 @@ function Cart() {
               </div>
             </div>
             <div className="cart-wrapper">
-              <h1>Enter your data to order the pizza</h1>
               <div className="cart-wrapper_content">
                 <div className="cart__items">
-                  {pizzas.map((value: PizzaForCart, index) => {
+                  <div>{pizzas.map((value: PizzaForCart, index) => {
                     return <CartItem pizzasInCart={value} key={index} index={index} />;
-                  })}
+                  })}</div>
+                  <div className="cart__bottom-details">
+                                                <span>
+                                                      Total pizzas qty: <b>{quantity}</b>
+                                                </span>
+                    <span>
+                                                      Order cost: <b>${totalCost}</b>
+                                                </span>
+                  </div>
                 </div>
                 <OrderDetails />
               </div>
             </div>
             <div className="cart__bottom">
-              <div className="cart__bottom-details">
-                                                <span>
-                                                      Total pizzas: <b>{quantity} шт.</b>
-                                                </span>
-                <span>
-                                                      Order cost: <b>${totalCost}</b>
-                                                </span>
-              </div>
               <div className="cart__bottom-buttons">
                 {/*<Link to={'/'} className="button button--outline button--add go-back-btn">
                                                       <img src="grey-arrow-left.svg" alt="Back to homepage" />
                                                       <span>Back to homepage</span>
                                                 </Link>*/}
                 <div className="button button--outline button--add go-back-btn" onClick={() => navigate(-1)}>
-                  <IoChevronBackSharp color="#000"/>
+                  <IoChevronBackSharp color="#000" />
 
-                  <span >
+                  <span>
 
                     Back to homepage</span>
                 </div>

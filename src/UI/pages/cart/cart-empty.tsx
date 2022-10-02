@@ -7,7 +7,6 @@ function CartEmpty() {
                   <div className="content" style={{ width: '600px', marginBottom: '100px' }}>
                         <div className="container container--cart">
                               <div className="cart--empty">
-                                    {/*TODO make footer disappear or move to bottom*/}
                                     <h2>Cart is empty 😕</h2>
                                     <p>
                                           Probably, you haven't added pizza yet.
