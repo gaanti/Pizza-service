@@ -3,7 +3,9 @@
 @import 'src/styles/libs/normalize';
 
 @import 'src/styles/components/all';
-
+*{
+  accent-color: $orange;
+}
 body {
   //background-color: $background;
   /*background-color: #98150E;

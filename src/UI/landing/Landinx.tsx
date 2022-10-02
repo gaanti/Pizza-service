@@ -1,12 +1,12 @@
 import React from "react";
 import "./landing.scss";
-import "./Phone-landing.scss"
 import { Link } from "react-router-dom";
 import LandingSideHeader from "./landing-side-header";
 import Header from "./Header";
 import { footerPointsTitlesSelector } from "../../redux/slices/footer";
 import { useSelector } from "react-redux";
 import FooterWithButton from "../footer-with-button";
+import PhoneLanding from "./phone-landing";
 
 export const LeftPoints = {
   side: "left", points: ["Delivery time", "Personnel", "What ingredients we use"
@@ -47,9 +47,7 @@ function Landing() {
           </div>
           <LandingSideHeader points={RightPoints} />
         </div> :
-        <div className="phone-landing">
-          <img src="image1.jpg" alt="" />
-        </div>}
+        <PhoneLanding></PhoneLanding>}
       <FooterWithButton />
     </div>
   );
