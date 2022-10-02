@@ -5,7 +5,7 @@ import HeaderPointToFooter from "../../landing/header-point-to-footer";
 import HeaderPoint from "../../landing/header-point";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  footerPointsTitlesSelector, footerVisibilitySelector,
+  footerPointsTitlesSelector,
   setNavigatedItemSelector,
   setVisibility
 } from "../../../redux/slices/footer";
