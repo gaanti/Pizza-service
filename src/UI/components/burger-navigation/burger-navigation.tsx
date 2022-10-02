@@ -5,18 +5,16 @@ import HeaderPointToFooter from "../../landing/header-point-to-footer";
 import HeaderPoint from "../../landing/header-point";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  footerPointsTitlesSelector,
+  footerPointsTitlesSelector, footerVisibilitySelector,
   setNavigatedItemSelector,
-  setVisibility,
+  setVisibility
 } from "../../../redux/slices/footer";
 
 function BurgerNavigation() {
   const dispatch = useDispatch()
-  const pickFooterPoint = (item:string) =>{
-    dispatch(setNavigatedItemSelector(item))
-  }
   const [navigation, setNavigation] = useState(true);
-  const navigateToFooter = () => {
+  const navigateToFooter = (item:string) => {
+    dispatch(setNavigatedItemSelector(item))
     dispatch(setVisibility(true))
     setNavigation(!navigation)
   }
@@ -25,7 +23,7 @@ function BurgerNavigation() {
 
   return (
     <div className="burger-container">
-      <div className="opened-burger-menu">
+      <div className="opened-burger-menu" style={{position:!navigation?"absolute":undefined}}>
         <div className="make-burger-middle">
           <div className={"burger-navigation " + `${navigation ? "scale-center-down" : "spin"}`}
                onClick={() => setNavigation(!navigation)}>
@@ -35,7 +33,6 @@ function BurgerNavigation() {
           </div>
         </div>
         {!navigation && LeftPnts.points.map((point) => {
-          console.log(point);
           return (
             <div className="hover">
               <HeaderPoint>{point}</HeaderPoint>
@@ -43,13 +40,11 @@ function BurgerNavigation() {
           );
         })}
         {!navigation && RightPnts.map((point) => {
-          console.log(point);
           return (
-            <a href="#footer">
-              <div className="hover" onClick={() => {
-                pickFooterPoint(point)
-                navigateToFooter();
-              }}>
+            <a href="#footer"  className="hover" onClick={() => {
+              navigateToFooter(point);
+            }}>
+              <div>
                 <HeaderPointToFooter>{point}</HeaderPointToFooter>
               </div>
             </a>

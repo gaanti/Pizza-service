@@ -6,6 +6,8 @@
   color: white;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  row-gap: 10px;
   transition: 200ms;
   justify-content: space-evenly;
   *{

@@ -35,13 +35,9 @@
       background-repeat: no-repeat;
 
       &-block-1 {
-        height: 100%;
-
         & * {
           color: white;
         }
-
-
         & button {
           width: 100%;
           height: 100%;
@@ -54,7 +50,6 @@
           padding: 10px;
           border: solid 3px white;
         }
-
         border-radius: 20px;
         margin: auto;
         padding: 40px;

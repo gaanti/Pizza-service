@@ -5,40 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7154f848-4d52-4cd8-a3e2-47b003914112" name="Changes" comment="Sorting, filtering and pagination functionality">
-      <change afterPath="$PROJECT_DIR$/src/UI/footer-with-button.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/landing/Footer.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/landing/Footer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/landing/Header.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/landing/Landinx.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/slices/footer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/Landing.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/landing/Landing.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/components/burger-navigation/burger-navigation.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/components/burger-navigation/burger-navigation.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/components/burger-navigation/burger-navigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/components/burger-navigation/burger-navigation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/cart-empty.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/cart/cart-empty.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/cart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/cart/cart.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/landing/Footer.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/landing/Footer.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/landing/Header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/landing/Header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/landing/Header.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/landing/Landinx.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/landing/header-point-to-footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/landing/header-point-to-footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/landing/header-point.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/landing/header-point.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/landing/header-point.tsx.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/landing/header-point.tsx.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/landing/landing-legend.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/landing/landing-legend.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/landing/landing-legend.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/landing/landing-legend.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/landing/landing-side-header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/landing/landing-side-header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/landing/landing-side-header.tsx.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/landing/landing-side-header.tsx.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/landing/landing.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/landing/landing.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/App.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/landing/Footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/landing/Footer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/landing/header-point.tsx.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/landing/header-point.tsx.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/landing/landing.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/landing/landing.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/components/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/_header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/components/_pizza-block.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/_pizza-block.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/components/_sort.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/_sort.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/components/landing_old.scss" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -257,7 +230,7 @@
       <workItem from="1664370892956" duration="2000" />
       <workItem from="1664370901234" duration="3378000" />
       <workItem from="1664400875915" duration="36000" />
-      <workItem from="1664567610663" duration="67424000" />
+      <workItem from="1664567610663" duration="69128000" />
     </task>
     <task id="LOCAL-00001" summary="Project has been initialized">
       <created>1660245634989</created>

@@ -5,12 +5,14 @@
   justify-content: flex-end;
   width: 100%;
   padding: 4px;
+  cursor: pointer;
 }
 .header-point-to-page{
   color: white;
   background-color: $orange;
 }
 .header-point-to-footer{
+  width: 100%;
   color: black;
   background-color: white;
 }
