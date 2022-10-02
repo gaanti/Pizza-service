@@ -226,7 +226,7 @@ body {
   &__items {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: flex-start;
   }
 
   &___user__data_order {

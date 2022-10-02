@@ -5,6 +5,8 @@ import "../styles/components/live-gradient-border.scss";
 import BurgerNavigation from "./components/burger-navigation/burger-navigation";
 
 function Header() {
+
+
   const Header = () => {
     return (
       <div className="header__logo">

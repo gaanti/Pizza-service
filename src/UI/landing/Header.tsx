@@ -6,9 +6,9 @@ function Header() {
     <div className="moving-text">
       <div id="rssBlock">
         <p className="cnnContents">
-          <span className="marqueeStyle">&nbsp;continuous infinite text loop 1 continuous infinite text loop 2 </span>
+          <span className="marqueeStyle">|&nbsp;REACT PIZZA | REACT PIZZA | REACT PIZZA | REACT PIZZA | REACT PIZZA |&nbsp;</span>
           <span
-            className="marqueeStyle2">&nbsp;continuous infinite text loop 3 continuous infinite text loop 4&nbsp;</span>
+            className="marqueeStyle2">|&nbsp;REACT PIZZA | REACT PIZZA | REACT PIZZA | REACT PIZZA | REACT PIZZA |&nbsp;</span>
         </p>
       </div>
     </div>

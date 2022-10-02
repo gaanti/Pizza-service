@@ -30,12 +30,11 @@ function Cart() {
           <div className="cart">
             <div className="cart__top">
               <h2 className="content__title">
-                <img src="cart.svg" alt="cart image" />
                 Cart
               </h2>
               <div className="cart__clear" onClick={() => dispatch(deleteAllPizzas())}>
                 <BsFillCartXFill></BsFillCartXFill>
-                <span>Clear the cart</span>
+                <span>Make it empty</span>
               </div>
             </div>
             <div className="cart-wrapper">
