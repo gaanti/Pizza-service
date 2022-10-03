@@ -31,7 +31,7 @@ function BurgerNavigation() {
                                     RightPnts.map((point) => {
                                           return (
                                                 <a
-                                                      href="src/UI/cross-page-components/header/burger-navigation/burger-navigation#footer"
+                                                      href="#footer"
                                                       className="hover"
                                                       onClick={() => {
                                                             navigateToFooter(point);
