@@ -1,7 +1,7 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
-import { pizzaApi } from '../services/pizza';
-import { RootState } from '../store';
+import { pizzaApi } from '../../services/pizza';
+import { RootState } from '../../store';
 
 const initialState = {
       filterCategoryId: 0,

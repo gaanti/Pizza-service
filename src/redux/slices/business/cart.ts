@@ -1,8 +1,8 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
-import { PizzaForCart } from '../types';
+import { PizzaForCart } from '../../types';
 import isequal from 'lodash.isequal';
-import { RootState } from '../store';
+import { RootState } from '../../store';
 
 export const func = () => {
       const pflor = () => {

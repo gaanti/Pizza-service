@@ -6,8 +6,8 @@ import { Provider } from 'react-redux';
 import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
 import { store } from './redux/store';
 import Cart from './UI/pages/cart/cart';
-import Header from './UI/header';
-import FooterWithButton from './UI/footer-with-button';
+import Header from './UI/cross-page-components/header/header';
+import FooterWithButton from './UI/cross-page-components/footer/footer-with-button';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(

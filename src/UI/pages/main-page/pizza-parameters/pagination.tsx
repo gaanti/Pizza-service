@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
-import { useAppDispatch } from '../../../redux/store';
-import { current_page_indexSelect, setCurrentPage, total_pages_qtySelect } from '../../../redux/slices/pizzas';
+import { useAppDispatch } from '../../../../redux/store';
+import { current_page_indexSelect, setCurrentPage, total_pages_qtySelect } from '../../../../redux/slices/business/pizzas';
 import React from 'react';
 
 function Pagination() {

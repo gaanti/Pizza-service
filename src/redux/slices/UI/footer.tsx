@@ -1,6 +1,6 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
-import { RootState } from '../store';
+import { RootState } from '../../store';
 import { AiFillInstagram, AiFillPhone, AiFillTwitterCircle } from 'react-icons/ai';
 import { BsFacebook, BsTelegram } from 'react-icons/bs';
 import { BiTimeFive } from 'react-icons/bi';

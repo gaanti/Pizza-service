@@ -1,7 +1,7 @@
 import CartItem from './cart-item';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../../redux/store';
-import { deleteAllPizzas } from '../../../redux/slices/cart';
+import { deleteAllPizzas } from '../../../redux/slices/business/cart';
 import { useNavigate } from 'react-router-dom';
 import CartEmpty from './cart-empty';
 import OrderDetails from './OrderDetails';

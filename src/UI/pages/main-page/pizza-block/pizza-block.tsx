@@ -1,10 +1,10 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { addItemOrIncreaseQuantity } from '../../redux/slices/cart';
+import { addItemOrIncreaseQuantity } from '../../../../redux/slices/business/cart';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../../redux/store';
-import { pizza } from '../../redux/types';
-import Configure from './pizza-parameters/configure';
-import { dough_radiusSelect, dough_widthsSelect } from '../../redux/slices/pizzas';
+import { RootState } from '../../../../redux/store';
+import { pizza } from '../../../../redux/types';
+import Configure from './configure';
+import { dough_radiusSelect, dough_widthsSelect } from '../../../../redux/slices/business/pizzas';
 
 function PizzaBlock(props: { element: pizza; index: number }) {
       const dispatch = useDispatch();

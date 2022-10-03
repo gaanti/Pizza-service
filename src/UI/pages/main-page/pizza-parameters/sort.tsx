@@ -1,7 +1,7 @@
 import React, { forwardRef, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { filteringParams, setSort, setSortDirection } from '../../../redux/slices/filtering_params';
-import useToggle from '../../../hooks/toggleHook';
+import { filteringParams, setSort, setSortDirection } from '../../../../redux/slices/business/filtering_params';
+import useToggle from '../../../../hooks/toggleHook';
 
 const SortPOPUP = forwardRef(
       (

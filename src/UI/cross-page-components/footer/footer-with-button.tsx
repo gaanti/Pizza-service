@@ -1,7 +1,7 @@
 import React from 'react';
-import { footerVisibilitySelector, setSwitchVisibility } from '../redux/slices/footer';
+import { footerVisibilitySelector, setSwitchVisibility } from '../../../redux/slices/UI/footer';
 import { AiOutlineArrowDown, AiOutlineArrowUp } from 'react-icons/ai';
-import Footer from './landing/Footer';
+import Footer from './Footer';
 import './footer-with-button.scss';
 import { useDispatch, useSelector } from 'react-redux';
 

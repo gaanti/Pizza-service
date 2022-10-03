@@ -1,7 +1,7 @@
 import React from 'react';
 import './Footer.scss';
 import { useSelector } from 'react-redux';
-import { footerPointsSelector, navigatedItemSelector } from '../../redux/slices/footer';
+import { footerPointsSelector, navigatedItemSelector } from '../../../redux/slices/UI/footer';
 
 function Footer() {
       const footerPoints1 = useSelector(footerPointsSelector);

@@ -1,9 +1,9 @@
 import React, { createRef, memo, useEffect, useState } from 'react';
-import DoughParams from '../doughParams';
+import DoughParams from './doughParams';
 import isequal from 'lodash.isequal';
 import differencewith from 'lodash.differencewith';
 import { useSelector } from 'react-redux';
-import { ingredientsSelect } from '../../../redux/slices/pizzas';
+import { ingredientsSelect } from '../../../../redux/slices/business/pizzas';
 import { BsPlusSquareFill } from 'react-icons/bs';
 import { MdCancel } from 'react-icons/md';
 import { AiFillSetting } from 'react-icons/ai';

@@ -1,9 +1,9 @@
 import React from 'react';
-import Pizzas from '../../components/pizzas';
-import Categories from '../../components/pizza-parameters/categories';
-import Sort from '../../components/pizza-parameters/sort';
-import Search from '../../components/pizza-parameters/search';
-import Pagination from '../../components/pizza-parameters/pagination';
+import Pizzas from './pizza-block/pizzas';
+import Categories from './pizza-parameters/categories';
+import Sort from './pizza-parameters/sort';
+import Search from './pizza-parameters/search';
+import Pagination from './pizza-parameters/pagination';
 
 function MainPage() {
       return (

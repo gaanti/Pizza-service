@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './burger-navigation.scss';
-import HeaderPointToFooter from '../../landing/header-point-to-footer';
+import HeaderPointToFooter from '../header-point-to-footer';
 import { useDispatch, useSelector } from 'react-redux';
-import { footerPointsTitlesSelector, setNavigatedItemSelector, setVisibility } from '../../../redux/slices/footer';
+import { footerPointsTitlesSelector, setNavigatedItemSelector, setVisibility } from '../../../../redux/slices/UI/footer';
 
 function BurgerNavigation() {
       const dispatch = useDispatch();
@@ -31,7 +31,7 @@ function BurgerNavigation() {
                                     RightPnts.map((point) => {
                                           return (
                                                 <a
-                                                      href="#footer"
+                                                      href="src/UI/cross-page-components/header/burger-navigation/burger-navigation#footer"
                                                       className="hover"
                                                       onClick={() => {
                                                             navigateToFooter(point);

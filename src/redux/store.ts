@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import slice from './slices/filtering_params';
-import cart from './slices/cart';
-import pizzas from './slices/pizzas';
+import slice from './slices/business/filtering_params';
+import cart from './slices/business/cart';
+import pizzas from './slices/business/pizzas';
 import { useDispatch } from 'react-redux';
 import { pizzaApi } from './services/pizza';
-import footer from './slices/footer';
+import footer from './slices/UI/footer';
 
 export const store = configureStore({
       reducer: {

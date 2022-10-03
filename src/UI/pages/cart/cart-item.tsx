@@ -1,5 +1,5 @@
 import React from 'react';
-import { decrease, increase } from '../../../redux/slices/cart';
+import { decrease, increase } from '../../../redux/slices/business/cart';
 import { useDispatch } from 'react-redux';
 import { PizzaForCart } from '../../../redux/types';
 
