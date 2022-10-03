@@ -10,7 +10,6 @@ export const pizzaApi = api.injectEndpoints({
             getPizzas: builder.query<pagedPizzas, any>({
                   // @ts-ignore
                   query: ({ sortBy, filterByCategory, currentPage, filterTitle, sortDirection }) => {
-                        console.log(sortBy, filterByCategory, currentPage, filterTitle, sortDirection);
                         const sortBy1 = `sortBy=${sortBy ? sortBy : 'price'}`;
                         const filterByCategory1 = `&filterByCategoryId=${filterByCategory ? filterByCategory : '0'}`;
                         const currentPage1 = `&currentPage=${currentPage > 0 ? currentPage : 0}`;

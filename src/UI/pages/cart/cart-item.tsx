@@ -5,7 +5,6 @@ import { PizzaForCart } from '../../../redux/types';
 
 function CartItem(props: { pizzasInCart: PizzaForCart; index: number }) {
       const dispatch = useDispatch();
-      console.log(props.pizzasInCart);
 
       return (
             <>

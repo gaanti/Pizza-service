@@ -216,8 +216,8 @@ bottom: 0;
         @include noselect();
         transition: 200ms;
         background-color: #ffffff;
-        color: $orange;
-        border: solid $orange 1px;
+        color: $accent-color;
+        border: solid $accent-color 1px;
         padding: 3px;
         white-space: nowrap;
 

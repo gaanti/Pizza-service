@@ -16,19 +16,19 @@ function BurgerNavigation() {
 
       return (
             <div className={`burger-container ${navigation ? 'CENTRED_ITEM' : ''}`}>
-                  <div className={`burger-menu ${navigation ? 'burger-menu-closed' : 'burger-menu-opened'}`}>
+                  <div className={`burger-wrapper ${navigation ? 'burger-menu-closed' : 'burger-menu-opened'}`}>
                         <div className="make-burger-middle">
                               <div
-                                    className={'burger-navigation ' + `${navigation ? 'scale-center-down' : 'spin'}`}
+                                    className={'burger-open-button ' + `${navigation ? 'scale-center-down' : 'spin'}`}
                                     onClick={() => setNavigation(!navigation)}>
                                     <div></div>
                                     <div></div>
                                     <div></div>
                               </div>
                         </div>
-                        <div>
-                              {!navigation &&
-                                    RightPnts.map((point) => {
+                        {!navigation && (
+                              <div className="burger-menu">
+                                    {RightPnts.map((point) => {
                                           return (
                                                 <a
                                                       href="#footer"
@@ -36,13 +36,12 @@ function BurgerNavigation() {
                                                       onClick={() => {
                                                             navigateToFooter(point);
                                                       }}>
-                                                      <div>
-                                                            <HeaderPointToFooter>{point}</HeaderPointToFooter>
-                                                      </div>
+                                                      <HeaderPointToFooter>{point}</HeaderPointToFooter>
                                                 </a>
                                           );
                                     })}
-                        </div>
+                              </div>
+                        )}
                   </div>
             </div>
       );

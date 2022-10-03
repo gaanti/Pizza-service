@@ -5,7 +5,7 @@
 @import 'src/styles/components/all';
 
 * {
-  accent-color: $orange;
+  accent-color: $accent-color;
 }
 
 body {
@@ -104,6 +104,14 @@ body {
     flex-direction: row;
     justify-content: flex-start;
     white-space: nowrap;
+    @media (max-width: 320px) {
+      & {
+        margin: 0;
+        white-space: nowrap;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
   }
 
   &__items {
@@ -162,14 +170,14 @@ body {
     }
 
     &-active-page {
-      background-color: $orange;
+      background-color: $accent-color;
       color: $white;
     }
   }
 }
 
 .container {
-  width: $container-width;
+  width: 100%;
   margin: 0 auto;
   flex-wrap: wrap;
   align-content: center;
@@ -204,6 +212,9 @@ body {
 
 .cart {
   cursor: default;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 
   &-wrapper {
     display: grid;
@@ -227,10 +238,11 @@ body {
   }
 
   &__items {
-    padding: 0 0 40px 0;
+    //padding: 0 0 40px 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 18px;
   }
 
   &___user__data_order {
@@ -246,7 +258,7 @@ body {
     border-radius: $border-radius;
     background: $white;
     //color: $black;
-    border: $orange solid;
+    border: $accent-color solid;
     line-height: 1.4;
 
     font-family: 'Inter', sans-serif;
@@ -304,6 +316,7 @@ body {
   .content__title {
     display: flex;
     font-size: 32px;
+
 
     svg {
       position: relative;
@@ -501,10 +514,12 @@ body {
         }
       }
     }
+    @media (max-width: 330px) {
+      padding: 0!important;
+    }
   }
 
   &__bottom {
-    margin: 50px 0;
 
     &-details {
       display: flex;
@@ -519,7 +534,7 @@ body {
 
         &:last-of-type {
           b {
-            color: $orange;
+            color: $accent-color;
           }
         }
       }
@@ -528,10 +543,10 @@ body {
     &-buttons {
       display: flex;
       justify-content: space-between;
-      margin-top: 40px;
       gap: 1px;
 
       .go-back-btn {
+        white-space: normal;
         display: flex;
         gap: 8px;
         align-items: center;

@@ -1,7 +1,7 @@
 @import 'src/styles/variables';
 
 .button {
-  background-color: $orange;
+  background-color: $accent-color;
   border-radius: $border-radius;
   text-align: center;
   cursor: pointer;
@@ -31,11 +31,11 @@
   }
 
   &:hover {
-    background-color: darken($orange, 8%);
+    background-color: darken($accent-color, 8%);
   }
 
   &:active {
-    background-color: darken($orange, 12%);
+    background-color: darken($accent-color, 12%);
     transform: translateY(1px);
   }
 
@@ -62,15 +62,15 @@
 
   &--outline {
     background-color: #fff;
-    border-color: $orange;
-    color: $orange;
+    border-color: $accent-color;
+    color: $accent-color;
 
     span {
-      color: $orange;
+      color: $accent-color;
     }
 
     &:hover {
-      background-color: $orange;
+      background-color: $accent-color;
 
       &,
       span {
@@ -80,7 +80,7 @@
     }
 
     &:active {
-      background-color: darken($orange, 8%);
+      background-color: darken($accent-color, 8%);
     }
   }
 
@@ -109,14 +109,14 @@
     &:hover {
       i {
         background-color: $white;
-        color: $orange;
+        color: $accent-color;
       }
     }
 
     i {
       display: inline-block;
       border-radius: $border-radius;
-      background-color: $orange;
+      background-color: $accent-color;
       color: $white;
       font-weight: 600;
       width: 19px;

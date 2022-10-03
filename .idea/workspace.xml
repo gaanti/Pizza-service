@@ -6,10 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="7154f848-4d52-4cd8-a3e2-47b003914112" name="Changes" comment="Sorting, filtering and pagination functionality">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/main-page/pizza-block/configure.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/main-page/pizza-block/configure.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/main-page/pizza-block/doughParams.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/main-page/pizza-block/doughParams.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/components/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/_header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/cross-page-components/header/burger-navigation/burger-navigation.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/cross-page-components/header/burger-navigation/burger-navigation.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/cross-page-components/header/burger-navigation/burger-navigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/cross-page-components/header/burger-navigation/burger-navigation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/cross-page-components/header/header-point.tsx.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/cross-page-components/header/header-point.tsx.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/cart-item.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/cart/cart-item.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/services/pizza.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/services/pizza.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/slices/business/pizzas.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/business/pizzas.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/App.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/components/__input.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/__input.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/components/_button.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/_button.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/components/_pizza-block.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/_pizza-block.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/components/_sort.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/_sort.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/components/live-gradient-border.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/live-gradient-border.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,31 +106,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/juliagaskevich/IdeaProjects/Pizzeria/Pizza-service/public",
-    "list.type.of.created.stylesheet": "SCSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "prettier.import.notification.dismissed": "true",
-    "prettierjs.PrettierConfiguration.Package": "/Users/juliagaskevich/IdeaProjects/Pizzeria/Pizza-service/node_modules/prettier",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "settings.javascript.prettier",
-    "settings.editor.splitter.proportion": "0.20500347",
-    "ts.external.directory.path": "/Users/juliagaskevich/IdeaProjects/Pizzeria/Pizza-service/node_modules/typescript/lib",
-    "typescript.add.unambiguous.imports.on.the.fly": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/juliagaskevich/IdeaProjects/Pizzeria/Pizza-service/public&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettier.import.notification.dismissed&quot;: &quot;true&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/juliagaskevich/IdeaProjects/Pizzeria/Pizza-service/node_modules/prettier&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
+    &quot;settings.editor.splitter.proportion&quot;: &quot;0.20500347&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/juliagaskevich/IdeaProjects/Pizzeria/Pizza-service/node_modules/typescript/lib&quot;,
+    &quot;typescript.add.unambiguous.imports.on.the.fly&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -232,7 +241,9 @@
       <workItem from="1664370892956" duration="2000" />
       <workItem from="1664370901234" duration="3378000" />
       <workItem from="1664400875915" duration="36000" />
-      <workItem from="1664567610663" duration="97785000" />
+      <workItem from="1664567610663" duration="102760000" />
+      <workItem from="1664823505284" duration="24000" />
+      <workItem from="1664823536806" duration="3038000" />
     </task>
     <task id="LOCAL-00001" summary="Project has been initialized">
       <created>1660245634989</created>

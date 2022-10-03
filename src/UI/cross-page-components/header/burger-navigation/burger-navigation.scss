@@ -1,24 +1,25 @@
 @import "../../../../styles/variables";
-
-.burger-navigation {
-  $size: 47px;
+$burger-size: 47px;
+.burger-open-button {
   background-color: black;
-  height: $size;
-  width: $size;
+  height: $burger-size;
+  width: $burger-size;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  padding: $size/9 0;
+  padding: $burger-size/9 0;
 
   div {
-    width: ($size * 0.59);
-    height: $size/15;
+    width: ($burger-size * 0.59);
+    height: $burger-size/15;
     background-color: #f9f9f9;
   }
 }
 
 .make-burger-middle {
+  //background-color: #ff4900;
+  border-radius: $border-radius $border-radius 0 0!important;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -103,9 +104,9 @@
   }
 }
 
-.burger-menu {
+.burger-wrapper {
   display: flex;
-  //position: absolute;
+  position: relative;
   flex-direction: column;
   align-items: flex-end;
   height: auto;
@@ -114,11 +115,12 @@
   top: 0;
   right: 0;
   z-index: 3;
-  background-color: #F1CE9D;
-  opacity: 1;
-  background-image: radial-gradient(#98150E 0.45px, transparent 0.45px), radial-gradient(#98150E 0.45px, #F1CE9D 0.45px);
-  background-size: 18px 18px;
-  background-position: 0 0, 9px 9px;
+  background-color: white;
+  //background-color: #F1CE9D;
+  //opacity: 1;
+  //background-image: radial-gradient(#98150E 0.45px, transparent 0.45px), radial-gradient(#98150E 0.45px, #F1CE9D 0.45px);
+  //background-size: 18px 18px;
+  //background-position: 0 0, 9px 9px;
 
   &-opened {
     position: absolute;
@@ -129,15 +131,31 @@
 
   }
 }
+.nav-to-footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
 
 .hover {
   width: 100%;
   //padding: 0 5px;
+
   border-radius: 0;
 
   div:hover {
     animation: blink-1 0.6s both;
   }
+//  // // // // // //
+  display: flex;
+  justify-content: space-between;
+}
+.verticalLine {
+  border-left: 4px solid #ff4242;
+  height: 100%;
+  margin-left: -3px;
+  top: 0;
 }
 
 .burger-container {
@@ -146,6 +164,24 @@
   }
 
   position: relative;
+}
+.burger-menu{
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  background-color: black;
+  padding: 11px;
+  $burger-menu-size: 135;
+  position: absolute;
+  top: $burger-size;
+  //left: ;
+  //padding: 5px;
+  border-radius: $border-radius;
+  width: $burger-menu-size;
+
+  *{
+    text-align: right;
+  }
 }
 
 @keyframes blink-1 {

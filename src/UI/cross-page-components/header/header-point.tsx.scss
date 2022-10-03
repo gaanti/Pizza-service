@@ -3,7 +3,7 @@
 .header-point {
   display: flex;
   justify-content: flex-end;
-  width: 100%;
+  border-right: white solid 2px;
   padding: 4px;
   cursor: pointer;
   border-radius: 0;
@@ -11,11 +11,13 @@
 
 .header-point-to-page {
   color: white;
-  background-color: $orange;
+  background-color: $accent-color;
 }
 
 .header-point-to-footer {
   width: 100%;
-  color: black;
-  background-color: white;
+  //color: black;
+  color: white;
+  background-color: black;
+  //background-color: white;
 }
