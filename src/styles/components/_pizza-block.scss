@@ -142,6 +142,9 @@ color: white;*/
         border: unset;
         padding-left: 10px;
       }
+      h4{
+        border-radius: $border-radius;
+      }
     }
   }
 
@@ -339,21 +342,29 @@ text-align: left;
     background-color: black;
     border-radius: $border-radius;
   }
-
-  /*
-&__add_to_cart_button{
-span{
-  color: white;
-}
-padding: 5px 0 ;
-border-radius: $border-radius;
-background-color: $black;
-color: white;
-}*/
   & + div {
     display: flex;
     flex-direction: column;
     row-gap: 5px;
     justify-content: center;
+  }
+  &__search-block {
+    background-color: white;
+    white-space: nowrap;
+    border-radius: $border-radius !important;
+    padding: 0 0 0 5px;
+  }
+  &__dough-switch-block {
+    display: flex;
+    flex-direction: column;
+    row-gap: 7px;
+  }
+}
+.onHover-scale{
+  transition: all $duration;
+  cursor: pointer;
+
+  &:hover{
+    scale: 1.2;
   }
 }

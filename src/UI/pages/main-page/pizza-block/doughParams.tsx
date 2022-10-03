@@ -12,7 +12,7 @@ function DoughParams(props: {
       const dough_widths = useSelector(dough_widthsSelect);
 
       return (
-            <div className="pizza-block__selector">
+            <div className="pizza-block__selector pizza-block__dough-switch-block">
                   <ul>
                         <div style={{ display: 'inline-block', width: 'auto' }}>Dough width</div>{' '}
                         {dough_widths.map((e) => {

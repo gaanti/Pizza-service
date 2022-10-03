@@ -117,8 +117,8 @@ function PopUp(props: {
       return (
             <div className="pizza-block__configure_window DIRECTION_COLUMN">
                   <div className="DIRECTION_COLUMN">
-                        <div style={{ backgroundColor: 'white' }}>
-                              <h4 className="DIRECTION_ROW" style={{ whiteSpace: 'nowrap' }}>
+                        <div className="pizza-block__search-block" >
+                              <h4 className="DIRECTION_ROW " >
                                     Add ingredient{' '}
                                     <input
                                           type="text"
@@ -130,7 +130,7 @@ function PopUp(props: {
                                     />
                               </h4>
                               {!isequal(searchIngredientArray, []) && (
-                                    <ul className="pizza-block__configure_window-add-ingredient">
+                                    <ul className="pizza-block__configure_window-add-ingredient ">
                                           {searchIngredientArray.map((v) => {
                                                 return (
                                                       <li key={v}>
@@ -140,6 +140,7 @@ function PopUp(props: {
                                                                   onClick={() => {
                                                                         setIngredient([...props.ingredients, v]);
                                                                   }}
+                                                                  className="onHover-scale"
                                                             />
                                                       </li>
                                                 );
@@ -163,6 +164,7 @@ function PopUp(props: {
                                           return (
                                                 <div style={{ display: 'flex', justifyContent: 'flex-start' }} key={index}>
                                                       <MdCancel
+                                                        className="onHover-scale"
                                                             onClick={() => {
                                                                   const temp = [...props.ingredients];
                                                                   temp.splice(temp.indexOf(v), 1);
@@ -185,7 +187,7 @@ function PopUp(props: {
                   />
 
                   <div className="DIRECTION_COLUMN">
-                        <div className="DIRECTION_ROW_WITHOUT_GAP" style={{ width: '100%' }}>
+                        <div className="DIRECTION_ROW" style={{ width: '100%' }}>
                               <div className="pizza-block__configure_button" onClick={() => props.resetPizzaParams()}>
                                     Reset
                               </div>
