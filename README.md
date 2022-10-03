@@ -11,12 +11,10 @@ If you want to test it on your own, here is link [https://pizza-service-5vz9.ver
 ### 🥸User can:
 1. Add items to cart 🛒 <br>
 2. Configure items as he wants<br>
-
 3. Filter items with search<br>
 4. Filter items by categories<br>
 5. Sort items by price/title/popularity<br>
 6. Navigate through pages
-7. `yarn start` <br>
 
 
 

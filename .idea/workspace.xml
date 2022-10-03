@@ -5,54 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7154f848-4d52-4cd8-a3e2-47b003914112" name="Changes" comment="Sorting, filtering and pagination functionality">
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/components/burger-navigation/burger-navigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/components/burger-navigation/burger-navigation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/components/doughParams.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/components/doughParams.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/components/pizza-block.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/components/pizza-block.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/components/pizza-parameters/categories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/components/pizza-parameters/categories.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/components/pizza-parameters/configure.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/components/pizza-parameters/configure.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/components/pizza-parameters/pagination.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/components/pizza-parameters/pagination.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/components/pizza-parameters/search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/components/pizza-parameters/search.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/components/pizza-parameters/sort.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/components/pizza-parameters/sort.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/components/pizzas.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/components/pizzas.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/components/skeleton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/components/skeleton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/components/text-filler.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/components/text-filler.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/footer-with-button.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/footer-with-button.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/footer-with-button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/footer-with-button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/landing/Footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/landing/Footer.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/landing/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/landing/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/landing/header-point.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/landing/header-point.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/landing/header-point.tsx.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/landing/header-point.tsx.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/cart-button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/cart/cart-button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/cart-empty.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/cart/cart-empty.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/cart-item.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/cart/cart-item.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/main-page/main-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/main-page/main-page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/toggleHook.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/toggleHook.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/services/order.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/services/order.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/services/pizza.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/services/pizza.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slices/cart.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/cart.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slices/filtering_params.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/filtering_params.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slices/footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slices/pizzas.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/pizzas.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/App.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/components/__input.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/__input.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/components/_button.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/_button.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/components/_categories.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/_categories.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/components/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/_header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/components/_pizza-block.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/_pizza-block.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/components/_search.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/_search.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/components/_sort.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/_sort.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/components/live-gradient-border.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/live-gradient-border.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/functions/sqrt.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/functions/sqrt.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/libs/_normalize.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/libs/_normalize.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/App.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/App.test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/setupTests.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/setupTests.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nginx.conf" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,11 +133,11 @@
       <recent name="$PROJECT_DIR$/src/redux" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/UI/landing" />
-      <recent name="$PROJECT_DIR$/src/UI" />
-      <recent name="$PROJECT_DIR$/src/UI/components/burger-navigation" />
-      <recent name="$PROJECT_DIR$/src/UI/components" />
-      <recent name="$PROJECT_DIR$/src/UI/pages/landing" />
+      <recent name="$PROJECT_DIR$/src/redux/slices/business" />
+      <recent name="$PROJECT_DIR$/src/redux/slices/UI" />
+      <recent name="$PROJECT_DIR$/src/UI/pages/main-page/pizza-block" />
+      <recent name="$PROJECT_DIR$/src/UI/pages/main-page" />
+      <recent name="$PROJECT_DIR$/src/UI/cross-page-components/header" />
     </key>
   </component>
   <component name="RunManager" selected="npm.build">
@@ -275,7 +228,7 @@
       <workItem from="1664370892956" duration="2000" />
       <workItem from="1664370901234" duration="3378000" />
       <workItem from="1664400875915" duration="36000" />
-      <workItem from="1664567610663" duration="94259000" />
+      <workItem from="1664567610663" duration="95307000" />
     </task>
     <task id="LOCAL-00001" summary="Project has been initialized">
       <created>1660245634989</created>
