@@ -162,7 +162,7 @@ function PopUp(props: {
                               {AreThereIngredients ? (
                                     props.ingredients.map((v, index) => {
                                           return (
-                                                <div style={{ display: 'flex', justifyContent: 'flex-start' }} key={index}>
+                                                <div style={{ display: 'flex', justifyContent: 'flex-start', alignItems:"center"}} key={index}>
                                                       <MdCancel
                                                         className="onHover-scale"
                                                             onClick={() => {
