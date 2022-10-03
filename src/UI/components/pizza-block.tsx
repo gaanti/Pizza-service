@@ -1,4 +1,4 @@
-import React, { MutableRefObject, RefObject, useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { addItemOrIncreaseQuantity } from '../../redux/slices/cart';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';

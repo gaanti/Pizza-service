@@ -3,9 +3,11 @@
 @import 'src/styles/libs/normalize';
 
 @import 'src/styles/components/all';
-*{
+
+* {
   accent-color: $orange;
 }
+
 body {
   //background-color: $background;
   /*background-color: #98150E;
@@ -225,7 +227,7 @@ body {
   }
 
   &__items {
-    padding: 0 0 40px 0 ;
+    padding: 0 0 40px 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -485,11 +487,11 @@ body {
         }
 
         .button {
-/*          svg {
-            width: 11.5px;
-            height: 11.5px;
-            position: relative;
-          }*/
+          /*          svg {
+                      width: 11.5px;
+                      height: 11.5px;
+                      position: relative;
+                    }*/
 
           &:hover,
           &:active {
@@ -614,14 +616,17 @@ body {
     }
   }
 }
-.TWO_COLUMNS{
+
+.TWO_COLUMNS {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.FLEX{
+
+.FLEX {
   display: flex;
 }
-.ROW_GAP{
+
+.ROW_GAP {
   row-gap: 10px;
 }

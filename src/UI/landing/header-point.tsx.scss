@@ -1,6 +1,6 @@
 @import "../../styles/variables";
 
-.header-point{
+.header-point {
   display: flex;
   justify-content: flex-end;
   width: 100%;
@@ -8,11 +8,13 @@
   cursor: pointer;
   border-radius: 0;
 }
-.header-point-to-page{
+
+.header-point-to-page {
   color: white;
   background-color: $orange;
 }
-.header-point-to-footer{
+
+.header-point-to-footer {
   width: 100%;
   color: black;
   background-color: white;

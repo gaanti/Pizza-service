@@ -4,9 +4,9 @@ import isequal from 'lodash.isequal';
 import differencewith from 'lodash.differencewith';
 import { useSelector } from 'react-redux';
 import { ingredientsSelect } from '../../../redux/slices/pizzas';
-import { BsPlusSquareFill } from "react-icons/bs";
-import { MdCancel } from "react-icons/md";
-import { AiFillSetting } from "react-icons/ai";
+import { BsPlusSquareFill } from 'react-icons/bs';
+import { MdCancel } from 'react-icons/md';
+import { AiFillSetting } from 'react-icons/ai';
 
 function Configure(props: {
       imageSRC: string;
@@ -113,6 +113,7 @@ function PopUp(props: {
             props.setIngredients(toSet);
             props.rerenderParent(!props.parent);
       }
+
       return (
             <div className="pizza-block__configure_window DIRECTION_COLUMN">
                   <div className="DIRECTION_COLUMN">
@@ -135,9 +136,11 @@ function PopUp(props: {
                                                       <li key={v}>
                                                             <div>{v}</div>
                                                             {/*PLUS from rotated cancel 45deg*/}
-                                                            <BsPlusSquareFill onClick={() => {
-                                                                  setIngredient([...props.ingredients, v]);
-                                                            }}/>
+                                                            <BsPlusSquareFill
+                                                                  onClick={() => {
+                                                                        setIngredient([...props.ingredients, v]);
+                                                                  }}
+                                                            />
                                                       </li>
                                                 );
                                           })}
@@ -159,11 +162,12 @@ function PopUp(props: {
                                     props.ingredients.map((v, index) => {
                                           return (
                                                 <div style={{ display: 'flex', justifyContent: 'flex-start' }} key={index}>
-                                                      <MdCancel onClick={() => {
-                                                            const temp = [...props.ingredients];
-                                                            temp.splice(temp.indexOf(v), 1);
-                                                            setIngredient(temp);
-                                                      }}></MdCancel>
+                                                      <MdCancel
+                                                            onClick={() => {
+                                                                  const temp = [...props.ingredients];
+                                                                  temp.splice(temp.indexOf(v), 1);
+                                                                  setIngredient(temp);
+                                                            }}></MdCancel>
                                                       <li key={index}>{v}</li>
                                                 </div>
                                           );

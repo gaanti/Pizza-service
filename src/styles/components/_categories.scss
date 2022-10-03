@@ -1,48 +1,48 @@
 @import 'src/styles/variables';
 
 .categories {
-      overflow: scroll;
-      position: relative;
-      max-width: 70vw;
-      width: min-content;
+  overflow: scroll;
+  position: relative;
+  max-width: 70vw;
+  width: min-content;
 
-      ul {
-            padding: 10px;
-            display: flex;
-            overflow-x: auto;
-            overflow-y: hidden;
+  ul {
+    padding: 10px;
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
 
-            li {
-                  white-space: nowrap;
-                  height: min-content;
-                  max-height: min-content;
-                  background-color: #f9f9f9;
-                  padding: 13px 30px;
-                  border-radius: $border-radius;
-                  margin-right: 10px;
-                  font-weight: bold;
-                  cursor: pointer;
-                  //transition: background-color 0.1s ease-in-out;
-                  transition: 200ms;
-                  will-change: transform;
+    li {
+      white-space: nowrap;
+      height: min-content;
+      max-height: min-content;
+      background-color: #f9f9f9;
+      padding: 13px 30px;
+      border-radius: $border-radius;
+      margin-right: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      //transition: background-color 0.1s ease-in-out;
+      transition: 200ms;
+      will-change: transform;
 
-                  &:not(.active):hover {
-                        will-change: transform;
-                        background-color: darken(#f9f9f9, 2%);
-                        text-decoration: underline;
+      &:not(.active):hover {
+        will-change: transform;
+        background-color: darken(#f9f9f9, 2%);
+        text-decoration: underline;
 
-                        box-shadow: 0 10px 10px -10px rgb(0 0 0 / 50%);
-                        transform: scale(1.1);
-                  }
-
-                  &.active {
-                        will-change: transform;
-                        background-color: $black;
-                        color: hsl(0deg 0% 98%);
-                        cursor: auto;
-                        box-shadow: 0 10px 10px -10px rgb(0 0 0 / 50%);
-                        transform: scale(1.1);
-                  }
-            }
+        box-shadow: 0 10px 10px -10px rgb(0 0 0 / 50%);
+        transform: scale(1.1);
       }
+
+      &.active {
+        will-change: transform;
+        background-color: $black;
+        color: hsl(0deg 0% 98%);
+        cursor: auto;
+        box-shadow: 0 10px 10px -10px rgb(0 0 0 / 50%);
+        transform: scale(1.1);
+      }
+    }
+  }
 }

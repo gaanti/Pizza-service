@@ -1,9 +1,7 @@
 import React from 'react';
-import { decrease, deleteLine, increase } from '../../../redux/slices/cart';
+import { decrease, increase } from '../../../redux/slices/cart';
 import { useDispatch } from 'react-redux';
 import { PizzaForCart } from '../../../redux/types';
-import { MdCancel } from "react-icons/md";
-import { AiOutlineCloseSquare } from "react-icons/ai";
 
 function CartItem(props: { pizzasInCart: PizzaForCart; index: number }) {
       const dispatch = useDispatch();

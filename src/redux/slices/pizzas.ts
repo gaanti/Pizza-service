@@ -13,6 +13,7 @@ const initialState: pizzas = {
       current_page_index: 0,
       status: ''
 };
+
 interface pizzas {
       pizzas: pizza[];
       ingredients: ingredient[];

@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { cartItemsSelect, cartTotalPriceSelect } from '../../../redux/slices/cart';
-import { FaShoppingCart } from "react-icons/fa";
+import { FaShoppingCart } from 'react-icons/fa';
 
 function CartButton() {
       const pizzasArray = useSelector(cartItemsSelect);
@@ -34,7 +34,7 @@ function CartButton() {
                               <Link to="cart" className="button button--cart">
                                     <span>$ {totalCost}</span>
                                     <div className="button__delimiter"></div>
-                                    <FaShoppingCart/>
+                                    <FaShoppingCart />
                                     <span>{popo}</span>
                               </Link>
                         </div>

@@ -1,122 +1,124 @@
 @import 'src/styles/variables';
 
 .header {
-      border-bottom: 1px solid $gray-line;
-      padding: 10px;
-      border-radius: $border-radius;
-      position: sticky !important;
-      top: 0;
-      align-self: flex-start;
-      height: auto;
-      user-select: none;
-      background-color: $white;
-      z-index: 2;
+  border-bottom: 1px solid $gray-line;
+  padding: 10px;
+  border-radius: $border-radius;
+  position: sticky !important;
+  top: 0;
+  align-self: flex-start;
+  height: auto;
+  user-select: none;
+  background-color: $white;
+  z-index: 2;
 
-      &__container {
-            margin: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-direction: row;
-            gap: 10px;
-            flex-wrap: nowrap;
+  &__container {
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: nowrap;
+  }
+
+  &__logo {
+    display: flex;
+    //position: relative;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+
+    nav {
+      //position: absolute;
+      bottom: -70px;
+      width: $icon-block-size;
+      background-color: orange;
+    }
+
+    & > img {
+      margin-right: 15px;
+    }
+
+    h1 {
+      color: #181818;
+      font-size: 24px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    @media (max-width: 585px) {
+      & h1 {
+        font-size: 22px;
       }
-
-      &__logo {
-            display: flex;
-            //position: relative;
-            flex-direction: row;
-            align-items: center;
-            gap: 20px;
-
-            nav {
-                  //position: absolute;
-                  bottom: -70px;
-                  width: $icon-block-size;
-                  background-color: orange;
-            }
-
-            & > img {
-                  margin-right: 15px;
-            }
-
-            h1 {
-                  color: #181818;
-                  font-size: 24px;
-                  letter-spacing: 1px;
-                  text-transform: uppercase;
-                  font-weight: 800;
-            }
-            @media (max-width: 585px) {
-                  & h1{
-                        font-size: 22px;
-                  }
-                  & p{
-                        font-size: 10px;
-                  }
-            }
-
-            p {
-                  color: #7b7b7b;
-            }
+      & p {
+        font-size: 10px;
       }
-      &-buttons {
-            display: flex;
-            flex-direction: row;
-            gap: 4px;
-      }
+    }
+
+    p {
+      color: #7b7b7b;
+    }
+  }
+
+  &-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+  }
 }
 
 .logo {
-      transition: 1.5s cubic-bezier(1, 0.02, 0, 1.02);
-      transform: rotate(35deg) translate(0%, 0%);
-      will-change: transform;
-      font-size: $icon-block-size * 0.55;
-      animation: lll 2s cubic-bezier(1, 0.02, 0, 1.02) 1 forwards;
+  transition: 1.5s cubic-bezier(1, 0.02, 0, 1.02);
+  transform: rotate(35deg) translate(0%, 0%);
+  will-change: transform;
+  font-size: $icon-block-size * 0.55;
+  animation: lll 2s cubic-bezier(1, 0.02, 0, 1.02) 1 forwards;
 
-      @keyframes lll {
-            0% {
-                  transform: rotateY(0) scale(1);
-            }
-            20% {
-                  transform: rotateY(-180deg) scale(1.2);
-            }
-            85% {
-                  transform: rotateY(360deg) scale(1.6);
-            }
-            100% {
-                  transform: scale(1);
-            }
-      }
+  @keyframes lll {
+    0% {
+      transform: rotateY(0) scale(1);
+    }
+    20% {
+      transform: rotateY(-180deg) scale(1.2);
+    }
+    85% {
+      transform: rotateY(360deg) scale(1.6);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
 }
 
 .header {
-      &__logo {
-            &___textNsubText {
-                  transition: 0.3s cubic-bezier(0.14, 1.29, 0.06, 1.23);
-                  will-change: transform;
-                  animation: iii 2.222s cubic-bezier(0.14, 1.29, 0.06, 1.23) 1 both;
+  &__logo {
+    &___textNsubText {
+      transition: 0.3s cubic-bezier(0.14, 1.29, 0.06, 1.23);
+      will-change: transform;
+      animation: iii 2.222s cubic-bezier(0.14, 1.29, 0.06, 1.23) 1 both;
 
-                  @keyframes iii {
-                        0% {
-                              transform: scale(1);
-                        }
-                        85% {
-                              transform: scale(1);
-                        }
-                        90% {
-                              transform: scale(0.8);
-                        }
-                        100% {
-                              transform: scale(1);
-                        }
-                  }
-            }
+      @keyframes iii {
+        0% {
+          transform: scale(1);
+        }
+        85% {
+          transform: scale(1);
+        }
+        90% {
+          transform: scale(0.8);
+        }
+        100% {
+          transform: scale(1);
+        }
       }
+    }
+  }
 }
 
 @media (max-width: 546px) {
-      .header__container{
-            flex-direction: column;
-      }
+  .header__container {
+    flex-direction: column;
+  }
 }
