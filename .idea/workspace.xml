@@ -6,26 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7154f848-4d52-4cd8-a3e2-47b003914112" name="Changes" comment="Sorting, filtering and pagination functionality">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/components/burger-navigation/burger-navigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/components/burger-navigation/burger-navigation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/landing/Header.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/landing/Header.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/landing/Landing.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/landing/Landinx.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/landing/Phone-landing.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/landing/landing-legend.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/landing/landing-legend.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/landing/landing-side-header.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/landing/landing-side-header.tsx.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/landing/landing.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/landing/phone-landing.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/cart-empty.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/cart/cart-empty.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/cart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/cart/cart.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/App.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/components/_button.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/_button.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,16 +39,16 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
+                    <option name="branchName" value="master" />
+                    <option name="lastUsedInstant" value="1664741873" />
+                  </RecentBranch>
+                  <RecentBranch>
                     <option name="branchName" value="footer" />
                     <option name="lastUsedInstant" value="1664740083" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="landing" />
                     <option name="lastUsedInstant" value="1664625098" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="master" />
-                    <option name="lastUsedInstant" value="1664180850" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="nginx" />
@@ -248,7 +228,7 @@
       <workItem from="1664370892956" duration="2000" />
       <workItem from="1664370901234" duration="3378000" />
       <workItem from="1664400875915" duration="36000" />
-      <workItem from="1664567610663" duration="86527000" />
+      <workItem from="1664567610663" duration="88168000" />
     </task>
     <task id="LOCAL-00001" summary="Project has been initialized">
       <created>1660245634989</created>
@@ -281,7 +261,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="landing" />
+                        <option value="origin/master" />
                       </list>
                     </value>
                   </entry>
