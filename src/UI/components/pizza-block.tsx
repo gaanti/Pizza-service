@@ -86,7 +86,7 @@ function PizzaBlock(props: { element: pizza; index: number }) {
                               }
                               <div className="pizza-block__bottom">
                                     <div className="pizza-block__price">${props.element.price}</div>
-                                    <div className="DIRECTION_ROW_WITHOUT_GAP">
+                                    <div className="DIRECTION_ROW_WITHOUT_GAP pizza-block__interact_pannel">
                                           <div ref={refference}>
                                                 <Configure
                                                       imageSRC={`data:image/jpg;base64,${props.element.image}`}

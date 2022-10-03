@@ -31,7 +31,7 @@ function Header() {
     <div className="header">
       <div className="header__container">
         <MemorizedHeader />
-        <div className="DIRECTION_ROW_WITHOUT_GAP">
+        <div className="DIRECTION_ROW_WITHOUT_GAP header-buttons">
           <BurgerNavigation/>
           <CartButton />
         </div>

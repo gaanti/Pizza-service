@@ -60,6 +60,11 @@
                   color: #7b7b7b;
             }
       }
+      &-buttons {
+            display: flex;
+            flex-direction: row;
+            gap: 4px;
+      }
 }
 
 .logo {

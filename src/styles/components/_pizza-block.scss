@@ -12,6 +12,7 @@
       text-align: center;
       display: flex;
       margin: auto;
+      row-gap: 5px;
       flex-direction: column;
 
       &_skeleton {
@@ -166,7 +167,6 @@
             }
             font-weight: 900;
             letter-spacing: 0.9px;
-            margin-bottom: 20px;
       }
 
       /*&__description {
@@ -312,15 +312,18 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-top: 20px;
             height: 42px;
       }
 
       &__price {
             font-weight: bold;
-            font-size: 22px;
+            font-size: 17px;
             line-height: 27px;
             letter-spacing: 0.015em;
+      }
+      &__interact_pannel {
+            background-color: black;
+            border-radius: $border-radius;
       }
       /*
   &__add_to_cart_button{
@@ -332,4 +335,10 @@
     background-color: $black;
     color: white;
   }*/
+      & + div {
+            display: flex;
+            flex-direction: column;
+            row-gap: 5px;
+            justify-content: center;
+      }
 }

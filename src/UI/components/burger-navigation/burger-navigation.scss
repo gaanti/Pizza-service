@@ -1,5 +1,7 @@
+@import "src/styles/variables";
+
 .burger-navigation {
-  $size:47px;
+  $size: 47px;
   background-color: black;
   height: $size;
   width: $size;
@@ -8,22 +10,26 @@
   justify-content: space-evenly;
   align-items: center;
   padding: $size/9 0;
+
   div {
     width: ($size * 0.59);
     height: $size/15;
     background-color: #f9f9f9;
   }
 }
-.make-burger-middle{
+
+.make-burger-middle {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
 .scale-down-center {
   transform: scale(1);
   transition: all 1s;
   animation: scale-down-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) forwards;
 }
+
 @-webkit-keyframes scale-down-center {
   0% {
     -webkit-transform: scale(1);
@@ -34,6 +40,7 @@
     transform: scale(0.5);
   }
 }
+
 @keyframes scale-down-center {
   0% {
     -webkit-transform: scale(1);
@@ -44,6 +51,7 @@
     transform: scale(0.5);
   }
 }
+
 .scale-center-down {
   transform: scale(0.5);
   transition: all 1s;
@@ -60,6 +68,7 @@
     transform: scale(1);
   }
 }
+
 @keyframes scale-center-down {
   0% {
     -webkit-transform: scale(0.5);
@@ -75,6 +84,7 @@
   transition: all 1s;
   animation: scale-down-center 0.4s linear forwards, spin-360-at-the-same 0.4s linear forwards infinite;
 }
+
 @-webkit-keyframes spin-360-at-the-same {
   0% {
     rotate: 0deg;
@@ -83,6 +93,7 @@
     rotate: 360deg;
   }
 }
+
 @keyframes spin-360-at-the-same {
   0% {
     rotate: 0deg;
@@ -92,7 +103,7 @@
   }
 }
 
-.opened-burger-menu{
+.burger-menu {
   display: flex;
   //position: absolute;
   flex-direction: column;
@@ -100,7 +111,6 @@
   height: auto;
   width: max-content;
   //background-color: #ff7777;
-  border: solid 2px black;
   top: 0;
   right: 0;
   z-index: 3;
@@ -109,15 +119,33 @@
   background-image: radial-gradient(#98150E 0.45px, transparent 0.45px), radial-gradient(#98150E 0.45px, #F1CE9D 0.45px);
   background-size: 18px 18px;
   background-position: 0 0, 9px 9px;
+
+  &-opened {
+    position: absolute;
+    border: solid 2px black
+  }
+
+  &-closed {
+
+  }
 }
-.hover{
+
+.hover {
   width: 100%;
-  div:hover{
+  //padding: 0 5px;
+  border-radius: 0;
+
+  div:hover {
     animation: blink-1 0.6s both;
   }
 }
-.burger-container{
-  position:relative;
+
+.burger-container {
+  * {
+    border-radius: $border-radius;
+  }
+
+  position: relative;
 }
 
 @keyframes blink-1 {
@@ -131,8 +159,9 @@
     opacity: 0;
   }
 }
+
 @media (max-width: 546px) {
-  .opened-burger-menu{
+  .opened-burger-menu {
     left: 0;
   }
 

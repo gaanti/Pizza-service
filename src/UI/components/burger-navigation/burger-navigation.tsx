@@ -20,8 +20,8 @@ function BurgerNavigation() {
   const RightPnts = useSelector(footerPointsTitlesSelector)
 
   return (
-    <div className="burger-container">
-      <div className="opened-burger-menu" style={{position:!navigation?"absolute":undefined}}>
+    <div className={`burger-container ${navigation?"CENTRED_ITEM":""}`}>
+      <div className={`burger-menu ${navigation?"burger-menu-closed":"burger-menu-opened"}`}>
         <div className="make-burger-middle">
           <div className={"burger-navigation " + `${navigation ? "scale-center-down" : "spin"}`}
                onClick={() => setNavigation(!navigation)}>
@@ -30,17 +30,19 @@ function BurgerNavigation() {
             <div></div>
           </div>
         </div>
-        {!navigation && RightPnts.map((point) => {
-          return (
-            <a href="#footer"  className="hover" onClick={() => {
-              navigateToFooter(point);
-            }}>
-              <div>
-                <HeaderPointToFooter>{point}</HeaderPointToFooter>
-              </div>
-            </a>
-        );
-      })}
+        <div>
+          {!navigation && RightPnts.map((point) => {
+            return (
+              <a href="#footer" className="hover" onClick={() => {
+                navigateToFooter(point);
+              }}>
+                <div>
+                  <HeaderPointToFooter>{point}</HeaderPointToFooter>
+                </div>
+              </a>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
