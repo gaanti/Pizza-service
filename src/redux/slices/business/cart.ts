@@ -5,16 +5,16 @@ import isequal from 'lodash.isequal';
 import { RootState } from '../../store';
 
 export const func = () => {
-      const pflor = () => {
-            const POPO = JSON.parse(window.localStorage.getItem('cart') as string) as PizzaForCart[];
-            return POPO ? POPO : [];
+      const getItemsInCart = () => {
+            const itemsInCart = JSON.parse(window.localStorage.getItem('cart') as string) as PizzaForCart[];
+            return itemsInCart ? itemsInCart : [];
       };
       let total_price = 0;
-      total_price = pflor().reduce(
+      total_price = getItemsInCart().reduce(
             (previousValue: number, currentValue: PizzaForCart) => previousValue + currentValue.price * currentValue.quantity,
             0
       );
-      return { items: pflor(), total_price: total_price };
+      return { items: getItemsInCart(), total_price: total_price };
 };
 
 const initialState = {
@@ -48,8 +48,8 @@ export const cartSlice = createSlice({
                   window.localStorage.setItem('cart', JSON.stringify(state.items));
             },
             increase: (state, action: PayloadAction<number>) => {
-                  const popo = state.items[action.payload];
-                  ++popo.quantity;
+                  const specificItemInCartQty = state.items[action.payload];
+                  ++specificItemInCartQty.quantity;
                   window.localStorage.setItem('cart', JSON.stringify(state.items));
                   state.total_price = state.items.reduce(
                         (previousValue, currentValue) => previousValue + currentValue.price * currentValue.quantity,
@@ -57,9 +57,9 @@ export const cartSlice = createSlice({
                   );
             },
             decrease: (state, action: PayloadAction<number>) => {
-                  const popo = state.items[action.payload];
-                  if (popo.quantity > 1) {
-                        --popo.quantity;
+                  const specificItemInCartQty = state.items[action.payload];
+                  if (specificItemInCartQty.quantity > 1) {
+                        --specificItemInCartQty.quantity;
                   } else state.items.splice(action.payload, 1);
                   window.localStorage.setItem('cart', JSON.stringify(state.items));
                   state.total_price = state.items.reduce(

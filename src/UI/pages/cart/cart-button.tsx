@@ -17,7 +17,7 @@ function CartButton() {
                   setQuantity(temp);
             }
       }, [pizzasArray, totalCost]);
-      const popo = useMemo(() => {
+      const itemsInCart = useMemo(() => {
             let temp = 0;
             if (pizzasArray) {
                   for (let i = 0; i < pizzasArray.length; i++) {
@@ -35,7 +35,7 @@ function CartButton() {
                                     <span>$ {totalCost}</span>
                                     <div className="button__delimiter"></div>
                                     <FaShoppingCart />
-                                    <span>{popo}</span>
+                                    <span>{itemsInCart}</span>
                               </Link>
                         </div>
                   )}

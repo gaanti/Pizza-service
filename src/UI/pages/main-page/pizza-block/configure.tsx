@@ -81,14 +81,14 @@ function PopUp(props: {
       const ingredients = structuredClone(selected).map((e: { ingredientName: any }) => e.ingredientName);
 
       useEffect(() => {
-            popo();
-            const popop = differencewith(ingredients, props.ingredients, isequal);
+            setNotAddedIngredients();
+            const notAddedIngredients = differencewith(ingredients, props.ingredients, isequal);
             return searchIngredient.trim() != '' && searchIngredient.trim() != null
-                  ? setSearchIngredientArray(popop.filter((value) => value.includes(searchIngredient)))
+                  ? setSearchIngredientArray(notAddedIngredients.filter((value) => value.includes(searchIngredient)))
                   : setSearchIngredientArray([]);
       }, [props.ingredients, searchIngredient]);
 
-      function popo() {
+      function setNotAddedIngredients() {
             for (let i = 0; i < props.ingredients.length; i++) {
                   for (let j = 0; j < ingredients.length; j++) {
                         if (ingredients[j].ingredientName === props.ingredients[i]) {

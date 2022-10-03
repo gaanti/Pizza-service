@@ -49,12 +49,12 @@ function PizzaBlock(props: { element: pizza; index: number }) {
       useEffect(() => {
             const pizArr = findAllPizzasByConstantParameters();
             if (pizArr) {
-                  let popo = 0;
+                  let itemsInCart = 0;
                   for (let i = 0; i < pizArr.length; i++) {
-                        popo += pizArr[i].quantity;
+                        itemsInCart += pizArr[i].quantity;
                   }
-                  if (popo) {
-                        setQtyOfItemsInCart(popo);
+                  if (itemsInCart) {
+                        setQtyOfItemsInCart(itemsInCart);
                   } else setQtyOfItemsInCart(0);
             }
       }, [increaseQty]);
