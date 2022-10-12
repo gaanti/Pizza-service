@@ -175,7 +175,7 @@ function PopUp(props: {
                                           );
                                     })
                               ) : (
-                                    <div>Wtf?! Dude, you are going to order dough 🤪.</div>
+                                    <div>Just dough... Good choice 👍</div>
                               )}
                         </ul>
                   </div>
