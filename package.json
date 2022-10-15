@@ -59,6 +59,8 @@
     ]
   },
   "devDependencies": {
+    "@stripe/react-stripe-js": "^1.12.0",
+    "@stripe/stripe-js": "^1.40.0",
     "@types/lodash.debounce": "^4.0.7",
     "@types/lodash.differencewith": "^4.5.7",
     "@types/lodash.includes": "^4.3.7",

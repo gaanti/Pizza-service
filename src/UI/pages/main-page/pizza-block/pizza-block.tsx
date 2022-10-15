@@ -3,7 +3,7 @@ import { addItemOrIncreaseQuantity } from '../../../../redux/slices/business/car
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../../../redux/store';
 import { pizza } from '../../../../redux/types';
-import Configure from './configure';
+import Configure from './configure/configure';
 import { dough_radiusSelect, dough_widthsSelect } from '../../../../redux/slices/business/pizzas';
 
 function PizzaBlock(props: { element: pizza; index: number }) {
@@ -93,14 +93,14 @@ function PizzaBlock(props: { element: pizza; index: number }) {
                                                       title={props.element.title}
                                                       setDoughRadius={setDoughRadius}
                                                       setDoughWidth={setDoughWidth}
+                                                      setIngredients={setIngredients}
                                                       doughRadius={doughRadius}
                                                       doughWidth={doughWidth}
                                                       increaseQty={increaseQty}
                                                       qtyOfItemsInCart={qtyOfItemsInCart}
                                                       ingredients={ingredients}
-                                                      setIngredients={setIngredients}
                                                       parent={parent}
-                                                      rerenderParent={rerenderParent}
+                                                      rerenderParent={() => rerenderParent(prevState => !prevState)}
                                                       resetPizzaParams={resetPizzaParams}
                                                       refference={refference}
                                                 />

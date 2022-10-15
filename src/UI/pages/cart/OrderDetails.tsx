@@ -42,7 +42,6 @@ function OrderDetails() {
       return (
             <div className="order_details">
                   <article className="l-design-widht">
-                        {/*<h1>Enter your data to order the pizza 😋</h1>*/}
                         <div>
                               Choose one of two order options:{' '}
                               <div
