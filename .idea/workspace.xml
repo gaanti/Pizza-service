@@ -5,16 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7154f848-4d52-4cd8-a3e2-47b003914112" name="Changes" comment="Sorting, filtering and pagination functionality">
-      <change afterPath="$PROJECT_DIR$/src/UI/pages/main-page/pizza-block/configure/configure-buttons.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/pages/main-page/pizza-block/configure/configure-ingredients.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/pages/main-page/pizza-block/configure/configure-search.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/cross-page-components/header/burger-navigation/burger-navigation.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/cross-page-components/header/burger-navigation/burger-navigation.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/main-page/pizza-block/configure.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/main-page/pizza-block/configure/configure.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UI/pages/main-page/pizza-block/ingredients-list.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/pages/main-page/pizza-block/pizza-block.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/main-page/pizza-block/pizza-block.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -5,6 +5,7 @@ import { RootState } from '../../../../redux/store';
 import { pizza } from '../../../../redux/types';
 import Configure from './configure/configure';
 import { dough_radiusSelect, dough_widthsSelect } from '../../../../redux/slices/business/pizzas';
+import IngredientsList from "./ingredients-list";
 
 function PizzaBlock(props: { element: pizza; index: number }) {
       const dispatch = useDispatch();
@@ -66,24 +67,7 @@ function PizzaBlock(props: { element: pizza; index: number }) {
                         <img className="pizza-block__image" src={'data:image/jpg;base64,' + props.element.image} alt="Pizza" />
                         <h4 className="pizza-block__title">{props.element.title}</h4>
                         <div style={{ position: 'relative' }}>
-                              {
-                                    <div className="pizza-block__selector">
-                                          <div className="pizza-block__description_and_params">
-                                                <div>
-                                                      <h5>
-                                                            Ingredients:
-                                                            <div>{ingredients.join(', ')}</div>
-                                                      </h5>
-                                                      <h5>
-                                                            Dough:{' '}
-                                                            <div>
-                                                                  width: {doughWidth}, radius: {doughRadius} ️
-                                                            </div>
-                                                      </h5>
-                                                </div>
-                                          </div>
-                                    </div>
-                              }
+                              <IngredientsList ingredients={ingredients} doughWidth={doughWidth} doughRadius={doughRadius}/>
                               <div className="pizza-block__bottom">
                                     <div className="pizza-block__price">${props.element.price}</div>
                                     <div className="DIRECTION_ROW_WITHOUT_GAP pizza-block__interact_pannel">

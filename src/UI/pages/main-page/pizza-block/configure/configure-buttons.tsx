@@ -30,4 +30,4 @@ function ConfigureButtons(props: {
       );
 }
 
-export default ConfigureButtons;
+export default React.memo(ConfigureButtons);

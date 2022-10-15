@@ -36,4 +36,4 @@ function ConfigureIngredients(props: { AreThereIngredients: boolean; ingredients
   );
 }
 
-export default ConfigureIngredients;
+export default React.memo(ConfigureIngredients);

@@ -38,4 +38,4 @@ function ConfigureSearch(props: {  searchIngredient: string;  searchIngredientAr
       );
 }
 
-export default ConfigureSearch;
+export default React.memo(ConfigureSearch);
