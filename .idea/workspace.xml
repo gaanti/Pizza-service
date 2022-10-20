@@ -5,8 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7154f848-4d52-4cd8-a3e2-47b003914112" name="Changes" comment="Sorting, filtering and pagination functionality">
-      <change afterPath="$PROJECT_DIR$/src/UI/pages/main-page/pizza-block/ingredients-list.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/main-page/pizza-block/pizza-block.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/main-page/pizza-block/pizza-block.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/CoffeIcon.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/ContactPersonField.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/ContactWay.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/DeliveryAddress.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/DeliveryTypeAndDescription.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/MakeAPayment.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/OrderDate.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/OrderDetails.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/OrderDetailsButtonGroup.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/cart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/cart/cart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,24 +52,12 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="checkout" />
-                    <option name="lastUsedInstant" value="1665614785" />
+                    <option name="branchName" value="stripe" />
+                    <option name="lastUsedInstant" value="1666212422" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="master" />
                     <option name="lastUsedInstant" value="1664741873" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="footer" />
-                    <option name="lastUsedInstant" value="1664740083" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="landing" />
-                    <option name="lastUsedInstant" value="1664625098" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="nginx" />
-                    <option name="lastUsedInstant" value="1664108275" />
                   </RecentBranch>
                 </list>
               </option>
@@ -134,11 +134,11 @@
       <recent name="$PROJECT_DIR$/src/redux" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails" />
       <recent name="$PROJECT_DIR$/src/UI/pages/main-page/pizza-block/configure" />
       <recent name="$PROJECT_DIR$/src/redux/slices/business" />
       <recent name="$PROJECT_DIR$/src/redux/slices/UI" />
       <recent name="$PROJECT_DIR$/src/UI/pages/main-page/pizza-block" />
-      <recent name="$PROJECT_DIR$/src/UI/pages/main-page" />
     </key>
   </component>
   <component name="RunManager" selected="npm.build">
@@ -237,6 +237,8 @@
       <workItem from="1665692745017" duration="373000" />
       <workItem from="1665693865285" duration="3771000" />
       <workItem from="1665862448563" duration="2167000" />
+      <workItem from="1665935648158" duration="2990000" />
+      <workItem from="1666212142449" duration="5552000" />
     </task>
     <task id="LOCAL-00001" summary="Project has been initialized">
       <created>1660245634989</created>
@@ -269,7 +271,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/master" />
+                        <option value="master" />
                       </list>
                     </value>
                   </entry>

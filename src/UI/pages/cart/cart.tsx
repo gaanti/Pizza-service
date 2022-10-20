@@ -4,13 +4,19 @@ import { RootState } from '../../../redux/store';
 import { deleteAllPizzas } from '../../../redux/slices/business/cart';
 import { useNavigate } from 'react-router-dom';
 import CartEmpty from './cart-empty';
-import OrderDetails from './OrderDetails';
+import OrderDetails from './OrderDetails/OrderDetails';
 import { PizzaForCart } from '../../../redux/types';
 import React from 'react';
 import { IoChevronBackSharp } from 'react-icons/io5';
 import { BsFillCartXFill } from 'react-icons/bs';
+import {Elements} from '@stripe/react-stripe-js';
+import {loadStripe} from '@stripe/stripe-js';
+
+// Make sure to call `loadStripe` outside of a component’s render to avoid
+// recreating the `Stripe` object on every render.
 
 function Cart() {
+
       const navigate = useNavigate();
       const pizzas = useSelector((state: RootState) => state.cart.items);
       const totalCost = useSelector((state: RootState) => state.cart.total_price);
@@ -57,10 +63,7 @@ function Cart() {
                                     </div>
                                     <div className="cart__bottom">
                                           <div className="cart__bottom-buttons">
-                                                {/*<Link to={'/'} className="button button--outline button--add go-back-btn">
-                                                      <img src="grey-arrow-left.svg" alt="Back to homepage" />
-                                                      <span>Back to homepage</span>
-                                                </Link>*/}
+
                                                 <div
                                                       className="button button--outline button--add go-back-btn"
                                                       onClick={() => navigate(-1)}>
@@ -83,4 +86,4 @@ function Cart() {
       return <>{pizzas?.length ? <CartWithItems /> : <CartEmpty />}</>;
 }
 
-export default Cart;
+export default React.memo(Cart);
