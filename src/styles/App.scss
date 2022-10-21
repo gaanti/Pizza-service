@@ -638,6 +638,35 @@ body {
     height: $size/1.7;
     overflow: scroll;
   }
+
+  .checkout-block-container {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+  }
+
+  .checkout-popup-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    background-color: rgba(185, 185, 185, 0.4);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .checkout-popup-block {
+    $size: 430px;
+    background-color: white;
+    width: 430px;
+    height: $size/1.7;
+    overflow: scroll;
+  }
 }
 
 .TWO_COLUMNS {

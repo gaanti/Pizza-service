@@ -9,25 +9,11 @@ export const pizzaApi = api.injectEndpoints({
                               url: `checkout`,
                               method: 'POST',
                               body: somethnig,
-                              headers: { "Access-Control-Allow-Origin": "*" }
-                        };
-                  }
-            }),
-            createAnDeliveryOrder: builder.query<any, any>({
-                  query: ({}) => {
-                        return {
-                              url: `pizzas?`
-                        };
-                  }
-            }),
-            createAnPickupOrder: builder.query<any, any>({
-                  query: ({}) => {
-                        return {
-                              url: `pizzas?`
+                              headers: { 'Access-Control-Allow-Origin': '*' }
                         };
                   }
             })
       })
 });
 
-export const { useCreateAnDeliveryOrderQuery, useDoCheckoutMutation } = pizzaApi;
+export const { useDoCheckoutMutation } = pizzaApi;
