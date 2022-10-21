@@ -4,20 +4,26 @@ import { RootState } from '../../../redux/store';
 import { deleteAllPizzas } from '../../../redux/slices/business/cart';
 import { useNavigate } from 'react-router-dom';
 import CartEmpty from './cart-empty';
-import OrderDetails from './OrderDetails';
+import OrderDetails from './OrderDetails/OrderDetails';
 import { PizzaForCart } from '../../../redux/types';
-import React from 'react';
+import React, { useState } from 'react';
 import { IoChevronBackSharp } from 'react-icons/io5';
 import { BsFillCartXFill } from 'react-icons/bs';
+import MakeAPayment from './OrderDetails/MakeAPayment';
+import GooglePayButton from '@google-pay/button-react';
+import Asd from './OrderDetails/checkout/asd';
+
+// Make sure to call `loadStripe` outside of a component’s render to avoid
+// recreating the `Stripe` object on every render.
 
 function Cart() {
       const navigate = useNavigate();
       const pizzas = useSelector((state: RootState) => state.cart.items);
       const totalCost = useSelector((state: RootState) => state.cart.total_price);
       const dispatch = useDispatch();
+      const [openCheckout, setOpenCheckout] = useState(false);
 
       let quantity = 0;
-
       if (pizzas) {
             for (let i = 0; i < pizzas.length; i++) {
                   quantity += pizzas[i].quantity;
@@ -57,10 +63,6 @@ function Cart() {
                                     </div>
                                     <div className="cart__bottom">
                                           <div className="cart__bottom-buttons">
-                                                {/*<Link to={'/'} className="button button--outline button--add go-back-btn">
-                                                      <img src="grey-arrow-left.svg" alt="Back to homepage" />
-                                                      <span>Back to homepage</span>
-                                                </Link>*/}
                                                 <div
                                                       className="button button--outline button--add go-back-btn"
                                                       onClick={() => navigate(-1)}>
@@ -69,9 +71,71 @@ function Cart() {
                                                       <span>Back to homepage</span>
                                                 </div>
 
-                                                <button className="button pay-btn" disabled={false}>
-                                                      <span>Checkout</span>
-                                                </button>
+                                                <div>
+                                                      <button
+                                                            className="button pay-btn"
+                                                            disabled={false}
+                                                            onClick={async () => {
+                                                                  setOpenCheckout(true);
+                                                                  // axios.post('http://localhost:5000/checkout').then(res => console.log(res))
+                                                            }}>
+                                                            <span>Checkout</span>
+                                                      </button>
+                                                      {openCheckout && (
+                                                            <div className="checkout-popup-container">
+                                                                  <div className="checkout-popup-block">
+                                                                        <Asd pizzas={pizzas}/>
+                                                                        <MakeAPayment />
+                                                                        <GooglePayButton
+                                                                              environment="TEST"
+                                                                              buttonColor="white"
+                                                                              buttonType="order"
+                                                                              paymentRequest={{
+                                                                                    apiVersion: 2,
+                                                                                    apiVersionMinor: 0,
+                                                                                    allowedPaymentMethods: [
+                                                                                          {
+                                                                                                type: 'CARD',
+                                                                                                parameters: {
+                                                                                                      allowedAuthMethods: [
+                                                                                                            'PAN_ONLY',
+                                                                                                            'CRYPTOGRAM_3DS'
+                                                                                                      ],
+                                                                                                      allowedCardNetworks: [
+                                                                                                            'MASTERCARD',
+                                                                                                            'VISA'
+                                                                                                      ]
+                                                                                                },
+                                                                                                tokenizationSpecification: {
+                                                                                                      type: 'PAYMENT_GATEWAY',
+                                                                                                      parameters: {
+                                                                                                            gateway: 'example',
+                                                                                                            gatewayMerchantId:
+                                                                                                                  'exampleGatewayMerchantId'
+                                                                                                      }
+                                                                                                }
+                                                                                          }
+                                                                                    ],
+                                                                                    merchantInfo: {
+                                                                                          merchantId: '12345678901234567890',
+                                                                                          merchantName: 'Demo Merchant'
+                                                                                    },
+                                                                                    transactionInfo: {
+                                                                                          totalPriceStatus: 'FINAL',
+                                                                                          totalPriceLabel: 'Total',
+                                                                                          totalPrice: '100.00',
+                                                                                          currencyCode: 'USD',
+                                                                                          countryCode: 'US'
+                                                                                    }
+                                                                              }}
+                                                                        />
+                                                                        <div>second</div>
+                                                                        <div>third</div>
+                                                                        <div>fou</div>
+                                                                  </div>
+                                                            </div>
+                                                      )}
+                                                </div>
                                           </div>
                                     </div>
                               </div>
@@ -83,4 +147,4 @@ function Cart() {
       return <>{pizzas?.length ? <CartWithItems /> : <CartEmpty />}</>;
 }
 
-export default Cart;
+export default React.memo(Cart);

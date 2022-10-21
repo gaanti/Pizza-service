@@ -10,12 +10,13 @@ function Footer() {
             <div className="footer">
                   {footerPoints1.map((ftp, index) => {
                         return (
-                              <div className={`${ingredientsSelect1 === ftp.title ? 'yourTargetElement' : ''}`}>
+                              <div className={`${ingredientsSelect1 === ftp.title ? 'yourTargetElement' : ''}`}
+                              key={ftp.title}>
                                     <div id={`${ftp.title}`}>{ftp.title}</div>
                                     <hr />
                                     <div>
-                                          {footerPoints1[index].points.map((item) => {
-                                                return <div>{item}</div>;
+                                          {footerPoints1[index].points.map((item, pointIndex) => {
+                                                return <div key={index + pointIndex}>{item}</div>;
                                           })}
                                     </div>
                               </div>

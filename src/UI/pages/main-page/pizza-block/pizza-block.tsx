@@ -5,7 +5,7 @@ import { RootState } from '../../../../redux/store';
 import { pizza } from '../../../../redux/types';
 import Configure from './configure/configure';
 import { dough_radiusSelect, dough_widthsSelect } from '../../../../redux/slices/business/pizzas';
-import IngredientsList from "./ingredients-list";
+import IngredientsList from './ingredients-list';
 
 function PizzaBlock(props: { element: pizza; index: number }) {
       const dispatch = useDispatch();
@@ -36,6 +36,7 @@ function PizzaBlock(props: { element: pizza; index: number }) {
       const increaseQty = () => {
             dispatch(
                   addItemOrIncreaseQuantity({
+                        id: props.element.id,
                         title: props.element.title,
                         image: props.element.image,
                         price: props.element.price,
@@ -67,7 +68,7 @@ function PizzaBlock(props: { element: pizza; index: number }) {
                         <img className="pizza-block__image" src={'data:image/jpg;base64,' + props.element.image} alt="Pizza" />
                         <h4 className="pizza-block__title">{props.element.title}</h4>
                         <div style={{ position: 'relative' }}>
-                              <IngredientsList ingredients={ingredients} doughWidth={doughWidth} doughRadius={doughRadius}/>
+                              <IngredientsList ingredients={ingredients} doughWidth={doughWidth} doughRadius={doughRadius} />
                               <div className="pizza-block__bottom">
                                     <div className="pizza-block__price">${props.element.price}</div>
                                     <div className="DIRECTION_ROW_WITHOUT_GAP pizza-block__interact_pannel">
@@ -84,7 +85,7 @@ function PizzaBlock(props: { element: pizza; index: number }) {
                                                       qtyOfItemsInCart={qtyOfItemsInCart}
                                                       ingredients={ingredients}
                                                       parent={parent}
-                                                      rerenderParent={() => rerenderParent(prevState => !prevState)}
+                                                      rerenderParent={() => rerenderParent((prevState) => !prevState)}
                                                       resetPizzaParams={resetPizzaParams}
                                                       refference={refference}
                                                 />
