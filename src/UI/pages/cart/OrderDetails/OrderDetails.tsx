@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import '../../../../styles/components/__input.scss';
 import '../../../../styles/_variables.scss';
-import MakeAPayment from './MakeAPayment';
 import OrderDate from "./OrderDate";
 import DeliveryAddress from "./DeliveryAddress";
 import ContactWay from "./ContactWay";
@@ -31,7 +30,7 @@ function OrderDetails() {
                                     Order details
                               </h2>
                               <OrderDate DeliveryOrPickup={DeliveryOrPickup}/>
-                              <ContactPersonField contactPerson={contactPerson} setContactPerson={setContactPerson}></ContactPersonField>
+                              <ContactPersonField contactPerson={contactPerson} setContactPerson={setContactPerson}/>
                               <DeliveryAddress DeliveryOrPickup={DeliveryOrPickup} city={city} street={street} setStreet={setStreet} setCity={setCity}/>
                               <ContactWay/>
                               <OrderDetailsButtonGroup/>

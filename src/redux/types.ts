@@ -42,12 +42,14 @@ export type ingredient = {
 };
 
 export interface PizzaForCart extends pizza {
+      id: number
       doughWidth: string;
       doughRadius: number;
       quantity: number;
 }
 
 export type pizza = {
+      id: number
       title: string;
       image: string;
       price: number;

@@ -1,23 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="GROUP_BY_SEVERITY" value="true" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7154f848-4d52-4cd8-a3e2-47b003914112" name="Changes" comment="Sorting, filtering and pagination functionality">
-      <change afterPath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/CoffeIcon.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/ContactPersonField.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/ContactWay.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/DeliveryAddress.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/DeliveryTypeAndDescription.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/MakeAPayment.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/OrderDate.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/OrderDetails.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/OrderDetailsButtonGroup.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/checkout/asd.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/cross-page-components/footer/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/cross-page-components/footer/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/cross-page-components/header/burger-navigation/burger-navigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/cross-page-components/header/burger-navigation/burger-navigation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/OrderDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/OrderDetails.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/OrderDetailsButtonGroup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/OrderDetailsButtonGroup.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/cart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/cart/cart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/pages/main-page/pizza-block/pizza-block.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/main-page/pizza-block/pizza-block.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/services/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/services/api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/services/order.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/services/order.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/App.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -84,7 +89,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="2DDpzlOad2nJjcvyGBIVDnr3nXS" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -238,7 +243,7 @@
       <workItem from="1665693865285" duration="3771000" />
       <workItem from="1665862448563" duration="2167000" />
       <workItem from="1665935648158" duration="2990000" />
-      <workItem from="1666212142449" duration="5552000" />
+      <workItem from="1666212142449" duration="26152000" />
     </task>
     <task id="LOCAL-00001" summary="Project has been initialized">
       <created>1660245634989</created>

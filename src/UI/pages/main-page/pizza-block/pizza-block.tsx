@@ -36,6 +36,7 @@ function PizzaBlock(props: { element: pizza; index: number }) {
       const increaseQty = () => {
             dispatch(
                   addItemOrIncreaseQuantity({
+                        id: props.element.id,
                         title: props.element.title,
                         image: props.element.image,
                         price: props.element.price,
