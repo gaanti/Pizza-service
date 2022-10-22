@@ -635,7 +635,7 @@ body {
     $size: 430px;
     background-color: white;
     width: 430px;
-    height: $size/1.7;
+    height: calc($size/1.7);
     overflow: scroll;
   }
 }
