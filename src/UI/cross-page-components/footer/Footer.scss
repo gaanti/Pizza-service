@@ -33,16 +33,19 @@
   background-color: #181818;
   animation: yourAnimation 1s ease-in-out 0s normal none;
 }
+
 .footer-item {
   width: 200px;
   padding: 10px;
   border-radius: $border-radius;
 }
+
 @media (max-width: 615px) {
   .footer-item {
     width: 95%;
   }
 }
+
 @keyframes yourAnimation {
   0% {
   }

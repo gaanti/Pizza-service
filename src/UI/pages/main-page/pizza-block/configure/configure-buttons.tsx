@@ -5,7 +5,7 @@ function ConfigureButtons(props: {
       rerenderParent: () => void;
       increaseQty: () => void;
       qtyOfItemsInCart: number;
-      setConfigureTab: React.Dispatch<React.SetStateAction<boolean>>
+      setConfigureTab: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
       return (
             <div className="DIRECTION_COLUMN">
@@ -22,7 +22,7 @@ function ConfigureButtons(props: {
                               <span>Add to cart</span>
                               {props.qtyOfItemsInCart ? <i>{props.qtyOfItemsInCart}</i> : ''}
                         </div>
-                        <div className="pizza-block__configure_button" onClick={() => props.setConfigureTab(prevState => !prevState)}>
+                        <div className="pizza-block__configure_button" onClick={() => props.setConfigureTab((prevState) => !prevState)}>
                               Save & close
                         </div>
                   </div>

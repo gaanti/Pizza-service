@@ -15,7 +15,7 @@ export const store = configureStore({
             [pizzaApi.reducerPath]: pizzaApi.reducer
       },
       middleware: (getDefaultMiddleware) => {
-            return getDefaultMiddleware({serializableCheck: false}).concat(pizzaApi.middleware);
+            return getDefaultMiddleware({ serializableCheck: false }).concat(pizzaApi.middleware);
       }
 });
 

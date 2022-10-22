@@ -1,4 +1,4 @@
-import { api } from './api';
+import { api } from "./api";
 import { PizzaForCart } from "../types";
 
 // Define a service using a base URL and expected endpoints
@@ -12,7 +12,7 @@ export const pizzaApi = api.injectEndpoints({
                               body: somethnig,
                               responseHandler: 'text'
                         };
-                  },
+                  }
             })
       })
 });

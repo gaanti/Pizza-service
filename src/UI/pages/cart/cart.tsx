@@ -1,16 +1,16 @@
-import CartItem from './cart-item';
-import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../../../redux/store';
-import { deleteAllPizzas } from '../../../redux/slices/business/cart';
-import { useNavigate } from 'react-router-dom';
-import CartEmpty from './cart-empty';
-import OrderDetails from './OrderDetails/OrderDetails';
-import { PizzaForCart } from '../../../redux/types';
-import React, { useState } from 'react';
-import { IoChevronBackSharp } from 'react-icons/io5';
-import { BsFillCartXFill } from 'react-icons/bs';
-import GooglePayButton from '@google-pay/button-react';
-import StripeCheckoutButton from './OrderDetails/checkout/stripe-checkout-button';
+import CartItem from "./cart-item";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../../redux/store";
+import { deleteAllPizzas } from "../../../redux/slices/business/cart";
+import { useNavigate } from "react-router-dom";
+import CartEmpty from "./cart-empty";
+import OrderDetails from "./OrderDetails/OrderDetails";
+import { PizzaForCart } from "../../../redux/types";
+import React, { useState } from "react";
+import { IoChevronBackSharp } from "react-icons/io5";
+import { BsFillCartXFill } from "react-icons/bs";
+import GooglePayButton from "@google-pay/button-react";
+import StripeCheckoutButton from "./OrderDetails/checkout/stripe-checkout-button";
 
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
@@ -84,7 +84,8 @@ function Cart() {
                                                             <div className="checkout-popup-container">
                                                                   <div
                                                                         className="checkout-popup-background-to-close-menu"
-                                                                        onClick={() => setOpenCheckout(false)}/>
+                                                                        onClick={() => setOpenCheckout(false)}
+                                                                  />
                                                                   <div className="checkout-popup-block">
                                                                         <StripeCheckoutButton pizzas={pizzas} />
                                                                         <GooglePayButton
