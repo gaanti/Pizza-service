@@ -10,7 +10,7 @@ function Footer() {
             <div className="footer">
                   {footerPoints1.map((ftp, index) => {
                         return (
-                              <div className={`${ingredientsSelect1 === ftp.title ? 'yourTargetElement' : ''}`}
+                              <div className={`footer-item ${ingredientsSelect1 === ftp.title && 'yourTargetElement'}`}
                               key={ftp.title}>
                                     <div id={`${ftp.title}`}>{ftp.title}</div>
                                     <hr />
