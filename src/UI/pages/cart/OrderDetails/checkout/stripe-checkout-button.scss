@@ -14,3 +14,9 @@
   height: 40px;
   min-height: 40px;
 }
+.spining-animation {
+  text-align: center;
+  height: 40px;
+  margin: auto;
+  animation: 1s infinite spin-360-at-the-same;
+}
