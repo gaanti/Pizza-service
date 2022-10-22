@@ -9,9 +9,8 @@ import { PizzaForCart } from '../../../redux/types';
 import React, { useState } from 'react';
 import { IoChevronBackSharp } from 'react-icons/io5';
 import { BsFillCartXFill } from 'react-icons/bs';
-import MakeAPayment from './OrderDetails/MakeAPayment';
 import GooglePayButton from '@google-pay/button-react';
-import Asd from './OrderDetails/checkout/asd';
+import StripeCheckoutButton from './OrderDetails/checkout/stripe-checkout-button';
 
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
@@ -83,9 +82,11 @@ function Cart() {
                                                       </button>
                                                       {openCheckout && (
                                                             <div className="checkout-popup-container">
+                                                                  <div
+                                                                        className="checkout-popup-background-to-close-menu"
+                                                                        onClick={() => setOpenCheckout(false)}/>
                                                                   <div className="checkout-popup-block">
-                                                                        <Asd pizzas={pizzas}/>
-                                                                        <MakeAPayment />
+                                                                        <StripeCheckoutButton pizzas={pizzas} />
                                                                         <GooglePayButton
                                                                               environment="TEST"
                                                                               buttonColor="white"
@@ -129,9 +130,6 @@ function Cart() {
                                                                                     }
                                                                               }}
                                                                         />
-                                                                        <div>second</div>
-                                                                        <div>third</div>
-                                                                        <div>fou</div>
                                                                   </div>
                                                             </div>
                                                       )}

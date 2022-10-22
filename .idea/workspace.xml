@@ -8,11 +8,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7154f848-4d52-4cd8-a3e2-47b003914112" name="Changes" comment="Sorting, filtering and pagination functionality">
+      <change afterPath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/checkout/stripe-checkout-button.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/checkout/asd.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/checkout/asd.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/services/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/services/api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/services/order.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/services/order.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/checkout/asd.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/checkout/stripe-checkout-button.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/cart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/cart/cart.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/App.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,8 +24,8 @@
       <list>
         <option value="JavaScript File" />
         <option value="TypeScript File" />
-        <option value="SCSS File" />
         <option value="TypeScript JSX File" />
+        <option value="SCSS File" />
       </list>
     </option>
   </component>
@@ -237,7 +236,7 @@
       <workItem from="1666212142449" duration="26152000" />
       <workItem from="1666425718579" duration="6044000" />
       <workItem from="1666438603551" duration="87000" />
-      <workItem from="1666438702588" duration="4829000" />
+      <workItem from="1666438702588" duration="6085000" />
     </task>
     <task id="LOCAL-00001" summary="Project has been initialized">
       <created>1660245634989</created>
@@ -270,7 +269,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="origin/stripe" />
                       </list>
                     </value>
                   </entry>

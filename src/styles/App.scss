@@ -631,12 +631,30 @@ body {
     flex-direction: column;align-items: center;
     justify-content: center;
   }
+  .checkout-popup-background-to-close-menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 3;
+  }
   .checkout-popup-block{
     $size: 430px;
+    border-radius: $border-radius;
+    position: absolute;
+    z-index: 3;
+
+    left: calc(50% - $size / 2);
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
     background-color: white;
     width: 430px;
-    height: calc($size/1.7);
+    height: calc($size / 1.7);
     overflow: scroll;
+    padding: 8px;
   }
 }
 
