@@ -573,6 +573,14 @@ body {
         font-weight: 600;
         width: 210px;
         padding: 16px;
+        & img {
+          width: 30px;
+          height: 30px;
+          border-radius: 30px;
+          background-color: white;
+          padding-bottom: 3px;
+          object-fit: contain;
+        }
       }
     }
   }

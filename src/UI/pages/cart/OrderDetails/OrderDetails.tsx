@@ -71,11 +71,9 @@ const OrderDetails: React.FC<props> = ({
           <ContactWay contactMethod={contactMethod} setcontactMethod={setcontactMethod} handleChange={handleChange}
                       contactProvidedByUser={contactProvidedByUser}
                       setContactProvidedByUser={setContactProvidedByUser} />
-          <OrderDetailsButtonGroup />
         </div>
         /////
       </article>
-
       <CoffeIcon />
     </div>
   );

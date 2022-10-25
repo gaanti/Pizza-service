@@ -9,7 +9,6 @@ import { PizzaForCart } from '../../../redux/types/types';
 import React, { useState } from 'react';
 import { IoChevronBackSharp } from 'react-icons/io5';
 import { BsFillCartXFill } from 'react-icons/bs';
-import GooglePayButton from '@google-pay/button-react';
 import StripeCheckoutButton from './OrderDetails/checkout/stripe-checkout-button';
 import { deliveryMethod, notifyMethod } from '../../../redux/types/order.types';
 
@@ -98,82 +97,20 @@ function Cart() {
                                                 </div>
 
                                                 <div>
-                                                      <button
-                                                            className="button pay-btn"
-                                                            disabled={false}
-                                                            onClick={async () => {
-                                                                  setOpenCheckout(true);
-                                                                  // axios.post('http://localhost:5000/checkout').then(res => console.log(res))
-                                                            }}>
-                                                            <span>Checkout</span>
-                                                      </button>
-                                                      {openCheckout && (
-                                                            <div className="checkout-popup-container">
-                                                                  <div
-                                                                        className="checkout-popup-background-to-close-menu"
-                                                                        onClick={() => setOpenCheckout(false)}
-                                                                  />
-                                                                  <div className="checkout-popup-block">
-                                                                        <StripeCheckoutButton
-                                                                              DeliveryOrPickup={DeliveryOrPickup}
-                                                                              setDeliveryOrPickup={setDeliveryOrPickup}
-                                                                              contactProvidedByUser={contactProvidedByUser}
-                                                                              contactPerson={contactPerson}
-                                                                              setContactPerson={setContactPerson}
-                                                                              city={city}
-                                                                              setCity={setCity}
-                                                                              street={street}
-                                                                              setStreet={setStreet}
-                                                                              choosedNotifyMethod={contactMethod}
-                                                                              pizzas={pizzas}
-                                                                              getDate={getDate}
-                                                                        />
-                                                                        <GooglePayButton
-                                                                              environment="TEST"
-                                                                              buttonColor="white"
-                                                                              buttonType="order"
-                                                                              paymentRequest={{
-                                                                                    apiVersion: 2,
-                                                                                    apiVersionMinor: 0,
-                                                                                    allowedPaymentMethods: [
-                                                                                          {
-                                                                                                type: 'CARD',
-                                                                                                parameters: {
-                                                                                                      allowedAuthMethods: [
-                                                                                                            'PAN_ONLY',
-                                                                                                            'CRYPTOGRAM_3DS'
-                                                                                                      ],
-                                                                                                      allowedCardNetworks: [
-                                                                                                            'MASTERCARD',
-                                                                                                            'VISA'
-                                                                                                      ]
-                                                                                                },
-                                                                                                tokenizationSpecification: {
-                                                                                                      type: 'PAYMENT_GATEWAY',
-                                                                                                      parameters: {
-                                                                                                            gateway: 'example',
-                                                                                                            gatewayMerchantId:
-                                                                                                                  'exampleGatewayMerchantId'
-                                                                                                      }
-                                                                                                }
-                                                                                          }
-                                                                                    ],
-                                                                                    merchantInfo: {
-                                                                                          merchantId: '12345678901234567890',
-                                                                                          merchantName: 'Demo Merchant'
-                                                                                    },
-                                                                                    transactionInfo: {
-                                                                                          totalPriceStatus: 'FINAL',
-                                                                                          totalPriceLabel: 'Total',
-                                                                                          totalPrice: '100.00',
-                                                                                          currencyCode: 'USD',
-                                                                                          countryCode: 'US'
-                                                                                    }
-                                                                              }}
-                                                                        />
-                                                                  </div>
-                                                            </div>
-                                                      )}
+                                                      <StripeCheckoutButton
+                                                            DeliveryOrPickup={DeliveryOrPickup}
+                                                            setDeliveryOrPickup={setDeliveryOrPickup}
+                                                            contactProvidedByUser={contactProvidedByUser}
+                                                            contactPerson={contactPerson}
+                                                            setContactPerson={setContactPerson}
+                                                            city={city}
+                                                            setCity={setCity}
+                                                            street={street}
+                                                            setStreet={setStreet}
+                                                            choosedNotifyMethod={contactMethod}
+                                                            pizzas={pizzas}
+                                                            getDate={getDate}
+                                                      />
                                                 </div>
                                           </div>
                                     </div>

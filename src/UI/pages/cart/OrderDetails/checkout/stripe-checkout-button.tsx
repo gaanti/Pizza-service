@@ -74,8 +74,12 @@ const StripeCheckoutButton: React.FC<props> = ({
       return (
             <div>
                   {!ckeckoutPickUpResult.isLoading || ckeckoutDeliveryResult.isLoading ? (
-                        <button className="stripe-checkout-button" onClick={makeCheckout}>
-                              Checkout with Stripe
+                        <button className="button pay-btn" onClick={makeCheckout}>
+                              <span>
+                                    Checkout
+                              </span>
+                              <img src="https://i.pinimg.com/originals/5b/e7/15/5be7157c8d58a1b83acf3c4e0f4a267e.gif"
+                                   alt="Checkout now!)" />
                         </button>
                   ) : (
                         <ImSpinner2 className="spining-animation" size="25" />
