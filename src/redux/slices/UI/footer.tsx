@@ -12,13 +12,13 @@ const footerPoints0 = [
             title: 'Media',
             points: [
                   <div>
-                        <AiFillTwitterCircle /> Read our news
+                        <AiFillTwitterCircle /> Our news
                   </div>,
                   <div>
-                        <AiFillInstagram /> Check how we are cook
+                        <AiFillInstagram /> How we cook
                   </div>,
                   <div>
-                        <BsFacebook /> Impress yourself
+                        <BsFacebook /> Become impressed
                   </div>
             ]
       },
