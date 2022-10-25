@@ -1,7 +1,10 @@
 import React from 'react';
-import { deliveryMethod } from "../../../../redux/types/order.types";
+import { deliveryMethod } from '../../../../../redux/types/order.types';
 
-function DeliveryTypeAndDescription(props: { setDeliveryOrPickup: React.Dispatch<React.SetStateAction<deliveryMethod>>; DeliveryOrPickup: string }) {
+function DeliveryTypeAndDescription(props: {
+      setDeliveryOrPickup: React.Dispatch<React.SetStateAction<deliveryMethod>>;
+      DeliveryOrPickup: string;
+}) {
       return (
             <div>
                   Choose one of two order options:{' '}

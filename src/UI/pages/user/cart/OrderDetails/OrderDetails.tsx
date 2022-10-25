@@ -1,13 +1,13 @@
 import React from 'react';
-import '../../../../styles/components/__input.scss';
-import '../../../../styles/_variables.scss';
+import '../../../../../styles/components/__input.scss';
+import '../../../../../styles/_variables.scss';
 import OrderDate from './OrderDate';
 import DeliveryAddress from './DeliveryAddress';
 import ContactWay from './ContactWay';
 import CoffeIcon from './CoffeIcon';
 import ContactPersonField from './ContactPersonField';
 import DeliveryTypeAndDescription from './DeliveryTypeAndDescription';
-import { deliveryMethod, notifyMethod } from '../../../../redux/types/order.types';
+import { deliveryMethod, notifyMethod } from '../../../../../redux/types/order.types';
 
 interface props {
       DeliveryOrPickup: string;

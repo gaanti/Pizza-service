@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDoCheckoutDeliveryMutation, useDoCheckoutPickUpMutation } from '../../../../../redux/services/order';
+import { useDoCheckoutDeliveryMutation, useDoCheckoutPickUpMutation } from '../../../../../../redux/services/order';
 import './stripe-checkout-button.scss';
 import { ImSpinner2 } from 'react-icons/im';
 import {
@@ -8,8 +8,8 @@ import {
       deliveryPizzaOrder,
       notifyMethod,
       pickUpPizzaOrder
-} from '../../../../../redux/types/order.types';
-import { PizzaForCart } from '../../../../../redux/types/types';
+} from '../../../../../../redux/types/order.types';
+import { PizzaForCart } from '../../../../../../redux/types/types';
 
 interface props {
       DeliveryOrPickup: deliveryMethod;
@@ -75,11 +75,11 @@ const StripeCheckoutButton: React.FC<props> = ({
             <div>
                   {!ckeckoutPickUpResult.isLoading || ckeckoutDeliveryResult.isLoading ? (
                         <button className="button pay-btn" onClick={makeCheckout}>
-                              <span>
-                                    Checkout
-                              </span>
-                              <img src="https://i.pinimg.com/originals/5b/e7/15/5be7157c8d58a1b83acf3c4e0f4a267e.gif"
-                                   alt="Checkout now!)" />
+                              <span>Checkout</span>
+                              <img
+                                    src="https://i.pinimg.com/originals/5b/e7/15/5be7157c8d58a1b83acf3c4e0f4a267e.gif"
+                                    alt="Checkout now!)"
+                              />
                         </button>
                   ) : (
                         <ImSpinner2 className="spining-animation" size="25" />

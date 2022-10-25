@@ -1,5 +1,5 @@
 import React from 'react';
-import CartButton from '../../pages/cart/cart-button';
+import CartButton from '../../pages/user/cart/cart-button';
 import { Link } from 'react-router-dom';
 import '../../../styles/components/live-gradient-border.scss';
 import BurgerNavigation from './burger-navigation/burger-navigation';

@@ -1,8 +1,6 @@
 @import 'src/styles/variables';
 
-.content__title .input {
-  /*color: $black;
-background: #f9f9f9 !*url(../../../public/search.svg)*! left no-repeat;*/
+.black-input {
   border: unset;
   background-color: $black;
   color: $white;

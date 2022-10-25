@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../../../../redux/store';
-import { setFilterByCategoryId } from '../../../../redux/slices/business/filtering_params';
+import { RootState } from '../../../../../redux/store';
+import { setFilterByCategoryId } from '../../../../../redux/slices/business/filtering_params';
 
 function Categories() {
       const filterCategoryId = useSelector((state: RootState) => state.params.filterCategoryId);

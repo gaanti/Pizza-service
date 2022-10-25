@@ -1,7 +1,7 @@
+@use "sass:math";
 @import 'src/styles/fonts';
 @import 'src/styles/variables';
 @import 'src/styles/libs/normalize';
-
 @import 'src/styles/components/all';
 
 * {
@@ -71,6 +71,7 @@ body {
 .app-wrapper {
   width: 97%;
   height: auto;
+  min-height: 90vh;
   background-color: $white;
   margin: 1% auto;
   max-width: 1400px;
@@ -573,6 +574,7 @@ body {
         font-weight: 600;
         width: 210px;
         padding: 16px;
+
         & img {
           width: 30px;
           height: 30px;
@@ -653,22 +655,22 @@ body {
     z-index: 3;
   }
 
+
   .checkout-popup-block {
     $size: 430px;
     border-radius: $border-radius;
     position: absolute;
     z-index: 3;
 
-    left: calc(50% - $size / 2);
-
     display: flex;
     flex-direction: column;
     row-gap: 10px;
     background-color: white;
     width: 430px;
-    height: calc($size / 1.7);
+    height: math.div($size, 1.7);
     overflow: scroll;
     padding: 8px;
+    left: calc(50% - math.div($size, 2));
   }
 
   .checkout-block-container {
