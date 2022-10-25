@@ -1,34 +1,45 @@
-import CartItem from "./cart-item";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../../redux/store";
-import { deleteAllPizzas } from "../../../redux/slices/business/cart";
-import { useNavigate } from "react-router-dom";
-import CartEmpty from "./cart-empty";
-import OrderDetails from "./OrderDetails/OrderDetails";
-import { PizzaForCart } from "../../../redux/types";
-import React, { useState } from "react";
-import { IoChevronBackSharp } from "react-icons/io5";
-import { BsFillCartXFill } from "react-icons/bs";
-import GooglePayButton from "@google-pay/button-react";
-import StripeCheckoutButton from "./OrderDetails/checkout/stripe-checkout-button";
+import CartItem from './cart-item';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../../../redux/store';
+import { deleteAllPizzas } from '../../../redux/slices/business/cart';
+import { useNavigate } from 'react-router-dom';
+import CartEmpty from './cart-empty';
+import OrderDetails from './OrderDetails/OrderDetails';
+import { PizzaForCart } from '../../../redux/types/types';
+import React, { useState } from 'react';
+import { IoChevronBackSharp } from 'react-icons/io5';
+import { BsFillCartXFill } from 'react-icons/bs';
+import GooglePayButton from '@google-pay/button-react';
+import StripeCheckoutButton from './OrderDetails/checkout/stripe-checkout-button';
+import { deliveryMethod, notifyMethod } from '../../../redux/types/order.types';
 
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
 
 function Cart() {
-      const navigate = useNavigate();
       const pizzas = useSelector((state: RootState) => state.cart.items);
-      const totalCost = useSelector((state: RootState) => state.cart.total_price);
-      const dispatch = useDispatch();
-      const [openCheckout, setOpenCheckout] = useState(false);
-
-      let quantity = 0;
-      if (pizzas) {
-            for (let i = 0; i < pizzas.length; i++) {
-                  quantity += pizzas[i].quantity;
-            }
-      }
       const CartWithItems = () => {
+            const navigate = useNavigate();
+            const totalCost = useSelector((state: RootState) => state.cart.total_price);
+            const dispatch = useDispatch();
+            const [openCheckout, setOpenCheckout] = useState(false);
+            const [DeliveryOrPickup, setDeliveryOrPickup] = useState<deliveryMethod>(deliveryMethod.Pickup);
+            const [contactMethod, setcontactMethod] = useState<notifyMethod>(notifyMethod.Telegram);
+            const [contactProvidedByUser, setContactProvidedByUser] = useState('');
+            const [contactPerson, setContactPerson] = useState('');
+            const [city, setCity] = useState('');
+            const [street, setStreet] = useState('');
+            const handleChange = (event: any) => {
+                  setcontactMethod(event.target.value);
+            };
+            const [getDate, setGetDate] = useState(new Date().toJSON());
+
+            let quantity = 0;
+            if (pizzas) {
+                  for (let i = 0; i < pizzas.length; i++) {
+                        quantity += pizzas[i].quantity;
+                  }
+            }
             return (
                   <div className="content">
                         <div className="container container--cart">
@@ -57,7 +68,23 @@ function Cart() {
                                                             </span>
                                                       </div>
                                                 </div>
-                                                <OrderDetails />
+                                                <OrderDetails
+                                                      DeliveryOrPickup={DeliveryOrPickup}
+                                                      setDeliveryOrPickup={setDeliveryOrPickup}
+                                                      contactPerson={contactPerson}
+                                                      setContactPerson={setContactPerson}
+                                                      city={city}
+                                                      setCity={setCity}
+                                                      street={street}
+                                                      setStreet={setStreet}
+                                                      contactMethod={contactMethod}
+                                                      setcontactMethod={setcontactMethod}
+                                                      handleChange={handleChange}
+                                                      contactProvidedByUser={contactProvidedByUser}
+                                                      setContactProvidedByUser={setContactProvidedByUser}
+                                                      getDate={getDate}
+                                                      setGetDate={setGetDate}
+                                                />
                                           </div>
                                     </div>
                                     <div className="cart__bottom">
@@ -87,7 +114,20 @@ function Cart() {
                                                                         onClick={() => setOpenCheckout(false)}
                                                                   />
                                                                   <div className="checkout-popup-block">
-                                                                        <StripeCheckoutButton pizzas={pizzas} />
+                                                                        <StripeCheckoutButton
+                                                                              DeliveryOrPickup={DeliveryOrPickup}
+                                                                              setDeliveryOrPickup={setDeliveryOrPickup}
+                                                                              contactProvidedByUser={contactProvidedByUser}
+                                                                              contactPerson={contactPerson}
+                                                                              setContactPerson={setContactPerson}
+                                                                              city={city}
+                                                                              setCity={setCity}
+                                                                              street={street}
+                                                                              setStreet={setStreet}
+                                                                              choosedNotifyMethod={contactMethod}
+                                                                              pizzas={pizzas}
+                                                                              getDate={getDate}
+                                                                        />
                                                                         <GooglePayButton
                                                                               environment="TEST"
                                                                               buttonColor="white"

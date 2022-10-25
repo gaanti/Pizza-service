@@ -1,13 +1,23 @@
-import { api } from "./api";
-import { PizzaForCart } from "../types";
+import { api } from './api';
+import { deliveryPizzaOrder, pickUpPizzaOrder } from '../types/order.types';
 
 // Define a service using a base URL and expected endpoints
 export const pizzaApi = api.injectEndpoints({
       endpoints: (builder) => ({
-            doCheckout: builder.mutation<string, PizzaForCart[]>({
+            doCheckoutDelivery: builder.mutation<string, deliveryPizzaOrder | pickUpPizzaOrder>({
                   query: (somethnig) => {
                         return {
-                              url: `checkout`,
+                              url: `checkout-delivery`,
+                              method: 'POST',
+                              body: somethnig,
+                              responseHandler: 'text'
+                        };
+                  }
+            }),
+            doCheckoutPickUp: builder.mutation<string, deliveryPizzaOrder | pickUpPizzaOrder>({
+                  query: (somethnig) => {
+                        return {
+                              url: `checkout-pickUp`,
                               method: 'POST',
                               body: somethnig,
                               responseHandler: 'text'
@@ -17,4 +27,4 @@ export const pizzaApi = api.injectEndpoints({
       })
 });
 
-export const { useDoCheckoutMutation } = pizzaApi;
+export const { useDoCheckoutDeliveryMutation, useDoCheckoutPickUpMutation } = pizzaApi;

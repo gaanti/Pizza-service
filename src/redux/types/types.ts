@@ -41,8 +41,8 @@ export type ingredient = {
       ingredientName: string;
 };
 
-export interface PizzaForCart extends pizza {
-      id: number;
+export interface PizzaForCart extends Omit<pizza, 'id'> {
+      pizza_id: number;
       doughWidth: string;
       doughRadius: number;
       quantity: number;
@@ -56,11 +56,4 @@ export type pizza = {
       category: string;
       rank: number;
       ingredients: ingredient[];
-};
-
-export type filteringParams = {
-      filterCategoryId: number;
-      filterCategoryOptions: { id: number; categoryTitle: string }[] | null;
-      filterTitle: string | null;
-      sortBy: string;
 };

@@ -8,11 +8,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7154f848-4d52-4cd8-a3e2-47b003914112" name="Changes" comment="Sorting, filtering and pagination functionality">
-      <change afterPath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/checkout/stripe-checkout-button.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/types/order.types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/checkout/asd.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/checkout/stripe-checkout-button.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/ContactPersonField.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/ContactPersonField.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/ContactWay.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/ContactWay.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/DeliveryTypeAndDescription.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/DeliveryTypeAndDescription.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/OrderDate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/OrderDate.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/OrderDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/OrderDetails.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/checkout/stripe-checkout-button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/checkout/stripe-checkout-button.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/cart-item.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/cart/cart-item.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/cart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/cart/cart.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/App.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/pages/main-page/main-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/main-page/main-page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/pages/main-page/pizza-block/pizza-block.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/main-page/pizza-block/pizza-block.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/services/order.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/services/order.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/services/pizza.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/services/pizza.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/slices/business/cart.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/business/cart.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/slices/business/pizzas.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/business/pizzas.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/types/types.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,9 +36,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
         <option value="SCSS File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -129,11 +142,11 @@
       <recent name="$PROJECT_DIR$/src/redux" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/redux/types" />
       <recent name="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails" />
       <recent name="$PROJECT_DIR$/src/UI/pages/main-page/pizza-block/configure" />
       <recent name="$PROJECT_DIR$/src/redux/slices/business" />
       <recent name="$PROJECT_DIR$/src/redux/slices/UI" />
-      <recent name="$PROJECT_DIR$/src/UI/pages/main-page/pizza-block" />
     </key>
   </component>
   <component name="RunManager" selected="npm.build">
@@ -237,6 +250,7 @@
       <workItem from="1666425718579" duration="6044000" />
       <workItem from="1666438603551" duration="87000" />
       <workItem from="1666438702588" duration="6085000" />
+      <workItem from="1666527848263" duration="15229000" />
     </task>
     <task id="LOCAL-00001" summary="Project has been initialized">
       <created>1660245634989</created>
@@ -269,7 +283,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/stripe" />
+                        <option value="stripe" />
                       </list>
                     </value>
                   </entry>

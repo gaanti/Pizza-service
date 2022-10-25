@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { addItemOrIncreaseQuantity } from '../../../../redux/slices/business/cart';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../../../redux/store';
-import { pizza } from '../../../../redux/types';
+import { pizza } from '../../../../redux/types/types';
 import Configure from './configure/configure';
 import { dough_radiusSelect, dough_widthsSelect } from '../../../../redux/slices/business/pizzas';
 import IngredientsList from './ingredients-list';
@@ -36,7 +36,7 @@ function PizzaBlock(props: { element: pizza; index: number }) {
       const increaseQty = () => {
             dispatch(
                   addItemOrIncreaseQuantity({
-                        id: props.element.id,
+                        pizza_id: props.element.id,
                         title: props.element.title,
                         image: props.element.image,
                         price: props.element.price,

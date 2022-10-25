@@ -8,8 +8,9 @@ function ContactPersonField(props: { contactPerson: string; setContactPerson: (c
                         type="text"
                         placeholder="Anton Gaskevich"
                         spellCheck="false"
-                        value={props.contactPerson}
+                        defaultValue={props.contactPerson}
                         onChange={(e) => props.setContactPerson(e.target.value)}
+
                   />
                   <div className="input__label">Contact person</div>
             </label>
