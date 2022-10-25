@@ -31,7 +31,7 @@ function BurgerNavigation() {
                                     {RightPnts.map((point) => {
                                           return (
                                                 <a
-                                                  key={point}
+                                                      key={point}
                                                       href="#footer"
                                                       className="hover"
                                                       onClick={() => {

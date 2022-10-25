@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from "react";
 import Pizzas from './pizza-block/pizzas';
 import Categories from './pizza-parameters/categories';
 import Sort from './pizza-parameters/sort';
@@ -8,6 +8,7 @@ import Pagination from './pizza-parameters/pagination';
 function MainPage() {
       return (
             <div className="content">
+
                   <div className="container">
                         <div className="main_page_filters">
                               <h2 className="content__title">

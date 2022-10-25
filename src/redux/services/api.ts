@@ -5,7 +5,12 @@ const baseQuery = fetchBaseQuery({
       baseUrl: 'https://react-pizza-backend0.herokuapp.com',
       // baseUrl: 'http://localhost:5000',
       headers: {
-            accepts: 'application/json'
+            accepts: 'application/json',
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Headers': '*',
+            'Access-Control-Allow-Methods': '*',
+            // "content-type": "text/html; charset=utf-8; application/json; text/plain; application/x-www-form-urlencoded; multipart/form-data"
+            'content-type': 'application/json'
       }
 });
 // const baseQuery = fetchBaseQuery();

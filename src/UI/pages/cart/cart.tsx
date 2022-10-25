@@ -5,31 +5,40 @@ import { deleteAllPizzas } from '../../../redux/slices/business/cart';
 import { useNavigate } from 'react-router-dom';
 import CartEmpty from './cart-empty';
 import OrderDetails from './OrderDetails/OrderDetails';
-import { PizzaForCart } from '../../../redux/types';
+import { PizzaForCart } from '../../../redux/types/types';
 import React, { useState } from 'react';
 import { IoChevronBackSharp } from 'react-icons/io5';
 import { BsFillCartXFill } from 'react-icons/bs';
-import MakeAPayment from './OrderDetails/MakeAPayment';
-import GooglePayButton from '@google-pay/button-react';
-import Asd from './OrderDetails/checkout/asd';
+import StripeCheckoutButton from './OrderDetails/checkout/stripe-checkout-button';
+import { deliveryMethod, notifyMethod } from '../../../redux/types/order.types';
 
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
 
 function Cart() {
-      const navigate = useNavigate();
       const pizzas = useSelector((state: RootState) => state.cart.items);
-      const totalCost = useSelector((state: RootState) => state.cart.total_price);
-      const dispatch = useDispatch();
-      const [openCheckout, setOpenCheckout] = useState(false);
-
-      let quantity = 0;
-      if (pizzas) {
-            for (let i = 0; i < pizzas.length; i++) {
-                  quantity += pizzas[i].quantity;
-            }
-      }
       const CartWithItems = () => {
+            const navigate = useNavigate();
+            const totalCost = useSelector((state: RootState) => state.cart.total_price);
+            const dispatch = useDispatch();
+            const [openCheckout, setOpenCheckout] = useState(false);
+            const [DeliveryOrPickup, setDeliveryOrPickup] = useState<deliveryMethod>(deliveryMethod.Pickup);
+            const [contactMethod, setcontactMethod] = useState<notifyMethod>(notifyMethod.Telegram);
+            const [contactProvidedByUser, setContactProvidedByUser] = useState('');
+            const [contactPerson, setContactPerson] = useState('');
+            const [city, setCity] = useState('');
+            const [street, setStreet] = useState('');
+            const handleChange = (event: any) => {
+                  setcontactMethod(event.target.value);
+            };
+            const [getDate, setGetDate] = useState(new Date().toJSON());
+
+            let quantity = 0;
+            if (pizzas) {
+                  for (let i = 0; i < pizzas.length; i++) {
+                        quantity += pizzas[i].quantity;
+                  }
+            }
             return (
                   <div className="content">
                         <div className="container container--cart">
@@ -58,7 +67,23 @@ function Cart() {
                                                             </span>
                                                       </div>
                                                 </div>
-                                                <OrderDetails />
+                                                <OrderDetails
+                                                      DeliveryOrPickup={DeliveryOrPickup}
+                                                      setDeliveryOrPickup={setDeliveryOrPickup}
+                                                      contactPerson={contactPerson}
+                                                      setContactPerson={setContactPerson}
+                                                      city={city}
+                                                      setCity={setCity}
+                                                      street={street}
+                                                      setStreet={setStreet}
+                                                      contactMethod={contactMethod}
+                                                      setcontactMethod={setcontactMethod}
+                                                      handleChange={handleChange}
+                                                      contactProvidedByUser={contactProvidedByUser}
+                                                      setContactProvidedByUser={setContactProvidedByUser}
+                                                      getDate={getDate}
+                                                      setGetDate={setGetDate}
+                                                />
                                           </div>
                                     </div>
                                     <div className="cart__bottom">
@@ -72,69 +97,20 @@ function Cart() {
                                                 </div>
 
                                                 <div>
-                                                      <button
-                                                            className="button pay-btn"
-                                                            disabled={false}
-                                                            onClick={async () => {
-                                                                  setOpenCheckout(true);
-                                                                  // axios.post('http://localhost:5000/checkout').then(res => console.log(res))
-                                                            }}>
-                                                            <span>Checkout</span>
-                                                      </button>
-                                                      {openCheckout && (
-                                                            <div className="checkout-popup-container">
-                                                                  <div className="checkout-popup-block">
-                                                                        <Asd pizzas={pizzas}/>
-                                                                        <MakeAPayment />
-                                                                        <GooglePayButton
-                                                                              environment="TEST"
-                                                                              buttonColor="white"
-                                                                              buttonType="order"
-                                                                              paymentRequest={{
-                                                                                    apiVersion: 2,
-                                                                                    apiVersionMinor: 0,
-                                                                                    allowedPaymentMethods: [
-                                                                                          {
-                                                                                                type: 'CARD',
-                                                                                                parameters: {
-                                                                                                      allowedAuthMethods: [
-                                                                                                            'PAN_ONLY',
-                                                                                                            'CRYPTOGRAM_3DS'
-                                                                                                      ],
-                                                                                                      allowedCardNetworks: [
-                                                                                                            'MASTERCARD',
-                                                                                                            'VISA'
-                                                                                                      ]
-                                                                                                },
-                                                                                                tokenizationSpecification: {
-                                                                                                      type: 'PAYMENT_GATEWAY',
-                                                                                                      parameters: {
-                                                                                                            gateway: 'example',
-                                                                                                            gatewayMerchantId:
-                                                                                                                  'exampleGatewayMerchantId'
-                                                                                                      }
-                                                                                                }
-                                                                                          }
-                                                                                    ],
-                                                                                    merchantInfo: {
-                                                                                          merchantId: '12345678901234567890',
-                                                                                          merchantName: 'Demo Merchant'
-                                                                                    },
-                                                                                    transactionInfo: {
-                                                                                          totalPriceStatus: 'FINAL',
-                                                                                          totalPriceLabel: 'Total',
-                                                                                          totalPrice: '100.00',
-                                                                                          currencyCode: 'USD',
-                                                                                          countryCode: 'US'
-                                                                                    }
-                                                                              }}
-                                                                        />
-                                                                        <div>second</div>
-                                                                        <div>third</div>
-                                                                        <div>fou</div>
-                                                                  </div>
-                                                            </div>
-                                                      )}
+                                                      <StripeCheckoutButton
+                                                            DeliveryOrPickup={DeliveryOrPickup}
+                                                            setDeliveryOrPickup={setDeliveryOrPickup}
+                                                            contactProvidedByUser={contactProvidedByUser}
+                                                            contactPerson={contactPerson}
+                                                            setContactPerson={setContactPerson}
+                                                            city={city}
+                                                            setCity={setCity}
+                                                            street={street}
+                                                            setStreet={setStreet}
+                                                            choosedNotifyMethod={contactMethod}
+                                                            pizzas={pizzas}
+                                                            getDate={getDate}
+                                                      />
                                                 </div>
                                           </div>
                                     </div>

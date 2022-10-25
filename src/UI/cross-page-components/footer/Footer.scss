@@ -1,6 +1,7 @@
 @import "../../../styles/variables";
 
 .footer {
+  padding: 20px;
   width: 100%;
   border-radius: 0 0 $border-radius $border-radius;
   //height: 99.5px;
@@ -29,8 +30,20 @@
 }
 
 .yourTargetElement {
-  background-color: black;
+  background-color: #181818;
   animation: yourAnimation 1s ease-in-out 0s normal none;
+}
+
+.footer-item {
+  width: 200px;
+  padding: 10px;
+  border-radius: $border-radius;
+}
+
+@media (max-width: 615px) {
+  .footer-item {
+    width: 95%;
+  }
 }
 
 @keyframes yourAnimation {

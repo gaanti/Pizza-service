@@ -1,20 +1,49 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../../../../styles/components/__input.scss';
 import '../../../../styles/_variables.scss';
 import OrderDate from './OrderDate';
 import DeliveryAddress from './DeliveryAddress';
 import ContactWay from './ContactWay';
 import CoffeIcon from './CoffeIcon';
-import OrderDetailsButtonGroup from './OrderDetailsButtonGroup';
 import ContactPersonField from './ContactPersonField';
 import DeliveryTypeAndDescription from './DeliveryTypeAndDescription';
+import { deliveryMethod, notifyMethod } from '../../../../redux/types/order.types';
 
-function OrderDetails() {
-      const [DeliveryOrPickup, setDeliveryOrPickup] = useState('Pickup');
-      const [contactPerson, setContactPerson] = useState('' as string);
-      const [city, setCity] = useState('' as string);
-      const [street, setStreet] = useState('' as string);
+interface props {
+      DeliveryOrPickup: string;
+      setDeliveryOrPickup: React.Dispatch<React.SetStateAction<deliveryMethod>>;
+      contactPerson: string;
+      setContactPerson: React.Dispatch<React.SetStateAction<string>>;
+      city: string;
+      setCity: React.Dispatch<React.SetStateAction<string>>;
+      street: string;
+      setStreet: React.Dispatch<React.SetStateAction<string>>;
+      contactMethod: notifyMethod;
+      setcontactMethod: React.Dispatch<React.SetStateAction<notifyMethod>>;
+      handleChange: (event: any) => void;
+      contactProvidedByUser: string;
+      setContactProvidedByUser: (contact: string) => void;
+      getDate: string;
+      setGetDate: React.Dispatch<React.SetStateAction<string>>;
+}
 
+const OrderDetails: React.FC<props> = ({
+      DeliveryOrPickup,
+      setDeliveryOrPickup,
+      contactPerson,
+      setContactPerson,
+      city,
+      setCity,
+      street,
+      setStreet,
+      contactMethod,
+      handleChange,
+      contactProvidedByUser,
+      setContactProvidedByUser,
+      setcontactMethod,
+      getDate,
+      setGetDate
+}) => {
       return (
             <div className="order_details">
                   <article className="l-design-widht">
@@ -29,7 +58,7 @@ function OrderDetails() {
                                     </svg>
                                     Order details
                               </h2>
-                              <OrderDate DeliveryOrPickup={DeliveryOrPickup} />
+                              <OrderDate DeliveryOrPickup={DeliveryOrPickup} getDate={getDate} setGetDate={setGetDate} />
                               <ContactPersonField contactPerson={contactPerson} setContactPerson={setContactPerson} />
                               <DeliveryAddress
                                     DeliveryOrPickup={DeliveryOrPickup}
@@ -38,15 +67,19 @@ function OrderDetails() {
                                     setStreet={setStreet}
                                     setCity={setCity}
                               />
-                              <ContactWay />
-                              <OrderDetailsButtonGroup />
+                              <ContactWay
+                                    contactMethod={contactMethod}
+                                    setcontactMethod={setcontactMethod}
+                                    handleChange={handleChange}
+                                    contactProvidedByUser={contactProvidedByUser}
+                                    setContactProvidedByUser={setContactProvidedByUser}
+                              />
                         </div>
                         /////
                   </article>
-
                   <CoffeIcon />
             </div>
       );
-}
+};
 
-export default React.memo(OrderDetails);
+export default OrderDetails;

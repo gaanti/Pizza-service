@@ -1,7 +1,7 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 import { pizzaApi } from '../../services/pizza';
-import { doughRadius, doughWidths, ingredient, pizza } from '../../types';
+import { doughRadius, doughWidths, ingredient, pizza } from '../../types/types';
 import { RootState } from '../../store';
 
 const initialState: pizzas = {

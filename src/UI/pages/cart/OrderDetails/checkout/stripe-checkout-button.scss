@@ -1,0 +1,22 @@
+.stripe-checkout-button {
+  width: 100%;
+  background-color: #547cff;
+  padding: 9px 24px;
+  color: white;
+
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: 0;
+  border-radius: 4px;
+  box-shadow: rgb(60 64 67 / 30%) 0px 1px 1px 0px, rgb(60 64 67 / 15%) 0px 1px 3px 1px;
+  cursor: pointer;
+  height: 40px;
+  min-height: 40px;
+}
+.spining-animation {
+  text-align: center;
+  height: 40px;
+  margin: auto;
+  animation: 1s infinite spin-360-at-the-same;
+}

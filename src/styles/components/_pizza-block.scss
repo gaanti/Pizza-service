@@ -145,7 +145,8 @@ color: white;*/
         border: unset;
         padding-left: 10px;
       }
-      h4{
+
+      h4 {
         border-radius: $border-radius;
       }
     }
@@ -345,18 +346,21 @@ text-align: left;
     background-color: black;
     border-radius: $border-radius;
   }
+
   & + div {
     display: flex;
     flex-direction: column;
     row-gap: 5px;
     justify-content: center;
   }
+
   &__search-block {
     background-color: white;
     white-space: nowrap;
     border-radius: $border-radius !important;
     padding: 5px;
   }
+
   &__dough-switch-block {
     display: flex;
     flex-direction: column;
@@ -366,11 +370,12 @@ text-align: left;
     background-color: white;
   }
 }
-.onHover-scale{
+
+.onHover-scale {
   transition: all $duration;
   cursor: pointer;
 
-  &:hover{
+  &:hover {
     scale: 1.2;
   }
 }

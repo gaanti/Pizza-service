@@ -1,4 +1,4 @@
-import { pagedPizzas } from "../types";
+import { pagedPizzas } from "../types/types";
 import { api } from "./api";
 
 // Define a service using a base URL and expected endpoints
