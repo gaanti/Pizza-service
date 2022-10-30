@@ -7,44 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7154f848-4d52-4cd8-a3e2-47b003914112" name="Changes" comment="Sorting, filtering and pagination functionality">
-      <change afterPath="$PROJECT_DIR$/src/UI/pages/admin/login/admin-login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/cross-page-components/header/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/cross-page-components/header/header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/CoffeIcon.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/user/cart/OrderDetails/CoffeIcon.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/ContactPersonField.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/user/cart/OrderDetails/ContactPersonField.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/ContactWay.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/user/cart/OrderDetails/ContactWay.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/DeliveryAddress.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/user/cart/OrderDetails/DeliveryAddress.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/DeliveryTypeAndDescription.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/user/cart/OrderDetails/DeliveryTypeAndDescription.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/MakeAPayment.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/user/cart/OrderDetails/MakeAPayment.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/OrderDate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/user/cart/OrderDetails/OrderDate.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/OrderDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/user/cart/OrderDetails/OrderDetails.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/checkout/stripe-checkout-button.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/user/cart/OrderDetails/checkout/stripe-checkout-button.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails/checkout/stripe-checkout-button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/user/cart/OrderDetails/checkout/stripe-checkout-button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/cart-button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/user/cart/cart-button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/cart-empty.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/user/cart/cart-empty.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/cart-item.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/user/cart/cart-item.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/cart/cart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/user/cart/cart.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/main-page/main-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/user/main-page/main-page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/main-page/pizza-block/configure/configure-buttons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/user/main-page/pizza-block/configure/configure-buttons.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/main-page/pizza-block/configure/configure-ingredients.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/user/main-page/pizza-block/configure/configure-ingredients.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/main-page/pizza-block/configure/configure-search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/user/main-page/pizza-block/configure/configure-search.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/main-page/pizza-block/configure/configure.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/user/main-page/pizza-block/configure/configure.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/main-page/pizza-block/doughParams.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/user/main-page/pizza-block/doughParams.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/main-page/pizza-block/ingredients-list.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/user/main-page/pizza-block/ingredients-list.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/main-page/pizza-block/pizza-block.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/user/main-page/pizza-block/pizza-block.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/main-page/pizza-block/pizzas.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/user/main-page/pizza-block/pizzas.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/main-page/pizza-block/skeleton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/user/main-page/pizza-block/skeleton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/main-page/pizza-parameters/categories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/user/main-page/pizza-parameters/categories.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/main-page/pizza-parameters/pagination.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/user/main-page/pizza-parameters/pagination.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/main-page/pizza-parameters/search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/user/main-page/pizza-parameters/search.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/pages/main-page/pizza-parameters/sort.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/pages/user/main-page/pizza-parameters/sort.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/App.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/components/__input.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/__input.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/components/_search.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/_search.scss" afterDir="false" />
-    </list>
+    <list default="true" id="7154f848-4d52-4cd8-a3e2-47b003914112" name="Changes" comment="Sorting, filtering and pagination functionality" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,9 +17,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="SCSS File" />
         <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="SCSS File" />
       </list>
     </option>
   </component>
@@ -77,6 +40,10 @@
             <RecentBranchesForRepo>
               <option name="branches">
                 <list>
+                  <RecentBranch>
+                    <option name="branchName" value="admin-panel" />
+                    <option name="lastUsedInstant" value="1666729683" />
+                  </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="stripe" />
                     <option name="lastUsedInstant" value="1666212422" />
@@ -101,6 +68,13 @@
         <option name="url" value="https://github.com/gaanti/Pizza-service.git" />
       </UrlAndAccount>
     </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/App.tsx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/UI/pages/admin/login/admin-login.tsx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/UI/pages/admin/navbar/adminNavBar.scss" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/UI/pages/admin/navbar/adminNavBar.tsx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/styles/App.scss" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="JsBowerSettings">
     <bower-package value="" />
@@ -160,11 +134,11 @@
       <recent name="$PROJECT_DIR$/src/redux" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/UI/pages/admin/navbar" />
       <recent name="$PROJECT_DIR$/src/UI/pages/user" />
       <recent name="$PROJECT_DIR$/src/redux/types" />
       <recent name="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails" />
       <recent name="$PROJECT_DIR$/src/UI/pages/main-page/pizza-block/configure" />
-      <recent name="$PROJECT_DIR$/src/redux/slices/business" />
     </key>
   </component>
   <component name="RunManager" selected="npm.build">
@@ -269,6 +243,9 @@
       <workItem from="1666438603551" duration="87000" />
       <workItem from="1666438702588" duration="6085000" />
       <workItem from="1666527848263" duration="16478000" />
+      <workItem from="1666768656232" duration="8891000" />
+      <workItem from="1666870476184" duration="2039000" />
+      <workItem from="1667120221783" duration="4838000" />
     </task>
     <task id="LOCAL-00001" summary="Project has been initialized">
       <created>1660245634989</created>

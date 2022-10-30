@@ -6,6 +6,7 @@ import Header from './UI/cross-page-components/header/header';
 import FooterWithButton from './UI/cross-page-components/footer/footer-with-button';
 import MainPage from './UI/pages/user/main-page/main-page';
 import AdminLogin from './UI/pages/admin/login/admin-login';
+import AdminNavBar from './UI/pages/admin/navbar/adminNavBar';
 
 function App() {
       return (
@@ -18,7 +19,6 @@ function App() {
                               </Route>
                               <Route path="/application-administration" element={<AdminAppWrapper />}>
                                     <Route index element={<AdminLogin />} />
-                                    <Route path="cart" element={<Cart />} />
                               </Route>
                               <Route path="*" element={<div>ERROR PAGE NOT FOUND</div>} />
                         </Route>
@@ -30,7 +30,9 @@ function App() {
 function Wrapper() {
       return (
             <div className="app-wrapper" id="main-page">
-                  <Outlet />
+                  <div className="background-color">
+                        <Outlet />
+                  </div>
             </div>
       );
 }
@@ -47,9 +49,10 @@ function UserAppWrapper() {
 
 function AdminAppWrapper() {
       return (
-            <>
+            <div className="admin-app-wrapper">
+                  <AdminNavBar />
                   <Outlet />
-            </>
+            </div>
       );
 }
 

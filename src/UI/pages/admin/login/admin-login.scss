@@ -1,0 +1,19 @@
+@import "src/styles/variables";
+
+.login-form{
+  &-wrapper {
+    margin: auto;
+    height: 100%;
+  }
+  &-block{
+    align-items: center;
+    height: min-content;
+    padding-bottom: 20px;
+    width: 300px;
+   /* border-radius: $border-radius;
+    background-color: #f6f6f6;
+    box-shadow: 0 10px 10px -10px rgb(0 0 0 / 50%);*/
+
+
+  }
+}

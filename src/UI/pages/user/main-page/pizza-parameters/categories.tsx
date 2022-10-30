@@ -13,7 +13,7 @@ function Categories() {
                         {filterCategoryOptions.length > 1 && (
                               <li
                                     onClick={() => dispatch(setFilterByCategoryId(0))}
-                                    className={filterCategoryId == 0 ? 'active' : ''}
+                                    className={`${filterCategoryId == 0 ? 'active' : ''} white-switch-button`}
                                     key={0}>
                                     All
                               </li>
@@ -23,7 +23,7 @@ function Categories() {
                                     return (
                                           <li
                                                 onClick={() => dispatch(setFilterByCategoryId(value.id))}
-                                                className={filterCategoryId == value.id ? 'active' : ''}
+                                                className={`${filterCategoryId == value.id ? 'active' : ''} white-switch-button`}
                                                 key={value.id}>
                                                 {value.categoryTitle}
                                           </li>
