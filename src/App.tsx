@@ -7,6 +7,9 @@ import FooterWithButton from './UI/cross-page-components/footer/footer-with-butt
 import MainPage from './UI/pages/user/main-page/main-page';
 import AdminLogin from './UI/pages/admin/login/admin-login';
 import AdminNavBar from './UI/pages/admin/navbar/adminNavBar';
+import { ThemeProvider } from '@material-ui/core';
+// import { ThemeProvider } from '@mui/material';
+import { theme } from './theme/theme';
 
 function App() {
       return (
@@ -29,11 +32,13 @@ function App() {
 
 function Wrapper() {
       return (
-            <div className="app-wrapper" id="main-page">
-                  <div className="background-color">
-                        <Outlet />
+            <ThemeProvider theme={theme}>
+                  <div className="app-wrapper" id="main-page">
+                        <div className="background-color">
+                              <Outlet />
+                        </div>
                   </div>
-            </div>
+            </ThemeProvider>
       );
 }
 

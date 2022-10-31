@@ -89,7 +89,7 @@ body {
   max-width: 100vw;
   min-height: 100vh;
   height: auto;
-  padding: 30px;
+  padding: 21px;
   @media (max-width: 690px) {
     padding: 2vh;
     @media (max-width: 385px) {
@@ -235,7 +235,7 @@ body {
   cursor: default;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 30px;
 
   &-wrapper {
     display: grid;
@@ -329,7 +329,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 2rem;
     gap: 10px;
   }
 

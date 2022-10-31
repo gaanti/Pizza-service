@@ -17,9 +17,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
         <option value="SCSS File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -245,7 +245,7 @@
       <workItem from="1666527848263" duration="16478000" />
       <workItem from="1666768656232" duration="8891000" />
       <workItem from="1666870476184" duration="2039000" />
-      <workItem from="1667120221783" duration="4838000" />
+      <workItem from="1667120221783" duration="6077000" />
     </task>
     <task id="LOCAL-00001" summary="Project has been initialized">
       <created>1660245634989</created>
@@ -278,7 +278,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/master" />
+                        <option value="origin/admin-panel" />
                       </list>
                     </value>
                   </entry>
