@@ -33,6 +33,11 @@ function App() {
 function Wrapper() {
       return (
             <ThemeProvider theme={theme}>
+                  <script
+                        async
+                        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8893380620489182"
+                        crossOrigin="anonymous"
+                  />
                   <div className="app-wrapper" id="main-page">
                         <div className="background-color">
                               <Outlet />
