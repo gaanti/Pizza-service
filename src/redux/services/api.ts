@@ -1,9 +1,9 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-export const baseURL = process.env.REACT_APP_BASE_URL ? process.env.REACT_APP_BASE_URL : 'https://react-pizza-backend0.herokuapp.com';
+export const baseURL =
+      process && process.env.REACT_APP_BASE_URL ? process.env.REACT_APP_BASE_URL : 'https://react-pizza-backend0.herokuapp.com';
 const baseQuery = fetchBaseQuery({
       baseUrl: baseURL,
-      // baseUrl: 'http://localhost:5000',
       headers: {
             accepts: 'application/json',
             'Access-Control-Allow-Origin': '*',
