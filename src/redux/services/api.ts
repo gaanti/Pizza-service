@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+require('dotenv').config();
 
 export const baseURL = process.env.REACT_APP_BASE_URL;
 
