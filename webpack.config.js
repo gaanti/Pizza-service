@@ -8,7 +8,7 @@ module.exports = {
       plugins: [
             new HtmlWebpackPlugin({
                   template: path.join(__dirname, 'src', 'index.html'),
-                  'process.env': JSON.stringify(dotenv.parsed)
+                  'process.env': JSON.stringify(dotenv.parse)
             })
       ],
       module: {
