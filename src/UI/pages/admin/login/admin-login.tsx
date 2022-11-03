@@ -9,7 +9,7 @@ import { useAppDispatch } from '../../../../redux/store';
 function AdminLogin() {
       const loginToken = useSelector(authTokenSelect);
       const dispatch = useAppDispatch();
-      const [doLoginAction, { isError, data, error, isSuccess }] = useLoginMutation();
+      const [doLoginAction, { isError, data, error, status }] = useLoginMutation();
       const [loginForm, setLoginForm] = useState({
             email: '',
             password: ''
@@ -32,18 +32,18 @@ function AdminLogin() {
             doLoginAction(loginForm);
       };
       useEffect(() => {
-            if (data && !isError) {
+            if (status == 'fulfilled' && data && !isError) {
                   dispatch(setToken(data.token));
             } else if (error) {
                   console.log(error);
             }
-      }, [isSuccess]);
+      }, [status]);
       return (
             <div className="CENTRED_ITEM login-form-wrapper">
                   <div />
                   <div className="DIRECTION_COLUMN login-form-block">
                         <h1>Hello, mate</h1>
-                        <h1>{loginToken}</h1>
+                        <h1>{loginToken.slice(0, 14)}...</h1>
                         <Container maxWidth={'sm'}>
                               <TextField
                                     required
