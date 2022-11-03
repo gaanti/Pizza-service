@@ -7,7 +7,7 @@ export const pizzaApi = api.injectEndpoints({
             doCheckoutDelivery: builder.mutation<string, deliveryPizzaOrder | pickUpPizzaOrder>({
                   query: (somethnig) => {
                         return {
-                              url: `checkout-delivery`,
+                              url: `checkout/delivery`,
                               method: 'POST',
                               body: somethnig,
                               responseHandler: 'text'
@@ -17,7 +17,7 @@ export const pizzaApi = api.injectEndpoints({
             doCheckoutPickUp: builder.mutation<string, deliveryPizzaOrder | pickUpPizzaOrder>({
                   query: (somethnig) => {
                         return {
-                              url: `checkout-pickUp`,
+                              url: `checkout/pickUp`,
                               method: 'POST',
                               body: somethnig,
                               responseHandler: 'text'
