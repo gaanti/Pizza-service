@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
-import '../../../../styles/components/_search.scss';
+import '../../../../../styles/components/_search.scss';
 import { useDispatch } from 'react-redux';
-import { setFilterByTitle } from '../../../../redux/slices/business/filtering_params';
+import { setFilterByTitle } from '../../../../../redux/slices/business/filtering_params';
 import debounce from 'lodash.debounce';
 
 function Search() {
@@ -16,7 +16,7 @@ function Search() {
       /*styled from _search.scss*/
       return (
             <>
-                  <input placeholder="Find by title" onChange={(val) => testDBNC(val.target.value)} className="input" />
+                  <input placeholder="Find by title" onChange={(val) => testDBNC(val.target.value)} className="input black-input" />
             </>
       );
 }

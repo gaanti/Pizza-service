@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import Skeleton from './skeleton';
 import { useDispatch, useSelector } from 'react-redux';
-import { useGetPizzasQuery } from '../../../../redux/services/pizza';
-import { current_page_indexSelect, setTotalPagesQuantity, statusSelect } from '../../../../redux/slices/business/pizzas';
-import { filteringParams } from '../../../../redux/slices/business/filtering_params';
+import { useGetPizzasQuery } from '../../../../../redux/services/pizza';
+import { current_page_indexSelect, setTotalPagesQuantity, statusSelect } from '../../../../../redux/slices/business/pizzas';
+import { filteringParams } from '../../../../../redux/slices/business/filtering_params';
 import PizzaBlock from './pizza-block';
 
 function Pizzas() {

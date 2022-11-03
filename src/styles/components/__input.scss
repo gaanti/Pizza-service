@@ -167,7 +167,7 @@ button + button {
   display: none;
 }
 
-.input input[type='datetime-local']:before {
+.black-input input[type='datetime-local']:before {
   position: absolute;
   content: '';
   box-shadow: 6px 22px 0px 6px $accent-color;

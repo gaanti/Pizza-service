@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { useSelector } from 'react-redux';
-import { dough_radiusSelect, dough_widthsSelect } from '../../../../redux/slices/business/pizzas';
+import { dough_radiusSelect, dough_widthsSelect } from '../../../../../redux/slices/business/pizzas';
 
 function DoughParams(props: {
       setDoughRadius: React.Dispatch<React.SetStateAction<number>>;

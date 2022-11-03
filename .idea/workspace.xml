@@ -7,10 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7154f848-4d52-4cd8-a3e2-47b003914112" name="Changes" comment="Sorting, filtering and pagination functionality">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/cross-page-components/footer/Footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/cross-page-components/footer/Footer.scss" afterDir="false" />
-    </list>
+    <list default="true" id="7154f848-4d52-4cd8-a3e2-47b003914112" name="Changes" comment="Sorting, filtering and pagination functionality" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,6 +41,10 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
+                    <option name="branchName" value="admin-panel" />
+                    <option name="lastUsedInstant" value="1666729683" />
+                  </RecentBranch>
+                  <RecentBranch>
                     <option name="branchName" value="stripe" />
                     <option name="lastUsedInstant" value="1666212422" />
                   </RecentBranch>
@@ -67,6 +68,13 @@
         <option name="url" value="https://github.com/gaanti/Pizza-service.git" />
       </UrlAndAccount>
     </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/App.tsx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/UI/pages/admin/login/admin-login.tsx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/UI/pages/admin/navbar/adminNavBar.scss" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/UI/pages/admin/navbar/adminNavBar.tsx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/styles/App.scss" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="JsBowerSettings">
     <bower-package value="" />
@@ -126,11 +134,11 @@
       <recent name="$PROJECT_DIR$/src/redux" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/UI/pages/admin/navbar" />
+      <recent name="$PROJECT_DIR$/src/UI/pages/user" />
       <recent name="$PROJECT_DIR$/src/redux/types" />
       <recent name="$PROJECT_DIR$/src/UI/pages/cart/OrderDetails" />
       <recent name="$PROJECT_DIR$/src/UI/pages/main-page/pizza-block/configure" />
-      <recent name="$PROJECT_DIR$/src/redux/slices/business" />
-      <recent name="$PROJECT_DIR$/src/redux/slices/UI" />
     </key>
   </component>
   <component name="RunManager" selected="npm.build">
@@ -235,6 +243,9 @@
       <workItem from="1666438603551" duration="87000" />
       <workItem from="1666438702588" duration="6085000" />
       <workItem from="1666527848263" duration="16478000" />
+      <workItem from="1666768656232" duration="8891000" />
+      <workItem from="1666870476184" duration="2039000" />
+      <workItem from="1667120221783" duration="6077000" />
     </task>
     <task id="LOCAL-00001" summary="Project has been initialized">
       <created>1660245634989</created>
@@ -267,7 +278,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/master" />
+                        <option value="origin/admin-panel" />
                       </list>
                     </value>
                   </entry>

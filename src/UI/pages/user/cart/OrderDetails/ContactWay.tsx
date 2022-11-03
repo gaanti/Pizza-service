@@ -1,23 +1,23 @@
-import React, { useState } from "react";
-import { notifyMethod } from "../../../../redux/types/order.types";
+import React, { useState } from 'react';
+import { notifyMethod } from '../../../../../redux/types/order.types';
 
 interface props {
       contactMethod: notifyMethod;
-      setcontactMethod: React.Dispatch<React.SetStateAction<notifyMethod>>
+      setcontactMethod: React.Dispatch<React.SetStateAction<notifyMethod>>;
       handleChange: (event: any) => void;
       contactProvidedByUser: string;
       setContactProvidedByUser: (contact: string) => void;
 }
 
-const ContactWay = (props:{ contactMethod: notifyMethod;
-      setcontactMethod: React.Dispatch<React.SetStateAction<notifyMethod>>
+const ContactWay = (props: {
+      contactMethod: notifyMethod;
+      setcontactMethod: React.Dispatch<React.SetStateAction<notifyMethod>>;
       handleChange: (event: any) => void;
       contactProvidedByUser: string;
-      setContactProvidedByUser: (contact: string) => void }) => {
-
+      setContactProvidedByUser: (contact: string) => void;
+}) => {
       return (
             <div>
-
                   <div className="contact-method_wrapper">
                         How can we notify you?
                         <div className="contact-method">
@@ -33,13 +33,25 @@ const ContactWay = (props:{ contactMethod: notifyMethod;
                                     <label htmlFor="contactChoice1">Telegram</label>
                               </div>
                               <div>
-                                    <input type="radio" id="contactChoice2" name="contact" value="Phone" onChange={props.handleChange}
-                                           checked={props.contactMethod === notifyMethod.Phone}/>
+                                    <input
+                                          type="radio"
+                                          id="contactChoice2"
+                                          name="contact"
+                                          value="Phone"
+                                          onChange={props.handleChange}
+                                          checked={props.contactMethod === notifyMethod.Phone}
+                                    />
                                     <label htmlFor="contactChoice2">Phone</label>
                               </div>
                               <div>
-                                    <input type="radio" id="contactChoice3" name="contact" value="Nothing" onChange={props.handleChange}
-                                           checked={props.contactMethod === notifyMethod.Nothing}/>
+                                    <input
+                                          type="radio"
+                                          id="contactChoice3"
+                                          name="contact"
+                                          value="Nothing"
+                                          onChange={props.handleChange}
+                                          checked={props.contactMethod === notifyMethod.Nothing}
+                                    />
                                     <label htmlFor="contactChoice3">Nothing</label>
                               </div>
                               {}
@@ -53,15 +65,14 @@ const ContactWay = (props:{ contactMethod: notifyMethod;
                                     type="text"
                                     property="alol"
                                     placeholder={
-                                          props.contactMethod
-                                                && props.contactMethod === notifyMethod.Telegram
-                                                      ? '@Anton_Gaskevich'
-                                                      : props.contactMethod === notifyMethod.Phone
-                                                      ? '+380 99 377 4647'
-                                                      : ''
+                                          props.contactMethod && props.contactMethod === notifyMethod.Telegram
+                                                ? '@Anton_Gaskevich'
+                                                : props.contactMethod === notifyMethod.Phone
+                                                ? '+380 99 377 4647'
+                                                : ''
                                     }
                                     value={props.contactProvidedByUser}
-                                    onChange={event => props.setContactProvidedByUser(event.target.value)}
+                                    onChange={(event) => props.setContactProvidedByUser(event.target.value)}
                                     //TODO form validation and inactive checkout button until all fields are filled
                               />
                         </label>

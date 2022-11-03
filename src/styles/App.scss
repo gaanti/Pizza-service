@@ -1,7 +1,7 @@
+@use "sass:math";
 @import 'src/styles/fonts';
 @import 'src/styles/variables';
 @import 'src/styles/libs/normalize';
-
 @import 'src/styles/components/all';
 
 * {
@@ -9,6 +9,13 @@
 }
 
 body {
+  background-color: #F1CE9D;
+  opacity: 1;
+  background-image: radial-gradient(#98150E 0.45px, transparent 0.45px), radial-gradient(#98150E 0.45px, #F1CE9D 0.45px);
+  background-size: 18px 18px;
+  background-position: 0 0, 9px 9px;
+}
+.background-with-dots{
   background-color: #F1CE9D;
   opacity: 1;
   background-image: radial-gradient(#98150E 0.45px, transparent 0.45px), radial-gradient(#98150E 0.45px, #F1CE9D 0.45px);
@@ -45,7 +52,6 @@ body {
   align-items: center;
   justify-content: center;
 }
-
 .hover_scale_increase_animation {
   transition: 200ms;
 
@@ -69,13 +75,44 @@ body {
 }
 
 .app-wrapper {
-  width: 97%;
+  /*width: 97%;
   height: auto;
+  min-height: 90vh;
+  max-height: 100vh;
   background-color: $white;
   margin: 1% auto;
   max-width: 1400px;
   border-radius: $border-radius;
-  position: sticky;
+  position: sticky;*/
+  border-radius: $border-radius;
+  min-width: 100vw;
+  max-width: 100vw;
+  min-height: 100vh;
+  height: auto;
+  padding: 21px;
+  @media (max-width: 690px) {
+    padding: 2vh;
+    @media (max-width: 385px) {
+      padding: 1vh;
+    }
+  }
+}
+.admin-app-wrapper {
+  margin: auto;
+  padding: 1vh;
+  height: auto;
+
+  display: grid;
+  grid-template-columns: 1fr 7fr 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+.PADDING_EIGHT{
+  padding: 8px;
+}
+.background-color{
+  background-color: $white;
+  border-radius: $border-radius;
 }
 
 .content {
@@ -198,7 +235,7 @@ body {
   cursor: default;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 30px;
 
   &-wrapper {
     display: grid;
@@ -292,7 +329,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 2rem;
     gap: 10px;
   }
 
@@ -573,6 +609,7 @@ body {
         font-weight: 600;
         width: 210px;
         padding: 16px;
+
         & img {
           width: 30px;
           height: 30px;
@@ -653,22 +690,22 @@ body {
     z-index: 3;
   }
 
+
   .checkout-popup-block {
     $size: 430px;
     border-radius: $border-radius;
     position: absolute;
     z-index: 3;
 
-    left: calc(50% - $size / 2);
-
     display: flex;
     flex-direction: column;
     row-gap: 10px;
     background-color: white;
     width: 430px;
-    height: calc($size / 1.7);
+    height: math.div($size, 1.7);
     overflow: scroll;
     padding: 8px;
+    left: calc(50% - math.div($size, 2));
   }
 
   .checkout-block-container {

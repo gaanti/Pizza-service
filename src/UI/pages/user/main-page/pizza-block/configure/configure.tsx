@@ -3,7 +3,7 @@ import DoughParams from '../doughParams';
 import isequal from 'lodash.isequal';
 import differencewith from 'lodash.differencewith';
 import { useSelector } from 'react-redux';
-import { ingredientsSelect } from '../../../../../redux/slices/business/pizzas';
+import { ingredientsSelect } from '../../../../../../redux/slices/business/pizzas';
 import { AiFillSetting } from 'react-icons/ai';
 import ConfigureSearch from './configure-search';
 import ConfigureButtons from './configure-buttons';

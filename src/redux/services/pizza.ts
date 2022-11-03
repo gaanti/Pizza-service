@@ -1,14 +1,9 @@
-import { pagedPizzas } from "../types/types";
-import { api } from "./api";
+import { pagedPizzas } from '../types/types';
+import { api } from './api';
 
-// Define a service using a base URL and expected endpoints
-// @ts-ignore
 export const pizzaApi = api.injectEndpoints({
-      // @ts-ignore
       endpoints: (builder) => ({
-            // @ts-ignore
             getPizzas: builder.query<pagedPizzas, any>({
-                  // @ts-ignore
                   query: ({ sortBy, filterByCategory, currentPage, filterTitle, sortDirection }) => {
                         const sortBy1 = `sortBy=${sortBy ? sortBy : 'price'}`;
                         const filterByCategory1 = `&filterByCategoryId=${filterByCategory ? filterByCategory : '0'}`;
