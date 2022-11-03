@@ -3,18 +3,18 @@ import { api } from './api';
 // Define a service using a base URL and expected endpoints
 export const authentication = api.injectEndpoints({
       endpoints: (builder) => ({
-            login: builder.mutation<string, loginRequest>({
+            login: builder.mutation<loginResponse, loginRequest>({
                   query: (somethnig) => {
                         return {
                               url: `login`,
                               method: 'POST',
                               body: somethnig,
-                              responseHandler: 'text'
+                              responseHandler: 'json'
                         };
-                  },
-                  transformResponse: (res: { data: loginResponse }) => {
-                        return res.data.token;
                   }
+                  /*transformResponse: (res: loginResponse) => {
+                        return res.data.token;
+                  }*/
             })
       })
 });

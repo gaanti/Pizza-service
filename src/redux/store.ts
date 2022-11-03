@@ -5,6 +5,7 @@ import pizzas from './slices/business/pizzas';
 import { useDispatch } from 'react-redux';
 import { pizzaApi } from './services/pizza';
 import footer from './slices/UI/footer';
+import login from './slices/business/login';
 
 export const store = configureStore({
       reducer: {
@@ -12,6 +13,7 @@ export const store = configureStore({
             cart: cart,
             pizzas: pizzas,
             footer: footer,
+            login: login,
             [pizzaApi.reducerPath]: pizzaApi.reducer
       },
       middleware: (getDefaultMiddleware) => {
